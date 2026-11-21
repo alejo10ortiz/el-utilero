@@ -13,11 +13,11 @@ const Etiqueta: React.FC<{ texto: string; sway: number }> = ({ texto, sway }) =>
   <g transform={`translate(300 118) rotate(${sway} 0 0)`}>
     <path d="M0 0 C-8 20 -14 40 -10 60" fill="none" stroke={C.tinta} strokeWidth={2.2} />
     <g transform="translate(-10 58) rotate(6)">
-      <rect x={-8} y={0} width={110} height={150} fill={C.kraft} stroke={C.tinta} strokeWidth={3} />
+      <rect x={-8} y={0} width={128} height={150} fill={C.kraft} stroke={C.tinta} strokeWidth={3} />
       <path d="M-8 0 L6 0 L-8 14 Z" fill={C.papel} stroke={C.tinta} strokeWidth={2} />
       <circle cx={8} cy={14} r={5} fill={C.papel} stroke={C.tinta} strokeWidth={2.5} />
       {texto.split(' · ').map((t, i) => (
-        <text key={i} x={4} y={44 + i * 22} fontFamily={FONT.maquina} fontSize={15} fill={C.tinta}>
+        <text key={i} x={4} y={44 + i * 22} fontFamily={FONT.maquina} fontSize={14} fill={C.tinta}>
           {t}
         </text>
       ))}
