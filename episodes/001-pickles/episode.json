@@ -1,0 +1,31 @@
+{
+  "id": "001",
+  "slug": "pickles",
+  "serie": "El Casillero",
+  "titulo": "El perro que salvó la Copa",
+  "pais": "Inglaterra",
+  "anio": 1966,
+  "objeto": "bulto envuelto en papel periódico",
+  "objetoTipo": "bulto",
+  "cintaCasillero": "Inglaterra 66",
+  "etiqueta": "CASILLERO #001 · LONDRES · 1966",
+  "nivelSecreto": 5,
+  "estado": "verificado",
+  "escenas": [
+    { "tipo": "gancho", "fondo": "pizarra", "texto": "UN PERRO SALVÓ LA COPA DEL MUNDO", "resaltar": "PERRO", "voz": "Un perro salvó la Copa del Mundo. Y no es un chiste." },
+    { "tipo": "sting", "casillero": "entreabierto" },
+    { "tipo": "apertura", "expresion": "E3", "pose": "P3", "palabraGigante": "SHH", "voz": "Cierren la puerta, que les cuento." },
+    { "tipo": "contexto", "ficha": "LONDRES · 20.03.1966", "sello": "ROBADA", "palabraGigante": "1966", "claves": ["trofeo", "Londres"], "voz": "Marzo de 1966. Faltaban cuatro meses para el Mundial de Inglaterra… y alguien se robó el trofeo de una exhibición en Londres." },
+    { "tipo": "contexto", "ficha": "Piden rescate", "marcador": "rescate", "claves": ["rescate"], "voz": "La policía no encontraba nada. Hasta llegó una petición de rescate." },
+    { "tipo": "giro", "casillero": "abierto", "pose": "P5", "expresion": "E4", "palabraGigante": "27.03", "claves": ["Pickles", "Copa"], "voz": "Siete días después, un perro llamado Pickles salió a pasear con su dueño, olfateó un paquete envuelto en periódico… y adentro estaba la Copa." },
+    { "tipo": "remate", "ficha": "30.07.1966 — Inglaterra campeón", "cinta": "¡su único Mundial!", "palabraGigante": "ÚNICO", "claves": ["único"], "voz": "Ese julio, Inglaterra ganó el Mundial. El único que tiene." },
+    { "tipo": "cierre", "fondo": "lima", "expresion": "E2", "claves": ["casillero"], "voz": "Al perro lo trataron como un héroe. Yo estaba ahí. Bueno… casi. Comenten su país y mañana abro su casillero." }
+  ],
+  "textoFinal": "@elutilero · Mañana: casillero #002",
+  "fuentes": [
+    "https://www.thefa.com/news/2016/jul/27/guide-dogs-service-name-puppies-280716",
+    "https://www.fifa.com/news/pickles-and-the-stolen-world-cup-2771152",
+    "https://en.wikipedia.org/wiki/Pickles_(dog)",
+    "https://channel4.com/news/world-cup-england-1966-pickles-the-dog-archive-itn"
+  ]
+}
