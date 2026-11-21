@@ -1,9 +1,8 @@
 import React from 'react';
-import { C, FPS, SAFE_BOX } from '../../config/brand';
+import { FPS, SAFE_BOX } from '../../config/brand';
 import { PalabraGigante } from '../components/PalabraGigante';
 import { Subtitulos } from '../components/Subtitulos';
 import { Utilero } from '../components/Utilero';
-import { Sfx } from '../components/Sfx';
 import { Escenario, EscenaProps } from './Escenario';
 
 /** APERTURA (5–7 s): el utilero susurra con la mano en la boca (E3 + P3). «Cierren la puerta, que les cuento.» */
@@ -22,7 +21,6 @@ export const Apertura: React.FC<EscenaProps> = ({ esc, timing }) => {
         y={470}
       />
       <Subtitulos words={timing.words} offsetFrames={off} claves={esc.claves} />
-      <Sfx name="wink" at={0} volume={0.0} />
     </Escenario>
   );
 };
