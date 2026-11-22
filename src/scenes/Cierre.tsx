@@ -8,7 +8,7 @@ import { Portazo } from '../components/Portazo';
 import { Subtitulos } from '../components/Subtitulos';
 import { Utilero } from '../components/Utilero';
 import { Sfx } from '../components/Sfx';
-import { handleDe, numeroCasillero } from '../lib/episode';
+import { handleDe, numeroCamerino } from '../lib/episode';
 import { Escenario, EscenaProps } from './Escenario';
 
 /**
@@ -64,7 +64,7 @@ export const Cierre: React.FC<EscenaProps> = ({ esc, ep, timing, frames }) => {
           {ep.textoFinal.split(' · ').slice(1).join(' · ')}
         </div>
       )}
-      <Portazo delay={portazoAt} numero={numeroCasillero(ep)} />
+      <Portazo delay={portazoAt} numero={numeroCamerino(ep)} />
     </Escenario>
   );
 };

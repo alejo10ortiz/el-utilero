@@ -6,7 +6,8 @@ import tiempos from '../../assets/sfx/_timing.json';
 export type SfxName =
   | 'keys' | 'lock' | 'creak' | 'slam' | 'whistle' | 'stamp' | 'tape' | 'type_loop' | 'ding'
   | 'chalk' | 'marker' | 'paper_slide' | 'thump' | 'wink' | 'key_drop'
-  | 'whoosh' | 'whoosh_long' | 'impact' | 'hit' | 'riser' | 'pop' | 'static' | 'slap' | 'clap' | 'swish';
+  | 'whoosh' | 'whoosh_long' | 'impact' | 'hit' | 'riser' | 'pop' | 'static' | 'slap' | 'clap' | 'swish'
+  | 'patada' | 'hinchada';
 
 const T = tiempos as Record<string, { dur: number; pico: number }>;
 

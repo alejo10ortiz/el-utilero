@@ -17,18 +17,18 @@ import { Sting } from '../scenes/Sting';
 import { GanchoPro } from '../scenes/pro/GanchoPro';
 import { StingPro } from '../scenes/pro/StingPro';
 import { AperturaPro } from '../scenes/pro/AperturaPro';
-import { CasillerosPro } from '../scenes/pro/CasillerosPro';
+import { CamerinosPro } from '../scenes/pro/CamerinosPro';
 import { CierrePro } from '../scenes/pro/CierrePro';
 import { AbsProvider } from '../lib/ritmo';
 import { Musica } from '../components/Musica';
 import { DUR_TRANSICION, Transicion } from '../components/Transiciones';
-import { Casilleros } from '../scenes/Casilleros';
+import { Camerinos } from '../scenes/Camerinos';
 import { Secreto } from '../scenes/Secreto';
 import { Serie } from '../scenes/Serie';
 
 /** Escenas del estilo 'pro' (montaje dinámico al ritmo). Las que no existan caen al estilo clásico. */
 const ESCENAS_PRO: Partial<Record<keyof typeof ESCENAS, React.FC<any>>> = {
-  gancho: GanchoPro, sting: StingPro, apertura: AperturaPro, casilleros: CasillerosPro, cierre: CierrePro,
+  gancho: GanchoPro, sting: StingPro, apertura: AperturaPro, camerinos: CamerinosPro, cierre: CierrePro,
 };
 
 export type ShortProps = {
@@ -40,7 +40,7 @@ export type ShortProps = {
 
 const ESCENAS = {
   gancho: Gancho, sting: Sting, apertura: Apertura, contexto: Contexto, giro: Giro, remate: Remate, cierre: Cierre,
-  casilleros: Casilleros, serie: Serie, secreto: Secreto,
+  camerinos: Camerinos, serie: Serie, secreto: Secreto,
 };
 
 /**

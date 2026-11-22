@@ -7,8 +7,8 @@ export type Expresion = (typeof EXPRESIONES)[number];
 export type Pose = (typeof POSES)[number];
 export type Visema = (typeof VISEMAS)[number];
 
-export const ESTADOS_CASILLERO = ['cerrado', 'llave', 'entreabierto', 'abierto', 'objeto-fuera', 'cerrando'] as const;
-export type EstadoCasillero = (typeof ESTADOS_CASILLERO)[number];
+export const ESTADOS_PUERTA = ['cerrado', 'llave', 'entreabierto', 'abierto', 'objeto-fuera', 'cerrando'] as const;
+export type EstadoPuerta = (typeof ESTADOS_PUERTA)[number];
 
 export const OBJETOS = [
   'bulto', 'botin', 'balones', 'llave-rota', 'radio', 'silbato', 'boleta', 'camiseta', 'brujula', 'llavero',
@@ -17,8 +17,8 @@ export const OBJETOS = [
 export type ObjetoTipo = (typeof OBJETOS)[number];
 
 export const EscenaSchema = z.object({
-  tipo: z.enum(['gancho', 'sting', 'apertura', 'contexto', 'giro', 'remate', 'cierre', 'casilleros', 'serie', 'secreto']),
-  fondo: z.enum(['pizarra', 'papel', 'casillero', 'lima']).optional(),
+  tipo: z.enum(['gancho', 'sting', 'apertura', 'contexto', 'giro', 'remate', 'cierre', 'camerinos', 'serie', 'secreto']),
+  fondo: z.enum(['pizarra', 'papel', 'camerino', 'lima']).optional(),
   texto: z.string().optional(),
   resaltar: z.string().optional(),
   expresion: z.enum(EXPRESIONES).optional(),
@@ -27,7 +27,7 @@ export const EscenaSchema = z.object({
   sello: z.string().optional(),
   marcador: z.string().optional(),
   cinta: z.string().optional(),
-  casillero: z.enum(ESTADOS_CASILLERO).optional(),
+  camerino: z.enum(ESTADOS_PUERTA).optional(),
   palabraGigante: z.string().optional(),
   /** Palabras que se resaltan en lima en los subtítulos. */
   claves: z.array(z.string()).optional(),
@@ -46,9 +46,11 @@ export const EscenaSchema = z.object({
   cita: z.string().optional(),
   sellos: z.array(z.string()).optional(),
   objetoTipo: z.enum(OBJETOS).optional(),
-  /** casilleros: objetos que salen y cintas de cada casillero. */
+  /** camerinos: objetos que salen y cintas de cada camerino. */
   objetos: z.array(z.enum(OBJETOS)).optional(),
   cintas: z.array(z.string()).optional(),
+  /** camerinos: rótulo de cada puerta del túnel (LOCAL · VISITANTE · ÁRBITROS). */
+  rotulos: z.array(z.string()).optional(),
   /** secreto: cuántas llaves se muestran (1–5). */
   nivel: z.number().int().min(1).max(5).optional(),
 });
@@ -60,17 +62,19 @@ export const EpisodeSchema = z
     formato: z.enum(['episodio', 'presentacion']).default('episodio'),
     id: z.string().regex(/^(\d{3}|P\d{2})$/, 'id de 3 dígitos ("001") o de presentación ("P01")'),
     slug: z.string(),
-    serie: z.enum(['El Casillero', 'La llave de', '¿Mito o verdad?', 'Hoy hace X años', 'Presentación']),
+    serie: z.enum(['El Camerino', 'La llave de', '¿Mito o verdad?', 'Hoy hace X años', 'Presentación']),
     titulo: z.string(),
     pais: z.string().optional(),
     anio: z.number().int().optional(),
     objeto: z.string().optional(),
     /** Qué dibujo del catálogo (§3.3) representa al objeto. */
     objetoTipo: z.enum(OBJETOS).default('bulto'),
-    /** Número en la placa del casillero si no es el id ("000" para las presentaciones). */
-    casilleroNumero: z.string().optional(),
-    /** Texto de la cinta sobre la placa del casillero (§3.1). */
-    cintaCasillero: z.string().optional(),
+    /** Número en la placa del camerino si no es el id ("000" para las presentaciones). */
+    camerinoNumero: z.string().optional(),
+    /** Rótulo de la puerta del camerino (LOCAL · VISITANTE · ÁRBITROS). */
+    rotulo: z.enum(['LOCAL', 'VISITANTE', 'ÁRBITROS']).default('LOCAL'),
+    /** Texto de la cinta sobre la placa del camerino (§3.1). */
+    cintaCamerino: z.string().optional(),
     /** Etiqueta colgante del objeto (§3.3). */
     etiqueta: z.string().optional(),
     nivelSecreto: z.number().int().min(1).max(5).optional(),
@@ -98,7 +102,7 @@ export type Episode = z.infer<typeof EpisodeSchema>;
 
 export const parseEpisode = (raw: unknown): Episode => EpisodeSchema.parse(raw);
 
-/** Número que se pinta en la placa del casillero. */
-export const numeroCasillero = (ep: Episode) => ep.casilleroNumero ?? ep.id;
+/** Número que se pinta en la placa del camerino. */
+export const numeroCamerino = (ep: Episode) => ep.camerinoNumero ?? ep.id;
 /** @usuario de la marca: sale de textoFinal ("@elutilerofutbol · …"), una sola fuente de verdad. */
 export const handleDe = (ep: Episode) => ep.textoFinal.split(' · ')[0];

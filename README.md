@@ -28,7 +28,7 @@ Producir un episodio real:
 |---|---|
 | 0 · Base (Remotion, `brand.ts`, fuentes, grano) | ✅ |
 | 1 · Componentes A01–A07, A11 con sonido | ✅ (SFX placeholder) |
-| 2 · Casillero 3D + A08/A09 + sting de 2 s | ✅ |
+| 2 · Camerino 3D + A08/A09 + sting de 2 s | ✅ |
 | 3 · Personaje: rig SVG, 8 expresiones, 8 visemas, sincronía labial | ✅ (arte base; reemplazar por el del ilustrador) |
 | 4 · Voz ElevenLabs + tiempos por palabra | 🟡 script listo, falta `voice_id` y API key |
 | 5 · Episodio #001 completo | 🟡 renderiza con voz estimada; falta voz real y revisión en celular |
@@ -38,13 +38,13 @@ Producir un episodio real:
 
 | Id | Video | Idea |
 |---|---|---|
-| `P01-quien-es` | Quién es El Utilero | «Nadie me cree, todos me preguntan» → el personaje → cada video es un casillero |
-| `P02-que-hay` | Qué hay en mi casillero | Las 4 series, cada una como una carpeta de archivo |
+| `P01-quien-es` | Quién es El Utilero | «Nadie me cree, todos me preguntan» → el personaje → cada video es un camerino |
+| `P02-que-hay` | Qué hay en mi camerino | Las 4 series, cada una como una carpeta de archivo |
 | `P03-como-funciona` | Datos reales, contados como secreto | Comenta tu país · nivel de secreto · datos con fuente · el narrador es un personaje (MITO) |
 
 `npm run render -- P01` → `out/P01-quien-es/short.mp4` (1080×1920, sirve para Shorts, Reels, TikTok y Facebook).
 
-Composiciones de referencia en el Studio: `F1-Componentes`, `F2-Casillero`, `F3-UtileroHabla`, `Hoja-Expresiones`, `Hoja-Logo`.
+Composiciones de referencia en el Studio: `F1-Componentes`, `F2-Camerino`, `F3-UtileroHabla`, `Hoja-Expresiones`, `Hoja-Logo`.
 
 ## Licencias
 Remotion tiene términos de licencia propios para uso comercial según el tamaño de la empresa: revisar antes de monetizar. Fuentes: Google Fonts (OFL). Efectos actuales: sintetizados localmente (sin derechos).

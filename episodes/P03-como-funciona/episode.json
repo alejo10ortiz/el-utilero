@@ -4,10 +4,10 @@
   "slug": "como-funciona",
   "serie": "Presentación",
   "titulo": "Datos reales, contados como secreto",
-  "casilleroNumero": "000",
-  "cintaCasillero": "Así funciona",
+  "camerinoNumero": "000",
+  "cintaCamerino": "Así funciona",
   "escenas": [
-    { "tipo": "gancho", "fondo": "pizarra", "texto": "COMENTEN SU PAÍS", "resaltar": "PAÍS", "voz": "Comenten su país… y yo abro su casillero." },
+    { "tipo": "gancho", "fondo": "pizarra", "texto": "COMENTEN SU PAÍS", "resaltar": "PAÍS", "voz": "Comenten su país… y yo abro su camerino." },
     { "tipo": "sting" },
     { "tipo": "secreto", "nivel": 5, "palabraGigante": "SECRETO", "sello": "CONFIDENCIAL", "cinta": "de una a cinco llaves", "claves": ["secreto", "llaves"], "voz": "Cada historia trae su nivel de secreto: de una a cinco llaves." },
     { "tipo": "contexto", "ficha": "DATOS REALES CON FUENTE", "marcador": "FUENTE", "sello": "VERDAD", "expresion": "E1", "claves": ["reales", "fuente"], "voz": "Los datos son reales y tienen fuente. Si no hay dos fuentes… no sale." },

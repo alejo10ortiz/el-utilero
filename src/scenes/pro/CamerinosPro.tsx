@@ -1,7 +1,7 @@
 import React from 'react';
 import { useCurrentFrame } from 'remotion';
 import { C, FPS, SAFE_BOX } from '../../../config/brand';
-import { CASILLERO_W, Casillero, SonidosApertura, apertura } from '../../components/Casillero';
+import { CAMERINO_W, Camerino, SonidosApertura, apertura } from '../../components/Camerino';
 import { TituloImpacto } from '../../components/Cinetica';
 import { Chispas, Destello, Impacto, Onda, Particulas } from '../../components/Fx';
 import { Objeto } from '../../components/Objeto';
@@ -19,15 +19,15 @@ const cuando = (timing: EscenaProps['timing'], off: number, re: RegExp, desde = 
 };
 
 /**
- * CASILLEROS PRO: el pasillo del camerino sube con rebote, las cintas se pegan una a una, «CASILLERO» se clava
- * cuando se dice; el primer casillero se abre en «abro», el bulto sale volando con giro y aterriza con onda de choque;
+ * CAMERINOS PRO: el pasillo del camerino sube con rebote, las cintas se pegan una a una, «CAMERINO» se clava
+ * cuando se dice; el primer camerino se abre en «abro», el bulto sale volando con giro y aterriza con onda de choque;
  * la cámara sigue la acción (paneo) y en «historia» sale el botín.
  */
-export const CasillerosPro: React.FC<EscenaProps> = ({ esc, timing, frames }) => {
+export const CamerinosPro: React.FC<EscenaProps> = ({ esc, timing, frames }) => {
   const f = useCurrentFrame();
   const abs = useAbs();
   const off = Math.round(timing.start * FPS);
-  const tCas = cuando(timing, off, /casillero/i, 0, 41);
+  const tCas = cuando(timing, off, /camerino/i, 0, 41);
   const tAbro = cuando(timing, off, /abro/i, 0, 66);
   const tSaco = cuando(timing, off, /saco/i, 0, 84);
   const tHist = cuando(timing, off, /historia/i, 0, 143);
@@ -37,7 +37,7 @@ export const CasillerosPro: React.FC<EscenaProps> = ({ esc, timing, frames }) =>
   const tLand2 = tHist + 22;
 
   const escala = 0.52;
-  const w = CASILLERO_W * escala;
+  const w = CAMERINO_W * escala;
   const gap = 20;
   const x0 = 540 - (3 * w + 2 * gap) / 2; // ocupan casi todo el ancho (son gráficos, no texto: pueden pasar el margen seguro)
   const y = 440;
@@ -56,7 +56,7 @@ export const CasillerosPro: React.FC<EscenaProps> = ({ esc, timing, frames }) =>
   return (
     <Escenario fondo="papel" impactos={[{ frame: tCas + 2, amp: 12 }, { frame: tLand1 + 1, amp: 11 }, { frame: tLand2 + 1, amp: 11 }]} deriva={0.5} zoom={z}>
       <Particulas tipo="polvo" n={22} semilla={8} colores={[C.tinta, C.grisArchivo]} opacidad={0.25} velocidad={0.3} />
-      <TituloImpacto lineas={[{ texto: esc.palabraGigante ?? 'CASILLERO', at: tCas }]} x={SAFE_BOX.cx - 440} y={130} ancho={880} tono="tinta" maxSize={330} />
+      <TituloImpacto lineas={[{ texto: esc.palabraGigante ?? 'CAMERINO', at: tCas }]} x={SAFE_BOX.cx - 440} y={130} ancho={880} tono="tinta" maxSize={330} />
 
       <div style={{ position: 'absolute', inset: 0, transform: `translateX(${panX}px) scale(${pulso})`, transformOrigin: '50% 60%' }}>
         {numeros.map((n, i) => {
@@ -66,13 +66,13 @@ export const CasillerosPro: React.FC<EscenaProps> = ({ esc, timing, frames }) =>
           const sale = d !== undefined ? tw(f, [despega[i], despega[i] + 4], [0, 1], E.outCubic) : 0;
           return (
             <div key={n} style={{ position: 'absolute', inset: 0, transform: `translateY(${sube}px)`, opacity: f >= 6 + 4 * i ? 1 : 0 }}>
-              <Casillero x={x0 + i * (w + gap)} y={y} escala={escala} numero={n} tema={cintas[i]} cintaDelay={26 + 5 * i} angulo={Math.min(ap.angulo, 72)} luz={ap.luz} perspectiva={2000} sombra={false}>
+              <Camerino x={x0 + i * (w + gap)} y={y} escala={escala} numero={n} tema={cintas[i]} rotulo={esc.rotulos?.[i] ?? ['LOCAL', 'VISITANTE', 'ÁRBITROS'][i]} cintaDelay={26 + 5 * i} angulo={Math.min(ap.angulo, 72)} luz={ap.luz} perspectiva={2000} sombra={false}>
                 {d !== undefined && objetos[i] && (
-                  <div style={{ position: 'absolute', left: 110, top: 780, opacity: 1 - sale }}>
-                    <Objeto tipo={objetos[i]} size={400} />
+                  <div style={{ position: 'absolute', left: 135, top: 600, opacity: 1 - sale }}>
+                    <Objeto tipo={objetos[i]} size={330} />
                   </div>
                 )}
-              </Casillero>
+              </Camerino>
             </div>
           );
         })}

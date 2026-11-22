@@ -1,7 +1,7 @@
 import React from 'react';
 import { interpolate, useCurrentFrame, Easing } from 'remotion';
 import { FPS, SAFE_BOX } from '../../config/brand';
-import { CASILLERO_W, Casillero, SonidosApertura, apertura } from '../components/Casillero';
+import { CAMERINO_W, Camerino, SonidosApertura, apertura } from '../components/Camerino';
 import { Objeto } from '../components/Objeto';
 import { PalabraGigante } from '../components/PalabraGigante';
 import { Sfx } from '../components/Sfx';
@@ -10,14 +10,14 @@ import { hit } from '../lib/anim';
 import { Escenario, EscenaProps } from './Escenario';
 
 /**
- * CASILLEROS (presentación del concepto): un pasillo de camerino con tres casilleros numerados.
- * Se abren de a uno y de cada uno sale un objeto → "cada video es un casillero".
+ * CAMERINOS (presentación del concepto): un pasillo de camerino con tres camerinos numerados.
+ * Se abren de a uno y de cada uno sale un objeto → "cada video es un camerino".
  */
-export const Casilleros: React.FC<EscenaProps> = ({ esc, timing }) => {
+export const Camerinos: React.FC<EscenaProps> = ({ esc, timing }) => {
   const frame = useCurrentFrame();
   const off = Math.round(timing.start * FPS);
   const escala = 0.4;
-  const w = CASILLERO_W * escala; // 256
+  const w = CAMERINO_W * escala; // 256
   const gap = 40;
   const x0 = SAFE_BOX.cx - (3 * w + 2 * gap) / 2;
   const y = 500;
@@ -29,13 +29,14 @@ export const Casilleros: React.FC<EscenaProps> = ({ esc, timing }) => {
 
   return (
     <Escenario fondo="papel">
-      <PalabraGigante texto={esc.palabraGigante ?? 'CASILLERO'} x={SAFE_BOX.cx - 410} y={150} ancho={820} maxSize={330} delay={4} />
+      <PalabraGigante texto={esc.palabraGigante ?? 'CAMERINO'} x={SAFE_BOX.cx - 410} y={150} ancho={820} maxSize={330} delay={4} />
       {numeros.map((n, i) => {
         const d = aperturas[i];
         const ap = d !== undefined ? apertura(frame, d, 'abierto') : { angulo: 0, luz: 0 };
         const sale = d !== undefined ? interpolate(frame, [d + 26, d + 46], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' }) : 0;
         return (
-          <Casillero
+          <Camerino
+            rotulo={esc.rotulos?.[i] ?? ['LOCAL', 'VISITANTE', 'ÁRBITROS'][i]}
             key={n}
             x={x0 + i * (w + gap)}
             y={y}
@@ -49,11 +50,11 @@ export const Casilleros: React.FC<EscenaProps> = ({ esc, timing }) => {
             sombra={false}
           >
             {d !== undefined && objetos[i] && (
-              <div style={{ position: 'absolute', left: 110, top: 780, opacity: 1 - sale }}>
-                <Objeto tipo={objetos[i]} size={400} />
+              <div style={{ position: 'absolute', left: 135, top: 600, opacity: 1 - sale }}>
+                <Objeto tipo={objetos[i]} size={330} />
               </div>
             )}
-          </Casillero>
+          </Camerino>
         );
       })}
       {aperturas.map((d, i) => {

@@ -1,13 +1,14 @@
 import React from 'react';
 import { AbsoluteFill, interpolate, useCurrentFrame } from 'remotion';
 import { A, C, FONT, FPS } from '../../config/brand';
-import { Casillero, apertura, SonidosApertura } from '../components/Casillero';
+import { Camerino, apertura, SonidosApertura } from '../components/Camerino';
 import { Cinta } from '../components/Cinta';
 import { ConFuentes } from '../components/ConFuentes';
 import { Defs } from '../components/Defs';
 import { Ficha } from '../components/Ficha';
 import { Fondo } from '../components/Fondo';
 import { Grano } from '../components/Grano';
+import { Objeto } from '../components/Objeto';
 import { Escudo, LlaveBalon, Logotipo, Avatar } from '../components/Logo';
 import { NivelSecreto } from '../components/NivelSecreto';
 import { PalabraGigante } from '../components/PalabraGigante';
@@ -54,13 +55,15 @@ export const PruebaComponentes: React.FC = () => {
   );
 };
 
-/** FASE 2 — hoja de estados del casillero (apertura A08 completa). 4 s. */
-export const PruebaCasillero: React.FC = () => {
+/** FASE 2 — hoja de estados del camerino (apertura A08 completa). 4 s. */
+export const PruebaCamerino: React.FC = () => {
   const frame = useCurrentFrame();
   const ap = apertura(frame, 20, 'abierto');
   return (
     <Base fondo="tinta">
-      <Casillero x={220} y={150} numero="001" tema="Inglaterra 66" angulo={ap.angulo} luz={ap.luz} cintaDelay={-999} />
+      <Camerino x={220} y={150} numero="001" tema="Inglaterra 66" rotulo="LOCAL" angulo={ap.angulo} luz={ap.luz} cintaDelay={-999}>
+        <div style={{ position: 'absolute', left: 135, top: 600 }}><Objeto tipo="bulto" size={330} /></div>
+      </Camerino>
       <SonidosApertura delay={20} />
     </Base>
   );

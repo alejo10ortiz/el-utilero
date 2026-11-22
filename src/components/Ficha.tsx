@@ -22,7 +22,7 @@ export const Ficha: React.FC<{
   desde?: 'derecha' | 'izquierda' | 'abajo';
   marcar?: string;
   sonido?: boolean;
-  /** Etiqueta mecanografiada pequeña arriba ("CASILLERO #001"). */
+  /** Etiqueta mecanografiada pequeña arriba ("CAMERINO #001"). */
   encabezado?: string;
   /** Alto mínimo: una ficha es una ficha, no una tira. */
   altoMin?: number;

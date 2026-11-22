@@ -3,7 +3,7 @@ import { useCurrentFrame } from 'remotion';
 import { C, FONT } from '../../config/brand';
 import { E, hash, tw } from '../lib/ease';
 import { Destello, LineasVelocidad } from './Fx';
-import { Puerta } from './Casillero';
+import { Puerta } from './Camerino';
 import { Sfx } from './Sfx';
 
 /**
@@ -15,7 +15,7 @@ export type TipoTransicion = 'cinta' | 'hoja' | 'flash' | 'puerta';
 
 const RASGADO = 'polygon(0 8%,2% 0,12% 5%,25% 0,40% 6%,55% 0,70% 5%,85% 0,100% 7%,98% 30%,100% 55%,97% 80%,100% 95%,88% 100%,70% 94%,52% 100%,35% 95%,18% 100%,4% 96%,0 88%,2% 60%,0 35%)';
 
-const TransCinta: React.FC<{ dur: number; textos?: string[] }> = ({ dur, textos = ['EL UTILERO', '→', 'CASILLERO', '★', 'ARCHIVO', '→', 'EL UTILERO', '★', 'CASILLERO'] }) => {
+const TransCinta: React.FC<{ dur: number; textos?: string[] }> = ({ dur, textos = ['EL UTILERO', '→', 'CAMERINO', '★', 'ARCHIVO', '→', 'EL UTILERO', '★', 'CAMERINO'] }) => {
   const t = useCurrentFrame();
   const mitad = dur / 2;
   const n = 9;

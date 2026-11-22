@@ -1,14 +1,14 @@
 import React from 'react';
 import { useCurrentFrame } from 'remotion';
 import { C } from '../../../config/brand';
-import { CASILLERO_W, Casillero, ManoLlave } from '../../components/Casillero';
+import { CAMERINO_W, Camerino, ManoLlave } from '../../components/Camerino';
 import { CintaImpacto } from '../../components/Cinetica';
 import { Destello, Impacto, Particulas, Reflector, Chispas } from '../../components/Fx';
 import { Avatar } from '../../components/Logo';
 import { Sfx } from '../../components/Sfx';
 import { golpes } from '../../lib/camara';
 import { E, pop, tw } from '../../lib/ease';
-import { numeroCasillero } from '../../lib/episode';
+import { numeroCamerino } from '../../lib/episode';
 import { Escenario, EscenaProps } from '../Escenario';
 
 /**
@@ -22,8 +22,8 @@ export const StingPro: React.FC<EscenaProps> = ({ ep, frames }) => {
   const angulo = tw(f, [28, 47], [0, 17], E.outCubic);
   const luz = tw(f, [28, 46], [0, 1], E.outCubic);
   const salida = tw(f, [30, 40], [1, 0], E.inExpo);
-  const x = (1080 - CASILLERO_W) / 2;
-  const tema = ep.cintaCasillero ?? '';
+  const x = (1080 - CAMERINO_W) / 2;
+  const tema = ep.cintaCamerino ?? '';
   const avatar = pop(f, 52, 10);
   const tTapa = 45;
   // cámara: arranca encima de la cerradura (plano cerrado, la mano llena el cuadro) y abre plano justo
@@ -35,9 +35,9 @@ export const StingPro: React.FC<EscenaProps> = ({ ep, frames }) => {
   return (
     <Escenario fondo="tinta" impactos={[{ frame: 28, amp: 5 }, { frame: tTapa + 1, amp: 14 }]} deriva={0.6} zoom={z} panX={panX} panY={panY}>
       {/* luz que se derrama desde la rendija */}
-      <div style={{ position: 'absolute', left: x + CASILLERO_W - 150, top: 300, width: 520, height: 1100, background: C.lima, opacity: luz * 0.55, filter: 'blur(90px)', borderRadius: '50%' }} />
-      <Reflector x={x + CASILLERO_W - 40} opacidad={0.5 * luz} ancho={760} />
-      <Casillero x={x} y={150} numero={numeroCasillero(ep)} tema={tema} angulo={angulo} luz={luz * 0.95} cintaDelay={-999} sombra={false} />
+      <div style={{ position: 'absolute', left: x + CAMERINO_W - 150, top: 300, width: 520, height: 1100, background: C.lima, opacity: luz * 0.55, filter: 'blur(90px)', borderRadius: '50%' }} />
+      <Reflector x={x + CAMERINO_W - 40} opacidad={0.5 * luz} ancho={760} />
+      <Camerino rotulo={ep.rotulo} x={x} y={150} numero={numeroCamerino(ep)} tema={tema} angulo={angulo} luz={luz * 0.95} cintaDelay={-999} sombra={false} />
       <Particulas tipo="polvo" n={26} semilla={5} colores={[C.lima, C.papel]} opacidad={0.8 * luz} velocidad={0.35} dir={-1} />
       {f < 42 && (
         <div style={{ position: 'absolute', left: x, top: 150, opacity: salida }}>

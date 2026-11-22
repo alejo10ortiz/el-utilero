@@ -36,6 +36,9 @@ const SFX: Record<string, { text: string; dur: number; loop?: boolean; /** false
   sfx_slap: { text: 'Masking tape slapped hard onto a wooden surface, short, dry', dur: 0.5 },
   sfx_clap: { text: 'A single sharp hand clap, dry', dur: 0.5 },
   sfx_swish: { text: 'Quick paper swish, a sheet of paper whipped through air, short', dur: 0.5 },
+  // ── fútbol ──
+  sfx_patada: { text: 'A soccer ball kicked hard, deep punchy thump of a football strike, short, dry, isolated sound effect', dur: 0.5 },
+  sfx_hinchada: { text: 'Stadium crowd roar swelling up, football fans cheering and shouting, soccer match atmosphere, then fading, no music', dur: 3.0 },
   amb_locker_room: { text: 'Empty stadium locker room ambience, echo, distant water drip, very faint far-away crowd murmur', dur: 12, loop: true },
 };
 

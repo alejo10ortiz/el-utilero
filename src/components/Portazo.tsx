@@ -1,7 +1,7 @@
 import React from 'react';
 import { interpolate, useCurrentFrame } from 'remotion';
 import { A, C } from '../../config/brand';
-import { Puerta } from './Casillero';
+import { Puerta } from './Camerino';
 import { Sfx } from './Sfx';
 
 /**

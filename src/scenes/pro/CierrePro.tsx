@@ -10,13 +10,13 @@ import { Sfx } from '../../components/Sfx';
 import { UtileroActor } from '../../components/UtileroActor';
 import { empuje, golpes } from '../../lib/camara';
 import { E, hash, pop, tw } from '../../lib/ease';
-import { handleDe, numeroCasillero } from '../../lib/episode';
+import { handleDe, numeroCamerino } from '../../lib/episode';
 import { BEAT, useAbs } from '../../lib/ritmo';
 import { Escenario, EscenaProps } from '../Escenario';
 
 /**
  * CIERRE PRO: lima con rayos girando y confeti; el Utilero salta guiñando; la frase de marca salta palabra a palabra;
- * la cinta con el @usuario se clava en «casillero»; el portazo cae en el beat final.
+ * la cinta con el @usuario se clava en «camerino»; el portazo cae en el beat final.
  */
 export const CierrePro: React.FC<EscenaProps> = ({ esc, ep, timing, frames }) => {
   const f = useCurrentFrame();
@@ -24,7 +24,7 @@ export const CierrePro: React.FC<EscenaProps> = ({ esc, ep, timing, frames }) =>
   const off = Math.round(timing.start * FPS);
   const ultima = timing.words[timing.words.length - 1];
   const vozFin = ultima ? Math.round(ultima.end * FPS) - off : frames - 50;
-  const casi = timing.words.find((w) => /casillero/i.test(w.text));
+  const casi = timing.words.find((w) => /camerino/i.test(w.text));
   const tHandle = casi ? Math.round(casi.start * FPS) - off - 3 : vozFin - 25;
   const tPortazo = frames - 25; // el golpe de la puerta cae 7 frames después = justo en el beat final
   const handle = handleDe(ep);
@@ -83,13 +83,14 @@ export const CierrePro: React.FC<EscenaProps> = ({ esc, ep, timing, frames }) =>
           </svg>
         </div>
       )}
-      <Portazo delay={tPortazo} numero={numeroCasillero(ep)} />
+      <Portazo delay={tPortazo} numero={numeroCamerino(ep)} />
 
       <Sfx name="whoosh" at={7} volume={0.5} />
       <Sfx name="pop" at={9} volume={0.5} />
       <Sfx name="wink" at={22} volume={0.5} />
       <Sfx name="impact" at={tHandle} volume={0.85} />
       <Sfx name="slap" at={tHandle} volume={0.8} />
+      <Sfx name="hinchada" at={tHandle + 4} volume={0.35} />
     </Escenario>
   );
 };

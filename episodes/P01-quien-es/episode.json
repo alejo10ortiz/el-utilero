@@ -4,8 +4,8 @@
   "slug": "quien-es",
   "serie": "Presentación",
   "titulo": "Quién es El Utilero",
-  "casilleroNumero": "000",
-  "cintaCasillero": "Bienvenidos",
+  "camerinoNumero": "000",
+  "cintaCamerino": "Bienvenidos",
   "escenas": [
     {
       "tipo": "gancho",
@@ -29,8 +29,8 @@
       "voz": "Soy el Utilero. Yo guardo lo que no salió en la tele."
     },
     {
-      "tipo": "casilleros",
-      "palabraGigante": "CASILLERO",
+      "tipo": "camerinos",
+      "palabraGigante": "CAMERINO",
       "objetos": [
         "bulto",
         "botin"
@@ -41,20 +41,26 @@
         "¿y el tuyo?"
       ],
       "claves": [
-        "casillero",
+        "camerino",
+        "puerta",
         "objeto",
         "historia"
       ],
-      "voz": "Cada video es un casillero. Lo abro, saco un objeto… y les cuento su historia."
+      "voz": "Cada video es un camerino. Abro la puerta, saco un objeto… y les cuento su historia.",
+      "rotulos": [
+        "LOCAL",
+        "VISITANTE",
+        "ÁRBITROS"
+      ]
     },
     {
       "tipo": "cierre",
       "fondo": "lima",
       "expresion": "E2",
       "claves": [
-        "casillero"
+        "camerino"
       ],
-      "voz": "Cierren la puerta, que les cuento. Y síganme, para no perderse ningún casillero."
+      "voz": "Cierren la puerta, que les cuento. Y síganme, para no perderse ningún camerino."
     }
   ],
   "textoFinal": "@elutilerofutbol · Síganme",

@@ -2,6 +2,7 @@
 
 Videos cortos de fútbol (Shorts/Reels/TikTok 1080×1920). Narrador ficticio (un utilero viejo), **datos reales con fuente**.
 La fuente de verdad de marca es **`BRAND.md`** — léelo antes de tocar diseño, personaje, sonido o guion.
+**Concepto central: «El Camerino»** — cada video abre la puerta de un vestuario concreto (con rótulo LOCAL · VISITANTE · ÁRBITROS) con la llave del Utilero; numeración «Camerino #001». Todo lo visual debe leerse como **fútbol** a primera vista (pizarra táctica, camisetas numeradas, banca, guayos, balón, alineación); nada que se lea como deporte estadounidense (casilleros de gimnasio, etc.).
 
 ## Reglas que no se negocian
 1. **Regla de oro:** ningún dato sale sin 2 fuentes de dominios distintos en `episodes/*/episode.json`. `estado: "verificado"` solo tras contrastar. `npm run verify -- NNN`.
@@ -27,11 +28,11 @@ La clave de ElevenLabs no está en `.env`: la inyecta el proxy del entorno `el-u
 ## Arquitectura
 - `config/brand.ts` paleta, fuentes, zonas seguras, duraciones de animación (A01–A11). `config/voice.json` voz de ElevenLabs.
 - `episodes/NNN-slug/episode.json` guion estructurado + fuentes (esquema zod en `src/lib/episode.ts`). Registrar en `src/episodes.ts`.
-- **Presentaciones de la cuenta**: `episodes/P01…/episode.json` con `"formato": "presentacion"` (sin datos deportivos → sin fuentes; el verificador exige que cualquier año nombrado se declare como cuento del personaje: «dicen…», «mito», «personaje»). Escenas extra: `casilleros`, `serie` (carpeta kraft), `secreto`; `apertura` admite `logo: true`. Placa del casillero = `casilleroNumero` ("000"). El @usuario sale de `textoFinal` (`handleDe()`).
+- **Presentaciones de la cuenta**: `episodes/P01…/episode.json` con `"formato": "presentacion"` (sin datos deportivos → sin fuentes; el verificador exige que cualquier año nombrado se declare como cuento del personaje: «dicen…», «mito», «personaje»). Escenas extra: `camerinos` (pasillo del túnel con las puertas LOCAL · VISITANTE · ÁRBITROS), `serie` (carpeta kraft), `secreto`; `apertura` admite `logo: true`. Número de la placa de la puerta = `camerinoNumero` ("000"). El @usuario sale de `textoFinal` (`handleDe()`).
 - `assets/` es el `publicDir` de Remotion (`staticFile()`): `fonts/`, `sfx/`, `episodes/<slug>/{voice.mp3,words.json}` (generados), más `textures/ character/ objects/ locker/ logo/` para arte real.
 - `src/lib/timeline.ts`: tiempos por escena y por palabra. Con `words.json` (voz real) manda el audio; sin él, estimación (~2.3 palabras/s) para previsualizar.
-- `src/components/`: Cinta, Sello, Ficha, PalabraGigante, Trazo (Tiza/Marcador), NivelSecreto, Subtitulos, Casillero, Objeto, Utilero (rig SVG: 8 expresiones, 8 visemas, parpadeo, respiración), Portazo, Carpeta, Logo (Logotipo/Escudo/Avatar/LlaveBalon), Grano, Fondo, CamaraMesa, Defs (filtros SVG), Sfx.
-- `src/scenes/`: Gancho, Sting, Apertura, Contexto, Giro, Remate, Cierre (+ Casilleros, Serie, Secreto para presentaciones) → ensambladas por `src/compositions/Short.tsx` desde `episode.json`.
+- `src/components/`: Cinta, Sello, Ficha, PalabraGigante, Trazo (Tiza/Marcador), NivelSecreto, Subtitulos, Camerino (puerta de vestuario 3D + interior: banca, camisetas, pizarra, guayos), Objeto, Utilero (rig SVG: 8 expresiones, 8 visemas, parpadeo, respiración), Portazo, Carpeta, Logo (Logotipo/Escudo/Avatar/LlaveBalon), Grano, Fondo, CamaraMesa, Defs (filtros SVG), Sfx.
+- `src/scenes/`: Gancho, Sting, Apertura, Contexto, Giro, Remate, Cierre (+ Camerinos, Serie, Secreto para presentaciones) → ensambladas por `src/compositions/Short.tsx` desde `episode.json`.
 - Cada componente animado reproduce su propio SFX (`<Sfx name=… at=…/>`, archivos `assets/sfx/sfx_*.wav`).
 
 ## Estado (ver BRAND.md §11)
@@ -47,7 +48,7 @@ Un episodio en estilo pro **no es un cartel con elementos que aparecen**: cada e
 - **Transiciones = objetos** (`transiciones: [...]` en episode.json, una por corte): `cinta`, `hoja`, `flash`, `puerta`. Tapan ~9 frames a cada lado del corte: la primera animación de la escena que entra debe caer **después de f≈9**.
 - **Música**: `"musica": "base-100bpm-a.mp3"` (`assets/music/`, ver README allí). `Musica` baja bajo la voz y sube en los huecos. Pistas nuevas: `npm run music`, `scripts/make-music-bed.sh`, comprobar tempo con `scripts/analyze-beats.py`.
 - **SFX reales** (ElevenLabs): `npm run sfx -- --only=… --force` (recorta silencio inicial y deja el pico a −2 dBFS). Mín. 0.5 s por la API.
-- Escenas pro: `src/scenes/pro/` (GanchoPro, StingPro, AperturaPro, CasillerosPro, CierrePro). Las que no existen en pro caen al estilo clásico. Antes de dar un video por bueno: renderizar cuadros y mirar el filmstrip (entradas, impactos, solapes de texto).
+- Escenas pro: `src/scenes/pro/` (GanchoPro, StingPro, AperturaPro, CamerinosPro, CierrePro). Las que no existen en pro caen al estilo clásico. Antes de dar un video por bueno: renderizar cuadros y mirar el filmstrip (entradas, impactos, solapes de texto).
 
 ## Convenciones
 - Código y comentarios en español (el proyecto y su audiencia lo son); nombres de componentes en español como en BRAND.md.

@@ -180,9 +180,10 @@ export const GanchoPro: React.FC<EscenaProps> = ({ esc, timing, frames }) => {
       {tK >= 0 && <Sfx name="riser" at={tK} volume={0.55} />}
       {tK >= 0 && <Sfx name="impact" at={tK} volume={0.85} />}
       {lineasB.slice(0, -1).map((l, i) => (
-        <Sfx key={i} name="hit" at={l.at} volume={0.55} />
+        <Sfx key={i} name="patada" at={l.at} volume={0.7} />
       ))}
       {lineasB.length > 0 && <Sfx name="impact" at={tClimax} volume={1} />}
+      {lineasB.length > 0 && <Sfx name="hinchada" at={tClimax + 6} volume={0.5} />}
     </Escenario>
   );
 };

@@ -50,7 +50,7 @@ export async function verificar(slug: string, online = false): Promise<Hallazgo[
   const tipos = ep.escenas.map((e) => e.tipo);
   if (tipos[0] !== 'gancho') warn('la primera escena debería ser el gancho (0–3 s)');
   if (tipos[tipos.length - 1] !== 'cierre') err('la última escena debe ser el cierre');
-  if (!tipos.includes('sting')) warn('falta el sting (casillero que se abre)');
+  if (!tipos.includes('sting')) warn('falta el sting (camerino que se abre)');
   if (!esPres && !ep.escenas.some((e) => e.tipo === 'giro')) warn('falta la escena de giro (objeto del día)');
   const cierre = ep.escenas.find((e) => e.tipo === 'cierre');
   if (!esPres && cierre && !/comenten|comenta/i.test(cierre.voz ?? '')) warn('el cierre debería invitar a comentar el país (comunidad, §1)');

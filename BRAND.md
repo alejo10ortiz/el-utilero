@@ -1,6 +1,6 @@
 # EL UTILERO — Biblia de marca y producción
 
-> Documento maestro para continuar en **Claude Code**: identidad, dirección de arte, personaje, casillero, logo, movimiento, sonido y flujo de producción de videos cortos de fútbol.
+> Documento maestro para continuar en **Claude Code**: identidad, dirección de arte, personaje, camerino, logo, movimiento, sonido y flujo de producción de videos cortos de fútbol.
 >
 > Lienzo de diseño de referencia (privado): https://claude.ai/artifact/XaTJLv2vSnZ2seui4TXzMo
 > Versión 1.0 · noviembre 2026
@@ -21,22 +21,22 @@
 | | |
 |---|---|
 | **Nombre** | EL UTILERO |
-| **Usuario** | @elutilerofutbol *(confirmado; @elutilerofutbol no estaba disponible)* |
+| **Usuario** | @elutilerofutbol *(confirmado en las 4 redes; @elutilero no estaba disponible)* |
 | **Qué es** | Videos cortos de fútbol: Mundiales, todos los países, curiosidades, datos históricos y datos locos. |
-| **Concepto** | Un utilero viejo que dice haber estado en todos los camerinos desde 1930. Nadie le cree, pero todos le preguntan. Cada video es un **casillero** que él abre para sacar un **objeto** y contar la historia que no salió en la tele. |
+| **Concepto** | Un utilero viejo que dice haber estado en todos los camerinos desde 1930. Nadie le cree, pero todos le preguntan. Cada video abre **un camerino**: la puerta de un vestuario concreto (un estadio, un partido, un día) que él abre con su llave para sacar un **objeto** y contar la historia que no salió en la tele. |
 | **Promesa** | Datos reales, contados como secreto. |
 | **Tono** | Cómplice, pausado, con picardía. Humor sin burla. Nunca inventa. |
 | **Frase de apertura** | «Cierren la puerta, que les cuento.» |
 | **Frase de cierre** | «Esto no salió en la tele.» (variante: «Yo estaba ahí. Bueno… casi.») |
-| **Numeración** | Cada video es un casillero: **Casillero #001, #002…** (coleccionable). |
+| **Numeración** | Cada video es un camerino: **Camerino #001, #002…** (coleccionable). Cada puerta lleva su rótulo: **LOCAL · VISITANTE · ÁRBITROS**. |
 | **Nivel de secreto** | De 1 a 5 llaves (reemplaza cualquier "locurómetro"). |
-| **Comunidad** | Los seguidores comentan su país → "mañana abro su casillero". |
+| **Comunidad** | Los seguidores comentan su país → "mañana abro su camerino". |
 
 ### Series (formatos repetibles)
 
 | Serie | Qué es | Gancho tipo |
 |---|---|---|
-| **El Casillero** (principal) | Un objeto → una historia. | "Este guayo tiene un secreto." |
+| **El Camerino** (principal) | Un objeto → una historia. | "Este guayo tiene un secreto." |
 | **La llave de [país]** | El dato más loco de un país. Una entrega por selección. | "La llave de Uruguay abre esto…" |
 | **¿Mito o verdad?** | El utilero plantea, la gente comenta, él revela. Usa el rojo "Sello". | "¿Es verdad que…? Comenten antes de que lo diga." |
 | **Hoy hace X años** | Efeméride del día (se puede automatizar con calendario). | "Un día como hoy, en 1950…" |
@@ -72,7 +72,7 @@ La marca **no se ve como pantalla**: se ve como una mesa de trabajo del utilero 
 | Tiza | `#EDEBE4` | Texto y trazos sobre pizarra. |
 | Sello | `#E0412B` | Solo sellos y círculos de marcador rojo. |
 | Gris archivo | `#5A5247` | Fuentes y notas pequeñas sobre papel. |
-| Metal casillero | `#2F4A3F` / `#3B5A4D` / `#22362E` | Puerta del casillero (sección 3). |
+| Verde puerta | `#2F4A3F` / `#3B5A4D` / `#22362E` | Puerta del camerino (sección 3). |
 
 ### 2.3 Tipografía (Google Fonts)
 
@@ -166,27 +166,37 @@ Lo que más aleja la marca del "look IA". Fabricar, escanear a 600 dpi o fotogra
 - [ ] Una pizarra real con borrones de tiza; trazos de tiza sueltos (círculos, X, flechas).
 - [ ] Hojas de papel periódico y fichas bibliográficas reales (texturas de fondo).
 - [ ] Carpeta kraft con pestaña.
-- [ ] Metal pintado verde (lámina o casillero real) para la textura de la puerta.
+- [ ] Puerta de vestuario real pintada de verde (madera/acero descascarado) para la textura de la puerta; azulejo blanco viejo para el interior.
 - [ ] Opcional: máquina de escribir real para fichas clave.
 
 Guardar en `assets/textures/` como PNG con transparencia donde aplique.
 
 ---
 
-## 3. PUNTO 1 — El casillero y el objeto del día
+## 3. PUNTO 1 — El camerino y el objeto del día
 
-El casillero es el **dispositivo central**: convierte el concepto en algo visible y coleccionable. Todo episodio pasa por él.
+*(Decisión del 22-nov-2026: el dispositivo central pasa de "casillero" a "camerino". Un casillero metálico con candado se lee como deporte estadounidense; la puerta y el vestuario de un estadio son fútbol puro, y casan con la frase de apertura «Cierren la puerta…» y con «llevo en todos los camerinos desde 1930».)*
 
-### 3.1 Anatomía del casillero
+El camerino es el **dispositivo central**: convierte el concepto en algo visible y coleccionable. Todo episodio pasa por él: el Utilero abre la puerta con su llave, entra la luz y aparece el objeto del día sobre la banca.
 
+### 3.1 Anatomía de la puerta y del camerino
+
+**La puerta (exterior)**
 - **Formato en video:** ocupa el 70–85 % del alto en el momento de apertura (vertical 1080×1920).
-- **Puerta:** metal pintado verde (`#3B5A4D`, sombras `#22362E`, luces `#4E7464`), con desgaste, rayones y óxido leve en los bordes.
-- **Rejillas de ventilación:** 3 grupos de 6 ranuras horizontales en la parte superior de la puerta.
-- **Placa de número:** placa metálica remachada con el número pintado a mano en blanco tiza (League Gothic) → `001`.
-- **Cinta encima de la placa:** con el tema en marcador (ej. "Inglaterra 66").
-- **Cerradura:** cerrojo de manija y candado viejo; la llave sale del llavero del utilero.
+- **Puerta de vestuario de estadio:** madera pesada pintada de verde (`#3B5A4D`, sombras `#22362E`, luces `#4E7464`), paneles realzados, pintura descascarada y rayones.
+- **Rótulo esmaltado** arriba: `LOCAL`, `VISITANTE` o `ÁRBITROS` en League Gothic sobre papel, con filete lima; debajo, "VESTUARIO" en máquina de escribir.
+- **Placa de número** (tipo habitación) con el número del episodio → `001`.
+- **Cinta encima** con el tema en marcador (ej. "Inglaterra 66").
+- **Hoja de alineación** pegada con cinta: solo los números 1–11 a máquina (sin nombres, sin escudos).
+- **Zócalo de acero** remachado abajo, **manija de palanca** y **escudo de cerradura**: ahí entra la llave del llavero del Utilero.
 - **Bisagras:** 2, lado izquierdo, que se ven al abrir.
-- **Interior:** fondo oscuro (`#16130F`), con un gancho, una toalla colgada y el **objeto del día** iluminado por luz cálida desde arriba.
+
+**El camerino (interior)** — se ve al abrir la puerta
+- Pared de **azulejo blanco** hasta media altura; arriba, pintura crema gastada.
+- **Pizarra táctica** montada en la pared, con X, O y flechas en tiza.
+- **Banca de madera** con **ganchos y camisetas colgadas con número** (genéricas, sin escudos ni marcas); **guayos** bajo la banca, **canilleras**, **balón**, **toallas** y el **bolso del utilero**.
+- **Lámpara colgante** con luz cálida; el **objeto del día** sobre la banca, iluminado.
+- **El túnel:** cuando se presenta el concepto se muestra el pasillo con las tres puertas seguidas (LOCAL · VISITANTE · ÁRBITROS).
 
 ### 3.2 Estados (para animación)
 
@@ -205,7 +215,7 @@ Cada episodio tiene **un objeto** que dispara la historia. Reglas:
 
 - Es un objeto **genérico**, dibujado por nosotros, nunca una foto con derechos ni un logo oficial (FIFA, federaciones o clubes).
 - Estilo: impreso a dos tintas (tinta + lima) con trama de puntos, como el personaje.
-- Lleva una **etiqueta colgante** (cartón con cordel) escrita a máquina: `CASILLERO #001 · LONDRES · 1966`.
+- Lleva una **etiqueta colgante** (cartón con cordel) escrita a máquina: `CAMERINO #001 · LONDRES · 1966`.
 
 **Catálogo inicial de objetos** (objeto → historia). Las historias marcadas *verificar* necesitan 2 fuentes antes de producirse:
 
@@ -316,11 +326,11 @@ Retrato actual del lienzo. Sirve como guía de proporciones para el ilustrador y
 | `P1` | De frente, manos atrás | Presentación |
 | `P2` | Señalando a cámara | "Tú, sí, tú…" / llamado a comentar |
 | `P3` | Mano en la boca (susurro) | Apertura |
-| `P4` | Girando la llave en el casillero (de espaldas ¾) | Apertura del casillero |
+| `P4` | Girando la llave en la puerta del camerino (de espaldas ¾) | Apertura del camerino |
 | `P5` | Sosteniendo el objeto con las dos manos | Momento central |
 | `P6` | Brazos cruzados, escéptico | ¿Mito o verdad? |
 | `P7` | Cerrando la puerta de un empujón | Cierre |
-| `P8` | Apoyado en el casillero, una mano en la cadera | Transiciones |
+| `P8` | Apoyado en el marco de la puerta, una mano en la cadera | Transiciones |
 
 ### 4.6 Bocas para sincronizar con la voz (visemas)
 
@@ -374,7 +384,7 @@ Animaciones básicas del rig:
 | `A05` | **Palabra gigante** | 5 f | Cae de y −40 px, desregistro lima de 0 a 10 px en 3 f. | `sfx_thump.wav` |
 | `A06` | **Ficha que se desliza** | 10 f | Entra desde fuera del cuadro con rotación −8° → −2°, frena con fricción. | `sfx_paper_slide.wav` |
 | `A07` | **Círculo de marcador** | 10 f | Trazo a mano que rodea la palabra; termina pasado del inicio. | `sfx_marker.wav` |
-| `A08` | **Apertura del casillero** | 24 f | Llave gira (6 f) → clic → puerta a 15° (6 f, rechinido) → pausa (4 f) → puerta a 100° (8 f) con luz cálida. | `sfx_keys` + `sfx_lock` + `sfx_creak` |
+| `A08` | **Apertura del camerino** | 24 f | Llave gira (6 f) → clic → puerta a 15° (6 f, rechinido) → pausa (4 f) → puerta a 100° (8 f) con luz cálida. | `sfx_keys` + `sfx_lock` + `sfx_creak` |
 | `A09` | **Portazo** | 8 f | Puerta de 100° a 0° con rebote; temblor de cámara de 6 px. | `sfx_slam.wav` |
 | `A10` | **Guiño** | 6 f | Ojo der. a guiño + ceja izq. +6 px + inclinación de cabeza 3°. | `sfx_wink.wav` (brillo suave) |
 | `A11` | **Nivel de secreto** | 4 f por llave | Cada llave cae y tintinea. | `sfx_key_drop` ×N |
@@ -384,7 +394,7 @@ Animaciones básicas del rig:
 | Tiempo | Imagen | Sonido |
 |---|---|---|
 | 0.00–0.40 | Negro. Mano entra con el llavero. | Tintineo de llaves |
-| 0.40–0.80 | Llave en la cerradura de un casillero, gira. | Clic metálico |
+| 0.40–0.80 | Llave en la cerradura de la puerta de un camerino, gira. | Clic metálico |
 | 0.80–1.40 | Puerta se entreabre; luz lima por la rendija. | Rechinido corto |
 | 1.40–2.00 | Golpe a la cinta "EL UTILERO" + guiño del personaje en la rendija. | Cinta + pitazo corto |
 
@@ -407,7 +417,7 @@ Fondo lima → el utilero con `E2` (guiño) → cita en Instrument Serif "«Esto
 |---|---|
 | `sfx_keys.wav` | Manojo de llaves viejas, tintineo corto (firma sonora #1) |
 | `sfx_lock.wav` | Clic de cerrojo metálico |
-| `sfx_creak.wav` | Rechinido de puerta de casillero metálico |
+| `sfx_creak.wav` | Rechinido de puerta de camerino (bisagras viejas) |
 | `sfx_slam.wav` | Portazo metálico seco |
 | `sfx_whistle.wav` | Pitazo corto de árbitro (firma sonora #2, cierre) |
 | `sfx_stamp.wav` | Golpe de sello de caucho sobre mesa de madera |
@@ -487,10 +497,10 @@ Duración objetivo: **30–45 s**, formato 1080×1920 a 30 fps.
 | Bloque | Tiempo | Qué pasa | Fondo |
 |---|---|---|---|
 | **GANCHO** | 0–3 s | Palabra gigante con tiza: el dato más loco en una frase. | Pizarra |
-| **STING** | 3–5 s | Llaves → casillero se abre (A08). | Casillero |
+| **STING** | 3–5 s | Llaves → la puerta del camerino se abre (A08). | Puerta / camerino |
 | **APERTURA** | 5–7 s | Utilero E3 susurrando: «Cierren la puerta, que les cuento.» | Papel |
 | **CONTEXTO** | 7–15 s | Ficha a máquina con fecha y lugar; sello de la situación. | Papel |
-| **GIRO** | 15–28 s | Aparece el objeto del día (P5 + E4); el dato se revela. | Papel / casillero |
+| **GIRO** | 15–28 s | Aparece el objeto del día (P5 + E4); el dato se revela. | Papel / camerino |
 | **REMATE** | 28–35 s | Consecuencia o cifra final con palabra gigante. | Papel |
 | **CIERRE** | 35–40 s | Nivel de secreto (A11) + outro de marca (5.4) + llamado a comentar el país. | Lima |
 
@@ -503,7 +513,8 @@ Duración objetivo: **30–45 s**, formato 1080×1920 a 30 fps.
 ### 7.2 Plantilla de guion (formato por bloques)
 
 ```
-CASILLERO #000 — [Tema] · [País] · [Año]
+CAMERINO #000 — [Tema] · [País] · [Año]
+Rótulo de la puerta: LOCAL | VISITANTE | ÁRBITROS
 Objeto: [objeto del día]
 Nivel de secreto: [1–5]
 
@@ -523,13 +534,13 @@ CIERRE (35–40 s)
 (toma) …
 🎙 …
 
-TEXTO EN PANTALLA (final): @elutilerofutbol · Mañana: casillero #00X
+TEXTO EN PANTALLA (final): @elutilerofutbol · Mañana: camerino #00X
 FUENTES: [1] … [2] …
 ```
 
 ---
 
-## 8. Guion completo — Casillero #001: "El perro que salvó la Copa"
+## 8. Guion completo — Camerino #001: "El perro que salvó la Copa"
 
 **Objeto:** bulto envuelto en papel periódico · **País:** Inglaterra · **Año:** 1966 · **Nivel de secreto:** 5/5
 
@@ -538,7 +549,7 @@ FUENTES: [1] … [2] …
 🎙 «Un perro salvó la Copa del Mundo. Y no es un chiste.»
 
 **STING (3–5 s)**
-(toma) Llavero, casillero #001 con cinta "Inglaterra 66"; la puerta se entreabre (A08).
+(toma) Llavero, puerta del camerino #001 con rótulo LOCAL y cinta "Inglaterra 66"; la puerta se entreabre (A08).
 
 **APERTURA (5–7 s)**
 (toma) Utilero E3, mano en la boca.
@@ -551,7 +562,7 @@ FUENTES: [1] … [2] …
 (toma) Ficha: "Piden rescate". Círculo de marcador rojo (A07).
 🎙 «La policía no encontraba nada. Hasta llegó una petición de rescate.»
 
-(toma) Casillero abierto: el bulto envuelto en periódico iluminado. Utilero P5 + E4. Palabra gigante "27.03".
+(toma) Camerino abierto: el bulto envuelto en periódico sobre la banca, iluminado. Utilero P5 + E4. Palabra gigante "27.03".
 🎙 «Siete días después, un perro llamado Pickles salió a pasear con su dueño, olfateó un paquete envuelto en periódico… y adentro estaba la Copa.»
 
 (toma) Ficha: "30.07.1966 — Inglaterra campeón". Cinta: "¡su único Mundial!".
@@ -559,10 +570,10 @@ FUENTES: [1] … [2] …
 
 **CIERRE (32–40 s)**
 (toma) Nivel de secreto: 5 llaves (A11). Fondo lima, utilero E2 (guiño).
-🎙 «Al perro lo trataron como un héroe. Yo estaba ahí. Bueno… casi. Comenten su país y mañana abro su casillero.»
+🎙 «Al perro lo trataron como un héroe. Yo estaba ahí. Bueno… casi. Comenten su país y mañana abro su camerino.»
 (toma) Portazo (A09) + pitazo.
 
-**TEXTO EN PANTALLA (final):** @elutilerofutbol · Mañana: casillero #002
+**TEXTO EN PANTALLA (final):** @elutilerofutbol · Mañana: camerino #002
 
 **FUENTES (verificadas):**
 1. The FA: Pickles encontró el trofeo Jules Rimet siete días después de que fuera robado de una exhibición en Westminster, en marzo de 1966. https://www.thefa.com/news/2016/jul/27/guide-dogs-service-name-puppies-280716
@@ -604,7 +615,7 @@ el-utilero/
 │     └─ words.json              ← tiempos por palabra (subtítulos)
 ├─ src/
 │  ├─ components/                ← Cinta, Sello, Ficha, PalabraGigante, Tiza, Marcador,
-│  │                                Casillero, Utilero, NivelSecreto, Subtitulos, Grano
+│  │                                Camerino, Utilero, NivelSecreto, Subtitulos, Grano
 │  ├─ scenes/                    ← Gancho, Sting, Apertura, Contexto, Giro, Remate, Cierre
 │  └─ compositions/              ← Short (1080×1920), Miniatura (1280×720), Post (1080×1350)
 └─ scripts/
@@ -619,7 +630,7 @@ el-utilero/
 {
   "id": "001",
   "slug": "pickles",
-  "serie": "El Casillero",
+  "serie": "El Camerino",
   "titulo": "El perro que salvó la Copa",
   "pais": "Inglaterra",
   "anio": 1966,
@@ -631,11 +642,11 @@ el-utilero/
     { "tipo": "apertura", "expresion": "E3", "voz": "Cierren la puerta, que les cuento." },
     { "tipo": "contexto", "ficha": "LONDRES · 20.03.1966", "sello": "ROBADA", "voz": "Marzo de 1966. Faltaban cuatro meses para el Mundial de Inglaterra… y alguien se robó el trofeo de una exhibición en Londres." },
     { "tipo": "contexto", "ficha": "Piden rescate", "marcador": "rescate", "voz": "La policía no encontraba nada. Hasta llegó una petición de rescate." },
-    { "tipo": "giro", "casillero": "abierto", "pose": "P5", "expresion": "E4", "palabraGigante": "27.03", "voz": "Siete días después, un perro llamado Pickles salió a pasear con su dueño, olfateó un paquete envuelto en periódico… y adentro estaba la Copa." },
+    { "tipo": "giro", "camerino": "abierto", "pose": "P5", "expresion": "E4", "palabraGigante": "27.03", "voz": "Siete días después, un perro llamado Pickles salió a pasear con su dueño, olfateó un paquete envuelto en periódico… y adentro estaba la Copa." },
     { "tipo": "remate", "ficha": "30.07.1966 — Inglaterra campeón", "cinta": "¡su único Mundial!", "voz": "Ese julio, Inglaterra ganó el Mundial. El único que tiene." },
-    { "tipo": "cierre", "expresion": "E2", "voz": "Al perro lo trataron como un héroe. Yo estaba ahí. Bueno… casi. Comenten su país y mañana abro su casillero." }
+    { "tipo": "cierre", "expresion": "E2", "voz": "Al perro lo trataron como un héroe. Yo estaba ahí. Bueno… casi. Comenten su país y mañana abro su camerino." }
   ],
-  "textoFinal": "@elutilerofutbol · Mañana: casillero #002",
+  "textoFinal": "@elutilerofutbol · Mañana: camerino #002",
   "fuentes": [
     "https://www.thefa.com/news/2016/jul/27/guide-dogs-service-name-puppies-280716",
     "https://www.fifa.com/news/pickles-and-the-stolen-world-cup-2771152",
@@ -675,7 +686,7 @@ La duración de cada escena sale de la duración real del audio (`words.json`), 
 |---|---|---|
 | **0. Base** | Usuarios apartados, proyecto Remotion creado, `brand.ts` con paleta y fuentes. | Renderiza un cuadro vacío con el grano y las fuentes cargadas. |
 | **1. Componentes** | Cinta, Sello, Ficha, PalabraGigante, Tiza, Marcador, Grano, NivelSecreto (A01–A07, A11). | Una escena de prueba con todos animados y sonido. |
-| **2. Casillero** | Puerta en capas + estados + A08/A09 + sting de 2 s. | Sting renderizado con sonido. |
+| **2. Camerino** | Puerta + interior en capas + estados + A08/A09 + sting de 2 s. | Sting renderizado con sonido. |
 | **3. Personaje** | Rig con el SVG base (4.3): parpadeo, respiración, guiño, bocas simples. Luego se reemplaza por las capas del ilustrador. | El utilero dice la línea de prueba sincronizado. |
 | **4. Voz** | Voz diseñada en ElevenLabs + `generate-voice.ts` con tiempos por palabra. | `voice.mp3` y `words.json` del #001. |
 | **5. Episodio #001** | Short completo de Pickles + miniatura + post. | Video final revisado en un celular real. |
@@ -684,6 +695,8 @@ La duración de cada escena sale de la duración real del audio (`words.json`), 
 ---
 
 ## 12. Pendientes y decisiones abiertas
+
+- [x] **Concepto central: "El Camerino"** (22-nov-2026). El casillero metálico leía como deporte estadounidense; la puerta del vestuario es fútbol puro. Serie principal = *El Camerino*; numeración = *Camerino #001*.
 
 - [x] Usuario definido: **@elutilerofutbol** (@elutilerofutbol no estaba disponible).
 - [ ] Contratar ilustrador para la hoja de modelo (4.8).

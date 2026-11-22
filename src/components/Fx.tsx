@@ -98,6 +98,11 @@ export const Particulas: React.FC<{
         if (tipo === 'polvo')
           return <circle key={i} cx={xx} cy={yy} r={s} fill={c} opacity={opacidad * (0.3 + 0.7 * z)} />;
         const rot = abs * (2 + 6 * hash(i + 11)) * (i % 2 ? 1 : -1);
+        if (i % 3 === 0) {
+          // parche de balón (pentágono)
+          const pts = [0, 1, 2, 3, 4].map((q) => `${Math.cos(-Math.PI / 2 + (q * 2 * Math.PI) / 5) * s * 1.1},${Math.sin(-Math.PI / 2 + (q * 2 * Math.PI) / 5) * s * 1.1}`).join(' ');
+          return <polygon key={i} points={pts} fill={c} opacity={opacidad * (0.5 + 0.5 * z)} transform={`translate(${xx} ${yy}) rotate(${rot}) scale(1 ${Math.cos(abs / 9 + i)})`} />;
+        }
         return (
           <rect key={i} x={-s} y={-s * 0.6} width={s * 2} height={s * 1.2} fill={c} opacity={opacidad * (0.5 + 0.5 * z)} transform={`translate(${xx} ${yy}) rotate(${rot}) scale(1 ${Math.cos(abs / 9 + i)})`} />
         );

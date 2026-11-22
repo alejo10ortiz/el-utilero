@@ -14,7 +14,7 @@ import { EPISODIOS } from '../episodes';
 
 export type StillProps = { slug: string };
 
-/** Miniatura 1280×720: una palabra gigante + el utilero guiñando + número de casillero. */
+/** Miniatura 1280×720: una palabra gigante + el utilero guiñando + número de camerino. */
 export const Miniatura: React.FC<StillProps> = ({ slug }) => {
   const ep = EPISODIOS[slug];
   const gancho = ep.escenas.find((e) => e.tipo === 'gancho');
@@ -27,14 +27,14 @@ export const Miniatura: React.FC<StillProps> = ({ slug }) => {
         <Fondo tipo="papel" width={1280} height={720} />
         <PalabraGigante texto={palabra} x={40} y={50} ancho={720} maxSize={470} delay={-99} sonido={false} />
         <Utilero expresion="E2" size={640} x={660} y={150} vivo={false} />
-        <Cinta texto={pres ? 'EL UTILERO' : `CASILLERO #${ep.id}`} x={330} y={610} rot={-4} size={58} delay={-99} sonido={false} />
+        <Cinta texto={pres ? 'EL UTILERO' : `CAMERINO #${ep.id}`} x={330} y={610} rot={-4} size={58} delay={-99} sonido={false} />
         <Grano width={1280} height={720} />
       </AbsoluteFill>
     </ConFuentes>
   );
 };
 
-/** Post 1080×1350: objeto del día + número de casillero. */
+/** Post 1080×1350: objeto del día + número de camerino. */
 export const Post: React.FC<StillProps> = ({ slug }) => {
   const ep = EPISODIOS[slug];
   if (ep.formato === 'presentacion') {

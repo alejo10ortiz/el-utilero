@@ -113,7 +113,7 @@ const Llavero: React.FC = () => (
     <g transform="translate(150 330) rotate(-8)">
       <path d="M0 0 L-6 -24" stroke={C.tinta} strokeWidth={2.4} />
       <rect x={-34} y={0} width={74} height={50} fill={C.kraft} stroke={C.tinta} strokeWidth={3} />
-      <text x={-28} y={30} fontFamily={FONT.maquina} fontSize={15} fill={C.tinta}>CASILLERO</text>
+      <text x={-28} y={30} fontFamily={FONT.maquina} fontSize={15} fill={C.tinta}>CAMERINO</text>
     </g>
   </g>
 );
