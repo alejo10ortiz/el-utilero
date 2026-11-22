@@ -12,8 +12,8 @@ import { handleDe, numeroCamerino } from '../lib/episode';
 import { Escenario, EscenaProps } from './Escenario';
 
 /**
- * CIERRE (35–40 s): fondo lima → nivel de secreto (A11) → utilero guiñando (E2) → cita en Instrument Serif →
- * cinta @elutilerofutbol (A01) → portazo (A09) + pitazo.
+ * CIERRE (35–40 s): fondo lima → nivel de secreto (A11) → utilero guiñando (E2) → [cita en Instrument Serif, solo si el
+ * episodio la trae] → cinta @elutilerofutbol (A01) → portazo (A09) + pitazo.
  */
 export const Cierre: React.FC<EscenaProps> = ({ esc, ep, timing, frames }) => {
   const frame = useCurrentFrame();
@@ -29,9 +29,13 @@ export const Cierre: React.FC<EscenaProps> = ({ esc, ep, timing, frames }) => {
   const tamHandle = Math.min(84, (84 * (SAFE_BOX.w - 190)) / anchoHandle);
   // Sin nivel de secreto (presentaciones) la frase sube y el utilero crece.
   const conNivel = ep.nivelSecreto !== undefined;
+  const conCita = !!esc.cita;
+  const tamU = conCita ? (conNivel ? 620 : 700) : conNivel ? 780 : 860;
+  const yU = conCita ? (conNivel ? 600 : 520) : conNivel ? 520 : 440;
   return (
     <Escenario fondo="lima" impactos={[{ frame: portazoAt + A.portazo - 1, amp: 6 }]}>
       {conNivel && <NivelSecreto nivel={ep.nivelSecreto!} x={SAFE_BOX.cx} y={160} size={190} delay={6} />}
+      {conCita && (
       <div
         style={{
           position: 'absolute', left: SAFE_BOX.x0, width: SAFE_BOX.w, top: conNivel ? 500 : 230, textAlign: 'center',
@@ -39,16 +43,17 @@ export const Cierre: React.FC<EscenaProps> = ({ esc, ep, timing, frames }) => {
           color: C.tinta, opacity: cita, transform: `translateY(${(1 - cita) * 16}px)`,
         }}
       >
-        «{esc.cita ?? 'Esto no salió en la tele.'}»
+        «{esc.cita}»
       </div>
+      )}
       <Utilero
         expresion={esc.expresion ?? 'E2'}
         sobre="lima"
         words={timing.words}
         offsetFrames={off}
-        size={conNivel ? 620 : 700}
-        x={SAFE_BOX.cx - (conNivel ? 310 : 350)}
-        y={conNivel ? 600 : 520}
+        size={tamU}
+        x={SAFE_BOX.cx - tamU / 2}
+        y={yU}
         seed={9}
       />
       <Subtitulos words={timing.words} offsetFrames={off} tono="lima" claves={esc.claves} y={1335} />

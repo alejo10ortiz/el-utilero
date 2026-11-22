@@ -16,8 +16,9 @@ import { BEAT, useAbs } from '../../lib/ritmo';
 import { Escenario, EscenaProps } from '../Escenario';
 
 /**
- * CIERRE PRO: lima con rayos girando y confeti; el Utilero salta guiñando; la frase de marca salta palabra a palabra;
- * la cinta con el @usuario se clava en «camerino»; el portazo cae en el beat final.
+ * CIERRE PRO: lima con rayos girando y confeti; el Utilero salta guiñando y ocupa todo el espacio (sin cita en pantalla:
+ * la frase de marca vive en la voz); si el episodio trae `cita` explícita, salta palabra a palabra arriba.
+ * La cinta con el @usuario se clava en «camerino»; el portazo cae en el beat final.
  */
 export const CierrePro: React.FC<EscenaProps> = ({ esc, ep, timing, frames }) => {
   const f = useCurrentFrame();
@@ -32,7 +33,11 @@ export const CierrePro: React.FC<EscenaProps> = ({ esc, ep, timing, frames }) =>
   const anchoH = measureText({ text: handle, fontFamily: 'Permanent Marker', fontSize: 84 }).width + 84 * 1.1;
   const tamH = Math.min(84, (84 * (SAFE_BOX.w - 190)) / anchoH);
   const conNivel = ep.nivelSecreto !== undefined;
-  const cita = (esc.cita ?? 'Esto no salió en la tele.').split(' ');
+  const cita = esc.cita ? esc.cita.split(' ') : [];
+  const conCita = cita.length > 0;
+  // Sin cita el Utilero crece; con nivel de secreto (llaves arriba) queda un poco más bajo.
+  const tamU = conCita ? (conNivel ? 760 : 900) : conNivel ? 880 : 1000;
+  const yU = conCita ? (conNivel ? 600 : 440) : conNivel ? 460 : 340;
   const pulso = 1 + 0.016 * Math.exp(-(abs % BEAT) / 4.5);
   const z = empuje(f, frames, 0.05, 6) * golpes(f, [tHandle], 0.05);
   const finalTxt = ep.textoFinal.split(' · ').slice(1).join(' · ');
@@ -45,6 +50,7 @@ export const CierrePro: React.FC<EscenaProps> = ({ esc, ep, timing, frames }) =>
       <Particulas tipo="confeti" n={34} semilla={11} colores={[C.tinta, C.papel, C.sello, '#fff']} dir={1} velocidad={0.5} opacidad={0.85} />
 
       {/* frase de marca: las palabras saltan una tras otra */}
+      {conCita && (
       <div
         style={{
           position: 'absolute', left: SAFE_BOX.x0, width: SAFE_BOX.w, top: conNivel ? 400 : 220, display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '0 26px',
@@ -62,9 +68,10 @@ export const CierrePro: React.FC<EscenaProps> = ({ esc, ep, timing, frames }) =>
           );
         })}
       </div>
+      )}
 
       <div style={{ transform: `scale(${pulso})`, transformOrigin: '50% 100%', position: 'absolute', inset: 0 }}>
-        <UtileroActor entrada={8} desde="abajo" expresion="E2" sobre="lima" words={timing.words} offsetFrames={off} size={conNivel ? 760 : 900} x={SAFE_BOX.cx - (conNivel ? 380 : 450)} y={conNivel ? 600 : 440} seed={9} />
+        <UtileroActor entrada={8} desde="abajo" expresion="E2" sobre="lima" words={timing.words} offsetFrames={off} size={tamU} x={SAFE_BOX.cx - tamU / 2} y={yU} seed={9} />
       </div>
 
       <Palabras words={timing.words} offsetFrames={off} tono="lima" claves={esc.claves} y={1390} size={84} />

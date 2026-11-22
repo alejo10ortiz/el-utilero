@@ -27,7 +27,7 @@
 | **Promesa** | Datos reales, contados como secreto. |
 | **Tono** | Cómplice, pausado, con picardía. Humor sin burla. Nunca inventa. |
 | **Frase de apertura** | «Cierren la puerta, que les cuento.» |
-| **Frase de cierre** | «Esto no salió en la tele.» (variante: «Yo estaba ahí. Bueno… casi.») |
+| **Frase de cierre** | «Esto no salió en la tele.» — **solo dicha (voz), nunca en pantalla**: el cierre visual es el Utilero + la cinta del @usuario. (variante: «Yo estaba ahí. Bueno… casi.») |
 | **Numeración** | Cada video es un camerino: **Camerino #001, #002…** (coleccionable). Cada puerta lleva su rótulo: **LOCAL · VISITANTE · ÁRBITROS**. |
 | **Nivel de secreto** | De 1 a 5 llaves (reemplaza cualquier "locurómetro"). |
 | **Comunidad** | Los seguidores comentan su país → "mañana abro su camerino". |
@@ -402,7 +402,7 @@ Animaciones básicas del rig:
 
 ### 5.4 Cierre de marca (outro de 3 s)
 
-Fondo lima → el utilero con `E2` (guiño) → cita en Instrument Serif "«Esto no salió en la tele.»" → cinta `@elutilerofutbol` (A01) → portazo (A09) + pitazo.
+Fondo lima → el utilero con `E2` (guiño), **grande y sin texto compitiendo** → cinta `@elutilerofutbol` (A01) → portazo (A09) + pitazo. La frase de marca («Esto no salió en la tele.») se dice en la voz pero **no se pone en pantalla** (decisión del dueño: estorbaba a los subtítulos y le quitaba espacio al personaje). Una cita en Instrument Serif solo aparece si el episodio la trae explícita en `cita`.
 
 ### 5.5 Subtítulos
 
@@ -698,9 +698,10 @@ La duración de cada escena sale de la duración real del audio (`words.json`), 
 
 - [x] **Concepto central: "El Camerino"** (22-nov-2026). El casillero metálico leía como deporte estadounidense; la puerta del vestuario es fútbol puro. Serie principal = *El Camerino*; numeración = *Camerino #001*.
 
-- [x] Usuario definido: **@elutilerofutbol** (@elutilerofutbol no estaba disponible).
+- [x] Usuario definido: **@elutilerofutbol** (el nombre original no estaba disponible).
+- [x] **Cierre sin frase en pantalla** (22-nov-2026). «Esto no salió en la tele» queda solo en la voz; en pantalla estorbaba a los subtítulos y le quitaba espacio al Utilero.
 - [ ] Contratar ilustrador para la hoja de modelo (4.8).
 - [ ] Fabricar y escanear texturas reales (2.5).
-- [ ] Diseñar y guardar la voz en ElevenLabs (5.7).
+- [x] Voz diseñada y guardada en ElevenLabs: «El Utilero» (`config/voice.json`).
 - [ ] Verificar las historias #003–#009 con dos fuentes cada una.
 - [ ] Definir frecuencia de publicación (sugerido: 1 Short diario, 1 recopilación larga semanal para YouTube).
