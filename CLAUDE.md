@@ -36,8 +36,11 @@ La clave de ElevenLabs no está en `.env`: la inyecta el proxy del entorno `el-u
 - Cada componente animado reproduce su propio SFX (`<Sfx name=… at=…/>`, archivos `assets/sfx/sfx_*.wav`).
 
 ## Estado (ver BRAND.md §11)
-Fases 0–3 hechas en código (SVG base). SFX actuales = **placeholders sintetizados** (`scripts/synth-placeholder-sfx.sh`).
-Voz definida (`config/voice.json`: «El Utilero») y usuario @elutilerofutbol (`HANDLE` en `config/brand.ts`). Pendiente humano: permiso Text to Speech en la clave de ElevenLabs, ilustrador (hoja de modelo §4.8 → reemplazar capas del rig), texturas reales (§2.5), usuarios @elutilero, verificar historias #003–#009.
+P01, P02, P03 y #001 están en estilo **pro** (montaje al ritmo, música, SFX reales de ElevenLabs, transiciones-objeto) y con voz real («El Utilero»).
+Usuario oficial @elutilerofutbol (`HANDLE` en `config/brand.ts`). Música: `base-100bpm-a` (30 s, P01) y `base-100bpm-b` (60 s, el resto).
+Pendiente humano: ilustrador (hoja de modelo §4.8 → reemplazar capas del rig; el Utilero actual es el arte base en código), texturas reales (§2.5),
+escuchar y aprobar música/SFX, verificar historias #003–#009, textos de publicación. #001 dura 48.6 s con la voz real (objetivo 30–45 s): decidir recorte.
+Regla de ritmo aprendida: **nunca pantalla vacía** — lo gigante entra en f≈11 y la palabra dicha solo lo refuerza (`cuando()` en `src/lib/voz.ts`).
 
 ## Estilo "pro" (montaje dinámico al ritmo) — `"estilo": "pro"` en episode.json
 Un episodio en estilo pro **no es un cartel con elementos que aparecen**: cada escena está coreografiada sobre la rejilla musical.
