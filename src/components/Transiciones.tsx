@@ -52,7 +52,7 @@ const TransHoja: React.FC<{ dur: number }> = ({ dur }) => {
   const t = useCurrentFrame();
   const mitad = dur / 2;
   const entra = (k: number) => tw(t, [0, mitad - 1], [k, 0], E.outExpo);
-  const sale = (k: number) => tw(t, [mitad + 1, dur], [0, k], E.inExpo);
+  const sale = (k: number) => tw(t, [mitad, dur], [0, k], E.inOutCubic);
   const x = t < mitad ? entra(-1700) : sale(1700);
   const y = t < mitad ? entra(2100) : sale(-2100);
   const stamp = tw(t, [mitad - 4, mitad], [1.7, 1], E.outBack);
@@ -127,5 +127,5 @@ export const Transicion: React.FC<{ tipo: TipoTransicion; dur?: number; volumen?
   );
 };
 
-export const DUR_TRANSICION: Record<TipoTransicion, number> = { cinta: 18, hoja: 16, flash: 12, puerta: 16 };
+export const DUR_TRANSICION: Record<TipoTransicion, number> = { cinta: 16, hoja: 12, flash: 12, puerta: 14 };
 export { hash };

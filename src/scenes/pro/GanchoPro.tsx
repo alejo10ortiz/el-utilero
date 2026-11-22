@@ -51,7 +51,7 @@ export const GanchoPro: React.FC<EscenaProps> = ({ esc, timing, frames }) => {
     const texto = c.palabras.map((w) => w.texto).join(' ');
     const { fontSize } = fitText({ text: texto, withinWidth: 900, fontFamily: 'League Gothic', fontWeight: '400' });
     const siguiente = chunks[i + 1];
-    return { ...c, texto, size: Math.min(440, fontSize), sale: siguiente ? siguiente.ini - 2 : -1, entra: Math.max(1, c.ini - 2) };
+    return { ...c, texto, size: Math.min(440, fontSize), sale: siguiente ? siguiente.ini - 5 : -1, entra: Math.max(1, c.ini - 1) };
   });
 
   // ── fase B: líneas del titular sincronizadas con la voz
@@ -106,7 +106,7 @@ export const GanchoPro: React.FC<EscenaProps> = ({ esc, timing, frames }) => {
       {/* fase A: frases gigantes que se reemplazan al ritmo de la voz */}
       {chunkInfo.map((c, ci) => {
         const ultima = ci === chunkInfo.length - 1;
-        const sale = c.sale >= 0 ? tw(f, [c.sale, c.sale + 4], [0, 1], E.inExpo) : 0;
+        const sale = c.sale >= 0 ? tw(f, [c.sale, c.sale + 3], [0, 1], E.inExpo) : 0;
         const sube = ultima && tK >= 0 ? tw(f, [tK, tK + 9], [0, 1], E.outExpo) : 0; // "DESDE" cede el centro al kicker
         const salidaA = tw(f, [tSalidaA, tSalidaA + 5], [0, 1], E.inExpo);
         if (f < c.entra || sale >= 1 || salidaA >= 1) return null;
@@ -120,7 +120,7 @@ export const GanchoPro: React.FC<EscenaProps> = ({ esc, timing, frames }) => {
             style={{
               position: 'absolute', left: SAFE_BOX.cx - 450, top: yC - c.size * 0.45, width: 900, textAlign: 'center', whiteSpace: 'nowrap',
               fontFamily: FONT.grito, fontSize: c.size, lineHeight: 0.9, color: C.tiza, filter: 'url(#chalk)',
-              transform: `translateY(${-(sale + salidaA) * 120}px) scale(${(multi ? 1 : sl.scale) * k * (1 + sale * 0.1)})`, opacity: (multi ? 1 : sl.opacity) * (1 - Math.max(sale, salidaA)),
+              transform: `translateY(${-(sale + salidaA) * 120}px) scale(${(multi ? 1 : sl.scale) * k * (1 + sale * 0.1) * (1 + 0.03 * Math.exp(-(abs % BEAT) / 4.5))})`, opacity: (multi ? 1 : sl.opacity) * (1 - Math.max(sale, salidaA)),
               textShadow: `${c.size * 0.04}px ${c.size * 0.03}px 0 ${C.lima}`,
             }}
           >
