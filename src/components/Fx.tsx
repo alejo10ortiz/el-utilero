@@ -204,7 +204,7 @@ export const PizarraTactica: React.FC<{ delay?: number; opacidad?: number }> = (
   const deriva = { x: Math.sin(abs / 120) * 14, y: -abs * 0.12, s: 1 + abs * 0.00045 };
   return (
     <svg width={1080} height={1920} style={{ position: 'absolute', inset: 0, opacity: opacidad, pointerEvents: 'none', overflow: 'visible' }}>
-      <g filter="url(#chalk)" stroke={C.tiza} strokeWidth={6} transform={`translate(${deriva.x} ${deriva.y}) rotate(-3 540 960) scale(${deriva.s})`} style={{ transformOrigin: '540px 960px' }}>
+      <g filter="url(#chalk)" stroke={C.tiza} strokeWidth={8} transform={`translate(${deriva.x} ${deriva.y}) rotate(-3 540 960) scale(${deriva.s})`} style={{ transformOrigin: '540px 960px' }}>
         <path d="M120 300 H960 V1640 H120 Z" {...trazo(p(0, 22))} />
         <path d="M120 970 H960" {...trazo(p(6, 22))} />
         <circle cx={540} cy={970} r={170} {...trazo(p(10, 30))} />

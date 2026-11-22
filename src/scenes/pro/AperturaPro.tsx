@@ -38,15 +38,15 @@ export const AperturaPro: React.FC<EscenaProps> = ({ esc, timing, frames }) => {
         expresion={f < tUtil + 8 ? 'E1' : 'E2'}
         words={timing.words}
         offsetFrames={off}
-        size={800}
-        x={SAFE_BOX.cx - 400}
-        y={500}
+        size={900}
+        x={SAFE_BOX.cx - 450}
+        y={470}
         seed={7}
       />
       <div style={{ opacity: confeti }}>
         <Particulas tipo="confeti" n={30} semilla={2} colores={[C.lima, C.tinta, C.papel, C.sello]} dir={1} velocidad={0.55} opacidad={0.9} />
       </div>
-      <Palabras words={timing.words} offsetFrames={off} claves={esc.claves} y={1340} size={84} />
+      <Palabras words={timing.words} offsetFrames={off} claves={esc.claves} y={1390} size={84} />
 
       <Destello at={tUtil} max={0.4} />
       <Impacto at={tUtil} x={540} y={330} flash={0.0} />

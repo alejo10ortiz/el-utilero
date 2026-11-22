@@ -6,7 +6,7 @@ import { CintaImpacto } from '../../components/Cinetica';
 import { Destello, Impacto, Particulas, Reflector, Chispas } from '../../components/Fx';
 import { Avatar } from '../../components/Logo';
 import { Sfx } from '../../components/Sfx';
-import { empuje, golpes } from '../../lib/camara';
+import { golpes } from '../../lib/camara';
 import { E, pop, tw } from '../../lib/ease';
 import { numeroCasillero } from '../../lib/episode';
 import { Escenario, EscenaProps } from '../Escenario';
@@ -26,9 +26,14 @@ export const StingPro: React.FC<EscenaProps> = ({ ep, frames }) => {
   const tema = ep.cintaCasillero ?? '';
   const avatar = pop(f, 52, 10);
   const tTapa = 45;
-  const z = empuje(f, frames, 0.12) * golpes(f, [tTapa, 28], 0.05);
+  // cámara: arranca encima de la cerradura (plano cerrado, la mano llena el cuadro) y abre plano justo
+  // cuando se abre la puerta; el golpe de la cinta la sacude.
+  const foco = tw(f, [26, 47], [1, 0], E.inOutCubic);
+  const z = (1 + 0.62 * foco) * (1 + 0.05 * tw(f, [47, frames], [0, 1], E.outCubic)) * golpes(f, [tTapa, 28], 0.05);
+  const panX = -(690 - 540) * z * foco;
+  const panY = -(1030 - 960) * z * foco;
   return (
-    <Escenario fondo="tinta" impactos={[{ frame: 28, amp: 5 }, { frame: tTapa + 1, amp: 14 }]} deriva={0.6} zoom={z}>
+    <Escenario fondo="tinta" impactos={[{ frame: 28, amp: 5 }, { frame: tTapa + 1, amp: 14 }]} deriva={0.6} zoom={z} panX={panX} panY={panY}>
       {/* luz que se derrama desde la rendija */}
       <div style={{ position: 'absolute', left: x + CASILLERO_W - 150, top: 300, width: 520, height: 1100, background: C.lima, opacity: luz * 0.55, filter: 'blur(90px)', borderRadius: '50%' }} />
       <Reflector x={x + CASILLERO_W - 40} opacidad={0.5 * luz} ancho={760} />

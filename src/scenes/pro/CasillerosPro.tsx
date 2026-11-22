@@ -36,27 +36,27 @@ export const CasillerosPro: React.FC<EscenaProps> = ({ esc, timing, frames }) =>
   const tLand1 = tSaco + 24;
   const tLand2 = tHist + 22;
 
-  const escala = 0.43;
+  const escala = 0.52;
   const w = CASILLERO_W * escala;
-  const gap = 30;
-  const x0 = SAFE_BOX.cx - (3 * w + 2 * gap) / 2;
-  const y = 470;
+  const gap = 20;
+  const x0 = 540 - (3 * w + 2 * gap) / 2; // ocupan casi todo el ancho (son gráficos, no texto: pueden pasar el margen seguro)
+  const y = 440;
   const numeros = ['001', '002', '003'];
   const cintas = esc.cintas ?? [];
   const objetos = esc.objetos ?? ['bulto', 'botin'];
   const aperturas = [dA, dB];
   const aterriza = [tLand1, tLand2];
   const despega = [tSaco, tHist - 2];
-  const reposo = [{ x: 40, y: 840 }, { x: 540, y: 840 }];
+  const reposo = [{ x: 30, y: 900 }, { x: 560, y: 900 }];
   const pulso = 1 + 0.014 * Math.exp(-(abs % BEAT) / 4.5);
 
-  const panX = tw(f, [dA - 6, dA + 8], [0, 120], E.inOutCubic) + tw(f, [tLand1 + 4, tLand1 + 24], [0, -120], E.inOutCubic) + tw(f, [dB, dB + 20], [0, -70], E.inOutCubic);
+  const panX = tw(f, [dA - 6, dA + 8], [0, 120], E.inOutCubic) + tw(f, [tLand1 + 4, tLand1 + 24], [0, -120], E.inOutCubic);
   const z = empuje(f, frames, 0.07, 6) * golpes(f, [tCas, tLand1, tLand2], 0.045);
 
   return (
     <Escenario fondo="papel" impactos={[{ frame: tCas + 2, amp: 12 }, { frame: tLand1 + 1, amp: 11 }, { frame: tLand2 + 1, amp: 11 }]} deriva={0.5} zoom={z}>
       <Particulas tipo="polvo" n={22} semilla={8} colores={[C.tinta, C.grisArchivo]} opacidad={0.25} velocidad={0.3} />
-      <TituloImpacto lineas={[{ texto: esc.palabraGigante ?? 'CASILLERO', at: tCas }]} x={SAFE_BOX.cx - 440} y={150} ancho={880} tono="tinta" maxSize={330} />
+      <TituloImpacto lineas={[{ texto: esc.palabraGigante ?? 'CASILLERO', at: tCas }]} x={SAFE_BOX.cx - 440} y={130} ancho={880} tono="tinta" maxSize={330} />
 
       <div style={{ position: 'absolute', inset: 0, transform: `translateX(${panX}px) scale(${pulso})`, transformOrigin: '50% 60%' }}>
         {numeros.map((n, i) => {
@@ -86,11 +86,11 @@ export const CasillerosPro: React.FC<EscenaProps> = ({ esc, timing, frames }) =>
         const t0 = despega[i];
         const k = tw(f, [t0, aterriza[i]], [0, 1], E.inOutCubic);
         if (f < t0) return null;
-        const desde = { x: x0 + i * (w + gap) - 20, y: y + 330 };
+        const desde = { x: x0 + i * (w + gap) - 20, y: y + 380 };
         const hasta = reposo[i];
         const px = desde.x + (hasta.x - desde.x) * k;
         const py = desde.y + (hasta.y - desde.y) * k - Math.sin(Math.PI * k) * 260;
-        const tam = 150 + (380 - 150) * E.outBack(k);
+        const tam = 170 + (440 - 170) * E.outBack(k);
         const rot = (i === 0 ? -28 : 24) * (1 - k) + (i === 0 ? -4 : 4);
         const flota = f > aterriza[i] ? Math.sin((f - aterriza[i]) / 10 + i) * 5 : 0;
         return <Objeto key={i} tipo={tipo} size={tam} x={px} y={py + flota} rot={rot} />;
@@ -98,12 +98,12 @@ export const CasillerosPro: React.FC<EscenaProps> = ({ esc, timing, frames }) =>
       </div>
 
       <Impacto at={tCas} x={540} y={300} flash={0.0} />
-      <Impacto at={tLand1} x={x0 + 150} y={1130} flash={0.18} color={C.tinta} semilla={3} />
-      <Impacto at={tLand2} x={680} y={1130} flash={0.18} color={C.tinta} semilla={6} />
+      <Impacto at={tLand1} x={x0 + 160} y={1180} flash={0.18} color={C.tinta} semilla={3} />
+      <Impacto at={tLand2} x={760} y={1180} flash={0.18} color={C.tinta} semilla={6} />
       <Destello at={tCas} color={C.lima} max={0.35} />
-      <Chispas at={dA + 8} x={x0 + 128} y={y + 200} n={8} dist={120} dur={10} semilla={2} />
+      <Chispas at={dA + 8} x={x0 + 160} y={y + 240} n={8} dist={140} dur={10} semilla={2} />
 
-      <Palabras words={timing.words} offsetFrames={off} claves={esc.claves} y={1335} size={84} />
+      <Palabras words={timing.words} offsetFrames={off} claves={esc.claves} y={1385} size={84} />
 
       {aperturas.map((d, i) => <SonidosApertura key={i} delay={d} hasta="abierto" />)}
       <Sfx name="impact" at={tCas} volume={0.85} />

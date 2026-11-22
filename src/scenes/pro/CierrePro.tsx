@@ -61,16 +61,26 @@ export const CierrePro: React.FC<EscenaProps> = ({ esc, ep, timing, frames }) =>
       </div>
 
       <div style={{ transform: `scale(${pulso})`, transformOrigin: '50% 100%', position: 'absolute', inset: 0 }}>
-        <UtileroActor entrada={8} desde="abajo" expresion="E2" sobre="lima" words={timing.words} offsetFrames={off} size={800} x={SAFE_BOX.cx - 400} y={490} seed={9} />
+        <UtileroActor entrada={8} desde="abajo" expresion="E2" sobre="lima" words={timing.words} offsetFrames={off} size={900} x={SAFE_BOX.cx - 450} y={440} seed={9} />
       </div>
 
-      <Palabras words={timing.words} offsetFrames={off} tono="lima" claves={esc.claves} y={1330} size={84} />
-      <CintaImpacto texto={handle} x={SAFE_BOX.cx} y={1215} at={tHandle} rot={-3} size={tamH} />
-      <Impacto at={tHandle} x={SAFE_BOX.cx} y={1215} color="#fff" flash={0.3} />
+      <Palabras words={timing.words} offsetFrames={off} tono="lima" claves={esc.claves} y={1390} size={84} />
+      <CintaImpacto texto={handle} x={SAFE_BOX.cx} y={1255} at={tHandle} rot={-3} size={tamH} />
+      <Impacto at={tHandle} x={SAFE_BOX.cx} y={1255} color="#fff" flash={0.3} />
       <Destello at={tHandle} color="#fff" max={0.4} dur={5} />
       {f >= tFinal && (
-        <div style={{ position: 'absolute', left: SAFE_BOX.x0, width: SAFE_BOX.w, top: 1452, textAlign: 'center', fontFamily: FONT.maquina, fontSize: 42, letterSpacing: '0.06em', color: C.tinta, opacity: tw(f, [tFinal, tFinal + 6], [0, 1]), transform: `translateY(${tw(f, [tFinal, tFinal + 8], [24, 0], E.outBack)}px)` }}>
+        <div
+          style={{
+            position: 'absolute', left: SAFE_BOX.x0, width: SAFE_BOX.w, top: 1395, textAlign: 'center',
+            fontFamily: FONT.marcador, fontSize: 110, lineHeight: 1, color: C.tinta, textTransform: 'uppercase',
+            transform: `translateY(${tw(f, [tFinal, tFinal + 9], [60, 0], E.outBack2)}px) scale(${tw(f, [tFinal, tFinal + 9], [0.5, 1], E.outBack2)}) rotate(-2deg)`,
+            opacity: tw(f, [tFinal, tFinal + 4], [0, 1]),
+          }}
+        >
           {finalTxt}
+          <svg width={SAFE_BOX.w} height={40} viewBox={`0 0 ${SAFE_BOX.w} 40`} style={{ display: 'block', margin: '-6px auto 0', overflow: 'visible' }}>
+            <path d={`M${SAFE_BOX.w * 0.18} 22 C${SAFE_BOX.w * 0.35} 6 ${SAFE_BOX.w * 0.6} 34 ${SAFE_BOX.w * 0.82} 14`} fill="none" stroke={C.tinta} strokeWidth={9} strokeLinecap="round" pathLength={1} strokeDasharray={`${tw(f, [tFinal + 6, tFinal + 18], [0, 1], E.outExpo)} 2`} />
+          </svg>
         </div>
       )}
       <Portazo delay={tPortazo} numero={numeroCasillero(ep)} />

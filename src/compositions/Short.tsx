@@ -79,6 +79,8 @@ export const Short: React.FC<ShortProps> = ({ slug, episode, timeline }) => {
             </Sequence>
           );
         })}
+        {/* viñeta: oscurece las esquinas y da profundidad (no aplica a transiciones, que van encima) */}
+        <AbsoluteFill style={{ background: 'radial-gradient(ellipse at 50% 46%, rgba(22,19,15,0) 52%, rgba(22,19,15,0.34) 100%)', mixBlendMode: 'multiply', pointerEvents: 'none' }} />
         {/* transiciones-objeto que tapan el corte entre escenas */}
         {(episode.transiciones ?? []).map((tipo, i) => {
           const sig = timeline.scenes[i + 1];
