@@ -84,8 +84,10 @@ async function main() {
   const slug = resolveSlug(positional()[0]);
   const ep = loadEpisode(slug);
   const dir = episodeMediaDir(slug);
-  const clips = path.join(dir, 'clips');
+  const clips = path.join(dir, 'clips'); // caché de las líneas (mp3 + alineación): se versiona para no gastar créditos dos veces
+  const work = path.join(ROOT, 'out', 'voice-work', slug); // temporales (wav por escena): no van a assets/ ni a git
   fs.mkdirSync(clips, { recursive: true });
+  fs.mkdirSync(work, { recursive: true });
 
   const chars = ep.escenas.reduce((a, e) => a + (e.voz?.length ?? 0), 0);
   console.log(`Episodio ${slug}: ${ep.escenas.filter((e) => e.voz).length} líneas, ${chars} caracteres (≈ ${chars} créditos si no hay caché)`);
@@ -103,7 +105,7 @@ async function main() {
   for (let i = 0; i < ep.escenas.length; i++) {
     const esc = ep.escenas[i];
     const start = cursor;
-    const wav = path.join(clips, `scene-${String(i).padStart(2, '0')}.wav`);
+    const wav = path.join(work, `scene-${String(i).padStart(2, '0')}.wav`);
     let dur: number;
     let words: WordTiming[] = [];
 
@@ -132,7 +134,7 @@ async function main() {
   }
   timeline.totalSeconds = cursor;
 
-  const list = path.join(clips, 'concat.txt');
+  const list = path.join(work, 'concat.txt');
   fs.writeFileSync(list, wavs.map((w) => `file '${w}'`).join('\n'));
   execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-f', 'concat', '-safe', '0', '-i', list, '-c:a', 'libmp3lame', '-b:a', '192k', path.join(dir, 'voice.mp3')]);
   fs.writeFileSync(path.join(dir, 'words.json'), JSON.stringify(timeline, null, 1));
