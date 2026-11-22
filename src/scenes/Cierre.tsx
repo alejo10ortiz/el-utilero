@@ -1,5 +1,6 @@
 import React from 'react';
 import { interpolate, useCurrentFrame } from 'remotion';
+import { measureText } from '@remotion/layout-utils';
 import { A, C, FONT, FPS, SAFE_BOX } from '../../config/brand';
 import { Cinta } from '../components/Cinta';
 import { NivelSecreto } from '../components/NivelSecreto';
@@ -22,6 +23,10 @@ export const Cierre: React.FC<EscenaProps> = ({ esc, ep, timing, frames }) => {
   const portazoAt = Math.max(vozFin + 22, frames - 22);
   const cita = interpolate(frame, [14, 22], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
   const finalAt = vozFin + 10;
+  // La cinta del @usuario se ajusta al ancho seguro, sea cual sea el nombre (handle más largo → letra más chica).
+  const handle = handleDe(ep);
+  const anchoHandle = measureText({ text: handle, fontFamily: 'Permanent Marker', fontSize: 84 }).width + 84 * 1.1;
+  const tamHandle = Math.min(84, (84 * (SAFE_BOX.w - 190)) / anchoHandle);
   // Sin nivel de secreto (presentaciones) la frase sube y el utilero crece.
   const conNivel = ep.nivelSecreto !== undefined;
   return (
@@ -47,7 +52,7 @@ export const Cierre: React.FC<EscenaProps> = ({ esc, ep, timing, frames }) => {
         seed={9}
       />
       <Subtitulos words={timing.words} offsetFrames={off} tono="lima" claves={esc.claves} y={1335} />
-      <Cinta texto={handleDe(ep)} x={SAFE_BOX.cx} y={1185} rot={-3} size={84} delay={cintaAt} />
+      <Cinta texto={handle} x={SAFE_BOX.cx} y={1185} rot={-3} size={tamHandle} delay={cintaAt} />
       {frame >= finalAt && (
         <div
           style={{

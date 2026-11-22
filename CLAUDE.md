@@ -22,6 +22,7 @@ npx tsx scripts/stills.ts Short 100,300 001-pickles   # cuadros sueltos para rev
 npm run typecheck
 ```
 En este entorno cloud: `export REMOTION_BROWSER_EXECUTABLE=/opt/pw-browsers/chromium` antes de renderizar.
+La clave de ElevenLabs no está en `.env`: la inyecta el proxy del entorno `el-utilero` (host permitido: `api.elevenlabs.io`). Para correr los scripts: `ELEVENLABS_API_KEY=proxy-injected npm run voice -- P01`. La clave es restringida (solo los permisos que se le dieron); si un script falla con `missing_permissions`, falta ese permiso en la clave.
 
 ## Arquitectura
 - `config/brand.ts` paleta, fuentes, zonas seguras, duraciones de animación (A01–A11). `config/voice.json` voz de ElevenLabs.
