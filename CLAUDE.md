@@ -16,8 +16,9 @@ npm run dev                          # Remotion Studio (composiciones: Short, F1
 npm run verify -- 001 [--online]     # verificador editorial
 npm run voice -- 001 [--dry|--force] # ElevenLabs → assets/episodes/<slug>/voice.mp3 + words.json  (necesita .env)
 npm run sfx -- --force               # reemplaza SFX placeholder por ElevenLabs (necesita .env)
-npm run render -- 001 [--draft]      # video final + miniatura + post → out/001-pickles/
-npx tsx scripts/stills.ts Short 100,300 001-pickles   # cuadros sueltos para revisar → out/stills/
+npm run render -- 001 [--draft]      # video final + miniatura + post → out/001-pickles/ (igual con P01, P02, P03)
+npm run timeline -- P01              # tiempos por escena (voz real o estimados)
+npx tsx scripts/stills.ts Short 100,300 001-pickles   # cuadros sueltos para revisar → out/stills/Short-<slug>-<frame>.png
 npm run typecheck
 ```
 En este entorno cloud: `export REMOTION_BROWSER_EXECUTABLE=/opt/pw-browsers/chromium` antes de renderizar.
@@ -25,10 +26,11 @@ En este entorno cloud: `export REMOTION_BROWSER_EXECUTABLE=/opt/pw-browsers/chro
 ## Arquitectura
 - `config/brand.ts` paleta, fuentes, zonas seguras, duraciones de animación (A01–A11). `config/voice.json` voz de ElevenLabs.
 - `episodes/NNN-slug/episode.json` guion estructurado + fuentes (esquema zod en `src/lib/episode.ts`). Registrar en `src/episodes.ts`.
+- **Presentaciones de la cuenta**: `episodes/P01…/episode.json` con `"formato": "presentacion"` (sin datos deportivos → sin fuentes; el verificador exige que cualquier año nombrado se declare como cuento del personaje: «dicen…», «mito», «personaje»). Escenas extra: `casilleros`, `serie` (carpeta kraft), `secreto`; `apertura` admite `logo: true`. Placa del casillero = `casilleroNumero` ("000"). El @usuario sale de `textoFinal` (`handleDe()`).
 - `assets/` es el `publicDir` de Remotion (`staticFile()`): `fonts/`, `sfx/`, `episodes/<slug>/{voice.mp3,words.json}` (generados), más `textures/ character/ objects/ locker/ logo/` para arte real.
 - `src/lib/timeline.ts`: tiempos por escena y por palabra. Con `words.json` (voz real) manda el audio; sin él, estimación (~2.3 palabras/s) para previsualizar.
-- `src/components/`: Cinta, Sello, Ficha, PalabraGigante, Trazo (Tiza/Marcador), NivelSecreto, Subtitulos, Casillero, Objeto, Utilero (rig SVG: 8 expresiones, 8 visemas, parpadeo, respiración), Portazo, Logo (Logotipo/Escudo/Avatar/LlaveBalon), Grano, Fondo, CamaraMesa, Defs (filtros SVG), Sfx.
-- `src/scenes/`: Gancho, Sting, Apertura, Contexto, Giro, Remate, Cierre → ensambladas por `src/compositions/Short.tsx` desde `episode.json`.
+- `src/components/`: Cinta, Sello, Ficha, PalabraGigante, Trazo (Tiza/Marcador), NivelSecreto, Subtitulos, Casillero, Objeto, Utilero (rig SVG: 8 expresiones, 8 visemas, parpadeo, respiración), Portazo, Carpeta, Logo (Logotipo/Escudo/Avatar/LlaveBalon), Grano, Fondo, CamaraMesa, Defs (filtros SVG), Sfx.
+- `src/scenes/`: Gancho, Sting, Apertura, Contexto, Giro, Remate, Cierre (+ Casilleros, Serie, Secreto para presentaciones) → ensambladas por `src/compositions/Short.tsx` desde `episode.json`.
 - Cada componente animado reproduce su propio SFX (`<Sfx name=… at=…/>`, archivos `assets/sfx/sfx_*.wav`).
 
 ## Estado (ver BRAND.md §11)

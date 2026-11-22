@@ -1,5 +1,6 @@
 import React from 'react';
 import { interpolate, useCurrentFrame, Easing } from 'remotion';
+import { measureText } from '@remotion/layout-utils';
 import { A, C, FONT } from '../../config/brand';
 import { prog } from '../lib/anim';
 import { Sfx } from './Sfx';
@@ -33,14 +34,15 @@ export const Ficha: React.FC<{
   const frame = useCurrentFrame();
   if (frame < delay) return null;
 
-  // Special Elite ≈ monoespaciada (0.54 em): partimos las líneas largas por palabras.
-  const maxChars = Math.max(8, Math.floor((ancho - size * 2.2) / (size * 0.54)));
+  // Se mide el texto real (las mayúsculas de Special Elite son más anchas que las minúsculas).
+  const medir = (t: string) => measureText({ text: t, fontFamily: 'Special Elite', fontSize: size }).width;
+  const anchoUtil = ancho - size * 2.2;
   const lineas = lineasEntrada.flatMap((l) => {
     const out: string[] = [];
     let cur = '';
     for (const w of l.split(' ')) {
       if (!cur) cur = w;
-      else if ((cur + ' ' + w).length <= maxChars) cur += ' ' + w;
+      else if (medir(cur + ' ' + w) <= anchoUtil) cur += ' ' + w;
       else {
         out.push(cur);
         cur = w;
@@ -116,12 +118,13 @@ export const Ficha: React.FC<{
     const li = lineas.findIndex((l) => l.toLowerCase().includes(marcar.toLowerCase()));
     if (li >= 0) {
       const idx = lineas[li].toLowerCase().indexOf(marcar.toLowerCase());
-      const charW = size * 0.54; // Special Elite ≈ monoespaciada 0.54em
-      const mx = size * 1.1 + idx * charW + (marcar.length * charW) / 2;
+      const pre = idx > 0 ? medir(lineas[li].slice(0, idx)) : 0;
+      const mw = medir(marcar);
+      const mx = size * 1.1 + pre + mw / 2;
       const my = padTop + li * lineH + lineH * 0.5;
       marca = (
         <MarcadorTrazo
-          points={ellipsePoints(mx, my, (marcar.length * charW) / 2 + size * 0.3, lineH * 0.74, { seed: 9 })}
+          points={ellipsePoints(mx, my, mw / 2 + size * 0.34, lineH * 0.74, { seed: 9 })}
           delay={typeStart + typingFrames + 6}
           dur={A.marcador + 4}
           width={Math.max(7, size * 0.14)}

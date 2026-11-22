@@ -85,6 +85,58 @@ const Botin: React.FC = () => {
   );
 };
 
+
+/** Llave a medida (cabeza-balón) apuntando hacia abajo, origen en el centro de la cabeza. */
+const LlaveDibujo: React.FC<{ largo?: number; fill?: string }> = ({ largo = 150, fill = C.tinta }) => (
+  <g>
+    <circle cx={0} cy={0} r={24} fill={fill} />
+    <polygon points="0,-13 12,-4 7,10 -7,10 -12,-4" fill={C.lima} />
+    <rect x={-8} y={20} width={16} height={largo} rx={3} fill={fill} />
+    <rect x={8} y={largo - 20} width={24} height={12} fill={fill} />
+    <rect x={8} y={largo + 2} width={17} height={12} fill={fill} />
+  </g>
+);
+
+/** Llavero: aro con tres llaves y etiqueta de cartón. */
+const Llavero: React.FC = () => (
+  <g>
+    <g transform="translate(208 130)">
+      <circle cx={0} cy={0} r={52} fill="none" stroke={C.lima} strokeWidth={11} transform="translate(8 6)" />
+      <circle cx={0} cy={0} r={52} fill="none" stroke={C.tinta} strokeWidth={9} />
+    </g>
+    {[{ a: -26, d: 190 }, { a: 4, d: 220 }, { a: 28, d: 180 }].map((k, i) => (
+      <g key={i} transform={`translate(208 150) rotate(${k.a}) translate(0 52)`}>
+        <g transform="translate(7 5)" opacity={1}><LlaveDibujo largo={k.d - 90} fill={C.lima} /></g>
+        <LlaveDibujo largo={k.d - 90} />
+      </g>
+    ))}
+    <g transform="translate(150 330) rotate(-8)">
+      <path d="M0 0 L-6 -24" stroke={C.tinta} strokeWidth={2.4} />
+      <rect x={-34} y={0} width={74} height={50} fill={C.kraft} stroke={C.tinta} strokeWidth={3} />
+      <text x={-28} y={30} fontFamily={FONT.maquina} fontSize={15} fill={C.tinta}>CASILLERO</text>
+    </g>
+  </g>
+);
+
+/** Hoja de calendario de taco: "HOY HACE X AÑOS". Sin fechas reales: es un recurso gráfico. */
+const Calendario: React.FC = () => (
+  <g>
+    <rect x={78} y={96} width={250} height={300} transform="translate(9 7)" fill={C.lima} />
+    <rect x={78} y={96} width={250} height={300} fill={C.ficha} stroke={C.tinta} strokeWidth={4.5} />
+    <rect x={78} y={96} width={250} height={70} fill={C.tinta} />
+    <text x={203} y={148} textAnchor="middle" fontFamily={FONT.grito} fontSize={56} fill={C.ficha} letterSpacing={4}>HOY HACE</text>
+    <text x={203} y={318} textAnchor="middle" fontFamily={FONT.grito} fontSize={190} fill={C.tinta}>X</text>
+    <text x={203} y={370} textAnchor="middle" fontFamily={FONT.maquina} fontSize={30} fill={C.grisArchivo} letterSpacing={6}>AÑOS</text>
+    {[130, 203, 276].map((cx) => (
+      <g key={cx}>
+        <circle cx={cx} cy={92} r={11} fill={C.papel} stroke={C.tinta} strokeWidth={3.5} />
+        <rect x={cx - 3} y={72} width={6} height={30} rx={3} fill={C.tinta} />
+      </g>
+    ))}
+    <path d="M78 396 q125 24 250 0" fill="none" stroke={C.tinta} strokeWidth={3} strokeDasharray="8 6" opacity={0.5} />
+  </g>
+);
+
 const Generico: React.FC<{ tipo: ObjetoTipo }> = ({ tipo }) => (
   <g>
     <rect x={80} y={120} width={240} height={240} rx={8} transform="translate(9 7)" fill={C.lima} />
@@ -113,7 +165,7 @@ export const Objeto: React.FC<{
       height={size * 1.1}
       style={{ position: 'absolute', left: x, top: y, overflow: 'visible', transform: `rotate(${rot}deg)`, filter: 'url(#ink)' }}
     >
-      {tipo === 'bulto' ? <Bulto /> : tipo === 'botin' ? <Botin /> : <Generico tipo={tipo} />}
+      {tipo === 'bulto' ? <Bulto /> : tipo === 'botin' ? <Botin /> : tipo === 'llavero' ? <Llavero /> : tipo === 'calendario' ? <Calendario /> : <Generico tipo={tipo} />}
       {etiqueta && <Etiqueta texto={etiqueta} sway={sway} />}
     </svg>
   );

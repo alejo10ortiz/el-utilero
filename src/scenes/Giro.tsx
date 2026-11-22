@@ -8,6 +8,7 @@ import { Sfx } from '../components/Sfx';
 import { Subtitulos } from '../components/Subtitulos';
 import { Mano, Utilero } from '../components/Utilero';
 import { hit } from '../lib/anim';
+import { numeroCasillero } from '../lib/episode';
 import { Escenario, EscenaProps } from './Escenario';
 
 /** GIRO (15–28 s): el casillero está abierto; el objeto del día sale a las manos del utilero (P5 + E4); la palabra gigante revela el dato. */
@@ -31,7 +32,7 @@ export const Giro: React.FC<EscenaProps> = ({ esc, ep, timing }) => {
         x={30}
         y={470}
         escala={0.5}
-        numero={ep.id}
+        numero={numeroCasillero(ep)}
         angulo={Math.min(ap.angulo, 100)}
         luz={1}
         perspectiva={2200}

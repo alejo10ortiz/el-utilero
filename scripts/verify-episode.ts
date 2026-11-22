@@ -27,20 +27,32 @@ export async function verificar(slug: string, online = false): Promise<Hallazgo[
   }
   ok('esquema episode.json válido');
 
-  // ── Regla de oro: dos fuentes por dato, de dominios distintos
-  const dominios = new Set(ep.fuentes.map((u) => new URL(u).hostname.replace(/^www\./, '')));
-  if (dominios.size < 2) err(`regla de oro: ${ep.fuentes.length} fuente(s) pero solo ${dominios.size} dominio(s) distinto(s); se necesitan ≥ 2`);
-  else ok(`${ep.fuentes.length} fuentes, ${dominios.size} dominios distintos`);
-  if (ep.estado !== 'verificado') err(`estado = "${ep.estado}": marcar "verificado" solo después de contrastar los datos con las fuentes`);
+  const esPres = ep.formato === 'presentacion';
+
+  if (!esPres) {
+    // ── Regla de oro: dos fuentes por dato, de dominios distintos
+    const dominios = new Set(ep.fuentes.map((u) => new URL(u).hostname.replace(/^www\./, '')));
+    if (dominios.size < 2) err(`regla de oro: ${ep.fuentes.length} fuente(s) pero solo ${dominios.size} dominio(s) distinto(s); se necesitan ≥ 2`);
+    else ok(`${ep.fuentes.length} fuentes, ${dominios.size} dominios distintos`);
+    if (ep.estado !== 'verificado') err(`estado = "${ep.estado}": marcar "verificado" solo después de contrastar los datos con las fuentes`);
+  } else {
+    // Una presentación no trae datos nuevos: no hay fuentes que contrastar, pero tampoco puede afirmar hechos.
+    ok('presentación: sin datos deportivos que verificar');
+    ep.escenas.forEach((e, i) => {
+      if (e.voz && /\b(1[89]|20)\d{2}\b/.test(e.voz) && !/dicen|mito|personaje|ficci[oó]n/i.test(e.voz))
+        err(`escena ${i}: nombra un año sin declarar que es cuento del personaje ("dicen…", "mito", "personaje"): ${e.voz}`);
+    });
+    if (ep.fuentes.length) warn('una presentación no necesita fuentes; si afirma un dato real conviértela en episodio');
+  }
 
   // ── Estructura (§7)
   const tipos = ep.escenas.map((e) => e.tipo);
   if (tipos[0] !== 'gancho') warn('la primera escena debería ser el gancho (0–3 s)');
   if (tipos[tipos.length - 1] !== 'cierre') err('la última escena debe ser el cierre');
   if (!tipos.includes('sting')) warn('falta el sting (casillero que se abre)');
-  if (!ep.escenas.some((e) => e.tipo === 'giro')) warn('falta la escena de giro (objeto del día)');
+  if (!esPres && !ep.escenas.some((e) => e.tipo === 'giro')) warn('falta la escena de giro (objeto del día)');
   const cierre = ep.escenas.find((e) => e.tipo === 'cierre');
-  if (cierre && !/comenten|comenta/i.test(cierre.voz ?? '')) warn('el cierre debería invitar a comentar el país (comunidad, §1)');
+  if (!esPres && cierre && !/comenten|comenta/i.test(cierre.voz ?? '')) warn('el cierre debería invitar a comentar el país (comunidad, §1)');
   if (!/^@elutilero\b/.test(ep.textoFinal)) warn('textoFinal debería empezar con @elutilero');
 
   // ── Duración (30–45 s objetivo)

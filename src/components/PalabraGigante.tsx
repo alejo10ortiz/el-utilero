@@ -31,7 +31,10 @@ export const medirTitular = (texto: string, ancho: number, maxSize = 520, maxCha
     const { fontSize } = fitText({ text: l, withinWidth: ancho, fontFamily: 'League Gothic', fontWeight: '400' });
     return { l, size: Math.min(maxSize, fontSize) };
   });
-  const alto = items.reduce((a, it) => a + it.size * 0.84, 0);
+  const alto = items.reduce(
+    (a, it, i) => a + it.size * 0.84 + (i > 0 && /[ÁÉÍÓÚÑ]/.test(it.l) ? it.size * 0.17 : 0) + (/¿/.test(it.l) ? it.size * 0.12 : 0),
+    0,
+  );
   return { items, alto };
 };
 
@@ -88,16 +91,21 @@ export const PalabraGigante: React.FC<{
       >
         {items.map((it, i) => {
           const d = delay + i * escalon;
-          if (frame < d) return <div key={i} style={{ height: it.size * 0.84 }} />;
+          if (frame < d) return <div key={i} style={{ height: it.size * 0.84 + (i > 0 && /[ÁÉÍÓÚÑ]/.test(it.l) ? it.size * 0.17 : 0) + (/¿/.test(it.l) ? it.size * 0.12 : 0) }} />;
           const fall = prog(frame, d, A.palabra);
           const reg = interpolate(frame, [d, d + 3], [0, 10], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
           const dy = -40 * (1 - fall);
           const opacity = interpolate(frame, [d, d + 2], [0, 1], { extrapolateRight: 'clamp' });
           const words = it.l.split(' ');
+          // las tildes (Á É Í Ó Ú Ñ) suben y el ¿ baja: con interlineado 0.84 pisarían la línea vecina
+          const sube = i > 0 && /[ÁÉÍÓÚÑ]/.test(it.l);
+          const baja = /¿/.test(it.l);
           return (
             <div
               key={i}
               style={{
+                marginTop: sube ? it.size * 0.17 : 0,
+                marginBottom: baja ? it.size * 0.12 : 0,
                 fontFamily: FONT.grito,
                 fontSize: it.size,
                 lineHeight: 0.84,

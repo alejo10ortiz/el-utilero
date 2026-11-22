@@ -6,6 +6,7 @@ import { Cinta } from '../components/Cinta';
 import { Avatar } from '../components/Logo';
 import { Sfx } from '../components/Sfx';
 import { hit, prog } from '../lib/anim';
+import { numeroCasillero } from '../lib/episode';
 import { Escenario, EscenaProps } from './Escenario';
 
 /**
@@ -21,11 +22,11 @@ export const Sting: React.FC<EscenaProps> = ({ ep }) => {
   const entrada = prog(frame, 0, 12);
   const salida = interpolate(frame, [26, 34], [1, 0], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
   const x = (1080 - CASILLERO_W) / 2;
-  const tema = ep.cintaCasillero ?? `${ep.pais} ${String(ep.anio).slice(2)}`;
+  const tema = ep.cintaCasillero ?? (ep.pais && ep.anio ? `${ep.pais} ${String(ep.anio).slice(2)}` : '');
   const avatar = hit(frame, 46, 6);
   return (
     <Escenario fondo="tinta" impactos={[{ frame: 42, amp: 5 }]} deriva={0.6}>
-      <Casillero x={x} y={150} numero={ep.id} tema={tema} angulo={ap.angulo} luz={ap.luz * 0.9} cintaDelay={-999} sombra={false} />
+      <Casillero x={x} y={150} numero={numeroCasillero(ep)} tema={tema} angulo={ap.angulo} luz={ap.luz * 0.9} cintaDelay={-999} sombra={false} />
       {frame < 40 && (
         <div style={{ position: 'absolute', left: x, top: 150, opacity: salida }}>
           <ManoLlave entrada={entrada} giro={ap.llave} />

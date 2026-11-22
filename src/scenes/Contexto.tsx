@@ -63,7 +63,7 @@ export const Contexto: React.FC<EscenaProps> = ({ esc, timing }) => {
         marcar={esc.marcador}
         encabezado="ARCHIVO DEL CAMERINO"
       />
-      {esc.sello && <Sello texto={esc.sello} x={x + ancho - 190} y={y + altoMin - 110} size={130} rot={-10} delay={selloDelay} />}
+      {esc.sello && <Sello texto={esc.sello} x={x + ancho - 170} y={y + altoMin - 78} size={130} rot={-10} delay={selloDelay} />}
       <Subtitulos words={timing.words} offsetFrames={off} claves={esc.claves} />
     </Escenario>
   );

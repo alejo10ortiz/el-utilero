@@ -14,6 +14,9 @@ import { Gancho } from '../scenes/Gancho';
 import { Giro } from '../scenes/Giro';
 import { Remate } from '../scenes/Remate';
 import { Sting } from '../scenes/Sting';
+import { Casilleros } from '../scenes/Casilleros';
+import { Secreto } from '../scenes/Secreto';
+import { Serie } from '../scenes/Serie';
 
 export type ShortProps = {
   slug: string;
@@ -22,7 +25,10 @@ export type ShortProps = {
   timeline?: Timeline;
 };
 
-const ESCENAS = { gancho: Gancho, sting: Sting, apertura: Apertura, contexto: Contexto, giro: Giro, remate: Remate, cierre: Cierre };
+const ESCENAS = {
+  gancho: Gancho, sting: Sting, apertura: Apertura, contexto: Contexto, giro: Giro, remate: Remate, cierre: Cierre,
+  casilleros: Casilleros, serie: Serie, secreto: Secreto,
+};
 
 /**
  * Duración y tiempos salen del audio real (words.json de generate-voice.ts).

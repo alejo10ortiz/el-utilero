@@ -1,0 +1,18 @@
+{
+  "formato": "presentacion",
+  "id": "P03",
+  "slug": "como-funciona",
+  "serie": "Presentación",
+  "titulo": "Datos reales, contados como secreto",
+  "casilleroNumero": "000",
+  "cintaCasillero": "Así funciona",
+  "escenas": [
+    { "tipo": "gancho", "fondo": "pizarra", "texto": "COMENTEN SU PAÍS", "resaltar": "PAÍS", "voz": "Comenten su país… y yo abro su casillero." },
+    { "tipo": "sting" },
+    { "tipo": "secreto", "nivel": 5, "palabraGigante": "SECRETO", "sello": "CONFIDENCIAL", "cinta": "de una a cinco llaves", "claves": ["secreto", "llaves"], "voz": "Cada historia trae su nivel de secreto: de una a cinco llaves." },
+    { "tipo": "contexto", "ficha": "DATOS REALES CON FUENTE", "marcador": "FUENTE", "sello": "VERDAD", "expresion": "E1", "claves": ["reales", "fuente"], "voz": "Los datos son reales y tienen fuente. Si no hay dos fuentes… no sale." },
+    { "tipo": "contexto", "ficha": "Estuve en todos los camerinos desde 1930", "sello": "MITO", "expresion": "E6", "claves": ["personaje", "mito"], "voz": "El Utilero es un personaje. Eso de que estuve en todos los camerinos desde 1930… es puro mito." },
+    { "tipo": "cierre", "fondo": "lima", "expresion": "E2", "claves": ["país"], "voz": "Cierren la puerta, que les cuento. Y no se olviden de comentar su país." }
+  ],
+  "textoFinal": "@elutilero · Síganme"
+}

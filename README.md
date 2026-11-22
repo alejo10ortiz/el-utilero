@@ -34,6 +34,16 @@ Producir un episodio real:
 | 5 · Episodio #001 completo | 🟡 renderiza con voz estimada; falta voz real y revisión en celular |
 | 6 · Escala #002–#010 | ⬜ verificar fuentes primero |
 
+### Presentaciones de la cuenta (para publicar en todas las redes)
+
+| Id | Video | Idea |
+|---|---|---|
+| `P01-quien-es` | Quién es El Utilero | «Nadie me cree, todos me preguntan» → el personaje → cada video es un casillero |
+| `P02-que-hay` | Qué hay en mi casillero | Las 4 series, cada una como una carpeta de archivo |
+| `P03-como-funciona` | Datos reales, contados como secreto | Comenta tu país · nivel de secreto · datos con fuente · el narrador es un personaje (MITO) |
+
+`npm run render -- P01` → `out/P01-quien-es/short.mp4` (1080×1920, sirve para Shorts, Reels, TikTok y Facebook).
+
 Composiciones de referencia en el Studio: `F1-Componentes`, `F2-Casillero`, `F3-UtileroHabla`, `Hoja-Expresiones`, `Hoja-Logo`.
 
 ## Licencias

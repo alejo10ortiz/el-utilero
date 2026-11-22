@@ -1,5 +1,5 @@
 import { FPS } from '../../config/brand';
-import type { Episode } from './episode';
+import type { Escena } from './episode';
 
 /** Segundos absolutos desde el inicio del video. */
 export type WordTiming = { text: string; start: number; end: number };
@@ -48,7 +48,7 @@ export function estimateWords(voz: string, startAt: number): { words: WordTiming
   return { words, end: t };
 }
 
-export function estimateTimeline(ep: Episode): Timeline {
+export function estimateTimeline(ep: { escenas: Escena[] }): Timeline {
   let cursor = 0;
   const scenes: SceneTiming[] = [];
   ep.escenas.forEach((esc, index) => {

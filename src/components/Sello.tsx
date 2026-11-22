@@ -16,7 +16,9 @@ export const Sello: React.FC<{
   size?: number;
   delay?: number;
   sonido?: boolean;
-}> = ({ texto, x, y, rot = -10, size = 120, delay = 0, sonido = true }) => {
+  /** 'multiply' sobre papel; 'normal' sobre superficies oscuras o kraft. */
+  mezcla?: 'multiply' | 'normal';
+}> = ({ texto, x, y, rot = -10, size = 120, delay = 0, sonido = true, mezcla = 'multiply' }) => {
   const frame = useCurrentFrame();
   if (frame < delay) return null;
   const f = frame - delay;
@@ -39,7 +41,7 @@ export const Sello: React.FC<{
           padding: `${size * 0.03}px ${size * 0.14}px 0`,
           whiteSpace: 'nowrap',
           opacity,
-          mixBlendMode: 'multiply',
+          mixBlendMode: mezcla,
           filter: 'url(#rough)',
         }}
       >

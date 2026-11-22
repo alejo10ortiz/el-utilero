@@ -27,7 +27,7 @@ const inputProps = slug ? { slug } : {};
 const comp = await selectComposition({ serveUrl, id, inputProps, browserExecutable, chromeMode: browserExecutable ? 'chrome-for-testing' : undefined });
 console.log(`${id}: ${comp.width}×${comp.height}, ${comp.durationInFrames} frames (${(comp.durationInFrames / comp.fps).toFixed(1)} s)`);
 for (const f of framesArg.split(',').map(Number)) {
-  const output = path.join(outDir, `${id}-${String(f).padStart(5, '0')}.png`);
+  const output = path.join(outDir, `${id}${slug ? '-' + slug : ''}-${String(f).padStart(5, '0')}.png`);
   await renderStill({ serveUrl, composition: comp, inputProps, frame: Math.min(f, comp.durationInFrames - 1), output, browserExecutable, chromeMode: browserExecutable ? 'chrome-for-testing' : undefined });
   console.log('→', path.relative(root, output));
 }

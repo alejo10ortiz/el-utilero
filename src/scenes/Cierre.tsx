@@ -7,6 +7,7 @@ import { Portazo } from '../components/Portazo';
 import { Subtitulos } from '../components/Subtitulos';
 import { Utilero } from '../components/Utilero';
 import { Sfx } from '../components/Sfx';
+import { handleDe, numeroCasillero } from '../lib/episode';
 import { Escenario, EscenaProps } from './Escenario';
 
 /**
@@ -21,30 +22,32 @@ export const Cierre: React.FC<EscenaProps> = ({ esc, ep, timing, frames }) => {
   const portazoAt = Math.max(vozFin + 22, frames - 22);
   const cita = interpolate(frame, [14, 22], [0, 1], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
   const finalAt = vozFin + 10;
+  // Sin nivel de secreto (presentaciones) la frase sube y el utilero crece.
+  const conNivel = ep.nivelSecreto !== undefined;
   return (
     <Escenario fondo="lima" impactos={[{ frame: portazoAt + A.portazo - 1, amp: 6 }]}>
-      <NivelSecreto nivel={ep.nivelSecreto} x={SAFE_BOX.cx} y={160} size={190} delay={6} />
+      {conNivel && <NivelSecreto nivel={ep.nivelSecreto!} x={SAFE_BOX.cx} y={160} size={190} delay={6} />}
       <div
         style={{
-          position: 'absolute', left: SAFE_BOX.x0, width: SAFE_BOX.w, top: 500, textAlign: 'center',
+          position: 'absolute', left: SAFE_BOX.x0, width: SAFE_BOX.w, top: conNivel ? 500 : 230, textAlign: 'center',
           fontFamily: FONT.susurro, fontStyle: 'italic', fontSize: 118, lineHeight: 0.98, letterSpacing: '-0.015em',
           color: C.tinta, opacity: cita, transform: `translateY(${(1 - cita) * 16}px)`,
         }}
       >
-        «Esto no salió en la tele.»
+        «{esc.cita ?? 'Esto no salió en la tele.'}»
       </div>
       <Utilero
         expresion={esc.expresion ?? 'E2'}
         sobre="lima"
         words={timing.words}
         offsetFrames={off}
-        size={620}
-        x={SAFE_BOX.cx - 310}
-        y={600}
+        size={conNivel ? 620 : 700}
+        x={SAFE_BOX.cx - (conNivel ? 310 : 350)}
+        y={conNivel ? 600 : 520}
         seed={9}
       />
       <Subtitulos words={timing.words} offsetFrames={off} tono="lima" claves={esc.claves} y={1335} />
-      <Cinta texto="@elutilero" x={SAFE_BOX.cx} y={1185} rot={-3} size={84} delay={cintaAt} />
+      <Cinta texto={handleDe(ep)} x={SAFE_BOX.cx} y={1185} rot={-3} size={84} delay={cintaAt} />
       {frame >= finalAt && (
         <div
           style={{
@@ -56,7 +59,7 @@ export const Cierre: React.FC<EscenaProps> = ({ esc, ep, timing, frames }) => {
           {ep.textoFinal.split(' · ').slice(1).join(' · ')}
         </div>
       )}
-      <Portazo delay={portazoAt} numero={ep.id} />
+      <Portazo delay={portazoAt} numero={numeroCasillero(ep)} />
     </Escenario>
   );
 };
