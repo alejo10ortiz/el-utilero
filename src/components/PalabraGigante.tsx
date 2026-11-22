@@ -32,7 +32,7 @@ export const medirTitular = (texto: string, ancho: number, maxSize = 520, maxCha
     return { l, size: Math.min(maxSize, fontSize) };
   });
   const alto = items.reduce(
-    (a, it, i) => a + it.size * 0.84 + (i > 0 && /[ÁÉÍÓÚÑ]/.test(it.l) ? it.size * 0.17 : 0) + (/¿/.test(it.l) ? it.size * 0.12 : 0),
+    (a, it, i) => a + it.size * 0.84 + (i > 0 && /[ÁÉÍÓÚÑ]/.test(it.l) ? it.size * 0.27 : 0) + (/¿/.test(it.l) ? it.size * 0.12 : 0),
     0,
   );
   return { items, alto };
@@ -91,7 +91,7 @@ export const PalabraGigante: React.FC<{
       >
         {items.map((it, i) => {
           const d = delay + i * escalon;
-          if (frame < d) return <div key={i} style={{ height: it.size * 0.84 + (i > 0 && /[ÁÉÍÓÚÑ]/.test(it.l) ? it.size * 0.17 : 0) + (/¿/.test(it.l) ? it.size * 0.12 : 0) }} />;
+          if (frame < d) return <div key={i} style={{ height: it.size * 0.84 + (i > 0 && /[ÁÉÍÓÚÑ]/.test(it.l) ? it.size * 0.27 : 0) + (/¿/.test(it.l) ? it.size * 0.12 : 0) }} />;
           const fall = prog(frame, d, A.palabra);
           const reg = interpolate(frame, [d, d + 3], [0, 10], { extrapolateLeft: 'clamp', extrapolateRight: 'clamp' });
           const dy = -40 * (1 - fall);
@@ -104,7 +104,7 @@ export const PalabraGigante: React.FC<{
             <div
               key={i}
               style={{
-                marginTop: sube ? it.size * 0.17 : 0,
+                marginTop: sube ? it.size * 0.27 : 0,
                 marginBottom: baja ? it.size * 0.12 : 0,
                 fontFamily: FONT.grito,
                 fontSize: it.size,
@@ -130,6 +130,8 @@ export const PalabraGigante: React.FC<{
                               color: C.tinta,
                               padding: `${it.size * 0.02}px ${it.size * 0.06}px 0`,
                               textShadow: 'none',
+                              // la caja crece hacia arriba para contener la tilde (Á É Í Ó Ú Ñ)
+                              boxShadow: /[ÁÉÍÓÚÑ]/.test(w) ? `0 -${it.size * 0.22}px 0 0 ${C.lima}` : undefined,
                               display: 'inline-block',
                               transform: `rotate(-1.5deg) scaleX(${prog(frame, d + 4, 5)})`,
                               transformOrigin: 'left center',
