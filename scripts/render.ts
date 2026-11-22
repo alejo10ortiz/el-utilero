@@ -2,6 +2,7 @@
  * Render de producción de un episodio (BRAND.md §9.4).
  *   npm run render -- 001                 Short 1080×1920 30fps, H.264 CRF 18, AAC 192k, −14 LUFS + miniatura + post
  *   npm run render -- 001 --draft         media resolución, CRF 28 (revisión rápida)
+ *   npm run render -- 001 --web           además de short.mp4 (máster, CRF 18) escribe short-web.mp4 (CRF 23, ~la mitad de peso)
  *   npm run render -- 001 --stills        solo miniatura, post y avatar
  *   npm run render -- 001 --skip-verify   salta el verificador editorial (NO recomendado)
  * Salida: out/<slug>/short.mp4 · miniatura.png · post.png · avatar.png
@@ -59,6 +60,11 @@ async function main() {
     const fin = path.join(outDir, draft ? 'short-draft.mp4' : 'short.mp4');
     execFileSync('bash', [path.join(ROOT, 'scripts/normalize-audio.sh'), raw, fin], { stdio: 'inherit' });
     fs.unlinkSync(raw);
+    if (flag('web') && !draft) {
+      const web = path.join(outDir, 'short-web.mp4');
+      execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-i', fin, '-c:v', 'libx264', '-preset', 'slow', '-crf', '23', '-pix_fmt', 'yuv420p', '-movflags', '+faststart', '-c:a', 'copy', web], { stdio: 'inherit' });
+      console.log(`✓ ${web}  (versión ligera para subir)`);
+    }
   }
 
   for (const [id, file] of [['Miniatura', 'miniatura.png'], ['Post', 'post.png'], ['Avatar', 'avatar.png']] as const) {

@@ -58,7 +58,7 @@ export const Serie: React.FC<EscenaProps> = ({ esc, timing }) => {
           />
         ))}
       </Carpeta>
-      <Subtitulos words={timing.words} offsetFrames={off} claves={esc.claves} />
+      <Subtitulos words={timing.words} offsetFrames={off} claves={esc.claves} y={1345} />
     </Escenario>
   );
 };

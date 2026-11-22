@@ -16,7 +16,7 @@ npm run dev                          # Remotion Studio (composiciones: Short, F1
 npm run verify -- 001 [--online]     # verificador editorial
 npm run voice -- 001 [--dry|--force] # ElevenLabs → assets/episodes/<slug>/voice.mp3 + words.json  (necesita .env)
 npm run sfx -- --force               # reemplaza SFX placeholder por ElevenLabs (necesita .env)
-npm run render -- 001 [--draft]      # video final + miniatura + post → out/001-pickles/ (igual con P01, P02, P03)
+npm run render -- 001 [--draft|--web] # video final (máster CRF 18; --web añade short-web.mp4 CRF 23, ~la mitad de peso) + miniatura + post → out/001-pickles/ (igual con P01, P02, P03)
 npm run timeline -- P01              # tiempos por escena (voz real o estimados)
 npx tsx scripts/stills.ts Short 100,300 001-pickles   # cuadros sueltos para revisar → out/stills/Short-<slug>-<frame>.png
 npm run typecheck
