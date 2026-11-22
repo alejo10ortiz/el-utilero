@@ -18,6 +18,11 @@ const PROMPTS: Record<string, { text: string; ms: number }> = {
     text: COMUN + 'Locker-room stomp and clap groove: muffled punchy kick drum, layered hand claps on beats 2 and 4, dry plucked guitar riff in A minor, deep warm round bass, light shaker.',
     ms: 30000,
   },
+  // misma receta, 60 s: para los videos de 30–50 s (la pista "a" dura 30 s)
+  b: {
+    text: COMUN + 'Locker-room stomp and clap groove: muffled punchy kick drum, layered hand claps on beats 2 and 4, dry plucked guitar riff in A minor, deep warm round bass, light shaker. Keep the same steady groove and energy for the whole length, gentle variation every 8 bars, no breakdown, no silence.',
+    ms: 60000,
+  },
 };
 
 async function main() {

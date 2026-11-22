@@ -1,8 +1,8 @@
 import React from 'react';
 import { useCurrentFrame } from 'remotion';
 import { C, FPS, SAFE_BOX } from '../../../config/brand';
-import { LogotipoAnimado } from '../../components/Cinetica';
-import { Destello, Estatica, Impacto, Particulas, Rayos } from '../../components/Fx';
+import { LogotipoAnimado, TituloImpacto } from '../../components/Cinetica';
+import { Destello, Estatica, Impacto, Particulas, Rayos, Reflector } from '../../components/Fx';
 import { Palabras } from '../../components/Palabras';
 import { Sfx } from '../../components/Sfx';
 import { UtileroActor } from '../../components/UtileroActor';
@@ -15,7 +15,7 @@ import { Escenario, EscenaProps } from '../Escenario';
  * APERTURA PRO: sunburst lima girando, el logotipo se arma letra a letra y la I-llave gira y hace "ping"
  * justo cuando dice «Utilero»; el Utilero salta a cuadro con squash & stretch y guiña; en «la tele» salta la estática.
  */
-export const AperturaPro: React.FC<EscenaProps> = ({ esc, timing, frames }) => {
+const AperturaLogo: React.FC<EscenaProps> = ({ esc, timing, frames }) => {
   const f = useCurrentFrame();
   const abs = useAbs();
   const off = Math.round(timing.start * FPS);
@@ -61,3 +61,30 @@ export const AperturaPro: React.FC<EscenaProps> = ({ esc, timing, frames }) => {
     </Escenario>
   );
 };
+
+/**
+ * APERTURA «SHH» (episodios): el Utilero se lleva la mano a la boca y susurra «Cierren la puerta, que les cuento».
+ * Más íntima que la del logotipo: foco de luz, polvo, y el SHH gigante que se clava.
+ */
+const AperturaSusurro: React.FC<EscenaProps> = ({ esc, timing, frames }) => {
+  const f = useCurrentFrame();
+  const off = Math.round(timing.start * FPS);
+  const tShh = 12;
+  const z = empuje(f, frames, 0.05, 6) * golpes(f, [tShh], 0.05);
+  return (
+    <Escenario fondo="papel" impactos={[{ frame: tShh + 2, amp: 11 }]} deriva={0.5} zoom={z}>
+      <Reflector x={SAFE_BOX.cx} opacidad={0.3} ancho={900} />
+      <Particulas tipo="polvo" n={26} semilla={51} colores={[C.tinta, C.grisArchivo, C.lima]} opacidad={0.3} velocidad={0.3} />
+      <TituloImpacto lineas={[{ texto: esc.palabraGigante ?? 'SHH', at: tShh }]} x={SAFE_BOX.cx - 400} y={170} ancho={800} tono="tinta" maxSize={560} />
+      <UtileroActor entrada={10} desde="abajo" expresion={esc.expresion ?? 'E3'} pose={esc.pose ?? 'P3'} words={timing.words} offsetFrames={off} size={800} x={SAFE_BOX.cx - 400} y={470} seed={4} />
+      <Impacto at={tShh} x={540} y={330} flash={0.2} />
+      <Palabras words={timing.words} offsetFrames={off} claves={esc.claves} y={1340} size={84} />
+      <Sfx name="whoosh" at={9} volume={0.45} />
+      <Sfx name="impact" at={tShh} volume={0.7} />
+      <Sfx name="pop" at={14} volume={0.5} />
+    </Escenario>
+  );
+};
+
+/** Con `logo: true` (presentaciones) arma el logotipo; sin él, la apertura íntima «SHH» de los episodios. */
+export const AperturaPro: React.FC<EscenaProps> = (props) => (props.esc.logo ? <AperturaLogo {...props} /> : <AperturaSusurro {...props} />);

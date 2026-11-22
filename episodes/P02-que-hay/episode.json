@@ -7,13 +7,85 @@
   "camerinoNumero": "000",
   "cintaCamerino": "Cuatro cosas",
   "escenas": [
-    { "tipo": "gancho", "fondo": "pizarra", "texto": "CUATRO COSAS EN MI CAMERINO", "resaltar": "CUATRO", "voz": "En mi camerino van a encontrar cuatro cosas." },
-    { "tipo": "sting" },
-    { "tipo": "serie", "numero": "1", "titulo": "EL CAMERINO", "cita": "Este guayo tiene un secreto.", "objetoTipo": "botin", "claves": ["objeto", "historia"], "voz": "Uno: El Camerino. Un objeto, una historia." },
-    { "tipo": "serie", "numero": "2", "titulo": "LA LLAVE DE", "cita": "La llave de Uruguay abre esto…", "objetoTipo": "llavero", "claves": ["país", "loco"], "voz": "Dos: La llave de un país. Su dato más loco." },
-    { "tipo": "serie", "numero": "3", "titulo": "¿MITO O VERDAD?", "cita": "¿Es verdad que…? Comenten antes de que lo diga.", "sellos": ["MITO", "VERDAD"], "claves": ["comentan", "revelo"], "voz": "Tres: ¿Mito o verdad? Ustedes comentan… y yo lo revelo." },
-    { "tipo": "serie", "numero": "4", "titulo": "HOY HACE X AÑOS", "cita": "Un día como hoy…", "objetoTipo": "calendario", "claves": ["hoy"], "voz": "Cuatro: Hoy hace equis años. Lo que pasó un día como hoy." },
-    { "tipo": "cierre", "fondo": "lima", "expresion": "E2", "claves": ["secreto"], "voz": "Datos reales, contados como secreto. Cierren la puerta, que les cuento." }
+    {
+      "tipo": "gancho",
+      "fondo": "pizarra",
+      "texto": "CUATRO COSAS EN MI CAMERINO",
+      "resaltar": "CUATRO",
+      "voz": "En mi camerino van a encontrar cuatro cosas."
+    },
+    {
+      "tipo": "sting"
+    },
+    {
+      "tipo": "serie",
+      "numero": "1",
+      "titulo": "EL CAMERINO",
+      "cita": "Este guayo tiene un secreto.",
+      "objetoTipo": "botin",
+      "claves": [
+        "objeto",
+        "historia"
+      ],
+      "voz": "Uno: El Camerino. Un objeto, una historia."
+    },
+    {
+      "tipo": "serie",
+      "numero": "2",
+      "titulo": "LA LLAVE DE",
+      "cita": "La llave de Uruguay abre esto…",
+      "objetoTipo": "llavero",
+      "claves": [
+        "país",
+        "loco"
+      ],
+      "voz": "Dos: La llave de un país. Su dato más loco."
+    },
+    {
+      "tipo": "serie",
+      "numero": "3",
+      "titulo": "¿MITO O VERDAD?",
+      "cita": "¿Es verdad que…? Comenten antes de que lo diga.",
+      "sellos": [
+        "MITO",
+        "VERDAD"
+      ],
+      "claves": [
+        "comentan",
+        "revelo"
+      ],
+      "voz": "Tres: ¿Mito o verdad? Ustedes comentan… y yo lo revelo."
+    },
+    {
+      "tipo": "serie",
+      "numero": "4",
+      "titulo": "HOY HACE X AÑOS",
+      "cita": "Un día como hoy…",
+      "objetoTipo": "calendario",
+      "claves": [
+        "hoy"
+      ],
+      "voz": "Cuatro: Hoy hace equis años. Lo que pasó un día como hoy."
+    },
+    {
+      "tipo": "cierre",
+      "fondo": "lima",
+      "expresion": "E2",
+      "claves": [
+        "secreto"
+      ],
+      "voz": "Datos reales, contados como secreto. Cierren la puerta, que les cuento."
+    }
   ],
-  "textoFinal": "@elutilerofutbol · Síganme"
+  "textoFinal": "@elutilerofutbol · Síganme",
+  "estilo": "pro",
+  "musica": "base-100bpm-b.mp3",
+  "transiciones": [
+    "flash",
+    "cinta",
+    "hoja",
+    "cinta",
+    "hoja",
+    "flash"
+  ]
 }

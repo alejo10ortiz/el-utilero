@@ -4,6 +4,7 @@ import { C, FONT, FPS, SAFE_BOX } from '../../../config/brand';
 import { measureText } from '@remotion/layout-utils';
 import { CintaImpacto } from '../../components/Cinetica';
 import { Destello, Impacto, Particulas, Rayos } from '../../components/Fx';
+import { NivelSecreto } from '../../components/NivelSecreto';
 import { Palabras } from '../../components/Palabras';
 import { Portazo } from '../../components/Portazo';
 import { Sfx } from '../../components/Sfx';
@@ -30,6 +31,7 @@ export const CierrePro: React.FC<EscenaProps> = ({ esc, ep, timing, frames }) =>
   const handle = handleDe(ep);
   const anchoH = measureText({ text: handle, fontFamily: 'Permanent Marker', fontSize: 84 }).width + 84 * 1.1;
   const tamH = Math.min(84, (84 * (SAFE_BOX.w - 190)) / anchoH);
+  const conNivel = ep.nivelSecreto !== undefined;
   const cita = (esc.cita ?? 'Esto no salió en la tele.').split(' ');
   const pulso = 1 + 0.016 * Math.exp(-(abs % BEAT) / 4.5);
   const z = empuje(f, frames, 0.05, 6) * golpes(f, [tHandle], 0.05);
@@ -39,13 +41,14 @@ export const CierrePro: React.FC<EscenaProps> = ({ esc, ep, timing, frames }) =>
   return (
     <Escenario fondo="lima" impactos={[{ frame: tHandle + 2, amp: 12 }, { frame: tPortazo + 7, amp: 14 }]} deriva={0.5} zoom={z}>
       <Rayos c2="rgba(22,19,15,0.10)" cx={540} cy={900} vel={-0.22} />
+      {conNivel && <NivelSecreto nivel={ep.nivelSecreto!} x={SAFE_BOX.cx} y={150} size={150} delay={8} />}
       <Particulas tipo="confeti" n={34} semilla={11} colores={[C.tinta, C.papel, C.sello, '#fff']} dir={1} velocidad={0.5} opacidad={0.85} />
 
       {/* frase de marca: las palabras saltan una tras otra */}
       <div
         style={{
-          position: 'absolute', left: SAFE_BOX.x0, width: SAFE_BOX.w, top: 220, display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '0 26px',
-          fontFamily: FONT.susurro, fontStyle: 'italic', fontSize: 124, lineHeight: 1, letterSpacing: '-0.015em', color: C.tinta,
+          position: 'absolute', left: SAFE_BOX.x0, width: SAFE_BOX.w, top: conNivel ? 400 : 220, display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '0 26px',
+          fontFamily: FONT.susurro, fontStyle: 'italic', fontSize: conNivel ? 104 : 124, lineHeight: 1, letterSpacing: '-0.015em', color: C.tinta,
         }}
       >
         {cita.map((p, i) => {
@@ -61,7 +64,7 @@ export const CierrePro: React.FC<EscenaProps> = ({ esc, ep, timing, frames }) =>
       </div>
 
       <div style={{ transform: `scale(${pulso})`, transformOrigin: '50% 100%', position: 'absolute', inset: 0 }}>
-        <UtileroActor entrada={8} desde="abajo" expresion="E2" sobre="lima" words={timing.words} offsetFrames={off} size={900} x={SAFE_BOX.cx - 450} y={440} seed={9} />
+        <UtileroActor entrada={8} desde="abajo" expresion="E2" sobre="lima" words={timing.words} offsetFrames={off} size={conNivel ? 760 : 900} x={SAFE_BOX.cx - (conNivel ? 380 : 450)} y={conNivel ? 600 : 440} seed={9} />
       </div>
 
       <Palabras words={timing.words} offsetFrames={off} tono="lima" claves={esc.claves} y={1390} size={84} />

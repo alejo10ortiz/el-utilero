@@ -19,6 +19,11 @@ import { StingPro } from '../scenes/pro/StingPro';
 import { AperturaPro } from '../scenes/pro/AperturaPro';
 import { CamerinosPro } from '../scenes/pro/CamerinosPro';
 import { CierrePro } from '../scenes/pro/CierrePro';
+import { SeriePro } from '../scenes/pro/SeriePro';
+import { SecretoPro } from '../scenes/pro/SecretoPro';
+import { ContextoPro } from '../scenes/pro/ContextoPro';
+import { GiroPro } from '../scenes/pro/GiroPro';
+import { RematePro } from '../scenes/pro/RematePro';
 import { AbsProvider } from '../lib/ritmo';
 import { Musica } from '../components/Musica';
 import { DUR_TRANSICION, Transicion } from '../components/Transiciones';
@@ -29,6 +34,7 @@ import { Serie } from '../scenes/Serie';
 /** Escenas del estilo 'pro' (montaje dinámico al ritmo). Las que no existan caen al estilo clásico. */
 const ESCENAS_PRO: Partial<Record<keyof typeof ESCENAS, React.FC<any>>> = {
   gancho: GanchoPro, sting: StingPro, apertura: AperturaPro, camerinos: CamerinosPro, cierre: CierrePro,
+  serie: SeriePro, secreto: SecretoPro, contexto: ContextoPro, giro: GiroPro, remate: RematePro,
 };
 
 export type ShortProps = {

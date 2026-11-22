@@ -230,3 +230,17 @@ export const PizarraTactica: React.FC<{ delay?: number; opacidad?: number }> = (
     </svg>
   );
 };
+
+/** Cinta de precaución (franjas lima/tinta) que corre sin parar: para "CONFIDENCIAL", "SECRETO", alertas. */
+export const CintaPrecaucion: React.FC<{ y: number; alto?: number; dir?: 1 | -1; vel?: number; rot?: number }> = ({ y, alto = 64, dir = 1, vel = 1.6, rot = -2 }) => {
+  const abs = useAbs();
+  return (
+    <div
+      style={{
+        position: 'absolute', left: -120, top: y, width: 1320, height: alto, transform: `rotate(${rot}deg)`,
+        background: `repeating-linear-gradient(135deg, ${C.lima} 0 34px, ${C.tinta} 34px 68px)`,
+        backgroundPosition: `${dir * abs * vel * 3}px 0`, boxShadow: '0 8px 14px -6px rgba(22,19,15,0.5)', pointerEvents: 'none',
+      }}
+    />
+  );
+};
