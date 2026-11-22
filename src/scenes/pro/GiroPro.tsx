@@ -17,16 +17,18 @@ import { Escenario, EscenaProps } from '../Escenario';
 
 /**
  * GIRO PRO — la fecha se clava al empezar; el camerino se abre y el objeto del día sale volando en arco
- * (justo cuando se dice «paquete») hasta las manos del Utilero; al decir «Copa» se arma el estallido de la hinchada.
+ * (justo cuando se dice `gatillo`, por defecto «paquete») hasta las manos del Utilero; al decir `clave` («copa») se arma el
+ * estallido de la hinchada (o un golpe seco si `tono: "misterio"`).
  */
 export const GiroPro: React.FC<EscenaProps> = ({ esc, ep, timing, frames }) => {
   const f = useCurrentFrame();
   const off = Math.round(timing.start * FPS);
   const tFecha = 11; // la fecha entra de inmediato
-  const tPaquete = cuando(timing, off, 'paquete', 0, 100);
+  const tPaquete = cuando(timing, off, esc.gatillo ?? 'paquete', 0, 100);
   const tVuela = Math.max(46, tPaquete - 8);
   const tLand = tVuela + 22;
-  const tCopa = cuando(timing, off, 'copa', tPaquete, tLand + 40);
+  const tCopa = cuando(timing, off, esc.clave ?? 'copa', tPaquete, tLand + 40);
+  const misterio = esc.tono === 'misterio';
   const dOpen = 26; // la puerta se abre pronto: el interior ya se ve mientras se cuenta la historia
   const ap = apertura(f, dOpen, 'abierto');
   const k = tw(f, [tVuela, tLand], [0, 1], E.inOutCubic);
@@ -67,7 +69,7 @@ export const GiroPro: React.FC<EscenaProps> = ({ esc, ep, timing, frames }) => {
       <Impacto at={tLand} x={640} y={1130} flash={0.15} color={C.tinta} semilla={3} />
       <Impacto at={tCopa} x={640} y={900} flash={0.35} semilla={8} />
       <Chispas at={dOpen + 8} x={190} y={760} n={8} dist={130} dur={10} semilla={2} />
-      <Destello at={tCopa} color={C.lima} max={0.35} dur={5} />
+      <Destello at={tCopa} color={misterio ? C.tinta : C.lima} max={misterio ? 0.28 : 0.35} dur={5} />
       {tagPickles && f < tCopa - 2 && <CintaImpacto texto={tagPickles.texto} x={760} y={1255} at={tagPickles.at} rot={-4} size={74} color={C.lima} />}
       {tagPickles && <Impacto at={tagPickles.at} x={760} y={1255} flash={0} color={C.tinta} semilla={4} />}
       {tagPickles && <Sfx name="slap" at={tagPickles.at} volume={0.7} />}
@@ -77,7 +79,7 @@ export const GiroPro: React.FC<EscenaProps> = ({ esc, ep, timing, frames }) => {
       <Sfx name="impact" at={tFecha} volume={0.8} />
       <Sfx name="whoosh_long" at={tVuela + 4} volume={0.6} />
       <Sfx name="hit" at={tLand} volume={0.75} />
-      <Sfx name="hinchada" at={tCopa + 2} volume={0.55} />
+      {misterio ? <Sfx name="thump" at={tCopa + 1} volume={0.8} /> : <Sfx name="hinchada" at={tCopa + 2} volume={0.55} />}
     </Escenario>
   );
 };

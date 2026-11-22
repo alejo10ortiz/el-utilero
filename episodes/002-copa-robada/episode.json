@@ -1,0 +1,85 @@
+{
+  "id": "002",
+  "slug": "copa-robada",
+  "serie": "El Camerino",
+  "titulo": "La Copa que se robaron dos veces",
+  "pais": "Brasil",
+  "anio": 1983,
+  "objeto": "vitrina vacía",
+  "objetoTipo": "vitrina",
+  "cintaCamerino": "Brasil 83",
+  "etiqueta": "CAMERINO #002 · RÍO · 1983",
+  "nivelSecreto": 4,
+  "estado": "verificado",
+  "textoFinal": "@elutilerofutbol · Mañana: camerino #003",
+  "fuentes": [
+    "https://www.history.co.uk/this-day-in-history/19-december/world-cup-is-stolen",
+    "https://www.aetv.com/articles/brazil-jules-rimet-trophy-stolen-1983",
+    "https://www.si.com/soccer/2018/03/31/world-cup-countdown-12-weeks-go-story-iconic-jules-rimet-trophy",
+    "https://www.foxnews.com/sports/world-cup-2014-the-mystery-of-the-jules-rimet-trophy",
+    "https://www.folhavitoria.com.br/esportes/jules-rimet-a-taca-da-copa-que-foi-roubada-duas-vezes/"
+  ],
+  "estilo": "pro",
+  "musica": "base-100bpm-b.mp3",
+  "transiciones": ["flash", "cinta", "hoja", "cinta", "hoja", "flash", "flash"],
+  "escenas": [
+    {
+      "tipo": "gancho",
+      "fondo": "pizarra",
+      "texto": "ROBADA DOS VECES",
+      "resaltar": "DOS VECES",
+      "voz": "La Copa del Mundo se robó dos veces. La primera la encontró un perro."
+    },
+    { "tipo": "sting", "camerino": "entreabierto" },
+    {
+      "tipo": "apertura",
+      "expresion": "E3",
+      "pose": "P3",
+      "palabraGigante": "SHH",
+      "voz": "Cierren la puerta, que les cuento."
+    },
+    {
+      "tipo": "contexto",
+      "ficha": "BRASIL · DESDE 1970",
+      "sello": "SUYA",
+      "palabraGigante": "SIEMPRE",
+      "claves": ["siempre", "vidrio"],
+      "voz": "Brasil se quedó con la Copa para siempre. La exhibía en Río, tras un vidrio blindado."
+    },
+    {
+      "tipo": "contexto",
+      "ficha": "Diciembre de 1983",
+      "marcador": "se la llevaron",
+      "claves": ["ladrones", "llevaron"],
+      "voz": "En diciembre del 83, unos ladrones entraron a la sede y se la llevaron."
+    },
+    {
+      "tipo": "giro",
+      "camerino": "abierto",
+      "pose": "P5",
+      "expresion": "E8",
+      "palabraGigante": "VACÍA",
+      "gatillo": "perro",
+      "clave": "nunca",
+      "tono": "misterio",
+      "claves": ["perro", "nunca"],
+      "voz": "Esta vez no hubo perro. Condenaron a cuatro hombres, pero la Copa nunca apareció."
+    },
+    {
+      "tipo": "remate",
+      "ficha": "Río · 1983 — sin rastro",
+      "cinta": "solo una teoría",
+      "palabraGigante": "NADIE",
+      "kicker": "¿FUNDIDA?",
+      "claves": ["fundieron", "nadie"],
+      "voz": "Dicen que la fundieron. Nadie lo ha probado."
+    },
+    {
+      "tipo": "cierre",
+      "fondo": "lima",
+      "expresion": "E2",
+      "claves": ["camerino"],
+      "voz": "Yo estaba ahí. Bueno… casi. Comenten su país y mañana abro su camerino."
+    }
+  ]
+}

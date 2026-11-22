@@ -12,7 +12,7 @@ export type EstadoPuerta = (typeof ESTADOS_PUERTA)[number];
 
 export const OBJETOS = [
   'bulto', 'botin', 'balones', 'llave-rota', 'radio', 'silbato', 'boleta', 'camiseta', 'brujula', 'llavero',
-  'calendario',
+  'calendario', 'vitrina',
 ] as const;
 export type ObjetoTipo = (typeof OBJETOS)[number];
 
@@ -51,6 +51,11 @@ export const EscenaSchema = z.object({
   cintas: z.array(z.string()).optional(),
   /** camerinos: rótulo de cada puerta del túnel (LOCAL · VISITANTE · ÁRBITROS). */
   rotulos: z.array(z.string()).optional(),
+  /** giro: palabra de la voz que lanza el objeto (por defecto «paquete») y palabra que dispara el estallido («copa»). */
+  gatillo: z.string().optional(),
+  clave: z.string().optional(),
+  /** giro: «misterio» cambia el estallido de hinchada por un golpe seco (robos, desapariciones). */
+  tono: z.enum(['festivo', 'misterio']).optional(),
   /** secreto: cuántas llaves se muestran (1–5). */
   nivel: z.number().int().min(1).max(5).optional(),
 });

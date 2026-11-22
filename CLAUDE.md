@@ -40,6 +40,7 @@ P01, P02, P03 y #001 están en estilo **pro** (montaje al ritmo, música, SFX re
 Usuario oficial @elutilerofutbol (`HANDLE` en `config/brand.ts`). Música: `base-100bpm-a` (30 s, P01) y `base-100bpm-b` (60 s, el resto).
 Pendiente humano: ilustrador (hoja de modelo §4.8 → reemplazar capas del rig; el Utilero actual es el arte base en código), texturas reales (§2.5),
 escuchar y aprobar música/SFX, verificar historias #003–#009, textos de publicación. #001 dura 48.6 s con la voz real (objetivo 30–45 s): decidir recorte.
+Camerino #002 (Copa robada dos veces, objeto `vitrina`) producido; el catálogo de las 10 historias aprobadas (#002–#011, con orden de lanzamiento y estado de fuentes) está en BRAND.md §3.3. `giro` admite `gatillo`/`clave`/`tono: "misterio"` para historias que no son «aparece el objeto».
 Cierre: **sin la frase «Esto no salió en la tele» en pantalla** (solo en la voz; el dueño la quitó): Utilero grande + cinta @usuario + «SÍGANME»; `cita` en un cierre es opcional.
 Regla de ritmo aprendida: **nunca pantalla vacía** — lo gigante entra en f≈11 y la palabra dicha solo lo refuerza (`cuando()` en `src/lib/voz.ts`).
 

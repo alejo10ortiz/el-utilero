@@ -222,15 +222,20 @@ Cada episodio tiene **un objeto** que dispara la historia. Reglas:
 | # | Objeto | Historia | Estado |
 |---|---|---|---|
 | 001 | Bulto envuelto en papel periódico | Pickles, el perro que encontró la Copa robada (1966) | Verificado (sección 10) |
-| 002 | Botín viejo | Lucien Laurent, primer gol en la historia de los Mundiales (1930) | Verificado |
-| 003 | Dos balones distintos | Final de 1930: un balón por tiempo (Argentina / Uruguay) | Verificar |
-| 004 | Llave rota / vitrina vacía | El trofeo Jules Rimet robado en Brasil (1983) y nunca recuperado | Verificar |
-| 005 | Radio vieja | El Maracanazo (1950): Uruguay le gana a Brasil en el Maracaná | Verificar |
-| 006 | Silbato | Una historia de árbitro (elegir caso y verificar) | Por definir |
-| 007 | Boleta de partido | Un partido con asistencia récord o insólita (verificar) | Por definir |
-| 008 | Camiseta sin número | Una curiosidad de numeración/uniformes (verificar) | Por definir |
-| 009 | Brújula / mapa | Un viaje insólito de una selección a un Mundial (verificar) | Por definir |
-| 010 | Llavero completo | Episodio "detrás del utilero": presentación del personaje | Ficción declarada |
+| 002 | Vitrina vacía (`vitrina`) | La Copa Jules Rimet, robada dos veces: Londres 1966 (Pickles) y Río 1983 (nunca apareció; «fundida» solo como teoría) | **En producción** · 2+ fuentes |
+| 003 | Balón | 149–0 en Madagascar (2002): el equipo perdedor se metió 149 autogoles en protesta | 2 fuentes (Guinness, Seattle Times/Reuters) |
+| 004 | Silbato | El príncipe de Kuwait baja de la tribuna y le anulan un gol a Francia (1982). Sin los detalles discutidos (qué gol, origen del silbato, sanción al árbitro) | 2 fuentes (Fox Sports, Arab News) |
+| 005 | Camiseta blanca | Maracanazo (1950): asistencia oficial 173.850; Brasil desecha la camiseta blanca y estrena la amarilla en 1954 | 2 fuentes; **reforzar la del cambio de camiseta** |
+| 006 | Botín | ¿Mito o verdad? India no jugó el Mundial 1950 por no poder jugar descalza → **mito** (costos, preparación, selección, prioridad olímpica) | 2 fuentes (SI, Scroll.in) |
+| 007 | Marcador | Arbroath 36–0 Bon Accord (1885); ese día Dundee Harp ganó 35–0 | 2 fuentes (Arbroath FC, The Scotsman) |
+| 008 | Guante de portero | Rogério Ceni: 129 goles oficiales (Guinness); muchas fuentes dicen 131 | 2 fuentes (Guinness, CONMEBOL) |
+| 009 | Tarjetas / semáforo | Ken Aston y el semáforo: nacen las tarjetas (1966 → Mundial 1970), «según contó él» | 2 fuentes (FIFA, Smithsonian) |
+| 010 | Dos balones (`balones`) | Final de 1930: un balón por tiempo; luego la FIFA impone un balón único | 2 fuentes (WSC, Google Arts & Culture); **falta 3.ª para el 2–1 del descanso** |
+| 011 | Radio vieja | ¿Mito o verdad? La Guerra del Fútbol (1969): el partido fue el detonante, no la causa. Tema sensible: sin cifra de muertos hasta tenerla | 2 fuentes (UK National Archives, SI) |
+
+**Banca** (buenas, para después): Lucien Laurent, primer gol de un Mundial (viaje de 15 días en barco, permiso sin sueldo de Peugeot; **sin** el dato de 1998, no se pudo verificar) · Uruguay 1934 y Escocia 1950, los campeones y clasificados que no fueron (serie *La llave de Uruguay*).
+
+**Orden de lanzamiento** (tras Pickles #001): 002 → 003 → 004 → 005 → 006 → 007 → 008 → 009 → 010 → 011. Alterna *shock* (003, 004, 007) con *comentarios* (006, 011) y deja lo sensible para el final de la tanda.
 
 ---
 

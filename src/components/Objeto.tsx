@@ -137,6 +137,45 @@ const Calendario: React.FC = () => (
   </g>
 );
 
+
+/** Vitrina vacía (Copa robada): base de madera, vidrio con reflejos, terciopelo y el contorno a tiza de lo que ya no está. */
+const Vitrina: React.FC = () => {
+  const copa = 'M165 160 H235 C235 205 220 226 200 232 C180 226 165 205 165 160 Z';
+  return (
+    <g>
+      {/* desregistro lima */}
+      <rect x={84} y={96} width={236} height={274} rx={4} transform="translate(9 7)" fill={C.lima} />
+      {/* base de madera */}
+      <rect x={70} y={330} width={260} height={52} fill={C.kraft} stroke={C.tinta} strokeWidth={4} />
+      <path d="M70 346 H330 M70 364 H330" stroke={C.tinta} strokeWidth={2} opacity={0.4} />
+      {/* interior oscuro */}
+      <rect x={90} y={104} width={220} height={226} fill={C.tinta} />
+      {/* pedestal de terciopelo */}
+      <path d="M150 330 L160 276 H240 L250 330 Z" fill={C.kraftOscuro} stroke={C.papel} strokeWidth={2.5} />
+      <rect x={156} y={266} width={88} height={12} fill={C.kraft} stroke={C.papel} strokeWidth={2.5} />
+      {/* contorno a tiza de la copa que no está */}
+      <g fill="none" stroke={C.papel} strokeWidth={3.5} strokeDasharray="9 7" strokeLinecap="round" strokeLinejoin="round">
+        <path d={copa} />
+        <path d="M166 172 C140 172 140 208 172 208" />
+        <path d="M234 172 C260 172 260 208 228 208" />
+        <path d="M192 230 V258 H208 V230" />
+        <path d="M176 258 H224" />
+      </g>
+      <text x={200} y={200} textAnchor="middle" fontFamily={FONT.grito} fontSize={64} fill={C.lima}>?</text>
+      {/* marco y vidrio */}
+      <rect x={90} y={104} width={220} height={226} fill="none" stroke={C.tinta} strokeWidth={6} />
+      <rect x={84} y={96} width={232} height={14} fill={C.kraft} stroke={C.tinta} strokeWidth={4} />
+      <path d="M110 118 L170 118 L112 190 Z" fill={C.papel} opacity={0.22} />
+      <path d="M244 124 L296 124 L270 168 Z" fill={C.papel} opacity={0.16} />
+      {/* vidrio roto: grieta que sale de la esquina */}
+      <path d="M310 104 L262 150 L276 168 L238 208 M262 150 L240 132 M276 168 L304 176" fill="none" stroke={C.papel} strokeWidth={2.6} strokeLinejoin="round" />
+      {/* bisagra y cerradura forzada */}
+      <rect x={298} y={196} width={14} height={34} fill={C.kraftOscuro} stroke={C.tinta} strokeWidth={2.5} />
+      <circle cx={305} cy={213} r={4} fill={C.tinta} />
+    </g>
+  );
+};
+
 const Generico: React.FC<{ tipo: ObjetoTipo }> = ({ tipo }) => (
   <g>
     <rect x={80} y={120} width={240} height={240} rx={8} transform="translate(9 7)" fill={C.lima} />
@@ -165,7 +204,7 @@ export const Objeto: React.FC<{
       height={size * 1.1}
       style={{ position: 'absolute', left: x, top: y, overflow: 'visible', transform: `rotate(${rot}deg)`, filter: 'url(#ink)' }}
     >
-      {tipo === 'bulto' ? <Bulto /> : tipo === 'botin' ? <Botin /> : tipo === 'llavero' ? <Llavero /> : tipo === 'calendario' ? <Calendario /> : <Generico tipo={tipo} />}
+      {tipo === 'bulto' ? <Bulto /> : tipo === 'botin' ? <Botin /> : tipo === 'llavero' ? <Llavero /> : tipo === 'calendario' ? <Calendario /> : tipo === 'vitrina' ? <Vitrina /> : <Generico tipo={tipo} />}
       {etiqueta && <Etiqueta texto={etiqueta} sway={sway} />}
     </svg>
   );
