@@ -33,6 +33,9 @@ export const EscenaSchema = z.object({
   claves: z.array(z.string()).optional(),
   voz: z.string().optional(),
 
+  /** gancho pro: palabra/cifra gigante que se clava cuando se dice (p. ej. "1930"). */
+  kicker: z.string().optional(),
+
   // ── solo presentaciones ──
   /** apertura: muestra el logotipo en lugar de la palabra gigante. */
   logo: z.boolean().optional(),
@@ -71,6 +74,12 @@ export const EpisodeSchema = z
     /** Etiqueta colgante del objeto (§3.3). */
     etiqueta: z.string().optional(),
     nivelSecreto: z.number().int().min(1).max(5).optional(),
+    /** 'pro' = montaje dinámico al ritmo (escenas en src/scenes/pro); 'clasico' = el primer estilo. */
+    estilo: z.enum(['clasico', 'pro']).default('clasico'),
+    /** Pista de assets/music/ (100 BPM). Sin ella, el video va sin música. */
+    musica: z.string().optional(),
+    /** Transición entre la escena i y la i+1 (objeto que tapa el cuadro). 'ninguna' = corte seco. */
+    transiciones: z.array(z.enum(['cinta', 'hoja', 'flash', 'puerta', 'ninguna'])).optional(),
     escenas: z.array(EscenaSchema).min(3),
     textoFinal: z.string(),
     /** Regla de oro (§10): mínimo dos fuentes por dato, de dominios distintos. */

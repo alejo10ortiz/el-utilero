@@ -38,6 +38,17 @@ La clave de ElevenLabs no está en `.env`: la inyecta el proxy del entorno `el-u
 Fases 0–3 hechas en código (SVG base). SFX actuales = **placeholders sintetizados** (`scripts/synth-placeholder-sfx.sh`).
 Voz definida (`config/voice.json`: «El Utilero») y usuario @elutilerofutbol (`HANDLE` en `config/brand.ts`). Pendiente humano: permiso Text to Speech en la clave de ElevenLabs, ilustrador (hoja de modelo §4.8 → reemplazar capas del rig), texturas reales (§2.5), usuarios @elutilero, verificar historias #003–#009.
 
+## Estilo "pro" (montaje dinámico al ritmo) — `"estilo": "pro"` en episode.json
+Un episodio en estilo pro **no es un cartel con elementos que aparecen**: cada escena está coreografiada sobre la rejilla musical.
+- **Ritmo**: la música está a **100 BPM exactos** → 1 beat = 18 frames, 1 compás = 72 f (`src/lib/ritmo.tsx`). Toda escena dura un número entero de beats (el timeline lo cuantiza en `generate-voice`/`estimateTimeline`), así los cortes caen en tiempo. Los golpes se anclan a beats/corcheas (`snap`) o a la palabra dicha (la voz manda en lo sincrónico).
+- **Regla de movimiento**: nada queda quieto más de ~1 s. Entradas con `slam`/`pop` (easing Bézier, anticipación, rebote, blur) → después vida continua: respiración, `boil` (12 fps), pulso al bombo, empuje de cámara (`empuje`), golpes de zoom (`golpes`), partículas con parallax.
+- **Texto**: nunca estático. `Palabras` (subtítulos que saltan en el instante en que se dice cada palabra), `TituloImpacto` (titular que se clava por líneas), `LineaPalabras`, `LogotipoAnimado`, `CintaImpacto`.
+- **Impactos**: `Impacto` = destello + onda de choque + chispas, junto con `impactos` de `CamaraMesa` (temblor) y un SFX alineado al golpe. `Sfx` alinea el *pico* del sonido (ver `assets/sfx/_timing.json`) al frame indicado.
+- **Transiciones = objetos** (`transiciones: [...]` en episode.json, una por corte): `cinta`, `hoja`, `flash`, `puerta`. Tapan ~9 frames a cada lado del corte: la primera animación de la escena que entra debe caer **después de f≈9**.
+- **Música**: `"musica": "base-100bpm-a.mp3"` (`assets/music/`, ver README allí). `Musica` baja bajo la voz y sube en los huecos. Pistas nuevas: `npm run music`, `scripts/make-music-bed.sh`, comprobar tempo con `scripts/analyze-beats.py`.
+- **SFX reales** (ElevenLabs): `npm run sfx -- --only=… --force` (recorta silencio inicial y deja el pico a −2 dBFS). Mín. 0.5 s por la API.
+- Escenas pro: `src/scenes/pro/` (GanchoPro, StingPro, AperturaPro, CasillerosPro, CierrePro). Las que no existen en pro caen al estilo clásico. Antes de dar un video por bueno: renderizar cuadros y mirar el filmstrip (entradas, impactos, solapes de texto).
+
 ## Convenciones
 - Código y comentarios en español (el proyecto y su audiencia lo son); nombres de componentes en español como en BRAND.md.
 - Un componente nuevo = una animación de §5.2 + su sonido. No hay fundidos genéricos: las transiciones son objetos.

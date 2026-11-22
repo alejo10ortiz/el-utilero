@@ -14,7 +14,7 @@ import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import { FPS } from '../config/brand';
-import { PRE_LEAD, STING_SECONDS, MIN_SCENE, TAIL_CIERRE, TAIL_DEFAULT, Timeline, WordTiming } from '../src/lib/timeline';
+import { leadFor, quantBeat, STING_SECONDS, MIN_SCENE, TAIL_CIERRE, TAIL_DEFAULT, Timeline, WordTiming } from '../src/lib/timeline';
 import { ROOT, episodeMediaDir, flag, loadEnv, loadEpisode, positional, resolveSlug } from './lib';
 
 type VoiceCfg = {
@@ -121,11 +121,12 @@ async function main() {
       } else console.log(` · [${i}] ${esc.tipo}: caché`);
       const clipDur = ffprobeDur(mp3);
       const tail = esc.tipo === 'cierre' ? TAIL_CIERRE : TAIL_DEFAULT;
-      dur = aFrames(PRE_LEAD + clipDur + tail);
-      words = alignmentToWords(JSON.parse(fs.readFileSync(alf, 'utf8')), start + PRE_LEAD);
-      execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-i', mp3, '-af', `adelay=${Math.round(PRE_LEAD * 1000)}:all=1,apad=whole_dur=${dur}`, '-t', String(dur), '-ar', '44100', '-ac', '1', wav]);
+      const lead = leadFor(i);
+      dur = aFrames(quantBeat(lead + clipDur + tail)); // la escena dura un número entero de beats (100 BPM)
+      words = alignmentToWords(JSON.parse(fs.readFileSync(alf, 'utf8')), start + lead);
+      execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-i', mp3, '-af', `adelay=${Math.round(lead * 1000)}:all=1,apad=whole_dur=${dur}`, '-t', String(dur), '-ar', '44100', '-ac', '1', wav]);
     } else {
-      dur = esc.tipo === 'sting' ? STING_SECONDS : aFrames(MIN_SCENE);
+      dur = esc.tipo === 'sting' ? STING_SECONDS : aFrames(quantBeat(MIN_SCENE));
       execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-f', 'lavfi', '-i', 'anullsrc=r=44100:cl=mono', '-t', String(dur), wav]);
     }
     wavs.push(wav);

@@ -20,10 +20,13 @@ export const Escenario: React.FC<{
   fondo: 'papel' | 'pizarra' | 'lima' | 'tinta';
   impactos?: Impacto[];
   deriva?: number;
+  zoom?: number;
+  panX?: number;
+  panY?: number;
   children: React.ReactNode;
-}> = ({ fondo, impactos, deriva = 1, children }) => (
+}> = ({ fondo, impactos, deriva = 1, zoom, panX, panY, children }) => (
   <AbsoluteFill>
-    <CamaraMesa impactos={impactos} deriva={deriva}>
+    <CamaraMesa impactos={impactos} deriva={deriva} zoom={zoom} panX={panX} panY={panY}>
       <Fondo tipo={fondo} />
       {children}
     </CamaraMesa>

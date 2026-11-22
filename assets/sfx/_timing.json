@@ -1,0 +1,127 @@
+{
+ "chalk": {
+  "dur": 0.8,
+  "pico": 0.28,
+  "onset50": 0.27
+ },
+ "clap": {
+  "dur": 0.48,
+  "pico": 0.02,
+  "onset50": 0.0
+ },
+ "creak": {
+  "dur": 1.48,
+  "pico": 0.06,
+  "onset50": 0.02
+ },
+ "ding": {
+  "dur": 1.0,
+  "pico": 0.02,
+  "onset50": 0.0
+ },
+ "hit": {
+  "dur": 0.48,
+  "pico": 0.01,
+  "onset50": 0.0
+ },
+ "impact": {
+  "dur": 1.6,
+  "pico": 0.18,
+  "onset50": 0.0
+ },
+ "key_drop": {
+  "dur": 0.48,
+  "pico": 0.01,
+  "onset50": 0.0
+ },
+ "keys": {
+  "dur": 0.86,
+  "pico": 0.38,
+  "onset50": 0.01
+ },
+ "lock": {
+  "dur": 0.6,
+  "pico": 0.05,
+  "onset50": 0.04
+ },
+ "marker": {
+  "dur": 0.8,
+  "pico": 0.34,
+  "onset50": 0.14
+ },
+ "paper_slide": {
+  "dur": 0.6,
+  "pico": 0.23,
+  "onset50": 0.01
+ },
+ "pop": {
+  "dur": 0.48,
+  "pico": 0.0,
+  "onset50": 0.0
+ },
+ "riser": {
+  "dur": 2.4,
+  "pico": 1.82,
+  "onset50": 1.3
+ },
+ "slam": {
+  "dur": 1.0,
+  "pico": 0.01,
+  "onset50": 0.0
+ },
+ "slap": {
+  "dur": 0.48,
+  "pico": 0.28,
+  "onset50": 0.27
+ },
+ "stamp": {
+  "dur": 0.6,
+  "pico": 0.01,
+  "onset50": 0.0
+ },
+ "static": {
+  "dur": 0.48,
+  "pico": 0.24,
+  "onset50": 0.0
+ },
+ "swish": {
+  "dur": 0.48,
+  "pico": 0.1,
+  "onset50": 0.08
+ },
+ "tape": {
+  "dur": 0.8,
+  "pico": 0.41,
+  "onset50": 0.39
+ },
+ "thump": {
+  "dur": 0.48,
+  "pico": 0.03,
+  "onset50": 0.0
+ },
+ "type_loop": {
+  "dur": 2.25,
+  "pico": 1.82,
+  "onset50": 0.03
+ },
+ "whistle": {
+  "dur": 0.8,
+  "pico": 0.39,
+  "onset50": 0.0
+ },
+ "whoosh": {
+  "dur": 0.67,
+  "pico": 0.26,
+  "onset50": 0.18
+ },
+ "whoosh_long": {
+  "dur": 1.2,
+  "pico": 0.29,
+  "onset50": 0.17
+ },
+ "wink": {
+  "dur": 0.6,
+  "pico": 0.01,
+  "onset50": 0.0
+ }
+}

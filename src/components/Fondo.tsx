@@ -22,10 +22,10 @@ export const Fondo: React.FC<{ tipo: Tipo; width?: number; height?: number }> = 
   const id = `fondo-${tipo}`;
   const stains = tipo === 'pizarra';
   return (
-    <div style={{ position: 'absolute', inset: -60, background: BASE[tipo] }}>
+    <div style={{ position: 'absolute', inset: -240, background: BASE[tipo] }}>
       <svg
-        width={width + 120}
-        height={height + 120}
+        width={width + 480}
+        height={height + 480}
         style={{ position: 'absolute', inset: 0, mixBlendMode: stains ? 'screen' : 'multiply' }}
       >
         <filter id={`${id}-blot`}>

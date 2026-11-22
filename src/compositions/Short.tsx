@@ -14,9 +14,22 @@ import { Gancho } from '../scenes/Gancho';
 import { Giro } from '../scenes/Giro';
 import { Remate } from '../scenes/Remate';
 import { Sting } from '../scenes/Sting';
+import { GanchoPro } from '../scenes/pro/GanchoPro';
+import { StingPro } from '../scenes/pro/StingPro';
+import { AperturaPro } from '../scenes/pro/AperturaPro';
+import { CasillerosPro } from '../scenes/pro/CasillerosPro';
+import { CierrePro } from '../scenes/pro/CierrePro';
+import { AbsProvider } from '../lib/ritmo';
+import { Musica } from '../components/Musica';
+import { DUR_TRANSICION, Transicion } from '../components/Transiciones';
 import { Casilleros } from '../scenes/Casilleros';
 import { Secreto } from '../scenes/Secreto';
 import { Serie } from '../scenes/Serie';
+
+/** Escenas del estilo 'pro' (montaje dinámico al ritmo). Las que no existan caen al estilo clásico. */
+const ESCENAS_PRO: Partial<Record<keyof typeof ESCENAS, React.FC<any>>> = {
+  gancho: GanchoPro, sting: StingPro, apertura: AperturaPro, casilleros: CasillerosPro, cierre: CierrePro,
+};
 
 export type ShortProps = {
   slug: string;
@@ -57,14 +70,30 @@ export const Short: React.FC<ShortProps> = ({ slug, episode, timeline }) => {
           const t = timeline.scenes[i];
           const from = toFrames(t.start);
           const frames = Math.max(1, toFrames(t.end) - from);
-          const Escena = ESCENAS[esc.tipo];
+          const Escena = (episode.estilo === 'pro' && ESCENAS_PRO[esc.tipo]) || ESCENAS[esc.tipo];
           return (
             <Sequence key={i} from={from} durationInFrames={frames} name={`${i + 1}·${esc.tipo}`}>
-              <Escena esc={esc} ep={episode} timing={t} frames={frames} />
+              <AbsProvider inicio={from}>
+                <Escena esc={esc} ep={episode} timing={t} frames={frames} />
+              </AbsProvider>
+            </Sequence>
+          );
+        })}
+        {/* transiciones-objeto que tapan el corte entre escenas */}
+        {(episode.transiciones ?? []).map((tipo, i) => {
+          const sig = timeline.scenes[i + 1];
+          if (!sig || tipo === 'ninguna') return null;
+          const dur = DUR_TRANSICION[tipo];
+          return (
+            <Sequence key={`tr${i}`} from={Math.max(0, toFrames(sig.start) - Math.round(dur / 2))} durationInFrames={dur} name={`transición ${i + 1}→${i + 2}: ${tipo}`}>
+              <Transicion tipo={tipo} dur={dur} />
             </Sequence>
           );
         })}
         <Grano />
+        {episode.musica && (
+          <Musica archivo={episode.musica} palabras={timeline.scenes.flatMap((sc) => sc.words)} totalFrames={timelineFrames(timeline)} />
+        )}
         {timeline.source === 'elevenlabs' && <Audio src={staticFile(`episodes/${slug}/voice.mp3`)} />}
       </AbsoluteFill>
     </ConFuentes>

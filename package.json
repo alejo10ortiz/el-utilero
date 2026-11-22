@@ -13,7 +13,8 @@
     "sfx:placeholder": "bash scripts/synth-placeholder-sfx.sh",
     "stills": "tsx scripts/stills.ts",
     "render": "tsx scripts/render.ts",
-    "audio:norm": "bash scripts/normalize-audio.sh"
+    "audio:norm": "bash scripts/normalize-audio.sh",
+    "music": "tsx scripts/generate-music.ts"
   },
   "dependencies": {
     "@remotion/bundler": "4.0.545",

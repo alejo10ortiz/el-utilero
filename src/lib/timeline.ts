@@ -20,10 +20,16 @@ export type Timeline = {
 };
 
 /** Reglas de ritmo: pausado, casi susurro (§1). */
+/** El montaje va a 100 BPM: una escena dura siempre un número entero de beats (0.6 s = 18 frames), así los cortes caen en tiempo. */
+export const BEAT_SECONDS = 0.6;
+export const quantBeat = (seconds: number) => Math.ceil(seconds / BEAT_SECONDS - 1e-6) * BEAT_SECONDS;
+
+/** Silencio antes de la primera palabra: casi inmediato en el gancho; más largo tras una transición (queda tapada ~0.3 s). */
+const leadFor = (index: number) => (index === 0 ? 0.12 : 0.3);
 const PRE_LEAD = 0.15;
-const TAIL_DEFAULT = 0.4;
+const TAIL_DEFAULT = 0.35;
 const TAIL_CIERRE = 1.5; // portazo + pitazo
-const STING_SECONDS = 2.0; // §5.3
+const STING_SECONDS = 2.4; // 1 compás (§5.3)
 const MIN_SCENE = 1.2;
 
 const pauseAfter = (w: string) => {
@@ -56,13 +62,13 @@ export function estimateTimeline(ep: { escenas: Escena[] }): Timeline {
     let end: number;
     let words: WordTiming[] = [];
     if (esc.voz) {
-      const est = estimateWords(esc.voz, start + PRE_LEAD);
+      const est = estimateWords(esc.voz, start + leadFor(index));
       words = est.words;
       end = est.end + (esc.tipo === 'cierre' ? TAIL_CIERRE : TAIL_DEFAULT);
     } else {
       end = start + (esc.tipo === 'sting' ? STING_SECONDS : MIN_SCENE);
     }
-    end = Math.max(end, start + MIN_SCENE);
+    end = start + quantBeat(Math.max(end - start, MIN_SCENE));
     scenes.push({ index, tipo: esc.tipo, start, end, words });
     cursor = end;
   });
@@ -73,4 +79,4 @@ export const toFrames = (seconds: number) => Math.round(seconds * FPS);
 
 export const timelineFrames = (tl: Timeline) => Math.max(1, toFrames(tl.totalSeconds));
 
-export { PRE_LEAD, TAIL_DEFAULT, TAIL_CIERRE, STING_SECONDS, MIN_SCENE };
+export { PRE_LEAD, TAIL_DEFAULT, TAIL_CIERRE, STING_SECONDS, MIN_SCENE, leadFor };

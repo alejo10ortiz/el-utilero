@@ -8,7 +8,11 @@ export const CamaraMesa: React.FC<{
   children: React.ReactNode;
   impactos?: Impacto[];
   deriva?: number;
-}> = ({ children, impactos = [], deriva = 1 }) => {
+  /** Zoom de cámara multiplicador (1 = sin zoom) y paneo en px: para empujes, golpes de zoom y seguimientos. */
+  zoom?: number;
+  panX?: number;
+  panY?: number;
+}> = ({ children, impactos = [], deriva = 1, zoom = 1, panX = 0, panY = 0 }) => {
   const f = useCurrentFrame();
   let dx = deriva * 6 * (0.6 * Math.sin(f * 0.045) + 0.4 * Math.sin(f * 0.113 + 1.3));
   let dy = deriva * 6 * (0.55 * Math.sin(f * 0.037 + 0.7) + 0.45 * Math.sin(f * 0.097 + 2.1));
@@ -26,7 +30,7 @@ export const CamaraMesa: React.FC<{
       style={{
         position: 'absolute',
         inset: 0,
-        transform: `translate(${dx}px, ${dy}px) rotate(${rot}deg) scale(1.02)`,
+        transform: `translate(${dx + panX}px, ${dy + panY}px) rotate(${rot}deg) scale(${1.02 * zoom})`,
         transformOrigin: '50% 50%',
       }}
     >
