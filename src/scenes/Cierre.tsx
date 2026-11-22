@@ -13,7 +13,7 @@ import { Escenario, EscenaProps } from './Escenario';
 
 /**
  * CIERRE (35–40 s): fondo lima → nivel de secreto (A11) → utilero guiñando (E2) → cita en Instrument Serif →
- * cinta @elutilero (A01) → portazo (A09) + pitazo.
+ * cinta @elutilerofutbol (A01) → portazo (A09) + pitazo.
  */
 export const Cierre: React.FC<EscenaProps> = ({ esc, ep, timing, frames }) => {
   const frame = useCurrentFrame();

@@ -91,5 +91,5 @@ export const parseEpisode = (raw: unknown): Episode => EpisodeSchema.parse(raw);
 
 /** Número que se pinta en la placa del casillero. */
 export const numeroCasillero = (ep: Episode) => ep.casilleroNumero ?? ep.id;
-/** @usuario de la marca: sale de textoFinal ("@elutilero · …"), una sola fuente de verdad. */
+/** @usuario de la marca: sale de textoFinal ("@elutilerofutbol · …"), una sola fuente de verdad. */
 export const handleDe = (ep: Episode) => ep.textoFinal.split(' · ')[0];

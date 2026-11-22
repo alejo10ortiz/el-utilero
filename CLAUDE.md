@@ -22,7 +22,7 @@ npx tsx scripts/stills.ts Short 100,300 001-pickles   # cuadros sueltos para rev
 npm run typecheck
 ```
 En este entorno cloud: `export REMOTION_BROWSER_EXECUTABLE=/opt/pw-browsers/chromium` antes de renderizar.
-La clave de ElevenLabs no está en `.env`: la inyecta el proxy del entorno `el-utilero` (host permitido: `api.elevenlabs.io`). Para correr los scripts: `ELEVENLABS_API_KEY=proxy-injected npm run voice -- P01`. La clave es restringida (solo los permisos que se le dieron); si un script falla con `missing_permissions`, falta ese permiso en la clave.
+La clave de ElevenLabs no está en `.env`: la inyecta el proxy del entorno `el-utilero` (host permitido: `api.elevenlabs.io`). Para correr los scripts: `NODE_USE_ENV_PROXY=1 ELEVENLABS_API_KEY=proxy-injected npm run voice -- P01` (Node no usa el proxy sin esa variable). La clave es restringida (solo los permisos que se le dieron); si un script falla con `missing_permissions`, falta ese permiso en la clave.
 
 ## Arquitectura
 - `config/brand.ts` paleta, fuentes, zonas seguras, duraciones de animación (A01–A11). `config/voice.json` voz de ElevenLabs.
@@ -36,7 +36,7 @@ La clave de ElevenLabs no está en `.env`: la inyecta el proxy del entorno `el-u
 
 ## Estado (ver BRAND.md §11)
 Fases 0–3 hechas en código (SVG base). SFX actuales = **placeholders sintetizados** (`scripts/synth-placeholder-sfx.sh`).
-Pendiente humano: voz en ElevenLabs, ilustrador (hoja de modelo §4.8 → reemplazar capas del rig), texturas reales (§2.5), usuarios @elutilero, verificar historias #003–#009.
+Voz definida (`config/voice.json`: «El Utilero») y usuario @elutilerofutbol (`HANDLE` en `config/brand.ts`). Pendiente humano: permiso Text to Speech en la clave de ElevenLabs, ilustrador (hoja de modelo §4.8 → reemplazar capas del rig), texturas reales (§2.5), usuarios @elutilero, verificar historias #003–#009.
 
 ## Convenciones
 - Código y comentarios en español (el proyecto y su audiencia lo son); nombres de componentes en español como en BRAND.md.

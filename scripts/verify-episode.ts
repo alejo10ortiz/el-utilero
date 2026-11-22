@@ -7,6 +7,7 @@
 import { ZodError } from 'zod';
 import { flag, loadEpisode, positional, resolveSlug } from './lib';
 import { estimateTimeline, tokenize } from '../src/lib/timeline';
+import { HANDLE } from '../config/brand';
 
 type Hallazgo = { nivel: 'ERROR' | 'AVISO' | 'OK'; msg: string };
 
@@ -53,7 +54,7 @@ export async function verificar(slug: string, online = false): Promise<Hallazgo[
   if (!esPres && !ep.escenas.some((e) => e.tipo === 'giro')) warn('falta la escena de giro (objeto del día)');
   const cierre = ep.escenas.find((e) => e.tipo === 'cierre');
   if (!esPres && cierre && !/comenten|comenta/i.test(cierre.voz ?? '')) warn('el cierre debería invitar a comentar el país (comunidad, §1)');
-  if (!/^@elutilero\b/.test(ep.textoFinal)) warn('textoFinal debería empezar con @elutilero');
+  if (ep.textoFinal.split(' · ')[0] !== HANDLE) err(`textoFinal debe empezar con el @usuario oficial ${HANDLE}`);
 
   // ── Duración (30–45 s objetivo)
   const palabras = ep.escenas.reduce((a, e) => a + (e.voz ? tokenize(e.voz).length : 0), 0);

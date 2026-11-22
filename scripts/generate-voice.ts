@@ -142,5 +142,7 @@ async function main() {
 
 main().catch((e) => {
   console.error('✗', e.message ?? e);
+  if (String(e.message) === 'fetch failed' && process.env.HTTPS_PROXY && !process.env.NODE_USE_ENV_PROXY)
+    console.error('  Pista: en este entorno Node necesita NODE_USE_ENV_PROXY=1 para usar el proxy.');
   process.exit(1);
 });

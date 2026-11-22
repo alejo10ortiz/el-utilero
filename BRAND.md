@@ -21,7 +21,7 @@
 | | |
 |---|---|
 | **Nombre** | EL UTILERO |
-| **Usuario** | @elutilero *(pendiente: confirmar disponibilidad en YouTube, TikTok, Instagram y Facebook)* |
+| **Usuario** | @elutilerofutbol *(confirmado; @elutilerofutbol no estaba disponible)* |
 | **Qué es** | Videos cortos de fútbol: Mundiales, todos los países, curiosidades, datos históricos y datos locos. |
 | **Concepto** | Un utilero viejo que dice haber estado en todos los camerinos desde 1930. Nadie le cree, pero todos le preguntan. Cada video es un **casillero** que él abre para sacar un **objeto** y contar la historia que no salió en la tele. |
 | **Promesa** | Datos reales, contados como secreto. |
@@ -392,7 +392,7 @@ Animaciones básicas del rig:
 
 ### 5.4 Cierre de marca (outro de 3 s)
 
-Fondo lima → el utilero con `E2` (guiño) → cita en Instrument Serif "«Esto no salió en la tele.»" → cinta `@elutilero` (A01) → portazo (A09) + pitazo.
+Fondo lima → el utilero con `E2` (guiño) → cita en Instrument Serif "«Esto no salió en la tele.»" → cinta `@elutilerofutbol` (A01) → portazo (A09) + pitazo.
 
 ### 5.5 Subtítulos
 
@@ -523,7 +523,7 @@ CIERRE (35–40 s)
 (toma) …
 🎙 …
 
-TEXTO EN PANTALLA (final): @elutilero · Mañana: casillero #00X
+TEXTO EN PANTALLA (final): @elutilerofutbol · Mañana: casillero #00X
 FUENTES: [1] … [2] …
 ```
 
@@ -562,7 +562,7 @@ FUENTES: [1] … [2] …
 🎙 «Al perro lo trataron como un héroe. Yo estaba ahí. Bueno… casi. Comenten su país y mañana abro su casillero.»
 (toma) Portazo (A09) + pitazo.
 
-**TEXTO EN PANTALLA (final):** @elutilero · Mañana: casillero #002
+**TEXTO EN PANTALLA (final):** @elutilerofutbol · Mañana: casillero #002
 
 **FUENTES (verificadas):**
 1. The FA: Pickles encontró el trofeo Jules Rimet siete días después de que fuera robado de una exhibición en Westminster, en marzo de 1966. https://www.thefa.com/news/2016/jul/27/guide-dogs-service-name-puppies-280716
@@ -635,7 +635,7 @@ el-utilero/
     { "tipo": "remate", "ficha": "30.07.1966 — Inglaterra campeón", "cinta": "¡su único Mundial!", "voz": "Ese julio, Inglaterra ganó el Mundial. El único que tiene." },
     { "tipo": "cierre", "expresion": "E2", "voz": "Al perro lo trataron como un héroe. Yo estaba ahí. Bueno… casi. Comenten su país y mañana abro su casillero." }
   ],
-  "textoFinal": "@elutilero · Mañana: casillero #002",
+  "textoFinal": "@elutilerofutbol · Mañana: casillero #002",
   "fuentes": [
     "https://www.thefa.com/news/2016/jul/27/guide-dogs-service-name-puppies-280716",
     "https://www.fifa.com/news/pickles-and-the-stolen-world-cup-2771152",
@@ -685,7 +685,7 @@ La duración de cada escena sale de la duración real del audio (`words.json`), 
 
 ## 12. Pendientes y decisiones abiertas
 
-- [ ] Confirmar disponibilidad de **@elutilero** en las 4 redes (si está tomado: @elutilero.fc, @soyelutilero, @elutilerofutbol).
+- [x] Usuario definido: **@elutilerofutbol** (@elutilerofutbol no estaba disponible).
 - [ ] Contratar ilustrador para la hoja de modelo (4.8).
 - [ ] Fabricar y escanear texturas reales (2.5).
 - [ ] Diseñar y guardar la voz en ElevenLabs (5.7).

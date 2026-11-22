@@ -3,6 +3,9 @@
  * Todo valor visual sale de aquí. Nada de hex sueltos en componentes.
  */
 
+/** @usuario oficial en las 4 redes (confirmado). Los episodios lo llevan en textoFinal. */
+export const HANDLE = '@elutilerofutbol';
+
 export const FPS = 30;
 
 export const FORMATS = {

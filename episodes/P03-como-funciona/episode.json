@@ -14,5 +14,5 @@
     { "tipo": "contexto", "ficha": "Estuve en todos los camerinos desde 1930", "sello": "MITO", "expresion": "E6", "claves": ["personaje", "mito"], "voz": "El Utilero es un personaje. Eso de que estuve en todos los camerinos desde 1930… es puro mito." },
     { "tipo": "cierre", "fondo": "lima", "expresion": "E2", "claves": ["país"], "voz": "Cierren la puerta, que les cuento. Y no se olviden de comentar su país." }
   ],
-  "textoFinal": "@elutilero · Síganme"
+  "textoFinal": "@elutilerofutbol · Síganme"
 }
