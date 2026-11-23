@@ -12,7 +12,7 @@ export type EstadoPuerta = (typeof ESTADOS_PUERTA)[number];
 
 export const OBJETOS = [
   'bulto', 'botin', 'balones', 'llave-rota', 'radio', 'silbato', 'boleta', 'camiseta', 'brujula', 'llavero',
-  'calendario', 'vitrina',
+  'calendario', 'vitrina', 'balon',
 ] as const;
 export type ObjetoTipo = (typeof OBJETOS)[number];
 

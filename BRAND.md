@@ -223,7 +223,7 @@ Cada episodio tiene **un objeto** que dispara la historia. Reglas:
 |---|---|---|---|
 | 001 | Bulto envuelto en papel periódico | Pickles, el perro que encontró la Copa robada (1966) | Verificado (sección 10) |
 | 002 | Vitrina vacía (`vitrina`) | La Copa Jules Rimet, robada dos veces: Londres 1966 (Pickles) y Río 1983 (nunca apareció; «fundida» solo como teoría) | **En producción** · 2+ fuentes |
-| 003 | Balón | 149–0 en Madagascar (2002): el equipo perdedor se metió 149 autogoles en protesta | 2 fuentes (Guinness, Seattle Times/Reuters) |
+| 003 | Balón (`balon`) | 149–0 en Madagascar (2002): un equipo se metió 149 autogoles en protesta por decisiones arbitrales (Guinness: más autogoles en un partido de liga) | **En producción** · 2+ fuentes (Guinness, Seattle Times/Reuters, New Vision). Sin: sede (se discute), «tras cada saque» (una sola fuente) ni sanciones (no confirmadas) |
 | 004 | Silbato | El príncipe de Kuwait baja de la tribuna y le anulan un gol a Francia (1982). Sin los detalles discutidos (qué gol, origen del silbato, sanción al árbitro) | 2 fuentes (Fox Sports, Arab News) |
 | 005 | Camiseta blanca | Maracanazo (1950): asistencia oficial 173.850; Brasil desecha la camiseta blanca y estrena la amarilla en 1954 | 2 fuentes; **reforzar la del cambio de camiseta** |
 | 006 | Botín | ¿Mito o verdad? India no jugó el Mundial 1950 por no poder jugar descalza → **mito** (costos, preparación, selección, prioridad olímpica) | 2 fuentes (SI, Scroll.in) |
@@ -232,10 +232,12 @@ Cada episodio tiene **un objeto** que dispara la historia. Reglas:
 | 009 | Tarjetas / semáforo | Ken Aston y el semáforo: nacen las tarjetas (1966 → Mundial 1970), «según contó él» | 2 fuentes (FIFA, Smithsonian) |
 | 010 | Dos balones (`balones`) | Final de 1930: un balón por tiempo; luego la FIFA impone un balón único | 2 fuentes (WSC, Google Arts & Culture); **falta 3.ª para el 2–1 del descanso** |
 | 011 | Radio vieja | ¿Mito o verdad? La Guerra del Fútbol (1969): el partido fue el detonante, no la causa. Tema sensible: sin cifra de muertos hasta tenerla | 2 fuentes (UK National Archives, SI) |
+| 012 | Bandera de juez de línea | La mano de Dios (1986), con el ángulo poco contado: el árbitro (Ali Bin Nasser) y el juez de línea (Bogdan Dochev) se echaron la culpa entre ellos. Nasser dijo que esperó una señal que no llegó; Dochev nunca levantó la bandera. **Idea del dueño.** | 2+ fuentes (SBS, Sky Sports, ESPN, Irish Examiner); las versiones difieren en la secuencia: guion solo con lo que coincide |
+| 013 | Gafas protectoras | Las gafas de Edgar Davids: glaucoma tras una lesión en el nervio óptico y cirugía (1999 según la mayoría; una fuente dice 2000–01). **Idea del dueño.** Gancho más flojo, objeto muy bueno | 2 fuentes (Vice, Football Italia); **falta fecha firme y fuente médica**. Sin nombrar la marca de las gafas |
 
 **Banca** (buenas, para después): Lucien Laurent, primer gol de un Mundial (viaje de 15 días en barco, permiso sin sueldo de Peugeot; **sin** el dato de 1998, no se pudo verificar) · Uruguay 1934 y Escocia 1950, los campeones y clasificados que no fueron (serie *La llave de Uruguay*).
 
-**Orden de lanzamiento** (tras Pickles #001): 002 → 003 → 004 → 005 → 006 → 007 → 008 → 009 → 010 → 011. Alterna *shock* (003, 004, 007) con *comentarios* (006, 011) y deja lo sensible para el final de la tanda.
+**Orden de lanzamiento** (tras Pickles #001; 012 y 013 se suman al final de la tanda): 002 → 003 → 004 → 005 → 006 → 007 → 008 → 009 → 010 → 011. Alterna *shock* (003, 004, 007) con *comentarios* (006, 011) y deja lo sensible para el final de la tanda.
 
 ---
 

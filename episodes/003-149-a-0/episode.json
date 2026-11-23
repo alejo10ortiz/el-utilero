@@ -1,0 +1,84 @@
+{
+  "id": "003",
+  "slug": "149-a-0",
+  "serie": "El Camerino",
+  "titulo": "149 goles en su propia portería",
+  "pais": "Madagascar",
+  "anio": 2002,
+  "objeto": "balón",
+  "objetoTipo": "balon",
+  "cintaCamerino": "Madagascar 02",
+  "etiqueta": "CAMERINO #003 · MADAGASCAR · 2002",
+  "nivelSecreto": 3,
+  "estado": "verificado",
+  "textoFinal": "@elutilerofutbol · Síganme",
+  "fuentes": [
+    "https://www.guinnessworldrecords.com/world-records/101619-most-own-goals-in-a-domestic-league-football-match",
+    "https://archive.seattletimes.com/archive/20021102/websoccer02/madagascar-team-scores-149-own-goals-in-a-game",
+    "https://archive.seattletimes.com/archive/20021103/owngoal03/team-protests-with-149-own-goals",
+    "https://www.newvision.co.ug/news/1045783/149ers-banned",
+    "https://en.wikipedia.org/wiki/AS_Adema_149%E2%80%930_SO_l%27Emyrne"
+  ],
+  "estilo": "pro",
+  "musica": "base-100bpm-b.mp3",
+  "transiciones": ["flash", "cinta", "hoja", "cinta", "hoja", "flash", "flash"],
+  "escenas": [
+    {
+      "tipo": "gancho",
+      "fondo": "pizarra",
+      "texto": "149 GOLES EN CONTRA",
+      "resaltar": "CONTRA",
+      "voz": "Un equipo se metió 149 goles en su propia portería. A propósito."
+    },
+    { "tipo": "sting", "camerino": "entreabierto" },
+    {
+      "tipo": "apertura",
+      "expresion": "E3",
+      "pose": "P3",
+      "palabraGigante": "SHH",
+      "voz": "Cierren la puerta, que les cuento."
+    },
+    {
+      "tipo": "contexto",
+      "ficha": "MADAGASCAR · 2002",
+      "sello": "PROTESTA",
+      "palabraGigante": "2002",
+      "claves": ["harto", "árbitro"],
+      "voz": "Madagascar, 2002. Un equipo estaba harto de las decisiones del árbitro."
+    },
+    {
+      "tipo": "contexto",
+      "ficha": "Última fecha",
+      "marcador": "goles en contra",
+      "claves": ["última", "vez"],
+      "voz": "Así que, en la última fecha, empezó a meterse goles en contra. Una y otra vez."
+    },
+    {
+      "tipo": "giro",
+      "camerino": "abierto",
+      "pose": "P5",
+      "expresion": "E6",
+      "palabraGigante": "149–0",
+      "gatillo": "terminó",
+      "clave": "propia",
+      "claves": ["goles", "propia"],
+      "voz": "Terminó 149 a 0… y los 149 goles fueron en propia puerta."
+    },
+    {
+      "tipo": "remate",
+      "ficha": "Madagascar · 31.10.2002",
+      "cinta": "¡todos en contra!",
+      "palabraGigante": "RÉCORD",
+      "kicker": "149",
+      "claves": ["récord", "autogoles"],
+      "voz": "Es récord Guinness: más autogoles en un partido de liga."
+    },
+    {
+      "tipo": "cierre",
+      "fondo": "lima",
+      "expresion": "E2",
+      "claves": ["camerino"],
+      "voz": "Yo estaba ahí. Bueno… casi. Comenten su país y abro su camerino."
+    }
+  ]
+}

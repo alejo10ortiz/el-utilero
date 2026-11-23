@@ -176,6 +176,45 @@ const Vitrina: React.FC = () => {
   );
 };
 
+/** Balón con flecha de retorno (autogoles): papel + tinta, pentágonos en trama y la flecha que vuelve a la propia portería. */
+const Balon: React.FC = () => {
+  const cx = 190, cy = 236, R = 112;
+  const pent = (x: number, y: number, r: number, rot: number) =>
+    Array.from({ length: 5 }).map((_, i) => {
+      const a = ((rot + i * 72) * Math.PI) / 180;
+      return `${(x + r * Math.cos(a)).toFixed(1)},${(y + r * Math.sin(a)).toFixed(1)}`;
+    }).join(' ');
+  const vert = (r: number, rot: number, i: number): [number, number] => {
+    const a = ((rot + i * 72) * Math.PI) / 180;
+    return [cx + r * Math.cos(a), cy + r * Math.sin(a)];
+  };
+  return (
+    <g>
+      <circle cx={cx} cy={cy} r={R} transform="translate(9 7)" fill={C.lima} />
+      <clipPath id="clip-balon"><circle cx={cx} cy={cy} r={R} /></clipPath>
+      <circle cx={cx} cy={cy} r={R} fill={C.papel} stroke={C.tinta} strokeWidth={5} />
+      <g clipPath="url(#clip-balon)">
+        {Array.from({ length: 5 }).map((_, i) => {
+          const [x1, y1] = vert(38, -90, i);
+          const [x2, y2] = vert(R + 6, -90, i);
+          const [px, py] = vert(R + 14, -54, i);
+          return (
+            <g key={i}>
+              <line x1={x1} y1={y1} x2={x2} y2={y2} stroke={C.tinta} strokeWidth={4} />
+              <polygon points={pent(px, py, 40, -54 + i * 72 + 36)} fill={C.tinta} stroke={C.tinta} strokeWidth={3} strokeLinejoin="round" />
+            </g>
+          );
+        })}
+        <polygon points={pent(cx, cy, 40, -90)} fill={C.tinta} stroke={C.tinta} strokeWidth={4} strokeLinejoin="round" />
+        <path d={`M${cx - 80} ${cy + 70} C${cx - 20} ${cy + 110} ${cx + 60} ${cy + 100} ${cx + 100} ${cy + 40}`} fill="none" stroke={C.tinta} strokeWidth={2.5} opacity={0.35} strokeDasharray="6 6" />
+      </g>
+      {/* flecha que vuelve: el balón regresa a su propia portería */}
+      <path d="M312 150 C372 130 376 250 300 322" fill="none" stroke={C.tinta} strokeWidth={6} strokeLinecap="round" strokeDasharray="14 10" />
+      <path d="M300 322 L330 318 M300 322 L304 292" fill="none" stroke={C.tinta} strokeWidth={6} strokeLinecap="round" />
+    </g>
+  );
+};
+
 const Generico: React.FC<{ tipo: ObjetoTipo }> = ({ tipo }) => (
   <g>
     <rect x={80} y={120} width={240} height={240} rx={8} transform="translate(9 7)" fill={C.lima} />
@@ -204,7 +243,7 @@ export const Objeto: React.FC<{
       height={size * 1.1}
       style={{ position: 'absolute', left: x, top: y, overflow: 'visible', transform: `rotate(${rot}deg)`, filter: 'url(#ink)' }}
     >
-      {tipo === 'bulto' ? <Bulto /> : tipo === 'botin' ? <Botin /> : tipo === 'llavero' ? <Llavero /> : tipo === 'calendario' ? <Calendario /> : tipo === 'vitrina' ? <Vitrina /> : <Generico tipo={tipo} />}
+      {tipo === 'bulto' ? <Bulto /> : tipo === 'botin' ? <Botin /> : tipo === 'llavero' ? <Llavero /> : tipo === 'calendario' ? <Calendario /> : tipo === 'vitrina' ? <Vitrina /> : tipo === 'balon' ? <Balon /> : <Generico tipo={tipo} />}
       {etiqueta && <Etiqueta texto={etiqueta} sway={sway} />}
     </svg>
   );
