@@ -40,6 +40,7 @@ P01, P02, P03 y #001 están en estilo **pro** (montaje al ritmo, música, SFX re
 Usuario oficial @elutilerofutbol (`HANDLE` en `config/brand.ts`). Música: `base-100bpm-a` (30 s, P01) y `base-100bpm-b` (60 s, el resto).
 Pendiente humano: ilustrador (hoja de modelo §4.8 → reemplazar capas del rig; el Utilero actual es el arte base en código), texturas reales (§2.5),
 escuchar y aprobar música/SFX, verificar historias #003–#009, textos de publicación. #001 dura 48.6 s con la voz real (objetivo 30–45 s): decidir recorte.
+Camerinos #013 (El Dorado, `kraft`), #014 (Chivas vs Athletic, `cuaderno`) y #015 (Arbroath 36–0, `periodico`) son los pilotos de escenas explicativas + temas visuales.
 Camerinos #002 (Copa robada dos veces, objeto `vitrina`), #003 (149–0 Madagascar, `balon`), #004 (mano de Dios, `bandera`), #005 (príncipe de Kuwait, `silbato`), #006 (¿mito? India 1950, `botin`), #007 (Maracanazo, `camiseta`), #008 (servilleta de Messi), #009 (Chapecoense/Nacional, tono sobrio), #010 (secuestro de Di Stéfano), #011 (escorpión de Higuita) y #012 (Libertadores 2018 en Madrid) producidos y subidos al repo privado alejo10ortiz/el-utilero-videos (buena calidad, <100 MB/archivo: `-crf 19 -maxrate 14M`); el catálogo de las 10 historias aprobadas (#002–#011, con orden de lanzamiento y estado de fuentes) está en BRAND.md §3.3. `giro` admite `gatillo`/`clave`/`tono: "misterio"` para historias que no son «aparece el objeto».
 Cierre: **sin la frase «Esto no salió en la tele» en pantalla** (solo en la voz; el dueño la quitó): Utilero grande + cinta @usuario + «SÍGANME»; `cita` en un cierre es opcional.
 GanchoPro: sin `kicker`, la primera línea del titular entra en f≈9 (antes esperaba a la voz); #001–#004 se renderizaron antes de ese arreglo. Titulares de gancho: máx. 2–3 líneas (si no, invaden la zona segura inferior).
@@ -69,8 +70,14 @@ Prueba visual de todas: episodio interno `P99-pruebas-escenas` (no se publica). 
 ## Ritmo (decisión del dueño: que no parezca plantilla y que no se haga largo)
 - Omitir la escena `sting` en episodios nuevos (2,4 s de puerta sin información); el sello sonoro de marca (`sello`: llave + cerrojo + golpe) va en la apertura.
 - Gancho ≤ 3,5 s; cierre corto (variar: con y sin «Yo estaba ahí. Bueno… casi.»). Meta: 30–35 s por video.
-- Velocidad de voz: `config/voice.json` (hoy 0,95; el dueño elige entre 0,95 / 1,05 / v3 de oído).
-- Música por ánimo (`assets/music/`, todas 100 BPM): `b` base estomp, `c` tensión/misterio, `d` sobria/emotiva, `e` ligera/humor. Pendiente de aprobación del dueño.
+- Velocidad de voz: `config/voice.json` — el dueño eligió la opción **B** (eleven_multilingual_v2, velocidad 1,05).
+- Música por ánimo (`assets/music/`, todas 100 BPM): `b` base estomp, `c` tensión/misterio, `d` sobria/emotiva, `e` ligera/humor. Aprobadas por el dueño (c, d y e).
+
+## Temas visuales (rotación de superficie, BRAND §2.6) — `"tema"` en episode.json
+Identidad fija (Utilero, llaves, cinta @usuario, sello sonoro, portazo, grano, paleta) + **superficie que rota por episodio**: `clasico` (por defecto, el look de #001–#012), `cuaderno` (cuadriculado + espiral, ficha arrancada, subrayador, virutas de lápiz), `kraft` (estraza con dobleces y cinta de embalar, etiqueta con cordel, rotuladora), `plano` (milimetrado + cancha de agua, planilla, subtítulos a máquina), `periodico` (papel prensa, recorte, letras recortadas). Cada tema fija textura clara/oscura/lima, estilo de subtítulos (`Palabras` → `PalabrasEstilos.tsx`), ficha (`Ficha` → `FichaEstilos.tsx`), polvo, temblor de dibujo a 12 fps y transiciones propias. Se cambia solo la textura *dentro de su familia de luminosidad* (los textos de las escenas dependen de `fondo` papel/pizarra/lima). Definiciones en `src/lib/tema.tsx`; texturas en `src/components/FondoTema.tsx`; `esc.tema` cambia el tema de una sola escena.
+- Transiciones nuevas (`transiciones` en episode.json; `"auto"` = la elige el tema de la escena que entra): `persiana`, `balon`, `tinta`, `arranque`, `rotativa`, `borrador` (+ `cinta`, `hoja`, `flash`, `puerta`). Código en `TransicionesNuevas.tsx`.
+- `npm run rotacion` sugiere también tema; el verificador avisa si el tema se repite en los 2 episodios anteriores. Rotar: #013 kraft · #014 cuaderno · #015 periodico · siguiente: plano o cuaderno.
+- Revisión visual: `npx tsx scripts/stills-temas.ts <slug> 60,300,… [tema,…]` (cuadros por tema, `out/stills-temas/`) y `npx tsx scripts/stills-transiciones.ts <slug> <frameDelCorte> persiana,balon,…` (`out/stills-trans/`). Props de previsualización de `Short`: `tema`, `transicion`.
 
 ## Convenciones
 - Código y comentarios en español (el proyecto y su audiencia lo son); nombres de componentes en español como en BRAND.md.
