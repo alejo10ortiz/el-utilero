@@ -19,6 +19,8 @@ export type ObjetoTipo = (typeof OBJETOS)[number];
 export const EscenaSchema = z.object({
   tipo: z.enum(['gancho', 'sting', 'apertura', 'contexto', 'giro', 'remate', 'cierre', 'camerinos', 'serie', 'secreto', 'contador', 'mapa', 'versus', 'cronologia', 'recorte']),
   fondo: z.enum(['pizarra', 'papel', 'camerino', 'lima']).optional(),
+  /** Cambia el tema SOLO en esta escena (variar dentro de un mismo video). */
+  tema: z.enum(['clasico', 'cuaderno', 'kraft', 'plano', 'periodico']).optional(),
   texto: z.string().optional(),
   resaltar: z.string().optional(),
   expresion: z.enum(EXPRESIONES).optional(),
@@ -113,7 +115,9 @@ export const EpisodeSchema = z
     /** Pista de assets/music/ (100 BPM). Sin ella, el video va sin música. */
     musica: z.string().optional(),
     /** Transición entre la escena i y la i+1 (objeto que tapa el cuadro). 'ninguna' = corte seco. */
-    transiciones: z.array(z.enum(['cinta', 'hoja', 'flash', 'puerta', 'ninguna'])).optional(),
+    transiciones: z.array(z.enum(['cinta', 'hoja', 'flash', 'puerta', 'persiana', 'balon', 'tinta', 'arranque', 'rotativa', 'borrador', 'auto', 'ninguna'])).optional(),
+    /** Tema visual del episodio (BRAND §2.6). Por defecto 'clasico' (el look de #001–#015). */
+    tema: z.enum(['clasico', 'cuaderno', 'kraft', 'plano', 'periodico']).default('clasico'),
     escenas: z.array(EscenaSchema).min(3),
     textoFinal: z.string(),
     /** Regla de oro (§10): mínimo dos fuentes por dato, de dominios distintos. */

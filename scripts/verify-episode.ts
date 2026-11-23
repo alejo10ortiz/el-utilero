@@ -73,6 +73,8 @@ export async function verificar(slug: string, online = false): Promise<Hallazgo[
       if (/pa[ií]s/i.test(cierre) && previos.slice(-1).some((x) => /pa[ií]s/i.test(x.cierreVoz))) warn('el cierre pide «su país» como el del episodio anterior: usa una pregunta propia de la historia');
       const musicaActual = ep.musica?.match(/-([a-e])\.mp3$/)?.[1];
       if (musicaActual && previos.slice(-1).some((x) => x.musica === musicaActual)) warn(`cama de música «${musicaActual}» igual a la del episodio anterior`);
+      const temaActual = (ep as { tema?: string }).tema ?? 'clasico';
+      if (ult2.some((x) => x.tema === temaActual)) warn(`tema visual «${temaActual}» repetido en uno de los 2 episodios anteriores: rota la superficie (cuaderno, kraft, plano, periodico; BRAND §2.6)`);
     }
   }
 

@@ -5,13 +5,15 @@ import { E, hash, tw } from '../lib/ease';
 import { Destello, LineasVelocidad } from './Fx';
 import { Puerta } from './Camerino';
 import { Sfx } from './Sfx';
+import { TransArranque, TransBalon, TransBorrador, TransPersiana, TransRotativa, TransTinta } from './TransicionesNuevas';
+import type { TemaId } from '../lib/tema';
 
 /**
  * TRANSICIONES COMO OBJETOS (BRAND.md §5.1-5: "ningún fundido genérico").
  * Cada una es un overlay de `dur` frames que se monta con <Sequence from={corte − dur/2}>:
  * en t = dur/2 la pantalla está tapada del todo (ahí cae el corte) y al segundo tiempo se destapa.
  */
-export type TipoTransicion = 'cinta' | 'hoja' | 'flash' | 'puerta';
+export type TipoTransicion = 'cinta' | 'hoja' | 'flash' | 'puerta' | 'persiana' | 'balon' | 'tinta' | 'arranque' | 'rotativa' | 'borrador';
 
 const RASGADO = 'polygon(0 8%,2% 0,12% 5%,25% 0,40% 6%,55% 0,70% 5%,85% 0,100% 7%,98% 30%,100% 55%,97% 80%,100% 95%,88% 100%,70% 94%,52% 100%,35% 95%,18% 100%,4% 96%,0 88%,2% 60%,0 35%)';
 
@@ -110,15 +112,30 @@ const TransPuerta: React.FC<{ dur: number }> = ({ dur }) => {
 };
 
 /** Overlay de transición con su sonido (whoosh en el corte). Montar en <Sequence from={corte - dur/2} durationInFrames={dur}>. */
-export const Transicion: React.FC<{ tipo: TipoTransicion; dur?: number; volumen?: number }> = ({ tipo, dur = 16, volumen = 0.7 }) => {
+export const Transicion: React.FC<{ tipo: TipoTransicion; dur?: number; volumen?: number; tema?: TemaId }> = ({ tipo, dur = 16, volumen = 0.7, tema = 'clasico' }) => {
   const mitad = Math.round(dur / 2);
   return (
     <>
+      {tipo === 'persiana' && (tema === 'plano' ? <TransPersiana dur={dur} color={C.tinta} borde={C.lima} /> : <TransPersiana dur={dur} />)}
+      {tipo === 'balon' && <TransBalon dur={dur} />}
+      {tipo === 'tinta' && <TransTinta dur={dur} />}
+      {tipo === 'arranque' && <TransArranque dur={dur} />}
+      {tipo === 'rotativa' && <TransRotativa dur={dur} />}
+      {tipo === 'borrador' && <TransBorrador dur={dur} />}
       {tipo === 'cinta' && <TransCinta dur={dur} />}
       {tipo === 'hoja' && <TransHoja dur={dur} />}
       {tipo === 'flash' && <TransFlash dur={dur} />}
       {tipo === 'puerta' && <TransPuerta dur={dur} />}
-      <Sfx name={tipo === 'flash' ? 'whoosh_long' : 'whoosh'} at={mitad - 1} volume={volumen} />
+      <Sfx name={tipo === 'flash' || tipo === 'rotativa' ? 'whoosh_long' : 'whoosh'} at={mitad - 1} volume={volumen} />
+      {tipo === 'persiana' && <Sfx name="slap" at={mitad + 1} volume={volumen * 0.7} />}
+      {tipo === 'balon' && <Sfx name="patada" at={2} volume={volumen * 0.9} />}
+      {tipo === 'balon' && <Sfx name="slap" at={mitad} volume={volumen * 0.9} />}
+      {tipo === 'tinta' && <Sfx name="thump" at={mitad} volume={volumen * 0.8} />}
+      {tipo === 'arranque' && <Sfx name="paper_slide" at={mitad - 4} volume={volumen * 0.9} />}
+      {tipo === 'arranque' && <Sfx name="slap" at={mitad} volume={volumen * 0.8} />}
+      {tipo === 'rotativa' && <Sfx name="stamp" at={mitad} volume={volumen * 0.9} />}
+      {tipo === 'borrador' && <Sfx name="chalk" at={2} volume={volumen * 0.7} />}
+      {tipo === 'borrador' && <Sfx name="swish" at={mitad - 3} volume={volumen * 0.8} />}
       {tipo === 'cinta' && <Sfx name="slap" at={mitad} volume={volumen * 0.7} />}
       {tipo === 'hoja' && <Sfx name="swish" at={mitad - 3} volume={volumen * 0.8} />}
       {tipo === 'flash' && <Sfx name="hit" at={mitad} volume={volumen * 0.8} />}
@@ -127,5 +144,5 @@ export const Transicion: React.FC<{ tipo: TipoTransicion; dur?: number; volumen?
   );
 };
 
-export const DUR_TRANSICION: Record<TipoTransicion, number> = { cinta: 16, hoja: 12, flash: 12, puerta: 14 };
+export const DUR_TRANSICION: Record<TipoTransicion, number> = { cinta: 16, hoja: 12, flash: 12, puerta: 14, persiana: 14, balon: 14, tinta: 14, arranque: 14, rotativa: 16, borrador: 14 };
 export { hash };

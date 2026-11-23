@@ -3,6 +3,8 @@ import { useCurrentFrame } from 'remotion';
 import { C, FONT, FPS, SAFE_BOX } from '../../config/brand';
 import { E, hash, pop, tw } from '../lib/ease';
 import type { WordTiming } from '../lib/timeline';
+import { useTema } from '../lib/tema';
+import { PalabrasEstilo } from './PalabrasEstilos';
 import { agrupar } from './Subtitulos';
 
 const limpia = (s: string) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^\p{L}\p{N}]/gu, '').toLowerCase();
@@ -12,7 +14,7 @@ const limpia = (s: string) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').replace
  * la palabra clave lleva caja lima que se barre, la palabra activa crece un poco.
  * Mayúsculas Archivo 800, sombra de registro riso. Grupos de 1–3 palabras.
  */
-export const Palabras: React.FC<{
+const PalabrasClasico: React.FC<{
   words: WordTiming[];
   offsetFrames: number;
   tono?: 'papel' | 'pizarra' | 'lima';
@@ -93,4 +95,18 @@ export const Palabras: React.FC<{
       })}
     </div>
   );
+};
+
+/** Subtítulos cinéticos: el estilo (clásico, subrayador, etiqueta, recorte, máquina) lo decide el tema de la escena. */
+export const Palabras: React.FC<{
+  words: WordTiming[];
+  offsetFrames: number;
+  tono?: 'papel' | 'pizarra' | 'lima';
+  claves?: string[];
+  y?: number;
+  size?: number;
+}> = (props) => {
+  const tema = useTema();
+  if (tema.subtitulos === 'clasico') return <PalabrasClasico {...props} />;
+  return <PalabrasEstilo estilo={tema.subtitulos} {...props} />;
 };

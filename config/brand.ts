@@ -31,6 +31,12 @@ export const C = {
   metalLuz: '#4E7464',
   metalBase: '#2F4A3F',
   lineaFicha: '#C9D6E2',
+  // Temas visuales (BRAND §2.6): superficies alternas, siempre en la misma familia de papel/cartón/tinta.
+  kraftClaro: '#CFAE7C',
+  cuaderno: '#F2EEE0',
+  lineaCuaderno: '#8FAAC2',
+  diario: '#DAD3BE',
+  tintaDiario: '#3A352D',
 } as const;
 
 export const FONT = {

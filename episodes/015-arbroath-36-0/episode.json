@@ -21,10 +21,10 @@
   "estilo": "pro",
   "musica": "base-100bpm-b.mp3",
   "transiciones": [
-    "flash",
-    "cinta",
+    "tinta",
+    "rotativa",
     "hoja",
-    "cinta",
+    "tinta",
     "flash"
   ],
   "escenas": [
@@ -109,5 +109,6 @@
     "apertura": "intima",
     "formato": "cifra",
     "cierre": "pregunta"
-  }
+  },
+  "tema": "periodico"
 }

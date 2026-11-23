@@ -171,6 +171,22 @@ Lo que más aleja la marca del "look IA". Fabricar, escanear a 600 dpi o fotogra
 
 Guardar en `assets/textures/` como PNG con transparencia donde aplique.
 
+### 2.6 Temas visuales (rotación de superficie, decisión del dueño)
+
+Auditoría de #001–#015: 73 % de las escenas sobre el mismo papel, una sola textura, 3 transiciones, la misma ficha, el mismo sello, la misma curva de entrada, el mismo polvo. Se ve plantilla aunque el guion rote. **Identidad fija** (Utilero, llaves, cinta @usuario, sello sonoro, portazo, grano, rojo solo en sellos, paleta de `config/brand.ts`) y **superficie que rota por episodio** con `"tema"` en `episode.json` (o por escena con `esc.tema`). Por defecto `clasico` = el look de #001–#015 (no cambia nada).
+
+| Tema | Idea | Papel (claro) | Oscuro | Lima | Subtítulos | Ficha | Polvo | Temblor | Transiciones |
+|---|---|---|---|---|---|---|---|---|---|
+| `clasico` | mesa de archivo | periódico | pizarra | plana | clásico | índice | motas | — | cinta · hoja · flash |
+| `cuaderno` | cuaderno de la banca | cuadriculado + espiral | pizarra verde + bandeja | cuadros | subrayador | hoja arrancada | virutas de lápiz | 1,6 px | arranque · tinta · hoja |
+| `kraft` | paquete del camerino | estraza con dobleces y cinta de embalar | cartón oscuro | corrugado | rotuladora (etiqueta) | etiqueta con cordel | fibras | 1,2 px | persiana · cinta · puerta |
+| `plano` | plano de la jugada | milimetrado + cancha de agua | rejilla lima sobre tinta | franjas de césped | máquina | planilla | cruces de registro | — | balón · borrador · persiana |
+| `periodico` | rotativa | papel prensa con trama y columnas | plancha de imprenta | trama | letras recortadas | recorte | anillos de trama | 1,0 px | rotativa · hoja · tinta |
+
+Reglas: (1) un tema solo cambia la textura **dentro de su familia de luminosidad** (las escenas eligen el color del texto según el fondo que piden: papel → tinta, pizarra → tiza), así que `papel` sigue siendo claro y `pizarra` oscuro; (2) nada de degradados de UI ni tarjetas redondeadas: todo es papel, cartón, cinta, tiza o tinta; (3) el temblor es «línea que hierve» a 12 fps sobre toda la mesa (hecho a mano), nunca sobre los subtítulos de la voz; (4) `"transiciones": ["auto", …]` deja que el tema de la escena que entra elija su transición (rota por índice); (5) rotar temas entre episodios consecutivos igual que se rotan ganchos y cierres (`npm run rotacion` lo sugiere).
+
+Transiciones nuevas (objetos): `persiana` (listones de estraza o tinta que giran), `balon` (remate a cámara), `tinta` (derrame que sube y deja goteras), `arranque` (hoja de cuaderno que cae y se arranca), `rotativa` (plancha de diario que gira y se clava con EXTRA), `borrador` (el borrador barre la pizarra en franjas).
+
 ---
 
 ## 3. PUNTO 1 — El camerino y el objeto del día

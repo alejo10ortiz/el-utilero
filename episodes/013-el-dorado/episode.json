@@ -22,9 +22,9 @@
   "estilo": "pro",
   "musica": "base-100bpm-b.mp3",
   "transiciones": [
-    "flash",
+    "persiana",
     "cinta",
-    "hoja",
+    "persiana",
     "cinta",
     "flash"
   ],
@@ -128,5 +128,6 @@
     "apertura": "firma",
     "formato": "viaje",
     "cierre": "pais"
-  }
+  },
+  "tema": "kraft"
 }

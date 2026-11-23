@@ -30,8 +30,9 @@ import { VersusPro } from '../scenes/pro/VersusPro';
 import { CronologiaPro } from '../scenes/pro/CronologiaPro';
 import { RecortePro } from '../scenes/pro/RecortePro';
 import { AbsProvider } from '../lib/ritmo';
+import { TEMAS, TemaId, TemaProvider } from '../lib/tema';
 import { Musica } from '../components/Musica';
-import { DUR_TRANSICION, Transicion } from '../components/Transiciones';
+import { DUR_TRANSICION, TipoTransicion, Transicion } from '../components/Transiciones';
 import { Camerinos } from '../scenes/Camerinos';
 import { Secreto } from '../scenes/Secreto';
 import { Serie } from '../scenes/Serie';
@@ -46,6 +47,10 @@ const ESCENAS_PRO: Partial<Record<Episode['escenas'][number]['tipo'], React.FC<a
 
 export type ShortProps = {
   slug: string;
+  /** Solo para previsualizar: fuerza el tema visual sin tocar el episode.json. */
+  tema?: TemaId;
+  /** Solo para previsualizar: fuerza este tipo de transición en todos los cortes. */
+  transicion?: TipoTransicion;
   /** Se completan en calculateMetadata. */
   episode?: Episode;
   timeline?: Timeline;
@@ -61,8 +66,10 @@ const ESCENAS: Partial<Record<Episode['escenas'][number]['tipo'], React.FC<any>>
  * Si todavía no hay voz, usa la estimación para poder previsualizar el episodio completo.
  */
 export const calcularShort: CalculateMetadataFunction<ShortProps> = async ({ props }) => {
-  const episode = EPISODIOS[props.slug];
-  if (!episode) throw new Error(`Episodio desconocido: ${props.slug}. ¿Lo registraste en src/episodes.ts?`);
+  const base = EPISODIOS[props.slug];
+  if (!base) throw new Error(`Episodio desconocido: ${props.slug}. ¿Lo registraste en src/episodes.ts?`);
+  let episode = props.tema ? { ...base, tema: props.tema } : base;
+  if (props.transicion) episode = { ...episode, transiciones: episode.escenas.slice(1).map(() => props.transicion!) };
   let timeline = estimateTimeline(episode);
   try {
     const r = await fetch(staticFile(`episodes/${props.slug}/words.json`));
@@ -87,9 +94,11 @@ export const Short: React.FC<ShortProps> = ({ slug, episode, timeline }) => {
           if (!Escena) throw new Error(`La escena «${esc.tipo}» solo existe en estilo pro (episodio ${slug}, escena ${i + 1})`);
           return (
             <Sequence key={i} from={from} durationInFrames={frames} name={`${i + 1}·${esc.tipo}`}>
-              <AbsProvider inicio={from}>
-                <Escena esc={esc} ep={episode} timing={t} frames={frames} />
-              </AbsProvider>
+              <TemaProvider id={(esc.tema ?? episode.tema) as TemaId}>
+                <AbsProvider inicio={from}>
+                  <Escena esc={esc} ep={episode} timing={t} frames={frames} />
+                </AbsProvider>
+              </TemaProvider>
             </Sequence>
           );
         })}
@@ -99,10 +108,14 @@ export const Short: React.FC<ShortProps> = ({ slug, episode, timeline }) => {
         {(episode.transiciones ?? []).map((tipo, i) => {
           const sig = timeline.scenes[i + 1];
           if (!sig || tipo === 'ninguna') return null;
-          const dur = DUR_TRANSICION[tipo];
+          // «auto»: el tema de la escena que entra elige su propia transición (rota por índice)
+          const temaSig = (episode.escenas[i + 1]?.tema ?? episode.tema) as TemaId;
+          const set = TEMAS[temaSig].transiciones;
+          const real = tipo === 'auto' ? set[i % set.length] : tipo;
+          const dur = DUR_TRANSICION[real];
           return (
-            <Sequence key={`tr${i}`} from={Math.max(0, toFrames(sig.start) - Math.round(dur / 2))} durationInFrames={dur} name={`transición ${i + 1}→${i + 2}: ${tipo}`}>
-              <Transicion tipo={tipo} dur={dur} />
+            <Sequence key={`tr${i}`} from={Math.max(0, toFrames(sig.start) - Math.round(dur / 2))} durationInFrames={dur} name={`transición ${i + 1}→${i + 2}: ${real}`}>
+              <Transicion tipo={real} dur={dur} tema={temaSig} />
             </Sequence>
           );
         })}

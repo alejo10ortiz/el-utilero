@@ -1,5 +1,7 @@
 import React from 'react';
 import { C } from '../../config/brand';
+import { useTema } from '../lib/tema';
+import { FondoTema } from './FondoTema';
 
 type Tipo = 'papel' | 'pizarra' | 'lima' | 'tinta';
 
@@ -19,6 +21,8 @@ export const Fondo: React.FC<{ tipo: Tipo; width?: number; height?: number }> = 
   width = 1080,
   height = 1920,
 }) => {
+  const tema = useTema();
+  if (tema.id !== 'clasico' && tipo !== 'tinta') return <FondoTema tipo={tipo} tema={tema} width={width} height={height} />;
   const id = `fondo-${tipo}`;
   const stains = tipo === 'pizarra';
   return (

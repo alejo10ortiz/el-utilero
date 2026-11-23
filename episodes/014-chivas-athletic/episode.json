@@ -20,10 +20,10 @@
   "estilo": "pro",
   "musica": "base-100bpm-e.mp3",
   "transiciones": [
-    "flash",
-    "cinta",
+    "arranque",
+    "tinta",
+    "arranque",
     "hoja",
-    "cinta",
     "flash"
   ],
   "escenas": [
@@ -120,5 +120,6 @@
     "apertura": "corta",
     "formato": "duelo",
     "cierre": "pregunta"
-  }
+  },
+  "tema": "cuaderno"
 }

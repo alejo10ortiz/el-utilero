@@ -3,6 +3,8 @@ import { useCurrentFrame } from 'remotion';
 import { C } from '../../config/brand';
 import { E, hash, tw } from '../lib/ease';
 import { useAbs, BEAT } from '../lib/ritmo';
+import { useTema } from '../lib/tema';
+import { polvoForma } from './PolvoTema';
 
 /* ───────────── Impactos: destello + onda + chispas ───────────── */
 
@@ -84,6 +86,7 @@ export const Particulas: React.FC<{
   opacidad?: number;
 }> = ({ tipo = 'polvo', n = 36, semilla = 1, colores = [C.tiza], dir = -1, velocidad = 0.6, tam = 1, opacidad = 0.5 }) => {
   const abs = useAbs();
+  const forma = useTema().polvo; // el tema cambia la forma de la mota (virutas, fibras, cruces…)
   const H = 1920 + 200;
   return (
     <svg width={1080} height={1920} style={{ position: 'absolute', inset: 0, pointerEvents: 'none', overflow: 'visible' }}>
@@ -95,8 +98,10 @@ export const Particulas: React.FC<{
         const xx = x0 + Math.sin(abs / (28 + 40 * hash(i + 4)) + i) * (18 + 30 * z);
         const c = colores[i % colores.length];
         const s = (tipo === 'polvo' ? 3 : 14) * tam * (0.5 + z);
-        if (tipo === 'polvo')
-          return <circle key={i} cx={xx} cy={yy} r={s} fill={c} opacity={opacidad * (0.3 + 0.7 * z)} />;
+        if (tipo === 'polvo') {
+          const otra = forma !== 'polvo' ? polvoForma(forma, { i, x: xx, y: yy, s, c, o: opacidad * (0.3 + 0.7 * z) * 1.4, rot: abs * (1 + 3 * hash(i + 21)) * (i % 2 ? 1 : -1) }) : null;
+          return otra ?? <circle key={i} cx={xx} cy={yy} r={s} fill={c} opacity={opacidad * (0.3 + 0.7 * z)} />;
+        }
         const rot = abs * (2 + 6 * hash(i + 11)) * (i % 2 ? 1 : -1);
         if (i % 3 === 0) {
           // parche de balón (pentágono)

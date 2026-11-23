@@ -3,6 +3,8 @@ import { interpolate, useCurrentFrame, Easing } from 'remotion';
 import { measureText } from '@remotion/layout-utils';
 import { A, C, FONT } from '../../config/brand';
 import { prog } from '../lib/anim';
+import { useTema } from '../lib/tema';
+import { materiaFicha } from './FichaEstilos';
 import { Sfx } from './Sfx';
 import { MarcadorTrazo, ellipsePoints } from './Trazo';
 
@@ -32,6 +34,7 @@ export const Ficha: React.FC<{
   encabezado, altoMin = 0, children,
 }) => {
   const frame = useCurrentFrame();
+  const tema = useTema();
   if (frame < delay) return null;
 
   // Se mide el texto real (las mayúsculas de Special Elite son más anchas que las minúsculas).
@@ -70,6 +73,7 @@ export const Ficha: React.FC<{
   const lineH = size * 1.42;
   const padTop = encabezado ? size * 1.5 : size * 0.9;
   const alto = Math.max(altoMin, padTop + lineas.length * lineH + size * 0.7);
+  const materia = materiaFicha(tema.ficha, { lineH, padTop, size, ancho, alto, semilla: Math.round(x + y) % 50 });
 
   let consumed = 0;
   const rendered = lineas.map((linea, li) => {
@@ -145,9 +149,8 @@ export const Ficha: React.FC<{
           height: alto,
           transform: `translate(${tx}px, ${ty}px) rotate(${rotacion}deg)`,
           transformOrigin: '50% 50%',
-          background: `${C.ficha} repeating-linear-gradient(180deg, transparent 0 ${lineH - 1}px, ${C.lineaFicha} ${lineH - 1}px ${lineH}px)`,
-          backgroundPosition: `0 ${padTop - lineH * 0.18}px`,
-          boxShadow: '0 22px 30px -20px rgba(22,19,15,0.55), 0 2px 0 rgba(22,19,15,0.06)',
+          boxShadow: materia.clipPath ? 'none' : materia.sombra,
+          filter: materia.clipPath ? materia.sombra : undefined,
           fontFamily: FONT.maquina,
           fontSize: size,
           color: C.tinta,
@@ -155,8 +158,11 @@ export const Ficha: React.FC<{
           boxSizing: 'border-box',
         }}
       >
-        {/* margen rojo de cuaderno + perforación */}
-        <div style={{ position: 'absolute', left: size * 0.75, top: 0, bottom: 0, width: 2, background: 'rgba(224,65,43,0.35)' }} />
+        {/* papel de la ficha (según el tema): fondo + recorte del borde + adornos */}
+        <div style={{ position: 'absolute', inset: 0, ...materia.fondo, clipPath: materia.clipPath }}>{materia.dentro}</div>
+        {/* margen de cuaderno */}
+        {materia.margen && <div style={{ position: 'absolute', left: size * 0.75, top: 0, bottom: 0, width: materia.margen.ancho, background: materia.margen.color }} />}
+        {materia.fuera}
         {encabezado && (
           <div
             style={{
