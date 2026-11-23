@@ -228,16 +228,31 @@ Cada episodio tiene **un objeto** que dispara la historia. Reglas:
 | 005 | Silbato (`silbato`) | El príncipe de Kuwait baja de la tribuna y le anulan un gol a Francia (1982). Sin los detalles discutidos (qué gol, origen del silbato, sanción al árbitro) | **Producido** · 3+ fuentes (Fox Sports, Arab News, GB News) |
 | 006 | Botín (`botin`) | ¿Mito o verdad? India no jugó el Mundial 1950 por no poder jugar descalza → **mito** (costos, preparación, selección, prioridad olímpica) | 2 fuentes (SI, Scroll.in) · **Producido** (¿Mito o verdad?; sin FIFA en pantalla) |
 | 007 | Camiseta blanca (`camiseta`) | Maracanazo (1950): a Brasil le bastaba empatar; Uruguay ganó 2–1 ante más de 170 mil personas; tres años después el Correio da Manhã convoca el concurso de la camiseta nueva y gana una amarilla | **Producido** · 6 fuentes (Correio da Manhã, Google Arts & Culture, MercoPress, Sportskeeda, History, DFB). Sin: asistencia exacta (173.850 vs 173.830 vs ~200 mil), edad del ganador (18 o 19) ni «maldita» |
-| 008 | Marcador | Arbroath 36–0 Bon Accord (1885); ese día Dundee Harp ganó 35–0 | 2 fuentes (Arbroath FC, The Scotsman) |
-| 009 | Guante de portero | Rogério Ceni: 129 goles oficiales (Guinness); muchas fuentes dicen 131 | 2 fuentes (Guinness, CONMEBOL) |
-| 010 | Tarjetas / semáforo | Ken Aston y el semáforo: nacen las tarjetas (1966 → Mundial 1970), «según contó él» | 2 fuentes (FIFA, Smithsonian) |
-| 011 | Dos balones (`balones`) | Final de 1930: un balón por tiempo; luego la FIFA impone un balón único | 2 fuentes (WSC, Google Arts & Culture); **falta 3.ª para el 2–1 del descanso** |
-| 012 | Radio vieja | ¿Mito o verdad? La Guerra del Fútbol (1969): el partido fue el detonante, no la causa. Tema sensible: sin cifra de muertos hasta tenerla | 2 fuentes (UK National Archives, SI) |
-| 013 | Gafas protectoras | Las gafas de Edgar Davids: glaucoma tras una lesión en el nervio óptico y cirugía (1999 según la mayoría; una fuente dice 2000–01). **Idea del dueño.** Gancho más flojo, objeto muy bueno | 2 fuentes (Vice, Football Italia); **falta fecha firme y fuente médica**. Sin nombrar la marca de las gafas |
+| 008 | Servilleta (`servilleta`) | El contrato de Messi en una servilleta (Barcelona, 14-dic-2000): Carles Rexach la escribió, tres firmas, Messi con 13 años; esa noche hubo contrato formal; la servilleta salió a subasta | **Producido** · 5 fuentes (Fox Sports, ESPN, NPR, NBC Sports, The National). Sin: texto exacto de la servilleta, lugar del almuerzo, precio de la subasta |
+| 009 | Trofeo (`trofeo`) | Atlético Nacional pidió que el título de la Sudamericana 2016 fuera para el Chapecoense; la Conmebol se lo dio el 5-dic-2016 (su primer título internacional) y premió a Nacional con el Fair Play. **Tono sobrio** (sin confeti ni hinchada, cierre sin guiño) | **Producido** · 4 fuentes (FIFA, FourFourTwo, La FM, Wikipedia). Sin cifras de víctimas |
+| 010 | Llave de hotel (`llavehotel`) | Di Stéfano secuestrado en Caracas (agosto de 1963) por un grupo guerrillero que buscaba publicidad; lo soltaron sano y salvo y apareció en la embajada de España | **Producido** · 4 fuentes (These Football Times, Semana, El Observador, Papers Past 1963). Duración del cautiverio: 2–3 días según la fuente → «unos días» |
+| 011 | Botín (`botin`) | El escorpión de Higuita en Wembley (6-sept-1995, amistoso Inglaterra 0–0 Colombia, balón por alto de Jamie Redknapp) | **Producido** · 4 fuentes (FIFA, Wikipedia, City AM, AOL). Sin: que lo «inventó» (solo «reportadamente») ni lo del offside que dice Higuita |
+| 012 | Boleta (`boleta`) | La final de la Libertadores 2018 se jugó en Madrid tras el ataque al bus de Boca (24-nov-2018); River ganó 3–1 en el alargue (9-dic-2018); primera final fuera de América | **Producido** · 4 fuentes (FourFourTwo, Al Jazeera, Wikipedia, Bleacher Report) |
+| 013 | Marcador | Arbroath 36–0 Bon Accord (1885); ese día Dundee Harp ganó 35–0 | 2 fuentes (Arbroath FC, The Scotsman) |
+| 014 | Guante de portero | Rogério Ceni: 129 goles oficiales (Guinness); muchas fuentes dicen 131 | 2 fuentes (Guinness, CONMEBOL) |
+| 015 | Tarjetas / semáforo | Ken Aston y el semáforo: nacen las tarjetas (1966 → Mundial 1970), «según contó él» | 2 fuentes (FIFA, Smithsonian) |
+| 016 | Dos balones (`balones`) | Final de 1930: un balón por tiempo; luego la FIFA impone un balón único | 2 fuentes (WSC, Google Arts & Culture); **falta 3.ª para el 2–1 del descanso** |
+| 017 | Radio vieja | ¿Mito o verdad? La Guerra del Fútbol (1969): el partido fue el detonante, no la causa. Tema sensible: sin cifra de muertos hasta tenerla | 2 fuentes (UK National Archives, SI) |
+| 018 | Gafas protectoras | Las gafas de Edgar Davids: glaucoma tras una lesión en el nervio óptico y cirugía (1999 según la mayoría; una fuente dice 2000–01). **Idea del dueño.** Gancho más flojo, objeto muy bueno | 2 fuentes (Vice, Football Italia); **falta fecha firme y fuente médica**. Sin nombrar la marca de las gafas |
 
-**Banca** (buenas, para después): Lucien Laurent, primer gol de un Mundial (viaje de 15 días en barco, permiso sin sueldo de Peugeot; **sin** el dato de 1998, no se pudo verificar) · Uruguay 1934 y Escocia 1950, los campeones y clasificados que no fueron (serie *La llave de Uruguay*).
+**Banca nueva, pan-hispánica** (ya contrastadas, a elegir): saga **Di Stéfano** (El Dorado de Colombia 1949–54 · el Madrid y el Barça se lo reparten, 1953 · ya está el secuestro #010) · **Chivas vs Athletic** (solo con los suyos) · **Jorge Campos** (portero con uniformes propios) · **la final de las botellas** (1968) · **Bonmatí**, primera con tres Balones de Oro femeninos · **Copa América 2001** (Colombia, sin recibir un gol) · **Pelé «tesoro nacional»** (1961) · **Dick, Kerr Ladies** (1920) · **Juventus rosa** → rayas de Notts County · **Wrexham** (tres ascensos seguidos) · **Chile 1973, «el partido contra nadie»** (muy delicado) · **Mbappé, récord histórico de goles** · **Cristiano en seis Mundiales y el récord de Milla** · **Cabo Verde** (por verificar su torneo) · **la Copa en una caja de zapatos** (Barassi) · **Luis Monti** · **Trautmann** · **el penal lo inventó un portero**.
+
+**Banca anterior** (buenas, para después): Lucien Laurent, primer gol de un Mundial (viaje de 15 días en barco, permiso sin sueldo de Peugeot; **sin** el dato de 1998, no se pudo verificar) · Uruguay 1934 y Escocia 1950, los campeones y clasificados que no fueron (serie *La llave de Uruguay*).
 
 **Orden de lanzamiento** (tras Pickles #001): 002 → 003 → 004 (Maradona, pedido del dueño) → 005 → 006 → 007 → 008 → 009 → 010 → 011 → 012 → 013 (Davids). Alterna *shock* (003, 004, 007) con *comentarios* (006, 011) y deja lo sensible para el final de la tanda.
+
+
+### 3.4 Público: todo el mundo hispanohablante (decisión del dueño)
+
+- **Mezcla:** como máximo 1 de cada 3 videos de Mundial; el resto rota entre club, copa continental, fútbol femenino, objeto/regla del juego y actualidad. Alternar países (España, México, Argentina, Colombia, Chile…); nunca dos seguidos del mismo.
+- **Lenguaje neutro:** «ustedes» (no «vosotros»); sin regionalismos (guayo, chuzo, taco): «botín», «portería», «hinchas», «cancha» se entienden en todas partes.
+- **«Camerino» vs «vestuario»:** según la RAE (DPD), «camerino» significa vestuario deportivo *en América*; en España lo habitual es «vestuario» y «camerino» suena a teatro. Se mantiene la marca «El Camerino»; en textos para España (descripciones, comentarios) usar «vestuario». Revisar el nombre si hay fricción medible.
+- **Historias delicadas** (tragedias, política): `tono: "misterio"` en giro, remate y cierre (sin confeti, sin hinchada, sin guiño; expresión `E7`) y cierre sin «Yo estaba ahí. Bueno… casi.».
 
 ---
 
