@@ -215,6 +215,31 @@ const Balon: React.FC = () => {
   );
 };
 
+/** Bandera de juez de línea: asta, paño partido en dos tintas y la mano que no la levanta (queda caída). */
+const Bandera: React.FC = () => (
+  <g>
+    {/* desregistro lima del paño */}
+    <path d="M150 120 L330 150 L318 270 L140 248 Z" transform="translate(9 7)" fill={C.lima} />
+    {/* asta */}
+    <path d="M116 400 L156 96" fill="none" stroke={C.tinta} strokeWidth={13} strokeLinecap="round" />
+    <path d="M116 400 L156 96" fill="none" stroke={C.kraft} strokeWidth={6} strokeLinecap="round" />
+    <circle cx={158} cy={90} r={11} fill={C.tinta} />
+    {/* paño partido en diagonal */}
+    <clipPath id="clip-bandera"><path d="M150 120 L330 150 L318 270 L140 248 Z" /></clipPath>
+    <path d="M150 120 L330 150 L318 270 L140 248 Z" fill={C.papel} stroke={C.tinta} strokeWidth={5} strokeLinejoin="round" />
+    <g clipPath="url(#clip-bandera)">
+      <path d="M150 120 L330 150 L140 248 Z" fill={C.tinta} />
+      <path d="M150 120 L330 150 L140 248 Z" fill="url(#dots)" opacity={0.55} />
+    </g>
+    <path d="M150 120 L330 150 L318 270 L140 248 Z" fill="none" stroke={C.tinta} strokeWidth={5} strokeLinejoin="round" />
+    {/* pliegue del paño caído */}
+    <path d="M200 132 C214 170 210 214 196 252 M260 142 C272 180 270 226 258 262" fill="none" stroke={C.tinta} strokeWidth={2.4} strokeDasharray="8 7" opacity={0.5} />
+    {/* marca de «nunca subió»: flecha hacia arriba tachada */}
+    <path d="M252 392 L252 330 M232 350 L252 326 L272 350" fill="none" stroke={C.tinta} strokeWidth={6} strokeLinecap="round" strokeLinejoin="round" opacity={0.85} />
+    <path d="M226 382 L280 334" fill="none" stroke={C.tinta} strokeWidth={6} strokeLinecap="round" />
+  </g>
+);
+
 const Generico: React.FC<{ tipo: ObjetoTipo }> = ({ tipo }) => (
   <g>
     <rect x={80} y={120} width={240} height={240} rx={8} transform="translate(9 7)" fill={C.lima} />
@@ -243,7 +268,7 @@ export const Objeto: React.FC<{
       height={size * 1.1}
       style={{ position: 'absolute', left: x, top: y, overflow: 'visible', transform: `rotate(${rot}deg)`, filter: 'url(#ink)' }}
     >
-      {tipo === 'bulto' ? <Bulto /> : tipo === 'botin' ? <Botin /> : tipo === 'llavero' ? <Llavero /> : tipo === 'calendario' ? <Calendario /> : tipo === 'vitrina' ? <Vitrina /> : tipo === 'balon' ? <Balon /> : <Generico tipo={tipo} />}
+      {tipo === 'bulto' ? <Bulto /> : tipo === 'botin' ? <Botin /> : tipo === 'llavero' ? <Llavero /> : tipo === 'calendario' ? <Calendario /> : tipo === 'vitrina' ? <Vitrina /> : tipo === 'balon' ? <Balon /> : tipo === 'bandera' ? <Bandera /> : <Generico tipo={tipo} />}
       {etiqueta && <Etiqueta texto={etiqueta} sway={sway} />}
     </svg>
   );

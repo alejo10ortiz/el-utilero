@@ -1,0 +1,87 @@
+{
+  "id": "004",
+  "slug": "mano-de-dios",
+  "serie": "El Camerino",
+  "titulo": "La bandera que nunca se levantó",
+  "pais": "Argentina",
+  "anio": 1986,
+  "objeto": "bandera de juez de línea",
+  "objetoTipo": "bandera",
+  "cintaCamerino": "México 86",
+  "etiqueta": "CAMERINO #004 · MÉXICO · 1986",
+  "nivelSecreto": 4,
+  "estado": "verificado",
+  "textoFinal": "@elutilerofutbol · Síganme",
+  "fuentes": [
+    "https://www.sbs.com.au/news/article/bulgarian-linesman-who-failed-to-notice-maradonas-hand-of-god-goal-dies/4pvrciryt",
+    "https://www.skysports.com/football/news/11095/10901240/hand-of-god-linesman-bogdan-dochev-dies-aged-80",
+    "https://www.irishexaminer.com/sport/soccer/ref-pins-blame-for-maradonas-hand-of-god-goal-on-linesman-296762.html",
+    "https://www.espn.com/general/story?id=23731599",
+    "https://www.goal.com/en-gb/news/diego-maradona--the-hand-of-god-the-most-infamous-goal-in-world-cup-history/15sev9f2t2sn814f2n8d2ah3zc",
+    "https://www.khaleejtimes.com/sports/football/maradonas-hand-of-god-world-cup-ball-sells-for-2-4-million",
+    "https://nbcnewyork.com/news/sports/diego-maradonas-famous-1986-hand-of-god-world-cup-ball-sells-for-2-4m-at-auction"
+  ],
+  "estilo": "pro",
+  "musica": "base-100bpm-b.mp3",
+  "transiciones": ["flash", "cinta", "hoja", "cinta", "hoja", "flash", "flash"],
+  "escenas": [
+    {
+      "tipo": "gancho",
+      "fondo": "pizarra",
+      "texto": "SE ECHARON LA CULPA",
+      "resaltar": "CULPA",
+      "voz": "Dos hombres dejaron pasar la mano de Dios. Y se echaron la culpa."
+    },
+    { "tipo": "sting", "camerino": "entreabierto" },
+    {
+      "tipo": "apertura",
+      "expresion": "E3",
+      "pose": "P3",
+      "palabraGigante": "SHH",
+      "voz": "Cierren la puerta, que les cuento."
+    },
+    {
+      "tipo": "contexto",
+      "ficha": "ARGENTINA – INGLATERRA · 1986",
+      "sello": "MANO",
+      "palabraGigante": "51",
+      "claves": ["minuto", "mano"],
+      "voz": "Argentina contra Inglaterra, Mundial de 1986. Minuto 51: Maradona marca con la mano."
+    },
+    {
+      "tipo": "contexto",
+      "ficha": "El árbitro dijo…",
+      "marcador": "esperaba una señal",
+      "claves": ["señal", "nunca"],
+      "voz": "El árbitro dijo que esperaba una señal del juez de línea. Nunca llegó."
+    },
+    {
+      "tipo": "giro",
+      "camerino": "abierto",
+      "pose": "P5",
+      "expresion": "E5",
+      "palabraGigante": "LA VIO",
+      "gatillo": "bandera",
+      "clave": "nunca",
+      "tono": "misterio",
+      "claves": ["vio", "bandera"],
+      "voz": "El juez de línea admitió después que sí la vio. Pero su bandera nunca subió."
+    },
+    {
+      "tipo": "remate",
+      "ficha": "El balón · el árbitro",
+      "cinta": "en subasta",
+      "palabraGigante": "AÑOS",
+      "kicker": "EL BALÓN",
+      "claves": ["balón", "años"],
+      "voz": "El árbitro guardó el balón más de 35 años y luego lo puso en subasta."
+    },
+    {
+      "tipo": "cierre",
+      "fondo": "lima",
+      "expresion": "E2",
+      "claves": ["camerino"],
+      "voz": "Yo estaba ahí. Bueno… casi. Comenten su país y abro su camerino."
+    }
+  ]
+}

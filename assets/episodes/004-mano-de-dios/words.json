@@ -1,0 +1,504 @@
+{
+ "source": "elevenlabs",
+ "totalSeconds": 43.2,
+ "scenes": [
+  {
+   "index": 0,
+   "tipo": "gancho",
+   "start": 0,
+   "end": 4.8,
+   "words": [
+    {
+     "text": "Dos",
+     "start": 0.12,
+     "end": 0.364
+    },
+    {
+     "text": "hombres",
+     "start": 0.422,
+     "end": 0.817
+    },
+    {
+     "text": "dejaron",
+     "start": 0.863,
+     "end": 1.258
+    },
+    {
+     "text": "pasar",
+     "start": 1.339,
+     "end": 1.6640000000000001
+    },
+    {
+     "text": "la",
+     "start": 1.7570000000000001,
+     "end": 1.85
+    },
+    {
+     "text": "mano",
+     "start": 1.896,
+     "end": 2.152
+    },
+    {
+     "text": "de",
+     "start": 2.198,
+     "end": 2.2560000000000002
+    },
+    {
+     "text": "Dios.",
+     "start": 2.303,
+     "end": 2.767
+    },
+    {
+     "text": "Y",
+     "start": 2.802,
+     "end": 2.883
+    },
+    {
+     "text": "se",
+     "start": 2.964,
+     "end": 3.0460000000000003
+    },
+    {
+     "text": "echaron",
+     "start": 3.104,
+     "end": 3.452
+    },
+    {
+     "text": "la",
+     "start": 3.499,
+     "end": 3.568
+    },
+    {
+     "text": "culpa.",
+     "start": 3.615,
+     "end": 4.346
+    }
+   ]
+  },
+  {
+   "index": 1,
+   "tipo": "sting",
+   "start": 4.8,
+   "end": 7.199999999999999,
+   "words": []
+  },
+  {
+   "index": 2,
+   "tipo": "apertura",
+   "start": 7.199999999999999,
+   "end": 10.2,
+   "words": [
+    {
+     "text": "Cierren",
+     "start": 7.499999999999999,
+     "end": 7.882999999999999
+    },
+    {
+     "text": "la",
+     "start": 7.952999999999999,
+     "end": 8.011
+    },
+    {
+     "text": "puerta,",
+     "start": 8.056999999999999,
+     "end": 8.614999999999998
+    },
+    {
+     "text": "que",
+     "start": 8.741999999999999,
+     "end": 8.834999999999999
+    },
+    {
+     "text": "les",
+     "start": 8.882,
+     "end": 8.985999999999999
+    },
+    {
+     "text": "cuento.",
+     "start": 9.043999999999999,
+     "end": 9.776
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "tipo": "contexto",
+   "start": 10.2,
+   "end": 19.2,
+   "words": [
+    {
+     "text": "Argentina",
+     "start": 10.5,
+     "end": 11.104
+    },
+    {
+     "text": "contra",
+     "start": 11.15,
+     "end": 11.417
+    },
+    {
+     "text": "Inglaterra,",
+     "start": 11.452,
+     "end": 12.044
+    },
+    {
+     "text": "Mundial",
+     "start": 12.125,
+     "end": 12.625
+    },
+    {
+     "text": "de",
+     "start": 12.81,
+     "end": 12.903
+    },
+    {
+     "text": "1986.",
+     "start": 12.961,
+     "end": 14.703
+    },
+    {
+     "text": "Minuto",
+     "start": 14.761,
+     "end": 15.26
+    },
+    {
+     "text": "51:",
+     "start": 15.481,
+     "end": 16.363
+    },
+    {
+     "text": "Maradona",
+     "start": 16.456,
+     "end": 16.909
+    },
+    {
+     "text": "marca",
+     "start": 16.967,
+     "end": 17.256999999999998
+    },
+    {
+     "text": "con",
+     "start": 17.303,
+     "end": 17.42
+    },
+    {
+     "text": "la",
+     "start": 17.478,
+     "end": 17.536
+    },
+    {
+     "text": "mano.",
+     "start": 17.582,
+     "end": 18.209
+    }
+   ]
+  },
+  {
+   "index": 4,
+   "tipo": "contexto",
+   "start": 19.2,
+   "end": 24.6,
+   "words": [
+    {
+     "text": "El",
+     "start": 19.5,
+     "end": 19.628
+    },
+    {
+     "text": "árbitro",
+     "start": 19.697,
+     "end": 20.08
+    },
+    {
+     "text": "dijo",
+     "start": 20.127,
+     "end": 20.336
+    },
+    {
+     "text": "que",
+     "start": 20.382,
+     "end": 20.451999999999998
+    },
+    {
+     "text": "esperaba",
+     "start": 20.475,
+     "end": 20.893
+    },
+    {
+     "text": "una",
+     "start": 20.963,
+     "end": 21.114
+    },
+    {
+     "text": "señal",
+     "start": 21.16,
+     "end": 21.474
+    },
+    {
+     "text": "del",
+     "start": 21.543,
+     "end": 21.659
+    },
+    {
+     "text": "juez",
+     "start": 21.718,
+     "end": 21.915
+    },
+    {
+     "text": "de",
+     "start": 22.008,
+     "end": 22.089
+    },
+    {
+     "text": "línea.",
+     "start": 22.134999999999998,
+     "end": 22.611
+    },
+    {
+     "text": "Nunca",
+     "start": 22.774,
+     "end": 23.146
+    },
+    {
+     "text": "llegó.",
+     "start": 23.169,
+     "end": 23.772
+    }
+   ]
+  },
+  {
+   "index": 5,
+   "tipo": "giro",
+   "start": 24.6,
+   "end": 30.6,
+   "words": [
+    {
+     "text": "El",
+     "start": 24.900000000000002,
+     "end": 25.051000000000002
+    },
+    {
+     "text": "juez",
+     "start": 25.097,
+     "end": 25.26
+    },
+    {
+     "text": "de",
+     "start": 25.330000000000002,
+     "end": 25.399
+    },
+    {
+     "text": "línea",
+     "start": 25.434,
+     "end": 25.829
+    },
+    {
+     "text": "admitió",
+     "start": 25.991000000000003,
+     "end": 26.444000000000003
+    },
+    {
+     "text": "después",
+     "start": 26.491000000000003,
+     "end": 26.932000000000002
+    },
+    {
+     "text": "que",
+     "start": 27.059,
+     "end": 27.164
+    },
+    {
+     "text": "sí",
+     "start": 27.21,
+     "end": 27.303
+    },
+    {
+     "text": "la",
+     "start": 27.361,
+     "end": 27.431
+    },
+    {
+     "text": "vio.",
+     "start": 27.477000000000004,
+     "end": 27.791000000000004
+    },
+    {
+     "text": "Pero",
+     "start": 27.861,
+     "end": 28.186000000000003
+    },
+    {
+     "text": "su",
+     "start": 28.313000000000002,
+     "end": 28.453000000000003
+    },
+    {
+     "text": "bandera",
+     "start": 28.511000000000003,
+     "end": 28.917
+    },
+    {
+     "text": "nunca",
+     "start": 28.963,
+     "end": 29.277
+    },
+    {
+     "text": "subió.",
+     "start": 29.323,
+     "end": 30.008000000000003
+    }
+   ]
+  },
+  {
+   "index": 6,
+   "tipo": "remate",
+   "start": 30.6,
+   "end": 37.2,
+   "words": [
+    {
+     "text": "El",
+     "start": 30.900000000000002,
+     "end": 31.051000000000002
+    },
+    {
+     "text": "árbitro",
+     "start": 31.109,
+     "end": 31.631000000000004
+    },
+    {
+     "text": "guardó",
+     "start": 31.794,
+     "end": 32.107
+    },
+    {
+     "text": "el",
+     "start": 32.154,
+     "end": 32.212
+    },
+    {
+     "text": "balón",
+     "start": 32.27,
+     "end": 32.583000000000006
+    },
+    {
+     "text": "más",
+     "start": 32.769000000000005,
+     "end": 32.967
+    },
+    {
+     "text": "de",
+     "start": 33.013000000000005,
+     "end": 33.059000000000005
+    },
+    {
+     "text": "35",
+     "start": 33.141000000000005,
+     "end": 33.837
+    },
+    {
+     "text": "años",
+     "start": 33.965,
+     "end": 34.313
+    },
+    {
+     "text": "y",
+     "start": 34.441,
+     "end": 34.499
+    },
+    {
+     "text": "luego",
+     "start": 34.580000000000005,
+     "end": 34.871
+    },
+    {
+     "text": "lo",
+     "start": 34.917,
+     "end": 34.975
+    },
+    {
+     "text": "puso",
+     "start": 35.022000000000006,
+     "end": 35.277
+    },
+    {
+     "text": "en",
+     "start": 35.323,
+     "end": 35.381
+    },
+    {
+     "text": "subasta.",
+     "start": 35.428000000000004,
+     "end": 36.241
+    }
+   ]
+  },
+  {
+   "index": 7,
+   "tipo": "cierre",
+   "start": 37.2,
+   "end": 43.2,
+   "words": [
+    {
+     "text": "Yo",
+     "start": 37.5,
+     "end": 37.663
+    },
+    {
+     "text": "estaba",
+     "start": 37.697,
+     "end": 37.941
+    },
+    {
+     "text": "ahí.",
+     "start": 37.964,
+     "end": 38.208
+    },
+    {
+     "text": "Bueno…",
+     "start": 38.266,
+     "end": 38.707
+    },
+    {
+     "text": "casi.",
+     "start": 38.8,
+     "end": 39.207
+    },
+    {
+     "text": "Comenten",
+     "start": 39.23,
+     "end": 39.683
+    },
+    {
+     "text": "su",
+     "start": 39.729,
+     "end": 39.81
+    },
+    {
+     "text": "país",
+     "start": 39.857,
+     "end": 40.112
+    },
+    {
+     "text": "y",
+     "start": 40.24,
+     "end": 40.286
+    },
+    {
+     "text": "abro",
+     "start": 40.356,
+     "end": 40.577
+    },
+    {
+     "text": "su",
+     "start": 40.611,
+     "end": 40.704
+    },
+    {
+     "text": "camerino.",
+     "start": 40.751,
+     "end": 41.54
+    }
+   ]
+  }
+ ]
+}
