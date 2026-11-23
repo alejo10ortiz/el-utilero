@@ -7,9 +7,9 @@
     "similarity_boost": 0.85,
     "style": 0.35,
     "use_speaker_boost": true,
-    "speed": 0.95
+    "speed": 1.05
   },
-  "_nota": "Voz 'El Utilero' diseñada con ElevenLabs (preview 0 elegida). 'speed' se puede subir a 1.05 si un episodio se pasa de 45 s.",
+  "_nota": "Voz 'El Utilero' diseñada con ElevenLabs (preview 0 elegida). Velocidad 1.05 elegida por el dueño de oído (22-nov-2026; antes 0.95). Las líneas ya generadas siguen en caché con su velocidad anterior.",
   "_voice_design_prompt": "Hombre latinoamericano de unos 70 años, voz grave y un poco rasposa, cálida y cómplice. Habla pausado, casi en susurro, como quien cuenta un secreto en un camerino vacío; sonríe al hablar y tiene picardía. Acento neutro latinoamericano, buena dicción.",
   "_linea_de_prueba": "Cierren la puerta, que les cuento… Esto no salió en la tele."
 }

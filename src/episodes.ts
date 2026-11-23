@@ -12,6 +12,9 @@ import ep010 from '../episodes/010-secuestro-di-stefano/episode.json';
 import ep011 from '../episodes/011-escorpion-higuita/episode.json';
 import ep012 from '../episodes/012-libertadores-madrid/episode.json';
 import epP99 from '../episodes/P99-pruebas-escenas/episode.json';
+import ep013 from '../episodes/013-el-dorado/episode.json';
+import ep014 from '../episodes/014-chivas-athletic/episode.json';
+import ep015 from '../episodes/015-arbroath-36-0/episode.json';
 import epP01 from '../episodes/P01-quien-es/episode.json';
 import epP02 from '../episodes/P02-que-hay/episode.json';
 import epP03 from '../episodes/P03-como-funciona/episode.json';
@@ -34,6 +37,9 @@ export const EPISODIOS: Record<string, Episode> = {
   '010-secuestro-di-stefano': parseEpisode(ep010),
   '011-escorpion-higuita': parseEpisode(ep011),
   '012-libertadores-madrid': parseEpisode(ep012),
+  '013-el-dorado': parseEpisode(ep013),
+  '014-chivas-athletic': parseEpisode(ep014),
+  '015-arbroath-36-0': parseEpisode(ep015),
   'P01-quien-es': parseEpisode(epP01),
   'P99-pruebas-escenas': parseEpisode(epP99),
   'P02-que-hay': parseEpisode(epP02),

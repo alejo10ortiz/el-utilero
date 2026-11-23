@@ -1,0 +1,118 @@
+{
+  "id": "014",
+  "slug": "chivas-athletic",
+  "serie": "El Camerino",
+  "titulo": "Dos clubes que solo juegan con los suyos",
+  "pais": "México",
+  "anio": 1943,
+  "objeto": "—",
+  "objetoTipo": "bulto",
+  "rotulo": "LOCAL",
+  "nivelSecreto": 2,
+  "estado": "verificado",
+  "textoFinal": "@elutilerofutbol · Síganme",
+  "fuentes": [
+    "https://www.tudn.com/futbol/liga-mx/chivas-el-club-exclusivo-para-mexicanos-con-colores-europeos",
+    "https://www.90min.com/es/posts/equipos-de-futbol-que-no-fichan-jugadores-extranjeros",
+    "https://www.bbva.com/es/chivas-un-caso-atipico-en-el-futbol-mexicano-y-la-liga-bancomer/",
+    "https://es-us.noticias.yahoo.com/chivas-y-su-hipocrita-politica-de-no-aceptar-naturalizados-aunque-tambien-sean-mexicanos-214834059.html"
+  ],
+  "estilo": "pro",
+  "musica": "base-100bpm-e.mp3",
+  "transiciones": [
+    "flash",
+    "cinta",
+    "hoja",
+    "cinta",
+    "flash"
+  ],
+  "escenas": [
+    {
+      "tipo": "gancho",
+      "fondo": "pizarra",
+      "texto": "SOLO LOS SUYOS",
+      "resaltar": "SUYOS",
+      "voz": "Dos clubes que solo juegan con los suyos."
+    },
+    {
+      "tipo": "apertura",
+      "expresion": "E3",
+      "pose": "P3",
+      "palabraGigante": "SHH",
+      "voz": "Cierren la puerta, que les cuento."
+    },
+    {
+      "tipo": "mapa",
+      "puntos": [
+        {
+          "nombre": "Guadalajara",
+          "lat": 20.67,
+          "lon": -103.35,
+          "palabra": "Guadalajara"
+        },
+        {
+          "nombre": "Bilbao",
+          "lat": 43.26,
+          "lon": -2.93,
+          "palabra": "Bilbao"
+        }
+      ],
+      "ruta": [],
+      "claves": [
+        "México",
+        "España"
+      ],
+      "voz": "Uno está en Guadalajara, México. El otro, en Bilbao, España."
+    },
+    {
+      "tipo": "versus",
+      "lados": [
+        {
+          "titulo": "Chivas",
+          "lineas": [
+            "Solo mexicanos por nacimiento",
+            "Ni los nacionalizados"
+          ],
+          "palabras": [
+            "mexicanos",
+            "entran"
+          ]
+        },
+        {
+          "titulo": "Athletic",
+          "lineas": [
+            "Solo jugadores formados en el País Vasco y Navarra"
+          ],
+          "palabras": [
+            "formados"
+          ]
+        }
+      ],
+      "claves": [
+        "mexicanos",
+        "formados"
+      ],
+      "voz": "Las Chivas solo alinean mexicanos por nacimiento. Ni los nacionalizados entran. El Athletic, solo jugadores formados en el País Vasco y Navarra."
+    },
+    {
+      "tipo": "remate",
+      "ficha": "México · España",
+      "cinta": "la misma idea",
+      "palabraGigante": "FUNCIONA",
+      "kicker": "LA MISMA IDEA",
+      "claves": [
+        "funciona"
+      ],
+      "voz": "Dos países, una misma idea: jugar solo con los suyos. ¿Funciona?"
+    },
+    {
+      "tipo": "cierre",
+      "fondo": "lima",
+      "expresion": "E2",
+      "claves": [
+        "camerino"
+      ],
+      "voz": "Comenten su país: ¿su club haría lo mismo?"
+    }
+  ]
+}

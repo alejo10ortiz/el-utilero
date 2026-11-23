@@ -50,8 +50,10 @@ export async function verificar(slug: string, online = false): Promise<Hallazgo[
   const tipos = ep.escenas.map((e) => e.tipo);
   if (tipos[0] !== 'gancho') warn('la primera escena debería ser el gancho (0–3 s)');
   if (tipos[tipos.length - 1] !== 'cierre') err('la última escena debe ser el cierre');
-  if (!tipos.includes('sting')) warn('falta el sting (camerino que se abre)');
-  if (!esPres && !ep.escenas.some((e) => e.tipo === 'giro')) warn('falta la escena de giro (objeto del día)');
+  // Los episodios con escenas explicativas (contador, mapa, versus, cronología, recorte) omiten a propósito el sting y el giro del objeto.
+  const explicativo = tipos.some((t) => ['contador', 'mapa', 'versus', 'cronologia', 'recorte'].includes(t));
+  if (!tipos.includes('sting') && !explicativo) warn('falta el sting (camerino que se abre)');
+  if (!esPres && !explicativo && !ep.escenas.some((e) => e.tipo === 'giro')) warn('falta la escena de giro (objeto del día)');
   const cierre = ep.escenas.find((e) => e.tipo === 'cierre');
   if (!esPres && cierre && !/comenten|comenta/i.test(cierre.voz ?? '')) warn('el cierre debería invitar a comentar el país (comunidad, §1)');
   if (ep.textoFinal.split(' · ')[0] !== HANDLE) err(`textoFinal debe empezar con el @usuario oficial ${HANDLE}`);

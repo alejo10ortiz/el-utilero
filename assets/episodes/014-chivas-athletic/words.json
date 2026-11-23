@@ -1,0 +1,379 @@
+{
+ "source": "elevenlabs",
+ "totalSeconds": 32.4,
+ "scenes": [
+  {
+   "index": 0,
+   "tipo": "gancho",
+   "start": 0,
+   "end": 3.6,
+   "words": [
+    {
+     "text": "Dos",
+     "start": 0.12,
+     "end": 0.34099999999999997
+    },
+    {
+     "text": "clubes",
+     "start": 0.41,
+     "end": 0.863
+    },
+    {
+     "text": "que",
+     "start": 1.026,
+     "end": 1.13
+    },
+    {
+     "text": "solo",
+     "start": 1.177,
+     "end": 1.362
+    },
+    {
+     "text": "juegan",
+     "start": 1.3969999999999998,
+     "end": 1.6869999999999998
+    },
+    {
+     "text": "con",
+     "start": 1.745,
+     "end": 1.8729999999999998
+    },
+    {
+     "text": "los",
+     "start": 1.908,
+     "end": 2.012
+    },
+    {
+     "text": "suyos.",
+     "start": 2.036,
+     "end": 2.767
+    }
+   ]
+  },
+  {
+   "index": 1,
+   "tipo": "apertura",
+   "start": 3.6,
+   "end": 7.2,
+   "words": [
+    {
+     "text": "Cierren",
+     "start": 3.9,
+     "end": 4.4799999999999995
+    },
+    {
+     "text": "la",
+     "start": 4.5969999999999995,
+     "end": 4.689
+    },
+    {
+     "text": "puerta,",
+     "start": 4.748,
+     "end": 5.34
+    },
+    {
+     "text": "que",
+     "start": 5.420999999999999,
+     "end": 5.5489999999999995
+    },
+    {
+     "text": "les",
+     "start": 5.607,
+     "end": 5.746
+    },
+    {
+     "text": "cuento.",
+     "start": 5.827,
+     "end": 6.593999999999999
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "tipo": "mapa",
+   "start": 7.2,
+   "end": 12,
+   "words": [
+    {
+     "text": "Uno",
+     "start": 7.5,
+     "end": 7.697
+    },
+    {
+     "text": "está",
+     "start": 7.732,
+     "end": 7.941
+    },
+    {
+     "text": "en",
+     "start": 8.011,
+     "end": 8.068999999999999
+    },
+    {
+     "text": "Guadalajara,",
+     "start": 8.127,
+     "end": 8.707
+    },
+    {
+     "text": "México.",
+     "start": 8.742,
+     "end": 9.241
+    },
+    {
+     "text": "El",
+     "start": 9.3,
+     "end": 9.427
+    },
+    {
+     "text": "otro,",
+     "start": 9.485,
+     "end": 9.786999999999999
+    },
+    {
+     "text": "en",
+     "start": 9.834,
+     "end": 9.95
+    },
+    {
+     "text": "Bilbao,",
+     "start": 10.019,
+     "end": 10.495000000000001
+    },
+    {
+     "text": "España.",
+     "start": 10.565,
+     "end": 11.355
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "tipo": "versus",
+   "start": 12,
+   "end": 22.2,
+   "words": [
+    {
+     "text": "Las",
+     "start": 12.3,
+     "end": 12.544
+    },
+    {
+     "text": "Chivas",
+     "start": 12.602,
+     "end": 13.020000000000001
+    },
+    {
+     "text": "solo",
+     "start": 13.136000000000001,
+     "end": 13.449000000000002
+    },
+    {
+     "text": "alinean",
+     "start": 13.496,
+     "end": 13.867
+    },
+    {
+     "text": "mexicanos",
+     "start": 13.925,
+     "end": 14.448
+    },
+    {
+     "text": "por",
+     "start": 14.494,
+     "end": 14.610000000000001
+    },
+    {
+     "text": "nacimiento.",
+     "start": 14.668000000000001,
+     "end": 15.319
+    },
+    {
+     "text": "Ni",
+     "start": 15.435,
+     "end": 15.574000000000002
+    },
+    {
+     "text": "los",
+     "start": 15.620000000000001,
+     "end": 15.748000000000001
+    },
+    {
+     "text": "nacionalizados",
+     "start": 15.806000000000001,
+     "end": 16.584
+    },
+    {
+     "text": "entran.",
+     "start": 16.654,
+     "end": 17.141000000000002
+    },
+    {
+     "text": "El",
+     "start": 17.211,
+     "end": 17.339
+    },
+    {
+     "text": "Athletic,",
+     "start": 17.408,
+     "end": 17.942
+    },
+    {
+     "text": "solo",
+     "start": 18.024,
+     "end": 18.279
+    },
+    {
+     "text": "jugadores",
+     "start": 18.314,
+     "end": 18.767
+    },
+    {
+     "text": "formados",
+     "start": 18.813000000000002,
+     "end": 19.243000000000002
+    },
+    {
+     "text": "en",
+     "start": 19.301000000000002,
+     "end": 19.347
+    },
+    {
+     "text": "el",
+     "start": 19.394000000000002,
+     "end": 19.452
+    },
+    {
+     "text": "País",
+     "start": 19.51,
+     "end": 19.707
+    },
+    {
+     "text": "Vasco",
+     "start": 19.765,
+     "end": 20.218
+    },
+    {
+     "text": "y",
+     "start": 20.357,
+     "end": 20.450000000000003
+    },
+    {
+     "text": "Navarra.",
+     "start": 20.520000000000003,
+     "end": 21.262999999999998
+    }
+   ]
+  },
+  {
+   "index": 4,
+   "tipo": "remate",
+   "start": 22.2,
+   "end": 27.6,
+   "words": [
+    {
+     "text": "Dos",
+     "start": 22.5,
+     "end": 22.732
+    },
+    {
+     "text": "países,",
+     "start": 22.813,
+     "end": 23.417
+    },
+    {
+     "text": "una",
+     "start": 23.533,
+     "end": 23.696
+    },
+    {
+     "text": "misma",
+     "start": 23.742,
+     "end": 23.986
+    },
+    {
+     "text": "idea:",
+     "start": 24.021,
+     "end": 24.392
+    },
+    {
+     "text": "jugar",
+     "start": 24.416,
+     "end": 24.799
+    },
+    {
+     "text": "solo",
+     "start": 24.857,
+     "end": 25.112000000000002
+    },
+    {
+     "text": "con",
+     "start": 25.159,
+     "end": 25.252
+    },
+    {
+     "text": "los",
+     "start": 25.286,
+     "end": 25.414
+    },
+    {
+     "text": "suyos.",
+     "start": 25.437,
+     "end": 25.925
+    },
+    {
+     "text": "¿Funciona?",
+     "start": 25.96,
+     "end": 26.819
+    }
+   ]
+  },
+  {
+   "index": 5,
+   "tipo": "cierre",
+   "start": 27.6,
+   "end": 32.4,
+   "words": [
+    {
+     "text": "Comenten",
+     "start": 27.900000000000002,
+     "end": 28.353
+    },
+    {
+     "text": "su",
+     "start": 28.388,
+     "end": 28.469
+    },
+    {
+     "text": "país:",
+     "start": 28.527,
+     "end": 28.887
+    },
+    {
+     "text": "¿su",
+     "start": 28.933000000000003,
+     "end": 29.107000000000003
+    },
+    {
+     "text": "club",
+     "start": 29.154000000000003,
+     "end": 29.409000000000002
+    },
+    {
+     "text": "haría",
+     "start": 29.491000000000003,
+     "end": 29.804000000000002
+    },
+    {
+     "text": "lo",
+     "start": 29.85,
+     "end": 29.92
+    },
+    {
+     "text": "mismo?",
+     "start": 29.967000000000002,
+     "end": 30.594
+    }
+   ]
+  }
+ ]
+}

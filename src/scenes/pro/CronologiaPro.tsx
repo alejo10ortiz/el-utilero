@@ -23,7 +23,7 @@ export const CronologiaPro: React.FC<EscenaProps> = ({ esc, timing, frames }) =>
   const t: number[] = [];
   hitos.forEach((h, i) => {
     const prev = i === 0 ? 0 : t[i - 1] + 8;
-    t.push(Math.max(i === 0 ? 14 : prev, cuando(timing, off, h.palabra ?? h.anio, i === 0 ? 0 : prev, 28 + i * 60) - 3));
+    t.push(i === 0 ? 12 : Math.max(prev, cuando(timing, off, h.palabra ?? h.anio, prev, 28 + i * 60) - 3));
   });
   // cámara: sigue al último hito que ya entró (suave)
   let camY = 0;

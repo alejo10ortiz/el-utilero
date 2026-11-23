@@ -1,0 +1,107 @@
+{
+  "id": "015",
+  "slug": "arbroath-36-0",
+  "serie": "El Camerino",
+  "titulo": "36 a 0 (y otro 35 a 0 el mismo día)",
+  "pais": "Escocia",
+  "anio": 1885,
+  "objeto": "—",
+  "objetoTipo": "bulto",
+  "rotulo": "LOCAL",
+  "nivelSecreto": 2,
+  "estado": "verificado",
+  "textoFinal": "@elutilerofutbol · Síganme",
+  "fuentes": [
+    "https://arbroathfc.co.uk/36-0",
+    "https://www.scotsman.com/whats-on/arts-and-entertainment/a-day-when-scottish-football-scorched-the-record-books-2465360",
+    "https://thecourier.co.uk/fp/past-times/1554649/the-scottish-cup-scoring-duel-which-made-arbroath-fc-world-famous",
+    "https://en.wikipedia.org/wiki/Arbroath_F.C._36%E2%80%930_Bon_Accord_F.C.",
+    "https://www.wsc.co.uk/wp-content/uploads/2020/03/Know_your_history__The_worlds_biggest_defeat.pdf"
+  ],
+  "estilo": "pro",
+  "musica": "base-100bpm-b.mp3",
+  "transiciones": [
+    "flash",
+    "cinta",
+    "hoja",
+    "cinta",
+    "flash"
+  ],
+  "escenas": [
+    {
+      "tipo": "gancho",
+      "fondo": "pizarra",
+      "texto": "36 A 0",
+      "resaltar": "36",
+      "voz": "36 a 0. Y ese mismo día, otro 35 a 0."
+    },
+    {
+      "tipo": "apertura",
+      "expresion": "E3",
+      "pose": "P3",
+      "palabraGigante": "SHH",
+      "voz": "Cierren la puerta, que les cuento."
+    },
+    {
+      "tipo": "recorte",
+      "titular": "ARBROATH 36, BON ACCORD 0",
+      "linea": "ESCOCIA · 12 SEP 1885",
+      "resaltar": "Arbroath",
+      "claves": [
+        "Arbroath",
+        "Copa"
+      ],
+      "voz": "Escocia, 12 de septiembre de 1885. Arbroath recibió al Bon Accord en la Copa de Escocia."
+    },
+    {
+      "tipo": "contador",
+      "estilo": "tiza",
+      "cifra": 36,
+      "unidad": "goles",
+      "clave": "goles",
+      "sello": "RÉCORD",
+      "claves": [
+        "descanso",
+        "Petrie"
+      ],
+      "voz": "Al descanso iban 15 a 0. Terminaron con 36 goles, y uno solo de sus jugadores, John Petrie, marcó 13."
+    },
+    {
+      "tipo": "versus",
+      "lados": [
+        {
+          "titulo": "Arbroath",
+          "lineas": [
+            "36–0 al Bon Accord"
+          ],
+          "palabras": [
+            "mismo"
+          ]
+        },
+        {
+          "titulo": "Dundee Harp",
+          "lineas": [
+            "35–0 al Aberdeen Rovers"
+          ],
+          "palabras": [
+            "Dundee"
+          ]
+        }
+      ],
+      "claves": [
+        "Dundee",
+        "Aberdeen"
+      ],
+      "voz": "Ese mismo día, muy cerca de ahí, el Dundee Harp le ganó 35 a 0 al Aberdeen Rovers."
+    },
+    {
+      "tipo": "cierre",
+      "fondo": "lima",
+      "expresion": "E2",
+      "claves": [
+        "camerino"
+      ],
+      "voz": "¿Cuál es el marcador más raro que han visto? Comenten."
+    }
+  ]
+}

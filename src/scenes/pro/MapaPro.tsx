@@ -66,7 +66,6 @@ export const MapaPro: React.FC<EscenaProps> = ({ esc, timing, frames }) => {
   return (
     <Escenario fondo={oscuro ? 'pizarra' : 'papel'} impactos={tPunto.map((t) => ({ frame: t + 2, amp: 7 }))} deriva={0.4} zoom={z}>
       <Particulas tipo="polvo" n={16} semilla={29} colores={oscuro ? [C.tiza] : [C.tinta, C.grisArchivo]} opacidad={0.22} velocidad={0.3} />
-      {esc.palabraGigante && <TituloImpacto lineas={[{ texto: esc.palabraGigante, at: 11 }]} x={SAFE_BOX.cx - 410} y={150} ancho={820} tono={oscuro ? 'tiza' : 'tinta'} maxSize={300} />}
 
       <svg width={1080} height={1920} style={{ position: 'absolute', inset: 0, overflow: 'visible', opacity: entra }}>
         <g transform={`translate(${bo.x} ${bo.y}) scale(${1.05 - 0.05 * entra})`} style={{ transformOrigin: '540px 775px' }}>
@@ -106,6 +105,8 @@ export const MapaPro: React.FC<EscenaProps> = ({ esc, timing, frames }) => {
           })}
         </g>
       </svg>
+
+      {esc.palabraGigante && <TituloImpacto lineas={[{ texto: esc.palabraGigante, at: 11 }]} x={SAFE_BOX.cx - 410} y={150} ancho={820} tono={oscuro ? 'tiza' : 'tinta'} maxSize={300} />}
 
       {puntos.map((p, i) => {
         const [x, y] = xy(i);
