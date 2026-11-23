@@ -23,6 +23,31 @@ const PROMPTS: Record<string, { text: string; ms: number }> = {
     text: COMUN + 'Locker-room stomp and clap groove: muffled punchy kick drum, layered hand claps on beats 2 and 4, dry plucked guitar riff in A minor, deep warm round bass, light shaker. Keep the same steady groove and energy for the whole length, gentle variation every 8 bars, no breakdown, no silence.',
     ms: 60000,
   },
+  // ── variantes de ánimo (todas a 100 BPM para caer en la rejilla de 18 frames/beat) ──
+  // c: tensión / misterio (robos, desapariciones, secuestros, giros oscuros)
+  c: {
+    text:
+      'Instrumental only. Exactly 100 BPM, 4/4, rock-solid steady tempo. Dark, suspenseful investigative documentary groove, tense but cool. ' +
+      'No vocals, tight dry mix. Starts immediately with a strong low hit on the first downbeat, no intro silence, no fade in. ' +
+      'Low pulsing analog synth bass, ticking closed hi-hat, muted plucked strings in D minor, sparse felt piano stabs, deep sub hits on beat 1, subtle detuned drone. Keep the same steady energy for the whole track, no big drop.',
+    ms: 60000,
+  },
+  // d: sobria / emotiva (tragedias, homenajes, historias delicadas) — sin golpe fuerte inicial
+  d: {
+    text:
+      'Instrumental only. Exactly 100 BPM, 4/4, rock-solid steady tempo. Somber, respectful, restrained and quietly hopeful documentary underscore. ' +
+      'No vocals. Starts immediately on the first downbeat with a soft note, no intro silence, no fade in. ' +
+      'Soft felt piano playing slow arpeggios in A minor, warm sustained string pad, gentle muted kick on beats 1 and 3, very light brushed snare, no big drops, no hand claps. Keep the same calm intensity for the whole track.',
+    ms: 60000,
+  },
+  // e: ligera / curiosa / humor (datos absurdos, anécdotas)
+  e: {
+    text:
+      'Instrumental only. Exactly 100 BPM, 4/4, rock-solid steady tempo. Light, quirky, curious and comedic documentary groove. No vocals, tight punchy mix. ' +
+      'Starts immediately with a bright hit on the first downbeat, no intro silence, no fade in. ' +
+      'Pizzicato strings, bouncy marimba melody in C major, finger snaps on beats 2 and 4, upright walking bass, soft brushed drums. Keep the same playful energy for the whole track.',
+    ms: 60000,
+  },
 };
 
 async function main() {

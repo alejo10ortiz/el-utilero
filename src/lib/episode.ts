@@ -17,7 +17,7 @@ export const OBJETOS = [
 export type ObjetoTipo = (typeof OBJETOS)[number];
 
 export const EscenaSchema = z.object({
-  tipo: z.enum(['gancho', 'sting', 'apertura', 'contexto', 'giro', 'remate', 'cierre', 'camerinos', 'serie', 'secreto']),
+  tipo: z.enum(['gancho', 'sting', 'apertura', 'contexto', 'giro', 'remate', 'cierre', 'camerinos', 'serie', 'secreto', 'contador', 'mapa', 'versus', 'cronologia', 'recorte']),
   fondo: z.enum(['pizarra', 'papel', 'camerino', 'lima']).optional(),
   texto: z.string().optional(),
   resaltar: z.string().optional(),
@@ -56,6 +56,22 @@ export const EscenaSchema = z.object({
   clave: z.string().optional(),
   /** giro: «misterio» cambia el estallido de hinchada por un golpe seco (robos, desapariciones). */
   tono: z.enum(['festivo', 'misterio']).optional(),
+  // ── escenas explicativas (rompen la plantilla de fichas de texto) ──
+  /** contador: cifra final, cifra inicial, unidad («goles»), estilo («tiza» = pizarra con marcas, «marcador» = papel). `clave` = palabra con la que termina la cuenta. */
+  cifra: z.number().optional(),
+  desde: z.number().optional(),
+  unidad: z.string().optional(),
+  estilo: z.enum(['tiza', 'marcador']).optional(),
+  /** mapa: lugares (lat/lon) que aparecen cuando se dicen; `ruta` = índices en orden de viaje. */
+  puntos: z.array(z.object({ nombre: z.string(), lat: z.number(), lon: z.number(), palabra: z.string().optional() })).optional(),
+  ruta: z.array(z.number().int()).optional(),
+  /** versus: dos lados con su título y líneas; `palabra` = palabra de la voz que hace entrar cada línea. */
+  lados: z.array(z.object({ titulo: z.string(), lineas: z.array(z.string()), palabras: z.array(z.string()).optional() })).optional(),
+  /** cronologia: hitos con año y texto corto. */
+  hitos: z.array(z.object({ anio: z.string(), texto: z.string(), palabra: z.string().optional() })).optional(),
+  /** recorte: titular y línea de fecha/lugar del recorte de periódico. */
+  titular: z.string().optional(),
+  linea: z.string().optional(),
   /** secreto: cuántas llaves se muestran (1–5). */
   nivel: z.number().int().min(1).max(5).optional(),
 });

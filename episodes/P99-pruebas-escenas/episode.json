@@ -1,0 +1,32 @@
+{
+  "formato": "presentacion",
+  "id": "P99",
+  "slug": "pruebas-escenas",
+  "serie": "Presentación",
+  "titulo": "Prueba interna de escenas nuevas (no se publica)",
+  "camerinoNumero": "000",
+  "textoFinal": "@elutilerofutbol · Síganme",
+  "estilo": "pro",
+  "musica": "base-100bpm-b.mp3",
+  "transiciones": ["flash", "cinta", "hoja", "cinta", "flash", "flash"],
+  "escenas": [
+    { "tipo": "gancho", "fondo": "pizarra", "texto": "149 GOLES EN CONTRA", "resaltar": "CONTRA", "voz": "Un equipo se metió 149 goles en su propia portería. A propósito." },
+    { "tipo": "contador", "estilo": "tiza", "cifra": 149, "unidad": "goles en contra", "clave": "propia", "sello": "RÉCORD", "claves": ["149"], "voz": "Terminó 149 a 0, y los 149 goles fueron en propia puerta." },
+    { "tipo": "mapa", "palabraGigante": "2018", "puntos": [
+        { "nombre": "Buenos Aires", "lat": -34.6, "lon": -58.4, "palabra": "Buenos" },
+        { "nombre": "Madrid", "lat": 40.4, "lon": -3.7, "palabra": "Madrid" } ], "ruta": [0, 1], "claves": ["Madrid"],
+      "voz": "La final salió de Buenos Aires y terminó en Madrid, a miles de kilómetros." },
+    { "tipo": "versus", "lados": [
+        { "titulo": "Chivas", "lineas": ["Solo mexicanos por nacimiento", "Desde 1943"], "palabras": ["mexicanos", "1943"] },
+        { "titulo": "Athletic", "lineas": ["Solo formados en el País Vasco y Navarra"], "palabras": ["vasco"] } ], "claves": ["Chivas", "Athletic"],
+      "voz": "Chivas solo juega con mexicanos desde 1943. El Athletic, solo con jugadores formados en el País Vasco y Navarra." },
+    { "tipo": "cronologia", "hitos": [
+        { "anio": "1949", "texto": "La liga se sale de la FIFA", "palabra": "1949" },
+        { "anio": "1953", "texto": "El reparto Madrid–Barça", "palabra": "1953" },
+        { "anio": "1963", "texto": "Secuestro en Caracas", "palabra": "1963" } ], "claves": ["1949", "1953", "1963"],
+      "voz": "En 1949 llegó a Colombia. En 1953, el Madrid y el Barça se lo repartieron. Y en 1963, lo secuestraron en Caracas." },
+    { "tipo": "recorte", "titular": "Uruguay gana a Brasil en el Maracaná", "linea": "RÍO · 17 JUL 1950", "resaltar": "Uruguay", "claves": ["Uruguay"],
+      "voz": "Así lo contó la prensa: Uruguay ganó en el Maracaná." },
+    { "tipo": "cierre", "fondo": "lima", "expresion": "E2", "claves": ["camerino"], "voz": "Comenten su país y abro su camerino." }
+  ]
+}

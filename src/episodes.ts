@@ -11,6 +11,7 @@ import ep009 from '../episodes/009-chapecoense-nacional/episode.json';
 import ep010 from '../episodes/010-secuestro-di-stefano/episode.json';
 import ep011 from '../episodes/011-escorpion-higuita/episode.json';
 import ep012 from '../episodes/012-libertadores-madrid/episode.json';
+import epP99 from '../episodes/P99-pruebas-escenas/episode.json';
 import epP01 from '../episodes/P01-quien-es/episode.json';
 import epP02 from '../episodes/P02-que-hay/episode.json';
 import epP03 from '../episodes/P03-como-funciona/episode.json';
@@ -34,6 +35,7 @@ export const EPISODIOS: Record<string, Episode> = {
   '011-escorpion-higuita': parseEpisode(ep011),
   '012-libertadores-madrid': parseEpisode(ep012),
   'P01-quien-es': parseEpisode(epP01),
+  'P99-pruebas-escenas': parseEpisode(epP99),
   'P02-que-hay': parseEpisode(epP02),
   'P03-como-funciona': parseEpisode(epP03),
 };

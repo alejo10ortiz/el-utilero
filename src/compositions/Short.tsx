@@ -24,6 +24,11 @@ import { SecretoPro } from '../scenes/pro/SecretoPro';
 import { ContextoPro } from '../scenes/pro/ContextoPro';
 import { GiroPro } from '../scenes/pro/GiroPro';
 import { RematePro } from '../scenes/pro/RematePro';
+import { ContadorPro } from '../scenes/pro/ContadorPro';
+import { MapaPro } from '../scenes/pro/MapaPro';
+import { VersusPro } from '../scenes/pro/VersusPro';
+import { CronologiaPro } from '../scenes/pro/CronologiaPro';
+import { RecortePro } from '../scenes/pro/RecortePro';
 import { AbsProvider } from '../lib/ritmo';
 import { Musica } from '../components/Musica';
 import { DUR_TRANSICION, Transicion } from '../components/Transiciones';
@@ -32,9 +37,11 @@ import { Secreto } from '../scenes/Secreto';
 import { Serie } from '../scenes/Serie';
 
 /** Escenas del estilo 'pro' (montaje dinámico al ritmo). Las que no existan caen al estilo clásico. */
-const ESCENAS_PRO: Partial<Record<keyof typeof ESCENAS, React.FC<any>>> = {
+const ESCENAS_PRO: Partial<Record<Episode['escenas'][number]['tipo'], React.FC<any>>> = {
   gancho: GanchoPro, sting: StingPro, apertura: AperturaPro, camerinos: CamerinosPro, cierre: CierrePro,
   serie: SeriePro, secreto: SecretoPro, contexto: ContextoPro, giro: GiroPro, remate: RematePro,
+  // escenas explicativas (solo existen en estilo pro)
+  contador: ContadorPro, mapa: MapaPro, versus: VersusPro, cronologia: CronologiaPro, recorte: RecortePro,
 };
 
 export type ShortProps = {
@@ -44,7 +51,7 @@ export type ShortProps = {
   timeline?: Timeline;
 };
 
-const ESCENAS = {
+const ESCENAS: Partial<Record<Episode['escenas'][number]['tipo'], React.FC<any>>> = {
   gancho: Gancho, sting: Sting, apertura: Apertura, contexto: Contexto, giro: Giro, remate: Remate, cierre: Cierre,
   camerinos: Camerinos, serie: Serie, secreto: Secreto,
 };
@@ -77,6 +84,7 @@ export const Short: React.FC<ShortProps> = ({ slug, episode, timeline }) => {
           const from = toFrames(t.start);
           const frames = Math.max(1, toFrames(t.end) - from);
           const Escena = (episode.estilo === 'pro' && ESCENAS_PRO[esc.tipo]) || ESCENAS[esc.tipo];
+          if (!Escena) throw new Error(`La escena «${esc.tipo}» solo existe en estilo pro (episodio ${slug}, escena ${i + 1})`);
           return (
             <Sequence key={i} from={from} durationInFrames={frames} name={`${i + 1}·${esc.tipo}`}>
               <AbsProvider inicio={from}>
