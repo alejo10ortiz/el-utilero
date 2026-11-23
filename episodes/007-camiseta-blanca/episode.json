@@ -23,7 +23,15 @@
   ],
   "estilo": "pro",
   "musica": "base-100bpm-b.mp3",
-  "transiciones": ["flash", "cinta", "hoja", "cinta", "hoja", "flash", "flash"],
+  "transiciones": [
+    "flash",
+    "cinta",
+    "hoja",
+    "cinta",
+    "hoja",
+    "flash",
+    "flash"
+  ],
   "escenas": [
     {
       "tipo": "gancho",
@@ -32,7 +40,10 @@
       "resaltar": "RETIRADA",
       "voz": "Brasil retiró su camiseta blanca para siempre… por una sola tarde."
     },
-    { "tipo": "sting", "camerino": "entreabierto" },
+    {
+      "tipo": "sting",
+      "camerino": "entreabierto"
+    },
     {
       "tipo": "apertura",
       "expresion": "E3",
@@ -45,14 +56,20 @@
       "ficha": "RÍO · 16.07.1950",
       "sello": "EMPATE",
       "palabraGigante": "EMPATAR",
-      "claves": ["empatar", "campeón"],
+      "claves": [
+        "empatar",
+        "campeón"
+      ],
       "voz": "Maracaná, 1950. A Brasil le bastaba empatar para ser campeón del mundo."
     },
     {
       "tipo": "contexto",
       "ficha": "Uruguay 2 – 1 Brasil",
       "marcador": "más de 170 mil",
-      "claves": ["170", "Uruguay"],
+      "claves": [
+        "170",
+        "Uruguay"
+      ],
       "voz": "Más de 170 mil personas vieron cómo Uruguay ganaba 2 a 1."
     },
     {
@@ -64,7 +81,10 @@
       "gatillo": "periódico",
       "clave": "amarilla",
       "tono": "misterio",
-      "claves": ["periódico", "amarilla"],
+      "claves": [
+        "periódico",
+        "amarilla"
+      ],
       "voz": "Tres años después, un periódico convocó un concurso para una camiseta nueva. Ganó una amarilla."
     },
     {
@@ -73,15 +93,25 @@
       "cinta": "nació en 1953",
       "palabraGigante": "AMARILLA",
       "kicker": "BLANCA",
-      "claves": ["amarilla"],
+      "claves": [
+        "amarilla"
+      ],
       "voz": "Y de esa derrota nació la camiseta amarilla."
     },
     {
       "tipo": "cierre",
       "fondo": "lima",
       "expresion": "E2",
-      "claves": ["camerino"],
+      "claves": [
+        "camerino"
+      ],
       "voz": "Yo estaba ahí. Bueno… casi. Comenten su país y abro su camerino."
     }
-  ]
+  ],
+  "guion": {
+    "gancho": "paradoja",
+    "apertura": "firma",
+    "formato": "objeto",
+    "cierre": "firma"
+  }
 }

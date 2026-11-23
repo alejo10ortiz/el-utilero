@@ -103,5 +103,11 @@
       ],
       "voz": "¿Cuál es el marcador más raro que han visto? Comenten."
     }
-  ]
+  ],
+  "guion": {
+    "gancho": "cifra",
+    "apertura": "firma",
+    "formato": "cifra",
+    "cierre": "pregunta"
+  }
 }

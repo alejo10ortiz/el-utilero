@@ -562,6 +562,30 @@ FUENTES: [1] … [2] …
 
 ---
 
+## 7b. Banco de guion y rotación (identidad fija + piezas que rotan)
+
+**Por qué:** una auditoría de los primeros 15 episodios mostró que 12 de 15 tenían exactamente la misma secuencia de escenas, 15 de 15 abrían con «Cierren la puerta, que les cuento.», 11 de 15 cerraban con «Yo estaba ahí. Bueno… casi.» y 13 de 15 pedían «su país». La identidad se mantiene; el esqueleto debe rotar.
+
+**Identidad (siempre):** el Utilero y su look «Archivo del camerino» · las llaves de nivel de secreto · la cinta con @usuario al final · el sello sonoro (llave + cerrojo + golpe) · datos reales con 2 fuentes · el portazo final.
+
+**Piezas que rotan** (se anotan en `guion` dentro de `episode.json`: `gancho`, `apertura`, `cierre`, `formato`):
+
+| Pieza | Variantes (código → fórmula y ejemplo) |
+|---|---|
+| **Gancho** | `afirmacion` hecho insólito en afirmativa («Un portero despejó con los talones…») · `paradoja` dos datos que chocan («La Copa se robó dos veces. La primera la encontró un perro.») · `cifra` empieza por el número («36 a 0.») · `pregunta` («¿India no fue a un Mundial por jugar descalza?») · `mito` «¿Mito o verdad?» · `escena` en mitad de la acción («Minuto 51. Maradona salta…») · `direccion` le habla a la gente («¿Sabían que una liga entera se salió de la FIFA?») · `promesa` («En 30 segundos van a saber quién…») · `objeto` el objeto va primero («Esta servilleta vale…») |
+| **Apertura** | `firma` «Cierren la puerta, que les cuento.» · `corta` «Cierren la puerta.» · `intima` «Esto es entre nosotros.» · `directa` sin frase: el sello sonoro y al relato · `invita` «Pasen, pero cierren la puerta.» |
+| **Formato** (cuerpo) | `objeto` (contexto → giro con objeto → remate) · `cifra` (contador) · `viaje` (mapa + cronología) · `duelo` (versus) · `documento` (recorte) · `misterio` (3 actos, cama `c`) · `mito` (¿mito o verdad?, sello rojo) · `cuenta_atras` (3-2-1) |
+| **Cierre** | `pais` «Comenten su país y abro su camerino.» · `pregunta` pregunta específica de la historia («¿Cuál es el marcador más raro que han visto?») · `ab` elegir entre A y B · `siguiente` gancho al próximo («Mañana: …») · `dato` «Y hay más: …» · `reto` adivinar el próximo · `firma` «Yo estaba ahí. Bueno… casi.» · `seco` solo cinta + «Síganme» · `sobrio` historias delicadas (sin chiste ni confeti) |
+
+**Reglas de rotación** (las revisa `npm run verify`, avisos no bloqueantes):
+1. Un mismo tipo de **gancho** no se repite en 2 videos seguidos ni más de 1 de cada 3.
+2. La frase firma de **apertura** en como máximo 1 de cada 2 videos; alternar con `corta`, `intima`, `directa`.
+3. «Yo estaba ahí. Bueno… casi.» en como máximo 1 de cada 3, y nunca en historias sobrias.
+4. «Comenten su país» en como máximo 1 de cada 2: el resto, una pregunta propia de la historia (genera más comentarios que una petición genérica).
+5. La **secuencia de escenas** y la **cama de música** deben ser distintas a las de los dos videos anteriores.
+6. Cada 5 videos, uno de serie (¿Mito o verdad?, La llave de…, Hoy hace X años).
+7. Antes de escribir un guion: `npm run rotacion` muestra lo usado en los últimos episodios y sugiere el siguiente gancho, apertura, formato, cierre y música.
+
 ## 8. Guion completo — Camerino #001: "El perro que salvó la Copa"
 
 **Objeto:** bulto envuelto en papel periódico · **País:** Inglaterra · **Año:** 1966 · **Nivel de secreto:** 5/5

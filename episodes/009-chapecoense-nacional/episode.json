@@ -107,5 +107,11 @@
       "voz": "Así también se juega. Comenten su país y abro su camerino.",
       "tono": "misterio"
     }
-  ]
+  ],
+  "guion": {
+    "gancho": "paradoja",
+    "apertura": "firma",
+    "formato": "objeto",
+    "cierre": "sobrio"
+  }
 }

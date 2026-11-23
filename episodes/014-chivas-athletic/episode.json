@@ -114,5 +114,11 @@
       ],
       "voz": "Comenten su país: ¿su club haría lo mismo?"
     }
-  ]
+  ],
+  "guion": {
+    "gancho": "afirmacion",
+    "apertura": "firma",
+    "formato": "duelo",
+    "cierre": "pregunta"
+  }
 }

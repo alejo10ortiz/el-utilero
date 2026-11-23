@@ -20,7 +20,15 @@
   ],
   "estilo": "pro",
   "musica": "base-100bpm-b.mp3",
-  "transiciones": ["flash", "cinta", "hoja", "cinta", "hoja", "flash", "flash"],
+  "transiciones": [
+    "flash",
+    "cinta",
+    "hoja",
+    "cinta",
+    "hoja",
+    "flash",
+    "flash"
+  ],
   "escenas": [
     {
       "tipo": "gancho",
@@ -29,7 +37,10 @@
       "resaltar": "TRIBUNA",
       "voz": "Un príncipe bajó de la tribuna y le anularon un gol a Francia."
     },
-    { "tipo": "sting", "camerino": "entreabierto" },
+    {
+      "tipo": "sting",
+      "camerino": "entreabierto"
+    },
     {
       "tipo": "apertura",
       "expresion": "E3",
@@ -42,14 +53,20 @@
       "ficha": "ESPAÑA · 1982",
       "sello": "SILBATO",
       "palabraGigante": "1982",
-      "claves": ["silbato", "Kuwait"],
+      "claves": [
+        "silbato",
+        "Kuwait"
+      ],
       "voz": "Mundial de 1982, Francia contra Kuwait. Los kuwaitíes se paran: creyeron oír un silbato."
     },
     {
       "tipo": "contexto",
       "ficha": "Francia marcó igual",
       "marcador": "bajó un príncipe",
-      "claves": ["príncipe", "federación"],
+      "claves": [
+        "príncipe",
+        "federación"
+      ],
       "voz": "Francia marcó igual. Entonces bajó a la cancha el presidente de su federación… un príncipe."
     },
     {
@@ -60,7 +77,10 @@
       "palabraGigante": "ANULADO",
       "gatillo": "discutió",
       "clave": "anuló",
-      "claves": ["discutió", "anuló"],
+      "claves": [
+        "discutió",
+        "anuló"
+      ],
       "voz": "Discutió con el árbitro… y el árbitro anuló el gol."
     },
     {
@@ -69,15 +89,25 @@
       "cinta": "¡igual ganó!",
       "palabraGigante": "IGUAL",
       "kicker": "4–1",
-      "claves": ["igual"],
+      "claves": [
+        "igual"
+      ],
       "voz": "Francia ganó igual: 4 a 1."
     },
     {
       "tipo": "cierre",
       "fondo": "lima",
       "expresion": "E2",
-      "claves": ["camerino"],
+      "claves": [
+        "camerino"
+      ],
       "voz": "Yo estaba ahí. Bueno… casi. Comenten su país y abro su camerino."
     }
-  ]
+  ],
+  "guion": {
+    "gancho": "afirmacion",
+    "apertura": "firma",
+    "formato": "objeto",
+    "cierre": "firma"
+  }
 }

@@ -21,7 +21,15 @@
   ],
   "estilo": "pro",
   "musica": "base-100bpm-b.mp3",
-  "transiciones": ["flash", "cinta", "hoja", "cinta", "hoja", "flash", "flash"],
+  "transiciones": [
+    "flash",
+    "cinta",
+    "hoja",
+    "cinta",
+    "hoja",
+    "flash",
+    "flash"
+  ],
   "escenas": [
     {
       "tipo": "gancho",
@@ -30,7 +38,10 @@
       "resaltar": "CONTRA",
       "voz": "Un equipo se metió 149 goles en su propia portería. A propósito."
     },
-    { "tipo": "sting", "camerino": "entreabierto" },
+    {
+      "tipo": "sting",
+      "camerino": "entreabierto"
+    },
     {
       "tipo": "apertura",
       "expresion": "E3",
@@ -43,14 +54,20 @@
       "ficha": "MADAGASCAR · 2002",
       "sello": "PROTESTA",
       "palabraGigante": "2002",
-      "claves": ["harto", "árbitro"],
+      "claves": [
+        "harto",
+        "árbitro"
+      ],
       "voz": "Madagascar, 2002. Un equipo estaba harto de las decisiones del árbitro."
     },
     {
       "tipo": "contexto",
       "ficha": "Última fecha",
       "marcador": "goles en contra",
-      "claves": ["última", "vez"],
+      "claves": [
+        "última",
+        "vez"
+      ],
       "voz": "Así que, en la última fecha, empezó a meterse goles en contra. Una y otra vez."
     },
     {
@@ -61,7 +78,10 @@
       "palabraGigante": "149–0",
       "gatillo": "terminó",
       "clave": "propia",
-      "claves": ["goles", "propia"],
+      "claves": [
+        "goles",
+        "propia"
+      ],
       "voz": "Terminó 149 a 0… y los 149 goles fueron en propia puerta."
     },
     {
@@ -70,15 +90,26 @@
       "cinta": "¡todos en contra!",
       "palabraGigante": "RÉCORD",
       "kicker": "149",
-      "claves": ["récord", "autogoles"],
+      "claves": [
+        "récord",
+        "autogoles"
+      ],
       "voz": "Es récord Guinness: más autogoles en un partido de liga."
     },
     {
       "tipo": "cierre",
       "fondo": "lima",
       "expresion": "E2",
-      "claves": ["camerino"],
+      "claves": [
+        "camerino"
+      ],
       "voz": "Yo estaba ahí. Bueno… casi. Comenten su país y abro su camerino."
     }
-  ]
+  ],
+  "guion": {
+    "gancho": "cifra",
+    "apertura": "firma",
+    "formato": "objeto",
+    "cierre": "firma"
+  }
 }

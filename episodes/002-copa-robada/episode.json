@@ -21,7 +21,15 @@
   ],
   "estilo": "pro",
   "musica": "base-100bpm-b.mp3",
-  "transiciones": ["flash", "cinta", "hoja", "cinta", "hoja", "flash", "flash"],
+  "transiciones": [
+    "flash",
+    "cinta",
+    "hoja",
+    "cinta",
+    "hoja",
+    "flash",
+    "flash"
+  ],
   "escenas": [
     {
       "tipo": "gancho",
@@ -30,7 +38,10 @@
       "resaltar": "DOS VECES",
       "voz": "La Copa del Mundo se robó dos veces. La primera la encontró un perro."
     },
-    { "tipo": "sting", "camerino": "entreabierto" },
+    {
+      "tipo": "sting",
+      "camerino": "entreabierto"
+    },
     {
       "tipo": "apertura",
       "expresion": "E3",
@@ -43,14 +54,20 @@
       "ficha": "BRASIL · DESDE 1970",
       "sello": "SUYA",
       "palabraGigante": "SIEMPRE",
-      "claves": ["siempre", "vidrio"],
+      "claves": [
+        "siempre",
+        "vidrio"
+      ],
       "voz": "Brasil se quedó con la Copa para siempre. La exhibía en Río, tras un vidrio blindado."
     },
     {
       "tipo": "contexto",
       "ficha": "Diciembre de 1983",
       "marcador": "se la llevaron",
-      "claves": ["ladrones", "llevaron"],
+      "claves": [
+        "ladrones",
+        "llevaron"
+      ],
       "voz": "En diciembre del 83, unos ladrones entraron a la sede y se la llevaron."
     },
     {
@@ -62,7 +79,10 @@
       "gatillo": "perro",
       "clave": "nunca",
       "tono": "misterio",
-      "claves": ["perro", "nunca"],
+      "claves": [
+        "perro",
+        "nunca"
+      ],
       "voz": "Esta vez no hubo perro. Condenaron a cuatro hombres, pero la Copa nunca apareció."
     },
     {
@@ -71,15 +91,26 @@
       "cinta": "solo una teoría",
       "palabraGigante": "NADIE",
       "kicker": "¿FUNDIDA?",
-      "claves": ["fundieron", "nadie"],
+      "claves": [
+        "fundieron",
+        "nadie"
+      ],
       "voz": "Dicen que la fundieron. Nadie lo ha probado."
     },
     {
       "tipo": "cierre",
       "fondo": "lima",
       "expresion": "E2",
-      "claves": ["camerino"],
+      "claves": [
+        "camerino"
+      ],
       "voz": "Yo estaba ahí. Bueno… casi. Comenten su país y mañana abro su camerino."
     }
-  ]
+  ],
+  "guion": {
+    "gancho": "paradoja",
+    "apertura": "firma",
+    "formato": "objeto",
+    "cierre": "firma"
+  }
 }

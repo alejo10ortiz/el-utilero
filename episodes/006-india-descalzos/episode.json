@@ -23,7 +23,15 @@
   ],
   "estilo": "pro",
   "musica": "base-100bpm-b.mp3",
-  "transiciones": ["flash", "cinta", "hoja", "cinta", "hoja", "flash", "flash"],
+  "transiciones": [
+    "flash",
+    "cinta",
+    "hoja",
+    "cinta",
+    "hoja",
+    "flash",
+    "flash"
+  ],
   "escenas": [
     {
       "tipo": "gancho",
@@ -32,7 +40,10 @@
       "resaltar": "MITO",
       "voz": "¿India no fue a un Mundial por jugar descalza?"
     },
-    { "tipo": "sting", "camerino": "entreabierto" },
+    {
+      "tipo": "sting",
+      "camerino": "entreabierto"
+    },
     {
       "tipo": "apertura",
       "expresion": "E5",
@@ -44,7 +55,10 @@
       "tipo": "contexto",
       "ficha": "BRASIL · 1950",
       "palabraGigante": "1950",
-      "claves": ["boleto", "última"],
+      "claves": [
+        "boleto",
+        "última"
+      ],
       "voz": "Mundial de 1950. India tenía su boleto… y se bajó a última hora."
     },
     {
@@ -52,7 +66,10 @@
       "ficha": "Lo que dicen",
       "sello": "¿MITO?",
       "marcador": "descalzos",
-      "claves": ["descalzos", "FIFA"],
+      "claves": [
+        "descalzos",
+        "FIFA"
+      ],
       "voz": "Dicen que fue porque la FIFA no los dejaba jugar descalzos."
     },
     {
@@ -63,7 +80,10 @@
       "palabraGigante": "MITO",
       "gatillo": "mito",
       "clave": "razones",
-      "claves": ["mito", "razones"],
+      "claves": [
+        "mito",
+        "razones"
+      ],
       "voz": "Es un mito. La federación india habló de otras razones: la selección del equipo y poco tiempo para prepararse."
     },
     {
@@ -72,15 +92,25 @@
       "cinta": "no fueron los pies",
       "palabraGigante": "OLÍMPICO",
       "kicker": "¿QUÉ PESÓ?",
-      "claves": ["olímpico"],
+      "claves": [
+        "olímpico"
+      ],
       "voz": "Algunos creen que pesó más el torneo olímpico."
     },
     {
       "tipo": "cierre",
       "fondo": "lima",
       "expresion": "E2",
-      "claves": ["mito"],
+      "claves": [
+        "mito"
+      ],
       "voz": "Yo estaba ahí. Bueno… casi. Comenten qué mito quieren que revele."
     }
-  ]
+  ],
+  "guion": {
+    "gancho": "mito",
+    "apertura": "firma",
+    "formato": "mito",
+    "cierre": "firma"
+  }
 }

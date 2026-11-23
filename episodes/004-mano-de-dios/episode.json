@@ -23,7 +23,15 @@
   ],
   "estilo": "pro",
   "musica": "base-100bpm-b.mp3",
-  "transiciones": ["flash", "cinta", "hoja", "cinta", "hoja", "flash", "flash"],
+  "transiciones": [
+    "flash",
+    "cinta",
+    "hoja",
+    "cinta",
+    "hoja",
+    "flash",
+    "flash"
+  ],
   "escenas": [
     {
       "tipo": "gancho",
@@ -32,7 +40,10 @@
       "resaltar": "CULPA",
       "voz": "Dos hombres dejaron pasar la mano de Dios. Y se echaron la culpa."
     },
-    { "tipo": "sting", "camerino": "entreabierto" },
+    {
+      "tipo": "sting",
+      "camerino": "entreabierto"
+    },
     {
       "tipo": "apertura",
       "expresion": "E3",
@@ -45,14 +56,20 @@
       "ficha": "MÉXICO · 22.06.1986",
       "sello": "MANO",
       "palabraGigante": "51",
-      "claves": ["minuto", "mano"],
+      "claves": [
+        "minuto",
+        "mano"
+      ],
       "voz": "Argentina contra Inglaterra, Mundial de 1986. Minuto 51: Maradona marca con la mano."
     },
     {
       "tipo": "contexto",
       "ficha": "El árbitro dijo…",
       "marcador": "esperaba una señal",
-      "claves": ["señal", "nunca"],
+      "claves": [
+        "señal",
+        "nunca"
+      ],
       "voz": "El árbitro dijo que esperaba una señal del juez de línea. Nunca llegó."
     },
     {
@@ -64,7 +81,10 @@
       "gatillo": "bandera",
       "clave": "nunca",
       "tono": "misterio",
-      "claves": ["vio", "bandera"],
+      "claves": [
+        "vio",
+        "bandera"
+      ],
       "voz": "El juez de línea admitió después que sí la vio. Pero su bandera nunca subió."
     },
     {
@@ -73,15 +93,26 @@
       "cinta": "en subasta",
       "palabraGigante": "AÑOS",
       "kicker": "MÁS DE 35",
-      "claves": ["balón", "años"],
+      "claves": [
+        "balón",
+        "años"
+      ],
       "voz": "El árbitro guardó el balón más de 35 años y luego lo puso en subasta."
     },
     {
       "tipo": "cierre",
       "fondo": "lima",
       "expresion": "E2",
-      "claves": ["camerino"],
+      "claves": [
+        "camerino"
+      ],
       "voz": "Yo estaba ahí. Bueno… casi. Comenten su país y abro su camerino."
     }
-  ]
+  ],
+  "guion": {
+    "gancho": "paradoja",
+    "apertura": "firma",
+    "formato": "objeto",
+    "cierre": "firma"
+  }
 }

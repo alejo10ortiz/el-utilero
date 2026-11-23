@@ -122,5 +122,11 @@
       ],
       "voz": "Comenten su país y abro su camerino."
     }
-  ]
+  ],
+  "guion": {
+    "gancho": "afirmacion",
+    "apertura": "firma",
+    "formato": "viaje",
+    "cierre": "pais"
+  }
 }

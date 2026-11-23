@@ -8,6 +8,7 @@ import { ZodError } from 'zod';
 import { flag, loadEpisode, positional, resolveSlug } from './lib';
 import { estimateTimeline, tokenize } from '../src/lib/timeline';
 import { HANDLE } from '../config/brand';
+import { cargarEpisodios } from './rotacion';
 
 type Hallazgo = { nivel: 'ERROR' | 'AVISO' | 'OK'; msg: string };
 
@@ -57,6 +58,23 @@ export async function verificar(slug: string, online = false): Promise<Hallazgo[
   const cierre = ep.escenas.find((e) => e.tipo === 'cierre');
   if (!esPres && cierre && !/comenten|comenta/i.test(cierre.voz ?? '')) warn('el cierre debería invitar a comentar el país (comunidad, §1)');
   if (ep.textoFinal.split(' · ')[0] !== HANDLE) err(`textoFinal debe empezar con el @usuario oficial ${HANDLE}`);
+
+  // ── Rotación de guion (BRAND.md §7b): avisos, nunca bloquean
+  if (!esPres) {
+    if (!ep.guion) warn('anota `guion: {gancho, apertura, formato, cierre}` en episode.json (BRAND.md §7b) para poder rotar recursos');
+    else {
+      const previos = cargarEpisodios().filter((x) => x.id < ep.id).slice(-3);
+      const ult2 = previos.slice(-2);
+      if (ep.guion.gancho && ult2.some((x) => x.gancho === ep.guion!.gancho)) warn(`gancho «${ep.guion.gancho}» repetido en uno de los 2 episodios anteriores: rota el tipo de gancho`);
+      if (ep.guion.formato && ult2.some((x) => x.formato === ep.guion!.formato)) warn(`formato «${ep.guion.formato}» repetido en uno de los 2 episodios anteriores`);
+      if (ep.guion.apertura === 'firma' && previos.filter((x) => x.apertura === 'firma').length >= 2) warn('la frase firma «Cierren la puerta, que les cuento.» salió en 2 de los 3 episodios anteriores: usa apertura corta, íntima o directa');
+      if (ep.guion.cierre === 'firma' && ult2.filter((x) => x.cierre === 'firma').length >= 1) warn('el cierre «Yo estaba ahí. Bueno… casi.» ya salió en el episodio anterior (máx. 1 de cada 3)');
+      const cierre = ep.escenas.find((e) => e.tipo === 'cierre')?.voz ?? '';
+      if (/pa[ií]s/i.test(cierre) && previos.slice(-1).some((x) => /pa[ií]s/i.test(x.cierreVoz))) warn('el cierre pide «su país» como el del episodio anterior: usa una pregunta propia de la historia');
+      const musicaActual = ep.musica?.match(/-([a-e])\.mp3$/)?.[1];
+      if (musicaActual && ult2.some((x) => x.musica === musicaActual)) warn(`cama de música «${musicaActual}» repetida en uno de los 2 episodios anteriores`);
+    }
+  }
 
   // ── Duración (30–45 s objetivo)
   const palabras = ep.escenas.reduce((a, e) => a + (e.voz ? tokenize(e.voz).length : 0), 0);

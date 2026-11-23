@@ -104,5 +104,11 @@
       ],
       "voz": "Yo estaba ahí. Bueno… casi. Comenten su país y abro su camerino."
     }
-  ]
+  ],
+  "guion": {
+    "gancho": "afirmacion",
+    "apertura": "firma",
+    "formato": "objeto",
+    "cierre": "firma"
+  }
 }

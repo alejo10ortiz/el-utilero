@@ -99,6 +99,15 @@ export const EpisodeSchema = z
     /** Etiqueta colgante del objeto (§3.3). */
     etiqueta: z.string().optional(),
     nivelSecreto: z.number().int().min(1).max(5).optional(),
+    /** Recursos de guion usados (BRAND.md §7b): sirven para rotar ganchos, aperturas, formatos y cierres. */
+    guion: z
+      .object({
+        gancho: z.string().optional(),
+        apertura: z.string().optional(),
+        formato: z.string().optional(),
+        cierre: z.string().optional(),
+      })
+      .optional(),
     /** 'pro' = montaje dinámico al ritmo (escenas en src/scenes/pro); 'clasico' = el primer estilo. */
     estilo: z.enum(['clasico', 'pro']).default('clasico'),
     /** Pista de assets/music/ (100 BPM). Sin ella, el video va sin música. */

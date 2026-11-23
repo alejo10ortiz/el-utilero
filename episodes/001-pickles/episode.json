@@ -100,5 +100,11 @@
     "hoja",
     "flash",
     "flash"
-  ]
+  ],
+  "guion": {
+    "gancho": "afirmacion",
+    "apertura": "firma",
+    "formato": "objeto",
+    "cierre": "firma"
+  }
 }
