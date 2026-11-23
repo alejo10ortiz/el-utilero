@@ -35,6 +35,7 @@ export const CierrePro: React.FC<EscenaProps> = ({ esc, ep, timing, frames }) =>
   const conNivel = ep.nivelSecreto !== undefined;
   const cita = esc.cita ? esc.cita.split(' ') : [];
   const conCita = cita.length > 0;
+  const sobrio = esc.tono === 'misterio'; // historias delicadas: sin confeti ni guiño sonoro
   // Sin cita el Utilero crece; con nivel de secreto (llaves arriba) queda un poco más bajo.
   const tamU = conCita ? (conNivel ? 760 : 900) : conNivel ? 880 : 1000;
   const yU = conCita ? (conNivel ? 600 : 440) : conNivel ? 460 : 340;
@@ -47,7 +48,7 @@ export const CierrePro: React.FC<EscenaProps> = ({ esc, ep, timing, frames }) =>
     <Escenario fondo="lima" impactos={[{ frame: tHandle + 2, amp: 12 }, { frame: tPortazo + 7, amp: 14 }]} deriva={0.5} zoom={z}>
       <Rayos c2="rgba(22,19,15,0.10)" cx={540} cy={900} vel={-0.22} />
       {conNivel && <NivelSecreto nivel={ep.nivelSecreto!} x={SAFE_BOX.cx} y={150} size={150} delay={8} />}
-      <Particulas tipo="confeti" n={34} semilla={11} colores={[C.tinta, C.papel, C.sello, '#fff']} dir={1} velocidad={0.5} opacidad={0.85} />
+      {!sobrio && <Particulas tipo="confeti" n={34} semilla={11} colores={[C.tinta, C.papel, C.sello, '#fff']} dir={1} velocidad={0.5} opacidad={0.85} />}
 
       {/* frase de marca: las palabras saltan una tras otra */}
       {conCita && (
@@ -71,7 +72,7 @@ export const CierrePro: React.FC<EscenaProps> = ({ esc, ep, timing, frames }) =>
       )}
 
       <div style={{ transform: `scale(${pulso})`, transformOrigin: '50% 100%', position: 'absolute', inset: 0 }}>
-        <UtileroActor entrada={8} desde="abajo" expresion="E2" sobre="lima" words={timing.words} offsetFrames={off} size={tamU} x={SAFE_BOX.cx - tamU / 2} y={yU} seed={9} />
+        <UtileroActor entrada={8} desde="abajo" expresion={esc.expresion ?? 'E2'} sobre="lima" words={timing.words} offsetFrames={off} size={tamU} x={SAFE_BOX.cx - tamU / 2} y={yU} seed={9} />
       </div>
 
       <Palabras words={timing.words} offsetFrames={off} tono="lima" claves={esc.claves} y={1390} size={84} />
@@ -97,10 +98,10 @@ export const CierrePro: React.FC<EscenaProps> = ({ esc, ep, timing, frames }) =>
 
       <Sfx name="whoosh" at={7} volume={0.5} />
       <Sfx name="pop" at={9} volume={0.5} />
-      <Sfx name="wink" at={22} volume={0.5} />
+      {!sobrio && <Sfx name="wink" at={22} volume={0.5} />}
       <Sfx name="impact" at={tHandle} volume={0.85} />
       <Sfx name="slap" at={tHandle} volume={0.8} />
-      <Sfx name="hinchada" at={tHandle + 4} volume={0.35} />
+      {!sobrio && <Sfx name="hinchada" at={tHandle + 4} volume={0.35} />}
     </Escenario>
   );
 };

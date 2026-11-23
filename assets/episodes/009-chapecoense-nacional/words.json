@@ -1,0 +1,479 @@
+{
+ "source": "elevenlabs",
+ "totalSeconds": 42,
+ "scenes": [
+  {
+   "index": 0,
+   "tipo": "gancho",
+   "start": 0,
+   "end": 3,
+   "words": [
+    {
+     "text": "Un",
+     "start": 0.12,
+     "end": 0.248
+    },
+    {
+     "text": "equipo",
+     "start": 0.28300000000000003,
+     "end": 0.573
+    },
+    {
+     "text": "pidió",
+     "start": 0.608,
+     "end": 0.863
+    },
+    {
+     "text": "que",
+     "start": 0.921,
+     "end": 0.991
+    },
+    {
+     "text": "su",
+     "start": 1.026,
+     "end": 1.13
+    },
+    {
+     "text": "rival",
+     "start": 1.1880000000000002,
+     "end": 1.444
+    },
+    {
+     "text": "fuera",
+     "start": 1.513,
+     "end": 1.734
+    },
+    {
+     "text": "campeón.",
+     "start": 1.7799999999999998,
+     "end": 2.581
+    }
+   ]
+  },
+  {
+   "index": 1,
+   "tipo": "sting",
+   "start": 3,
+   "end": 5.4,
+   "words": []
+  },
+  {
+   "index": 2,
+   "tipo": "apertura",
+   "start": 5.4,
+   "end": 8.4,
+   "words": [
+    {
+     "text": "Cierren",
+     "start": 5.7,
+     "end": 6.072
+    },
+    {
+     "text": "la",
+     "start": 6.13,
+     "end": 6.188000000000001
+    },
+    {
+     "text": "puerta,",
+     "start": 6.222,
+     "end": 6.698
+    },
+    {
+     "text": "que",
+     "start": 6.8260000000000005,
+     "end": 6.931
+    },
+    {
+     "text": "les",
+     "start": 6.977,
+     "end": 7.082
+    },
+    {
+     "text": "cuento.",
+     "start": 7.116,
+     "end": 7.79
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "tipo": "contexto",
+   "start": 8.4,
+   "end": 15,
+   "words": [
+    {
+     "text": "Noviembre",
+     "start": 8.700000000000001,
+     "end": 9.385000000000002
+    },
+    {
+     "text": "de",
+     "start": 9.478000000000002,
+     "end": 9.559000000000001
+    },
+    {
+     "text": "2016.",
+     "start": 9.64,
+     "end": 10.743000000000002
+    },
+    {
+     "text": "El",
+     "start": 10.871,
+     "end": 10.999
+    },
+    {
+     "text": "avión",
+     "start": 11.057000000000002,
+     "end": 11.347000000000001
+    },
+    {
+     "text": "del",
+     "start": 11.405000000000001,
+     "end": 11.521
+    },
+    {
+     "text": "Chapecoense",
+     "start": 11.568000000000001,
+     "end": 12.38
+    },
+    {
+     "text": "se",
+     "start": 12.508000000000001,
+     "end": 12.636000000000001
+    },
+    {
+     "text": "estrelló",
+     "start": 12.659,
+     "end": 13.100000000000001
+    },
+    {
+     "text": "camino",
+     "start": 13.170000000000002,
+     "end": 13.507000000000001
+    },
+    {
+     "text": "a",
+     "start": 13.530000000000001,
+     "end": 13.553
+    },
+    {
+     "text": "la",
+     "start": 13.576,
+     "end": 13.634
+    },
+    {
+     "text": "final.",
+     "start": 13.681000000000001,
+     "end": 14.319
+    }
+   ]
+  },
+  {
+   "index": 4,
+   "tipo": "contexto",
+   "start": 15,
+   "end": 22.8,
+   "words": [
+    {
+     "text": "La",
+     "start": 15.3,
+     "end": 15.451
+    },
+    {
+     "text": "final",
+     "start": 15.497,
+     "end": 15.869
+    },
+    {
+     "text": "se",
+     "start": 15.997,
+     "end": 16.078
+    },
+    {
+     "text": "suspendió.",
+     "start": 16.113,
+     "end": 16.856
+    },
+    {
+     "text": "Su",
+     "start": 16.914,
+     "end": 17.053
+    },
+    {
+     "text": "rival,",
+     "start": 17.111,
+     "end": 17.494
+    },
+    {
+     "text": "el",
+     "start": 17.564,
+     "end": 17.715
+    },
+    {
+     "text": "Atlético",
+     "start": 17.796,
+     "end": 18.179000000000002
+    },
+    {
+     "text": "Nacional,",
+     "start": 18.226,
+     "end": 18.725
+    },
+    {
+     "text": "pidió",
+     "start": 18.806,
+     "end": 19.131
+    },
+    {
+     "text": "a",
+     "start": 19.166,
+     "end": 19.189
+    },
+    {
+     "text": "la",
+     "start": 19.224,
+     "end": 19.282
+    },
+    {
+     "text": "Conmebol",
+     "start": 19.34,
+     "end": 19.828
+    },
+    {
+     "text": "darle",
+     "start": 19.898,
+     "end": 20.211
+    },
+    {
+     "text": "el",
+     "start": 20.234,
+     "end": 20.316000000000003
+    },
+    {
+     "text": "título",
+     "start": 20.385,
+     "end": 20.768
+    },
+    {
+     "text": "al",
+     "start": 20.838,
+     "end": 20.931
+    },
+    {
+     "text": "Chapecoense.",
+     "start": 21.012,
+     "end": 22.173000000000002
+    }
+   ]
+  },
+  {
+   "index": 5,
+   "tipo": "giro",
+   "start": 22.8,
+   "end": 30.6,
+   "words": [
+    {
+     "text": "El",
+     "start": 23.1,
+     "end": 23.263
+    },
+    {
+     "text": "5",
+     "start": 23.39,
+     "end": 23.576
+    },
+    {
+     "text": "de",
+     "start": 23.704,
+     "end": 23.773000000000003
+    },
+    {
+     "text": "diciembre,",
+     "start": 23.808,
+     "end": 24.458000000000002
+    },
+    {
+     "text": "la",
+     "start": 24.551000000000002,
+     "end": 24.644000000000002
+    },
+    {
+     "text": "Conmebol",
+     "start": 24.691000000000003,
+     "end": 25.294
+    },
+    {
+     "text": "lo",
+     "start": 25.48,
+     "end": 25.596
+    },
+    {
+     "text": "declaró",
+     "start": 25.643,
+     "end": 25.991
+    },
+    {
+     "text": "campeón.",
+     "start": 26.049,
+     "end": 26.711000000000002
+    },
+    {
+     "text": "Fue",
+     "start": 26.838,
+     "end": 27.14
+    },
+    {
+     "text": "el",
+     "start": 27.268,
+     "end": 27.442
+    },
+    {
+     "text": "primer",
+     "start": 27.5,
+     "end": 27.790000000000003
+    },
+    {
+     "text": "título",
+     "start": 27.872,
+     "end": 28.174
+    },
+    {
+     "text": "internacional",
+     "start": 28.220000000000002,
+     "end": 28.917
+    },
+    {
+     "text": "del",
+     "start": 28.975,
+     "end": 29.091
+    },
+    {
+     "text": "club.",
+     "start": 29.16,
+     "end": 29.694000000000003
+    }
+   ]
+  },
+  {
+   "index": 6,
+   "tipo": "remate",
+   "start": 30.6,
+   "end": 36,
+   "words": [
+    {
+     "text": "Atlético",
+     "start": 30.900000000000002,
+     "end": 31.457
+    },
+    {
+     "text": "Nacional",
+     "start": 31.504,
+     "end": 32.003
+    },
+    {
+     "text": "recibió",
+     "start": 32.224000000000004,
+     "end": 32.653
+    },
+    {
+     "text": "el",
+     "start": 32.7,
+     "end": 32.758
+    },
+    {
+     "text": "premio",
+     "start": 32.827000000000005,
+     "end": 33.176
+    },
+    {
+     "text": "Fair",
+     "start": 33.234,
+     "end": 33.454
+    },
+    {
+     "text": "Play",
+     "start": 33.547000000000004,
+     "end": 33.861000000000004
+    },
+    {
+     "text": "de",
+     "start": 34.023,
+     "end": 34.104
+    },
+    {
+     "text": "la",
+     "start": 34.151,
+     "end": 34.209
+    },
+    {
+     "text": "Conmebol.",
+     "start": 34.255,
+     "end": 35.08
+    }
+   ]
+  },
+  {
+   "index": 7,
+   "tipo": "cierre",
+   "start": 36,
+   "end": 42,
+   "words": [
+    {
+     "text": "Así",
+     "start": 36.3,
+     "end": 36.705999999999996
+    },
+    {
+     "text": "también",
+     "start": 36.833999999999996,
+     "end": 37.309999999999995
+    },
+    {
+     "text": "se",
+     "start": 37.391,
+     "end": 37.507
+    },
+    {
+     "text": "juega.",
+     "start": 37.541999999999994,
+     "end": 37.925
+    },
+    {
+     "text": "Comenten",
+     "start": 37.971999999999994,
+     "end": 38.436
+    },
+    {
+     "text": "su",
+     "start": 38.471,
+     "end": 38.564
+    },
+    {
+     "text": "país",
+     "start": 38.61,
+     "end": 38.934999999999995
+    },
+    {
+     "text": "y",
+     "start": 39.074999999999996,
+     "end": 39.156
+    },
+    {
+     "text": "abro",
+     "start": 39.236999999999995,
+     "end": 39.422999999999995
+    },
+    {
+     "text": "su",
+     "start": 39.458,
+     "end": 39.538999999999994
+    },
+    {
+     "text": "camerino.",
+     "start": 39.586,
+     "end": 40.433
+    }
+   ]
+  }
+ ]
+}

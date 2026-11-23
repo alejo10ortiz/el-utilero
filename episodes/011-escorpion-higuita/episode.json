@@ -1,0 +1,108 @@
+{
+  "id": "011",
+  "slug": "escorpion-higuita",
+  "serie": "El Camerino",
+  "titulo": "El escorpión de Higuita",
+  "pais": "Colombia",
+  "anio": 1995,
+  "objeto": "botín",
+  "objetoTipo": "botin",
+  "rotulo": "VISITANTE",
+  "cintaCamerino": "Wembley 1995",
+  "etiqueta": "CAMERINO #011 · LONDRES · 1995",
+  "nivelSecreto": 2,
+  "estado": "verificado",
+  "textoFinal": "@elutilerofutbol · Síganme",
+  "fuentes": [
+    "https://inside.fifa.com/news/colombia-s-scorpion-king-25-years-on",
+    "https://en.wikipedia.org/wiki/Ren%C3%A9_Higuita",
+    "https://www.cityam.com/rene-higuita-my-scorpion-kick-changed-football-forever-we-wont-see-it-again/",
+    "https://www.aol.com/articles/goalkeeper-save-crazy-still-talked-163257981.html"
+  ],
+  "estilo": "pro",
+  "musica": "base-100bpm-b.mp3",
+  "transiciones": [
+    "flash",
+    "cinta",
+    "hoja",
+    "cinta",
+    "hoja",
+    "flash",
+    "flash"
+  ],
+  "escenas": [
+    {
+      "tipo": "gancho",
+      "fondo": "pizarra",
+      "texto": "EL ESCORPIÓN",
+      "resaltar": "ESCORPIÓN",
+      "voz": "Un portero despejó con los talones… en Wembley."
+    },
+    {
+      "tipo": "sting",
+      "camerino": "entreabierto"
+    },
+    {
+      "tipo": "apertura",
+      "expresion": "E3",
+      "pose": "P3",
+      "palabraGigante": "SHH",
+      "voz": "Cierren la puerta, que les cuento."
+    },
+    {
+      "tipo": "contexto",
+      "ficha": "WEMBLEY · 06.09.1995",
+      "sello": "AMISTOSO",
+      "palabraGigante": "1995",
+      "claves": [
+        "Inglaterra",
+        "Colombia"
+      ],
+      "voz": "6 de septiembre de 1995. Un amistoso entre Inglaterra y Colombia."
+    },
+    {
+      "tipo": "contexto",
+      "ficha": "Jamie Redknapp",
+      "marcador": "balón por alto",
+      "claves": [
+        "Redknapp",
+        "alto"
+      ],
+      "voz": "Jamie Redknapp mandó el balón por alto hacia la portería colombiana."
+    },
+    {
+      "tipo": "giro",
+      "camerino": "abierto",
+      "pose": "P5",
+      "expresion": "E4",
+      "palabraGigante": "HIGUITA",
+      "gatillo": "lanzó",
+      "clave": "talones",
+      "claves": [
+        "lanzó",
+        "talones"
+      ],
+      "voz": "René Higuita se lanzó hacia delante y lo despejó con los dos talones."
+    },
+    {
+      "tipo": "remate",
+      "ficha": "Inglaterra 0 – 0 Colombia",
+      "cinta": "dio la vuelta al mundo",
+      "palabraGigante": "ESCORPIÓN",
+      "kicker": "0–0",
+      "claves": [
+        "escorpión"
+      ],
+      "voz": "Terminó 0 a 0. Pero esa jugada se llama «el escorpión»."
+    },
+    {
+      "tipo": "cierre",
+      "fondo": "lima",
+      "expresion": "E2",
+      "claves": [
+        "camerino"
+      ],
+      "voz": "Yo estaba ahí. Bueno… casi. Comenten su país y abro su camerino."
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "id": "010",
+  "slug": "secuestro-di-stefano",
+  "serie": "El Camerino",
+  "titulo": "Secuestraron a Di Stéfano",
+  "pais": "Venezuela",
+  "anio": 1963,
+  "objeto": "llave de hotel",
+  "objetoTipo": "llavehotel",
+  "rotulo": "VISITANTE",
+  "cintaCamerino": "Caracas 1963",
+  "etiqueta": "CAMERINO #010 · CARACAS · 1963",
+  "nivelSecreto": 4,
+  "estado": "verificado",
+  "textoFinal": "@elutilerofutbol · Síganme",
+  "fuentes": [
+    "https://thesefootballtimes.co/2015/04/10/the-kidnap-of-alfredo-di-stefano/",
+    "https://www.semana.com/deportes/articulo/los-3-dias-en-que-alfredo-di-stefano-estuvo-secuestrado-en-venezuela--deportes/697014",
+    "https://www.elobservador.com.uy/nota/el-secuestro-que-conmovio-al-mundo-20138302070",
+    "https://paperspast.natlib.govt.nz/newspapers/CHP19630828.2.60"
+  ],
+  "estilo": "pro",
+  "musica": "base-100bpm-b.mp3",
+  "transiciones": [
+    "flash",
+    "cinta",
+    "hoja",
+    "cinta",
+    "hoja",
+    "flash",
+    "flash"
+  ],
+  "escenas": [
+    {
+      "tipo": "gancho",
+      "fondo": "pizarra",
+      "texto": "SECUESTRARON A DI STÉFANO",
+      "resaltar": "SECUESTRARON",
+      "voz": "Secuestraron a Di Stéfano en pleno viaje del Real Madrid."
+    },
+    {
+      "tipo": "sting",
+      "camerino": "entreabierto"
+    },
+    {
+      "tipo": "apertura",
+      "expresion": "E3",
+      "pose": "P3",
+      "palabraGigante": "SHH",
+      "voz": "Cierren la puerta, que les cuento."
+    },
+    {
+      "tipo": "contexto",
+      "ficha": "CARACAS · 1963",
+      "palabraGigante": "1963",
+      "claves": [
+        "gira",
+        "hotel"
+      ],
+      "voz": "Agosto de 1963. El Real Madrid estaba de gira y Di Stéfano se alojaba en un hotel de Caracas."
+    },
+    {
+      "tipo": "contexto",
+      "ficha": "Un grupo guerrillero",
+      "sello": "SECUESTRO",
+      "marcador": "querían publicidad",
+      "claves": [
+        "armados",
+        "publicidad"
+      ],
+      "voz": "Hombres armados de un grupo guerrillero se lo llevaron. Querían publicidad para su causa."
+    },
+    {
+      "tipo": "giro",
+      "camerino": "abierto",
+      "pose": "P5",
+      "expresion": "E4",
+      "palabraGigante": "LIBRE",
+      "gatillo": "soltaron",
+      "clave": "embajada",
+      "claves": [
+        "soltaron",
+        "embajada"
+      ],
+      "voz": "Unos días después lo soltaron, sano y salvo. Apareció en la embajada de España."
+    },
+    {
+      "tipo": "remate",
+      "ficha": "Caracas · 1963",
+      "cinta": "sano y salvo",
+      "palabraGigante": "RASGUÑO",
+      "kicker": "SIN UN",
+      "claves": [
+        "rasguño"
+      ],
+      "voz": "Volvió sin un rasguño. Y siguió jugando."
+    },
+    {
+      "tipo": "cierre",
+      "fondo": "lima",
+      "expresion": "E2",
+      "claves": [
+        "camerino"
+      ],
+      "voz": "Yo estaba ahí. Bueno… casi. Comenten su país y abro su camerino."
+    }
+  ]
+}

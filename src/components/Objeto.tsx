@@ -282,6 +282,77 @@ const Camiseta: React.FC = () => {
   );
 };
 
+/** Servilleta con el compromiso escrito a mano y tres firmas (Messi, 2000). Papel con pliegue, renglones y garabatos de tinta. */
+const Servilleta: React.FC = () => {
+  const forma = 'M66 124 L318 98 L346 332 L92 364 Z';
+  return (
+    <g>
+      <path d={forma} transform="translate(9 7)" fill={C.lima} />
+      <path d={forma} fill={C.papel} stroke={C.tinta} strokeWidth={5} strokeLinejoin="round" />
+      {/* borde en relieve */}
+      <path d="M84 142 L304 118 L328 316 L106 342 Z" fill="none" stroke={C.tinta} strokeWidth={2.4} strokeDasharray="3 7" opacity={0.45} />
+      {/* esquina doblada */}
+      <path d="M318 98 L292 150 L346 140 Z" fill={C.ficha} stroke={C.tinta} strokeWidth={3.5} strokeLinejoin="round" />
+      {/* texto escrito de prisa */}
+      {[0, 1, 2, 3].map((i) => (
+        <path key={i} d={`M${108 + i * 3} ${176 + i * 28} C${150 + i * 4} ${166 + i * 28} 190 ${186 + i * 28} ${236 - i * 12} ${172 + i * 28}`} fill="none" stroke={C.tinta} strokeWidth={4} strokeLinecap="round" opacity={0.85} />
+      ))}
+      {/* tres firmas */}
+      <path d="M110 300 C122 276 136 322 150 292 C158 278 168 318 180 296" fill="none" stroke={C.tinta} strokeWidth={4.5} strokeLinecap="round" />
+      <path d="M196 308 C206 286 222 318 236 294 L254 312" fill="none" stroke={C.tinta} strokeWidth={4.5} strokeLinecap="round" />
+      <path d="M262 300 C272 280 290 316 304 290" fill="none" stroke={C.tinta} strokeWidth={4.5} strokeLinecap="round" />
+    </g>
+  );
+};
+
+/** Trofeo genérico (sin diseño oficial): copa de dos asas con reflejo lima. */
+const Trofeo: React.FC = () => (
+  <g>
+    <path d="M130 110 H270 C270 200 240 250 200 262 C160 250 130 200 130 110 Z" transform="translate(9 7)" fill={C.lima} />
+    <path d="M132 150 C70 150 70 232 142 242" fill="none" stroke={C.tinta} strokeWidth={12} strokeLinecap="round" />
+    <path d="M268 150 C330 150 330 232 258 242" fill="none" stroke={C.tinta} strokeWidth={12} strokeLinecap="round" />
+    <path d="M130 110 H270 C270 200 240 250 200 262 C160 250 130 200 130 110 Z" fill={C.papel} stroke={C.tinta} strokeWidth={5} strokeLinejoin="round" />
+    <path d="M152 130 C150 188 170 226 196 242" fill="none" stroke={C.lima} strokeWidth={11} strokeLinecap="round" />
+    <rect x={186} y={262} width={28} height={58} fill={C.papel} stroke={C.tinta} strokeWidth={5} />
+    <path d="M148 322 H252 L264 372 H136 Z" fill={C.tinta} />
+    <rect x={128} y={372} width={144} height={22} fill={C.tinta} />
+    <path d="M150 340 H250" stroke={C.papel} strokeWidth={4} strokeDasharray="10 8" opacity={0.7} />
+  </g>
+);
+
+/** Llave de habitación de hotel con su etiqueta (secuestro de Di Stéfano): llave inclinada y colgante de cartón. */
+const LlaveHotel: React.FC = () => (
+  <g transform="rotate(-24 200 240)">
+    <circle cx={118} cy={228} r={52} transform="translate(9 7)" fill={C.lima} />
+    <circle cx={118} cy={228} r={52} fill={C.papel} stroke={C.tinta} strokeWidth={6} />
+    <circle cx={118} cy={228} r={18} fill={C.tinta} />
+    <rect x={160} y={219} width={178} height={20} fill={C.papel} stroke={C.tinta} strokeWidth={5} />
+    <path d="M296 239 V272 H312 V239 M322 239 V262 H338 V239" fill={C.papel} stroke={C.tinta} strokeWidth={5} strokeLinejoin="round" />
+    {/* colgante */}
+    <path d="M96 272 C84 300 84 318 96 336" fill="none" stroke={C.tinta} strokeWidth={3} />
+    <g transform="translate(60 330) rotate(6)">
+      <rect x={0} y={0} width={110} height={76} fill={C.kraft} stroke={C.tinta} strokeWidth={4} />
+      <circle cx={16} cy={14} r={6} fill={C.papel} stroke={C.tinta} strokeWidth={2.5} />
+      <text x={14} y={46} fontFamily={FONT.maquina} fontSize={15} fill={C.tinta}>HABITACIÓN</text>
+      <text x={14} y={64} fontFamily={FONT.maquina} fontSize={13} fill={C.tinta}>1963</text>
+    </g>
+  </g>
+);
+
+/** Boleta de entrada (final trasladada): medallones laterales, perforación y talón con rayitas. */
+const Boleta: React.FC = () => (
+  <g transform="rotate(-7 200 240)">
+    <path d="M60 140 H340 V196 a24 24 0 0 0 0 48 V312 H60 V244 a24 24 0 0 0 0 -48 Z" transform="translate(9 7)" fill={C.lima} />
+    <path d="M60 140 H340 V196 a24 24 0 0 0 0 48 V312 H60 V244 a24 24 0 0 0 0 -48 Z" fill={C.papel} stroke={C.tinta} strokeWidth={5} strokeLinejoin="round" />
+    <path d="M262 150 V302" stroke={C.tinta} strokeWidth={3} strokeDasharray="8 8" />
+    <text x={86} y={236} fontFamily={FONT.grito} fontSize={92} fill={C.tinta}>FINAL</text>
+    <text x={90} y={284} fontFamily={FONT.maquina} fontSize={24} fill={C.tinta}>MADRID · 2018</text>
+    {[0, 1, 2, 3, 4, 5].map((i) => (
+      <rect key={i} x={278 + i * 9} y={176 + (i % 2) * 6} width={i % 3 === 0 ? 6 : 3.5} height={92 - (i % 2) * 12} fill={C.tinta} />
+    ))}
+  </g>
+);
+
 const Generico: React.FC<{ tipo: ObjetoTipo }> = ({ tipo }) => (
   <g>
     <rect x={80} y={120} width={240} height={240} rx={8} transform="translate(9 7)" fill={C.lima} />
@@ -310,7 +381,7 @@ export const Objeto: React.FC<{
       height={size * 1.1}
       style={{ position: 'absolute', left: x, top: y, overflow: 'visible', transform: `rotate(${rot}deg)`, filter: 'url(#ink)' }}
     >
-      {tipo === 'bulto' ? <Bulto /> : tipo === 'botin' ? <Botin /> : tipo === 'llavero' ? <Llavero /> : tipo === 'calendario' ? <Calendario /> : tipo === 'vitrina' ? <Vitrina /> : tipo === 'balon' ? <Balon /> : tipo === 'bandera' ? <Bandera /> : tipo === 'silbato' ? <Silbato /> : tipo === 'camiseta' ? <Camiseta /> : <Generico tipo={tipo} />}
+      {tipo === 'bulto' ? <Bulto /> : tipo === 'botin' ? <Botin /> : tipo === 'llavero' ? <Llavero /> : tipo === 'calendario' ? <Calendario /> : tipo === 'vitrina' ? <Vitrina /> : tipo === 'balon' ? <Balon /> : tipo === 'bandera' ? <Bandera /> : tipo === 'silbato' ? <Silbato /> : tipo === 'camiseta' ? <Camiseta /> : tipo === 'servilleta' ? <Servilleta /> : tipo === 'trofeo' ? <Trofeo /> : tipo === 'llavehotel' ? <LlaveHotel /> : tipo === 'boleta' ? <Boleta /> : <Generico tipo={tipo} />}
       {etiqueta && <Etiqueta texto={etiqueta} sway={sway} />}
     </svg>
   );

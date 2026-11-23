@@ -1,0 +1,110 @@
+{
+  "id": "008",
+  "slug": "servilleta-messi",
+  "serie": "El Camerino",
+  "titulo": "El contrato de Messi en una servilleta",
+  "pais": "España",
+  "anio": 2000,
+  "objeto": "servilleta",
+  "objetoTipo": "servilleta",
+  "rotulo": "LOCAL",
+  "cintaCamerino": "Barcelona 2000",
+  "etiqueta": "CAMERINO #008 · BARCELONA · 2000",
+  "nivelSecreto": 3,
+  "estado": "verificado",
+  "textoFinal": "@elutilerofutbol · Síganme",
+  "fuentes": [
+    "https://www.foxsports.com/stories/soccer/barca-inked-messi-agreement-on-napkin",
+    "https://global.espn.com/football/story/_/id/37609629/oral-history-transfer-arranged-20-years-ago",
+    "https://www.npr.org/2024/05/18/1252319131/lionel-messi-first-contract-barcelona-auction-soccer-napkin",
+    "https://www.nbcsports.com/soccer/news/lionel-messi-was-signed-by-barcelona-on-a-napkin",
+    "https://www.thenationalnews.com/sport/how-rise-of-lionel-messi-at-barcelona-started-with-a-scribble-on-a-napkin-1.379802"
+  ],
+  "estilo": "pro",
+  "musica": "base-100bpm-b.mp3",
+  "transiciones": [
+    "flash",
+    "cinta",
+    "hoja",
+    "cinta",
+    "hoja",
+    "flash",
+    "flash"
+  ],
+  "escenas": [
+    {
+      "tipo": "gancho",
+      "fondo": "pizarra",
+      "texto": "CONTRATO EN SERVILLETA",
+      "resaltar": "SERVILLETA",
+      "voz": "El contrato más famoso de Messi se firmó en una servilleta."
+    },
+    {
+      "tipo": "sting",
+      "camerino": "entreabierto"
+    },
+    {
+      "tipo": "apertura",
+      "expresion": "E3",
+      "pose": "P3",
+      "palabraGigante": "SHH",
+      "voz": "Cierren la puerta, que les cuento."
+    },
+    {
+      "tipo": "contexto",
+      "ficha": "BARCELONA · DIC. 2000",
+      "palabraGigante": "2000",
+      "claves": [
+        "13",
+        "garantía"
+      ],
+      "voz": "Diciembre de 2000. Messi tenía 13 años y su familia necesitaba una garantía."
+    },
+    {
+      "tipo": "contexto",
+      "ficha": "Carles Rexach",
+      "marcador": "escribió el compromiso",
+      "claves": [
+        "Rexach",
+        "servilleta"
+      ],
+      "voz": "Carles Rexach, del Barcelona, escribió el compromiso en una servilleta."
+    },
+    {
+      "tipo": "giro",
+      "camerino": "abierto",
+      "pose": "P5",
+      "expresion": "E4",
+      "palabraGigante": "FAMOSA",
+      "gatillo": "noche",
+      "clave": "subasta",
+      "tono": "misterio",
+      "claves": [
+        "formal",
+        "subasta"
+      ],
+      "voz": "Esa noche hubo un contrato formal. Pero la famosa es la servilleta, que salió a subasta."
+    },
+    {
+      "tipo": "remate",
+      "ficha": "Barcelona · 14.12.2000",
+      "cinta": "tres firmas",
+      "palabraGigante": "NIÑO",
+      "kicker": "3 FIRMAS",
+      "claves": [
+        "firmas",
+        "niño"
+      ],
+      "voz": "Una servilleta, tres firmas y un niño de 13 años."
+    },
+    {
+      "tipo": "cierre",
+      "fondo": "lima",
+      "expresion": "E2",
+      "claves": [
+        "camerino"
+      ],
+      "voz": "Yo estaba ahí. Bueno… casi. Comenten su país y abro su camerino."
+    }
+  ]
+}

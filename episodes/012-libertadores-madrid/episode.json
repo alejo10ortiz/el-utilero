@@ -1,0 +1,108 @@
+{
+  "id": "012",
+  "slug": "libertadores-madrid",
+  "serie": "El Camerino",
+  "titulo": "La final se jugó en Madrid",
+  "pais": "Argentina",
+  "anio": 2018,
+  "objeto": "boleta",
+  "objetoTipo": "boleta",
+  "rotulo": "LOCAL",
+  "cintaCamerino": "Madrid 2018",
+  "etiqueta": "CAMERINO #012 · MADRID · 2018",
+  "nivelSecreto": 3,
+  "estado": "verificado",
+  "textoFinal": "@elutilerofutbol · Síganme",
+  "fuentes": [
+    "https://fourfourtwo.com/news/river-v-boca-how-did-libertadores-showpiece-end-madrid",
+    "https://www.aljazeera.com/sports/2018/12/10/river-plate-beat-argentine-rivals-boca-to-win-copa-libertadores",
+    "https://en.wikipedia.org/wiki/2018_Copa_Libertadores_finals",
+    "https://bleacherreport.com/articles/2807595-boca-juniors-team-bus-attacked-by-fans-tear-gas-from-police-injured-players"
+  ],
+  "estilo": "pro",
+  "musica": "base-100bpm-b.mp3",
+  "transiciones": [
+    "flash",
+    "cinta",
+    "hoja",
+    "cinta",
+    "hoja",
+    "flash",
+    "flash"
+  ],
+  "escenas": [
+    {
+      "tipo": "gancho",
+      "fondo": "pizarra",
+      "texto": "FINAL EN MADRID",
+      "resaltar": "MADRID",
+      "voz": "La final de la Libertadores se jugó en Madrid."
+    },
+    {
+      "tipo": "sting",
+      "camerino": "entreabierto"
+    },
+    {
+      "tipo": "apertura",
+      "expresion": "E3",
+      "pose": "P3",
+      "palabraGigante": "SHH",
+      "voz": "Cierren la puerta, que les cuento."
+    },
+    {
+      "tipo": "contexto",
+      "ficha": "BUENOS AIRES · 2018",
+      "palabraGigante": "2018",
+      "claves": [
+        "bus",
+        "atacaron"
+      ],
+      "voz": "River y Boca, noviembre de 2018. Hinchas de River atacaron el bus de Boca antes del partido."
+    },
+    {
+      "tipo": "contexto",
+      "ficha": "Jugadores heridos",
+      "sello": "SUSPENDIDO",
+      "marcador": "dos veces",
+      "claves": [
+        "heridos",
+        "suspendió"
+      ],
+      "voz": "Varios jugadores de Boca resultaron heridos. El partido se suspendió dos veces."
+    },
+    {
+      "tipo": "giro",
+      "camerino": "abierto",
+      "pose": "P5",
+      "expresion": "E4",
+      "palabraGigante": "MADRID",
+      "gatillo": "decidió",
+      "clave": "Bernabéu",
+      "claves": [
+        "Conmebol",
+        "Bernabéu"
+      ],
+      "voz": "La Conmebol decidió jugarlo fuera de Sudamérica: en el Bernabéu, en Madrid."
+    },
+    {
+      "tipo": "remate",
+      "ficha": "Madrid · 09.12.2018",
+      "cinta": "3–1 en el alargue",
+      "palabraGigante": "PRIMERA",
+      "kicker": "3–1",
+      "claves": [
+        "primera"
+      ],
+      "voz": "River ganó 3 a 1 en tiempo extra. Fue la primera final jugada fuera de América."
+    },
+    {
+      "tipo": "cierre",
+      "fondo": "lima",
+      "expresion": "E2",
+      "claves": [
+        "camerino"
+      ],
+      "voz": "Yo estaba ahí. Bueno… casi. Comenten su país y abro su camerino."
+    }
+  ]
+}

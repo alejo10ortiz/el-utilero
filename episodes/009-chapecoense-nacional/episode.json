@@ -1,0 +1,111 @@
+{
+  "id": "009",
+  "slug": "chapecoense-nacional",
+  "serie": "El Camerino",
+  "titulo": "El rival que pidió darle el título",
+  "pais": "Colombia",
+  "anio": 2016,
+  "objeto": "trofeo",
+  "objetoTipo": "trofeo",
+  "rotulo": "VISITANTE",
+  "cintaCamerino": "Medellín 2016",
+  "etiqueta": "CAMERINO #009 · MEDELLÍN · 2016",
+  "nivelSecreto": 2,
+  "estado": "verificado",
+  "textoFinal": "@elutilerofutbol · Síganme",
+  "fuentes": [
+    "https://inside.fifa.com/news/conmebol-declare-chapecoense-champions-of-copa-sudamericana-2016-2858080",
+    "https://fourfourtwo.com/news/chapecoense-confirmed-copa-sudamericana-champions",
+    "https://www.lafm.com.co/deportes/conmebol-otorgo-titulo-campeon-la-copa-sudamericana-2016-chapecoense",
+    "https://en.wikipedia.org/wiki/2016_Copa_Sudamericana"
+  ],
+  "estilo": "pro",
+  "musica": "base-100bpm-b.mp3",
+  "transiciones": [
+    "flash",
+    "cinta",
+    "hoja",
+    "cinta",
+    "hoja",
+    "flash",
+    "flash"
+  ],
+  "escenas": [
+    {
+      "tipo": "gancho",
+      "fondo": "pizarra",
+      "texto": "SU RIVAL, CAMPEÓN",
+      "resaltar": "CAMPEÓN",
+      "voz": "Un equipo pidió que su rival fuera campeón."
+    },
+    {
+      "tipo": "sting",
+      "camerino": "entreabierto"
+    },
+    {
+      "tipo": "apertura",
+      "expresion": "E3",
+      "pose": "P3",
+      "palabraGigante": "SHH",
+      "voz": "Cierren la puerta, que les cuento."
+    },
+    {
+      "tipo": "contexto",
+      "ficha": "MEDELLÍN · 2016",
+      "palabraGigante": "2016",
+      "claves": [
+        "avión",
+        "final"
+      ],
+      "voz": "Noviembre de 2016. El avión del Chapecoense se estrelló camino a la final."
+    },
+    {
+      "tipo": "contexto",
+      "ficha": "Atlético Nacional",
+      "marcador": "pidió el título",
+      "claves": [
+        "rival",
+        "Conmebol"
+      ],
+      "voz": "La final se suspendió. Su rival, el Atlético Nacional, pidió a la Conmebol darle el título al Chapecoense."
+    },
+    {
+      "tipo": "giro",
+      "camerino": "abierto",
+      "pose": "P5",
+      "expresion": "E7",
+      "palabraGigante": "CAMPEÓN",
+      "gatillo": "campeón",
+      "clave": "primer",
+      "tono": "misterio",
+      "claves": [
+        "campeón",
+        "primer"
+      ],
+      "voz": "El 5 de diciembre, la Conmebol lo declaró campeón. Fue el primer título internacional del club."
+    },
+    {
+      "tipo": "remate",
+      "ficha": "Atlético Nacional",
+      "cinta": "gesto de respeto",
+      "palabraGigante": "FAIR PLAY",
+      "kicker": "GESTO",
+      "claves": [
+        "Fair",
+        "Play"
+      ],
+      "tono": "misterio",
+      "voz": "Atlético Nacional recibió el premio Fair Play de la Conmebol."
+    },
+    {
+      "tipo": "cierre",
+      "fondo": "lima",
+      "expresion": "E7",
+      "claves": [
+        "camerino"
+      ],
+      "voz": "Así también se juega. Comenten su país y abro su camerino.",
+      "tono": "misterio"
+    }
+  ]
+}

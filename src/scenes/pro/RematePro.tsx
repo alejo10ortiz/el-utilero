@@ -26,7 +26,8 @@ export const RematePro: React.FC<EscenaProps> = ({ esc, timing, frames }) => {
   const previa = esc.kicker; // palabra que llena el hueco hasta la cifra final (p. ej. «CAMPEÓN»)
   const tPrevia = 11;
   const salePrevia = tw(f, [tPal - 3, tPal + 2], [0, 1], E.inExpo);
-  const celebra = tw(f, [tPal, tPal + 10], [0, 1], E.outCubic);
+  const sobrio = esc.tono === 'misterio'; // historias delicadas: sin confeti, rayos ni hinchada
+  const celebra = sobrio ? 0 : tw(f, [tPal, tPal + 10], [0, 1], E.outCubic);
   const z = empuje(f, frames, 0.06, 8) * golpes(f, [tPal, tCinta], 0.05);
   void A;
   void salePrevia;
@@ -50,7 +51,7 @@ export const RematePro: React.FC<EscenaProps> = ({ esc, timing, frames }) => {
       <Palabras words={timing.words} offsetFrames={off} claves={esc.claves} y={1385} size={84} />
       {previa && <Sfx name="impact" at={tPrevia} volume={0.7} />}
       <Sfx name="impact" at={tPal} volume={0.9} />
-      <Sfx name="hinchada" at={tPal + 2} volume={0.5} />
+      {!sobrio && <Sfx name="hinchada" at={tPal + 2} volume={0.5} />}
       <Sfx name="whoosh" at={fichaDelay - 2} volume={0.4} />
     </Escenario>
   );
