@@ -28,8 +28,8 @@
     {
       "tipo": "gancho",
       "fondo": "pizarra",
-      "texto": "LA CAMISETA QUE BRASIL RETIRÓ",
-      "resaltar": "RETIRÓ",
+      "texto": "CAMISETA RETIRADA",
+      "resaltar": "RETIRADA",
       "voz": "Brasil retiró su camiseta blanca para siempre… por una sola tarde."
     },
     { "tipo": "sting", "camerino": "entreabierto" },
