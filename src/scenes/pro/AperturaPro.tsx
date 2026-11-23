@@ -80,7 +80,9 @@ const AperturaSusurro: React.FC<EscenaProps> = ({ esc, timing, frames }) => {
       <Impacto at={tShh} x={540} y={330} flash={0.2} />
       <Palabras words={timing.words} offsetFrames={off} claves={esc.claves} y={1340} size={84} />
       <Sfx name="whoosh" at={9} volume={0.45} />
-      <Sfx name="impact" at={tShh} volume={0.7} />
+      <Sfx name="impact" at={tShh} volume={0.5} />
+      {/* sello sonoro de marca: llave + cerrojo + golpe (el golpe cae con el SHH) */}
+      <Sfx name="sello" at={tShh} volume={0.8} />
       <Sfx name="pop" at={14} volume={0.5} />
     </Escenario>
   );
