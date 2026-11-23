@@ -1,0 +1,449 @@
+{
+ "source": "elevenlabs",
+ "totalSeconds": 43.800000000000004,
+ "scenes": [
+  {
+   "index": 0,
+   "tipo": "gancho",
+   "start": 0,
+   "end": 6.6,
+   "words": [
+    {
+     "text": "Brasil",
+     "start": 0.12,
+     "end": 0.7
+    },
+    {
+     "text": "retiró",
+     "start": 0.956,
+     "end": 1.3039999999999998
+    },
+    {
+     "text": "su",
+     "start": 1.362,
+     "end": 1.455
+    },
+    {
+     "text": "camiseta",
+     "start": 1.5019999999999998,
+     "end": 1.943
+    },
+    {
+     "text": "blanca",
+     "start": 1.9780000000000002,
+     "end": 2.407
+    },
+    {
+     "text": "para",
+     "start": 2.454,
+     "end": 2.628
+    },
+    {
+     "text": "siempre…",
+     "start": 2.674,
+     "end": 3.394
+    },
+    {
+     "text": "por",
+     "start": 4.567,
+     "end": 4.718
+    },
+    {
+     "text": "una",
+     "start": 4.764,
+     "end": 4.9030000000000005
+    },
+    {
+     "text": "sola",
+     "start": 4.961,
+     "end": 5.17
+    },
+    {
+     "text": "tarde.",
+     "start": 5.228,
+     "end": 5.925
+    }
+   ]
+  },
+  {
+   "index": 1,
+   "tipo": "sting",
+   "start": 6.6,
+   "end": 9,
+   "words": []
+  },
+  {
+   "index": 2,
+   "tipo": "apertura",
+   "start": 9,
+   "end": 13.2,
+   "words": [
+    {
+     "text": "Cierren",
+     "start": 9.3,
+     "end": 9.683
+    },
+    {
+     "text": "la",
+     "start": 9.764000000000001,
+     "end": 9.834000000000001
+    },
+    {
+     "text": "puerta,",
+     "start": 9.88,
+     "end": 10.612
+    },
+    {
+     "text": "que",
+     "start": 11.471,
+     "end": 11.599
+    },
+    {
+     "text": "les",
+     "start": 11.645000000000001,
+     "end": 11.773
+    },
+    {
+     "text": "cuento.",
+     "start": 11.854000000000001,
+     "end": 12.690000000000001
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "tipo": "contexto",
+   "start": 13.2,
+   "end": 20.4,
+   "words": [
+    {
+     "text": "Maracaná,",
+     "start": 13.5,
+     "end": 14.115
+    },
+    {
+     "text": "1950.",
+     "start": 14.278,
+     "end": 15.961
+    },
+    {
+     "text": "A",
+     "start": 16.089,
+     "end": 16.147
+    },
+    {
+     "text": "Brasil",
+     "start": 16.217,
+     "end": 16.576999999999998
+    },
+    {
+     "text": "le",
+     "start": 16.634999999999998,
+     "end": 16.704
+    },
+    {
+     "text": "bastaba",
+     "start": 16.751,
+     "end": 17.122
+    },
+    {
+     "text": "empatar",
+     "start": 17.157,
+     "end": 17.61
+    },
+    {
+     "text": "para",
+     "start": 17.703,
+     "end": 17.865000000000002
+    },
+    {
+     "text": "ser",
+     "start": 17.912,
+     "end": 18.063
+    },
+    {
+     "text": "campeón",
+     "start": 18.121000000000002,
+     "end": 18.527
+    },
+    {
+     "text": "del",
+     "start": 18.585,
+     "end": 18.701
+    },
+    {
+     "text": "mundo.",
+     "start": 18.759,
+     "end": 19.444
+    }
+   ]
+  },
+  {
+   "index": 4,
+   "tipo": "contexto",
+   "start": 20.4,
+   "end": 26.4,
+   "words": [
+    {
+     "text": "Más",
+     "start": 20.7,
+     "end": 20.932
+    },
+    {
+     "text": "de",
+     "start": 20.99,
+     "end": 21.072
+    },
+    {
+     "text": "170",
+     "start": 21.118,
+     "end": 22
+    },
+    {
+     "text": "mil",
+     "start": 22.093,
+     "end": 22.244
+    },
+    {
+     "text": "personas",
+     "start": 22.314,
+     "end": 22.858999999999998
+    },
+    {
+     "text": "vieron",
+     "start": 22.987,
+     "end": 23.277
+    },
+    {
+     "text": "cómo",
+     "start": 23.358999999999998,
+     "end": 23.567999999999998
+    },
+    {
+     "text": "Uruguay",
+     "start": 23.602,
+     "end": 24.125
+    },
+    {
+     "text": "ganaba",
+     "start": 24.287,
+     "end": 24.624
+    },
+    {
+     "text": "2",
+     "start": 24.694,
+     "end": 24.822
+    },
+    {
+     "text": "a",
+     "start": 24.948999999999998,
+     "end": 24.983999999999998
+    },
+    {
+     "text": "1.",
+     "start": 25.031,
+     "end": 25.669
+    }
+   ]
+  },
+  {
+   "index": 5,
+   "tipo": "giro",
+   "start": 26.4,
+   "end": 33.6,
+   "words": [
+    {
+     "text": "Tres",
+     "start": 26.7,
+     "end": 27.002
+    },
+    {
+     "text": "años",
+     "start": 27.048,
+     "end": 27.304
+    },
+    {
+     "text": "después,",
+     "start": 27.339,
+     "end": 27.803
+    },
+    {
+     "text": "un",
+     "start": 27.931,
+     "end": 28.024
+    },
+    {
+     "text": "periódico",
+     "start": 28.07,
+     "end": 28.511
+    },
+    {
+     "text": "convocó",
+     "start": 28.546,
+     "end": 28.929
+    },
+    {
+     "text": "un",
+     "start": 28.976,
+     "end": 29.022
+    },
+    {
+     "text": "concurso",
+     "start": 29.102999999999998,
+     "end": 29.765
+    },
+    {
+     "text": "para",
+     "start": 29.835,
+     "end": 30.067
+    },
+    {
+     "text": "una",
+     "start": 30.125,
+     "end": 30.264
+    },
+    {
+     "text": "camiseta",
+     "start": 30.311,
+     "end": 30.762999999999998
+    },
+    {
+     "text": "nueva.",
+     "start": 30.81,
+     "end": 31.205
+    },
+    {
+     "text": "Ganó",
+     "start": 31.262999999999998,
+     "end": 31.657
+    },
+    {
+     "text": "una",
+     "start": 31.82,
+     "end": 32.041
+    },
+    {
+     "text": "amarilla.",
+     "start": 32.064,
+     "end": 32.876999999999995
+    }
+   ]
+  },
+  {
+   "index": 6,
+   "tipo": "remate",
+   "start": 33.6,
+   "end": 37.2,
+   "words": [
+    {
+     "text": "Y",
+     "start": 33.9,
+     "end": 33.993
+    },
+    {
+     "text": "de",
+     "start": 34.074,
+     "end": 34.144
+    },
+    {
+     "text": "esa",
+     "start": 34.202,
+     "end": 34.388
+    },
+    {
+     "text": "derrota",
+     "start": 34.446,
+     "end": 34.887
+    },
+    {
+     "text": "nació",
+     "start": 35.015,
+     "end": 35.315999999999995
+    },
+    {
+     "text": "la",
+     "start": 35.363,
+     "end": 35.421
+    },
+    {
+     "text": "camiseta",
+     "start": 35.455999999999996,
+     "end": 35.885
+    },
+    {
+     "text": "amarilla.",
+     "start": 35.92,
+     "end": 36.733
+    }
+   ]
+  },
+  {
+   "index": 7,
+   "tipo": "cierre",
+   "start": 37.2,
+   "end": 43.800000000000004,
+   "words": [
+    {
+     "text": "Yo",
+     "start": 37.5,
+     "end": 37.674
+    },
+    {
+     "text": "estaba",
+     "start": 37.721,
+     "end": 38.057
+    },
+    {
+     "text": "ahí.",
+     "start": 38.08,
+     "end": 38.348
+    },
+    {
+     "text": "Bueno…",
+     "start": 38.394,
+     "end": 38.8
+    },
+    {
+     "text": "casi.",
+     "start": 39.021,
+     "end": 39.358
+    },
+    {
+     "text": "Comenten",
+     "start": 39.392,
+     "end": 39.845
+    },
+    {
+     "text": "su",
+     "start": 39.892,
+     "end": 39.985
+    },
+    {
+     "text": "país",
+     "start": 40.031,
+     "end": 40.402
+    },
+    {
+     "text": "y",
+     "start": 40.53,
+     "end": 40.623
+    },
+    {
+     "text": "abro",
+     "start": 40.704,
+     "end": 40.879
+    },
+    {
+     "text": "su",
+     "start": 40.913,
+     "end": 40.995
+    },
+    {
+     "text": "camerino.",
+     "start": 41.041,
+     "end": 41.819
+    }
+   ]
+  }
+ ]
+}

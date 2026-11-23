@@ -1,0 +1,86 @@
+{
+  "id": "006",
+  "slug": "india-descalzos",
+  "serie": "¿Mito o verdad?",
+  "titulo": "¿India no jugó el Mundial por ir descalza?",
+  "pais": "India",
+  "anio": 1950,
+  "objeto": "botín",
+  "objetoTipo": "botin",
+  "rotulo": "VISITANTE",
+  "cintaCamerino": "Brasil 50",
+  "etiqueta": "CAMERINO #006 · INDIA · 1950",
+  "nivelSecreto": 2,
+  "estado": "verificado",
+  "textoFinal": "@elutilerofutbol · Síganme",
+  "fuentes": [
+    "https://www.si.com/soccer/2018/02/25/world-cup-countdown-17-weeks-go-did-india-drop-out-1950-because-they-refused-wear-boots",
+    "https://scroll.in/field/1024901/not-barefoot-but-cold-feet-the-events-that-led-to-indias-absence-at-1950-fifa-world-cup-in-brazil",
+    "https://thebridge.in/football/india-1950-fifa-world-cup-barefoot-myth",
+    "https://www.tribuneindia.com/news/archive/sport/india-skipped-fifa-world-cup-in-1950-607610",
+    "https://www.thequint.com/sports/football/india-opted-not-to-play-fifa-world-cup",
+    "https://www.youthkiawaaz.com/2018/06/why-did-india-not-play-in-the-1950-fifa-world-cup-novy-kapadia-book-excerpt/amp/"
+  ],
+  "estilo": "pro",
+  "musica": "base-100bpm-b.mp3",
+  "transiciones": ["flash", "cinta", "hoja", "cinta", "hoja", "flash", "flash"],
+  "escenas": [
+    {
+      "tipo": "gancho",
+      "fondo": "pizarra",
+      "texto": "¿MITO O VERDAD?",
+      "resaltar": "MITO",
+      "voz": "¿India no fue a un Mundial por jugar descalza?"
+    },
+    { "tipo": "sting", "camerino": "entreabierto" },
+    {
+      "tipo": "apertura",
+      "expresion": "E5",
+      "pose": "P3",
+      "palabraGigante": "SHH",
+      "voz": "Cierren la puerta, que les cuento."
+    },
+    {
+      "tipo": "contexto",
+      "ficha": "BRASIL · 1950",
+      "palabraGigante": "1950",
+      "claves": ["boleto", "última"],
+      "voz": "Mundial de 1950. India tenía su boleto… y se bajó a última hora."
+    },
+    {
+      "tipo": "contexto",
+      "ficha": "Lo que dicen",
+      "sello": "¿MITO?",
+      "marcador": "descalzos",
+      "claves": ["descalzos", "FIFA"],
+      "voz": "Dicen que fue porque la FIFA no los dejaba jugar descalzos."
+    },
+    {
+      "tipo": "giro",
+      "camerino": "abierto",
+      "pose": "P5",
+      "expresion": "E6",
+      "palabraGigante": "MITO",
+      "gatillo": "mito",
+      "clave": "razones",
+      "claves": ["mito", "razones"],
+      "voz": "Es un mito. La federación india habló de otras razones: la selección del equipo y poco tiempo para prepararse."
+    },
+    {
+      "tipo": "remate",
+      "ficha": "India · 1950",
+      "cinta": "no fueron los pies",
+      "palabraGigante": "OLÍMPICO",
+      "kicker": "¿QUÉ PESÓ?",
+      "claves": ["olímpico"],
+      "voz": "Algunos creen que pesó más el torneo olímpico."
+    },
+    {
+      "tipo": "cierre",
+      "fondo": "lima",
+      "expresion": "E2",
+      "claves": ["mito"],
+      "voz": "Yo estaba ahí. Bueno… casi. Comenten qué mito quieren que revele."
+    }
+  ]
+}

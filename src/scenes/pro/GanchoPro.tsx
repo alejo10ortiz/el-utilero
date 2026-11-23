@@ -73,6 +73,9 @@ export const GanchoPro: React.FC<EscenaProps> = ({ esc, timing, frames }) => {
       cursor = hit;
       at = snap(pal[hit].ini - 1, 9, 2);
     } else at = prev + 12;
+    // nunca pantalla vacía al inicio: sin kicker, la primera línea se clava en f≈9 aunque la voz tarde en decir su palabra
+    if (i === 0 && kIdx < 0) at = Math.min(at, 9);
+    else if (i > 0 && at < prev + 8) at = prev + 8;
     prev = at;
     return { texto: l, at, resaltar: esc.resaltar };
   });

@@ -240,6 +240,48 @@ const Bandera: React.FC = () => (
   </g>
 );
 
+/** Silbato de árbitro (inclinado para que la boquilla asome sobre las manos): boquilla, cámara lisa con reflejo lima, ventana, bolita y anilla. */
+const Silbato: React.FC = () => (
+  <g transform="rotate(-30 200 250)">
+    <circle cx={200} cy={250} r={88} transform="translate(9 7)" fill={C.lima} />
+    {/* boquilla */}
+    <path d="M44 212 L192 212 L192 292 L62 292 Q36 292 36 252 Q36 212 44 212 Z" fill={C.papel} stroke={C.tinta} strokeWidth={6} strokeLinejoin="round" />
+    <path d="M52 232 H186 M52 272 H186" stroke={C.tinta} strokeWidth={3} opacity={0.35} />
+    {/* cámara */}
+    <circle cx={200} cy={250} r={88} fill={C.papel} stroke={C.tinta} strokeWidth={6} />
+    <path d="M136 296 A70 70 0 0 0 266 286" fill="none" stroke={C.lima} strokeWidth={12} strokeLinecap="round" />
+    {/* ventana */}
+    <path d="M112 210 L190 210 L172 238 L112 238 Z" fill={C.tinta} />
+    {/* bolita */}
+    <circle cx={206} cy={262} r={26} fill={C.tinta} />
+    <circle cx={198} cy={254} r={7} fill={C.lima} />
+    {/* anilla */}
+    <circle cx={286} cy={168} r={22} fill="none" stroke={C.tinta} strokeWidth={8} />
+    <path d="M298 150 C318 120 312 96 290 88" fill="none" stroke={C.tinta} strokeWidth={5} strokeLinecap="round" strokeDasharray="10 8" />
+    {/* ondas de sonido: el silbato que alguien creyó oír */}
+    <path d="M96 176 C100 150 118 134 142 130 M72 170 C74 132 104 106 140 102" fill="none" stroke={C.tinta} strokeWidth={6} strokeLinecap="round" />
+  </g>
+);
+
+/** Camiseta blanca sin número ni escudo (Brasil 1950): papel con contorno tinta, cuello y puños, escudo solo insinuado a puntos. */
+const Camiseta: React.FC = () => {
+  const forma = 'M150 100 L80 130 L28 212 L86 248 L112 216 L112 384 L288 384 L288 216 L314 248 L372 212 L320 130 L250 100 Q200 160 150 100 Z';
+  return (
+    <g>
+      <path d={forma} transform="translate(9 7)" fill={C.lima} />
+      <path d={forma} fill={C.papel} stroke={C.tinta} strokeWidth={5} strokeLinejoin="round" />
+      {/* cuello y puños */}
+      <path d="M150 100 Q200 160 250 100" fill="none" stroke={C.tinta} strokeWidth={11} strokeLinecap="round" />
+      <path d="M40 196 L96 232 M360 196 L304 232" stroke={C.tinta} strokeWidth={8} strokeLinecap="round" />
+      {/* pliegues */}
+      <path d="M130 250 C150 300 138 340 128 376 M270 250 C250 300 262 340 272 376" fill="none" stroke={C.tinta} strokeWidth={2.4} strokeDasharray="8 7" opacity={0.45} />
+      {/* escudo solo insinuado: sin logos */}
+      <circle cx={246} cy={206} r={22} fill="none" stroke={C.tinta} strokeWidth={3} strokeDasharray="5 6" opacity={0.7} />
+      <path d="M150 384 H250" stroke={C.tinta} strokeWidth={3} opacity={0.3} />
+    </g>
+  );
+};
+
 const Generico: React.FC<{ tipo: ObjetoTipo }> = ({ tipo }) => (
   <g>
     <rect x={80} y={120} width={240} height={240} rx={8} transform="translate(9 7)" fill={C.lima} />
@@ -268,7 +310,7 @@ export const Objeto: React.FC<{
       height={size * 1.1}
       style={{ position: 'absolute', left: x, top: y, overflow: 'visible', transform: `rotate(${rot}deg)`, filter: 'url(#ink)' }}
     >
-      {tipo === 'bulto' ? <Bulto /> : tipo === 'botin' ? <Botin /> : tipo === 'llavero' ? <Llavero /> : tipo === 'calendario' ? <Calendario /> : tipo === 'vitrina' ? <Vitrina /> : tipo === 'balon' ? <Balon /> : tipo === 'bandera' ? <Bandera /> : <Generico tipo={tipo} />}
+      {tipo === 'bulto' ? <Bulto /> : tipo === 'botin' ? <Botin /> : tipo === 'llavero' ? <Llavero /> : tipo === 'calendario' ? <Calendario /> : tipo === 'vitrina' ? <Vitrina /> : tipo === 'balon' ? <Balon /> : tipo === 'bandera' ? <Bandera /> : tipo === 'silbato' ? <Silbato /> : tipo === 'camiseta' ? <Camiseta /> : <Generico tipo={tipo} />}
       {etiqueta && <Etiqueta texto={etiqueta} sway={sway} />}
     </svg>
   );

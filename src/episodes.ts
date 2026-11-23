@@ -3,6 +3,9 @@ import ep001 from '../episodes/001-pickles/episode.json';
 import ep002 from '../episodes/002-copa-robada/episode.json';
 import ep003 from '../episodes/003-149-a-0/episode.json';
 import ep004 from '../episodes/004-mano-de-dios/episode.json';
+import ep005 from '../episodes/005-principe-kuwait/episode.json';
+import ep006 from '../episodes/006-india-descalzos/episode.json';
+import ep007 from '../episodes/007-camiseta-blanca/episode.json';
 import epP01 from '../episodes/P01-quien-es/episode.json';
 import epP02 from '../episodes/P02-que-hay/episode.json';
 import epP03 from '../episodes/P03-como-funciona/episode.json';
@@ -17,6 +20,9 @@ export const EPISODIOS: Record<string, Episode> = {
   '002-copa-robada': parseEpisode(ep002),
   '003-149-a-0': parseEpisode(ep003),
   '004-mano-de-dios': parseEpisode(ep004),
+  '005-principe-kuwait': parseEpisode(ep005),
+  '006-india-descalzos': parseEpisode(ep006),
+  '007-camiseta-blanca': parseEpisode(ep007),
   'P01-quien-es': parseEpisode(epP01),
   'P02-que-hay': parseEpisode(epP02),
   'P03-como-funciona': parseEpisode(epP03),

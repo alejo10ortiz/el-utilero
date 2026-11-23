@@ -1,0 +1,87 @@
+{
+  "id": "007",
+  "slug": "camiseta-blanca",
+  "serie": "El Camerino",
+  "titulo": "La camiseta blanca que Brasil retiró",
+  "pais": "Brasil",
+  "anio": 1950,
+  "objeto": "camiseta blanca",
+  "objetoTipo": "camiseta",
+  "rotulo": "LOCAL",
+  "cintaCamerino": "Brasil 50",
+  "etiqueta": "CAMERINO #007 · RÍO · 1950",
+  "nivelSecreto": 4,
+  "estado": "verificado",
+  "textoFinal": "@elutilerofutbol · Síganme",
+  "fuentes": [
+    "https://www.correiodamanha.com.br/esporte/esportes/2026/06/293671-selecao-brasileira-e-correio-da-manha-uma-parceria-campea.html",
+    "https://artsandculture.google.com/story/DQWBCiIxN2jqKQ",
+    "https://en.mercopress.com/2018/11/21/uruguay-maracana-and-the-brazilian-national-team-jersey-verde-e-amarela",
+    "https://sportskeeda.com/football/history-in-a-jersey-brazil",
+    "https://www.history.com/articles/the-maracana-blow-brazils-stunning-world-cup-defeat",
+    "https://datencenter.dfb.de/en/data-center/fifa-world-cup/1950-in-brasil/final-round/uruguay-brazil-136851"
+  ],
+  "estilo": "pro",
+  "musica": "base-100bpm-b.mp3",
+  "transiciones": ["flash", "cinta", "hoja", "cinta", "hoja", "flash", "flash"],
+  "escenas": [
+    {
+      "tipo": "gancho",
+      "fondo": "pizarra",
+      "texto": "LA CAMISETA QUE BRASIL RETIRÓ",
+      "resaltar": "RETIRÓ",
+      "voz": "Brasil retiró su camiseta blanca para siempre… por una sola tarde."
+    },
+    { "tipo": "sting", "camerino": "entreabierto" },
+    {
+      "tipo": "apertura",
+      "expresion": "E3",
+      "pose": "P3",
+      "palabraGigante": "SHH",
+      "voz": "Cierren la puerta, que les cuento."
+    },
+    {
+      "tipo": "contexto",
+      "ficha": "RÍO · 16.07.1950",
+      "sello": "EMPATE",
+      "palabraGigante": "EMPATAR",
+      "claves": ["empatar", "campeón"],
+      "voz": "Maracaná, 1950. A Brasil le bastaba empatar para ser campeón del mundo."
+    },
+    {
+      "tipo": "contexto",
+      "ficha": "Uruguay 2 – 1 Brasil",
+      "marcador": "más de 170 mil",
+      "claves": ["170", "Uruguay"],
+      "voz": "Más de 170 mil personas vieron cómo Uruguay ganaba 2 a 1."
+    },
+    {
+      "tipo": "giro",
+      "camerino": "abierto",
+      "pose": "P5",
+      "expresion": "E7",
+      "palabraGigante": "1953",
+      "gatillo": "periódico",
+      "clave": "amarilla",
+      "tono": "misterio",
+      "claves": ["periódico", "amarilla"],
+      "voz": "Tres años después, un periódico convocó un concurso para una camiseta nueva. Ganó una amarilla."
+    },
+    {
+      "tipo": "remate",
+      "ficha": "Brasil · 1953",
+      "cinta": "nació en 1953",
+      "palabraGigante": "AMARILLA",
+      "kicker": "BLANCA",
+      "claves": ["amarilla"],
+      "voz": "Y de esa derrota nació la camiseta amarilla."
+    },
+    {
+      "tipo": "cierre",
+      "fondo": "lima",
+      "expresion": "E2",
+      "claves": ["camerino"],
+      "voz": "Yo estaba ahí. Bueno… casi. Comenten su país y abro su camerino."
+    }
+  ]
+}

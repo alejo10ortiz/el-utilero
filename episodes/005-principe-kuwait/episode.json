@@ -1,0 +1,83 @@
+{
+  "id": "005",
+  "slug": "principe-kuwait",
+  "serie": "El Camerino",
+  "titulo": "El príncipe que bajó de la tribuna",
+  "pais": "Kuwait",
+  "anio": 1982,
+  "objeto": "silbato",
+  "objetoTipo": "silbato",
+  "cintaCamerino": "España 82",
+  "etiqueta": "CAMERINO #005 · ESPAÑA · 1982",
+  "nivelSecreto": 3,
+  "estado": "verificado",
+  "textoFinal": "@elutilerofutbol · Síganme",
+  "fuentes": [
+    "https://amp.foxsports.com/stories/soccer/world-cups-101-most-memorable-moments-kuwaits-princely-protest",
+    "https://arabnews.pk/node/1690661/sport",
+    "https://www.gbnews.com/sport/football/world-cup-kuwait-france-sheikh",
+    "https://en.wikipedia.org/wiki/Myroslav_Stupar"
+  ],
+  "estilo": "pro",
+  "musica": "base-100bpm-b.mp3",
+  "transiciones": ["flash", "cinta", "hoja", "cinta", "hoja", "flash", "flash"],
+  "escenas": [
+    {
+      "tipo": "gancho",
+      "fondo": "pizarra",
+      "texto": "BAJÓ DE LA TRIBUNA",
+      "resaltar": "TRIBUNA",
+      "voz": "Un príncipe bajó de la tribuna y le anularon un gol a Francia."
+    },
+    { "tipo": "sting", "camerino": "entreabierto" },
+    {
+      "tipo": "apertura",
+      "expresion": "E3",
+      "pose": "P3",
+      "palabraGigante": "SHH",
+      "voz": "Cierren la puerta, que les cuento."
+    },
+    {
+      "tipo": "contexto",
+      "ficha": "ESPAÑA · 1982",
+      "sello": "SILBATO",
+      "palabraGigante": "1982",
+      "claves": ["silbato", "Kuwait"],
+      "voz": "Mundial de 1982, Francia contra Kuwait. Los kuwaitíes se paran: creyeron oír un silbato."
+    },
+    {
+      "tipo": "contexto",
+      "ficha": "Francia marcó igual",
+      "marcador": "bajó un príncipe",
+      "claves": ["príncipe", "federación"],
+      "voz": "Francia marcó igual. Entonces bajó a la cancha el presidente de su federación… un príncipe."
+    },
+    {
+      "tipo": "giro",
+      "camerino": "abierto",
+      "pose": "P5",
+      "expresion": "E4",
+      "palabraGigante": "ANULADO",
+      "gatillo": "discutió",
+      "clave": "anuló",
+      "claves": ["discutió", "anuló"],
+      "voz": "Discutió con el árbitro… y el árbitro anuló el gol."
+    },
+    {
+      "tipo": "remate",
+      "ficha": "Francia 4 – 1 Kuwait",
+      "cinta": "¡igual ganó!",
+      "palabraGigante": "IGUAL",
+      "kicker": "4–1",
+      "claves": ["igual"],
+      "voz": "Francia ganó igual: 4 a 1."
+    },
+    {
+      "tipo": "cierre",
+      "fondo": "lima",
+      "expresion": "E2",
+      "claves": ["camerino"],
+      "voz": "Yo estaba ahí. Bueno… casi. Comenten su país y abro su camerino."
+    }
+  ]
+}
