@@ -81,7 +81,7 @@ export const ContadorPro: React.FC<EscenaProps> = ({ esc, timing, frames }) => {
         {fmt(valor)}
       </div>
       {esc.unidad && f >= t0 + 12 && <CintaImpacto texto={esc.unidad} x={SAFE_BOX.cx} y={yNum + size * 0.92 + 70} at={t0 + 12} rot={-3} size={tiza ? 70 : 80} />}
-      {esc.sello && fin && <Sello texto={esc.sello} x={tiza ? 700 : 690} y={tiza ? 1010 : 840} size={tiza ? 100 : 130} rot={-9} delay={tFin + 5} mezcla={tiza ? 'normal' : 'multiply'} />}
+      {esc.sello && fin && <Sello texto={esc.sello} x={tiza ? 770 : 690} y={tiza ? 560 : 840} size={tiza ? 118 : 130} rot={-9} delay={tFin + 5} mezcla={tiza ? 'normal' : 'multiply'} />}
       <Impacto at={tFin} x={540} y={yNum + size * 0.4} flash={0.3} />
       <Destello at={tFin} color={C.lima} max={0.35} dur={5} />
       <Palabras words={timing.words} offsetFrames={off} tono={tiza ? 'pizarra' : 'papel'} claves={esc.claves} y={1385} size={84} />

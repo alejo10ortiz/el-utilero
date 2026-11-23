@@ -7,7 +7,7 @@ export type SfxName =
   | 'keys' | 'lock' | 'creak' | 'slam' | 'whistle' | 'stamp' | 'tape' | 'type_loop' | 'ding'
   | 'chalk' | 'marker' | 'paper_slide' | 'thump' | 'wink' | 'key_drop'
   | 'whoosh' | 'whoosh_long' | 'impact' | 'hit' | 'riser' | 'pop' | 'static' | 'slap' | 'clap' | 'swish'
-  | 'patada' | 'hinchada';
+  | 'patada' | 'hinchada' | 'sello';
 
 const T = tiempos as Record<string, { dur: number; pico: number }>;
 

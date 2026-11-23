@@ -57,6 +57,21 @@ Un episodio en estilo pro **no es un cartel con elementos que aparecen**: cada e
 - **SFX reales** (ElevenLabs): `npm run sfx -- --only=… --force` (recorta silencio inicial y deja el pico a −2 dBFS). Mín. 0.5 s por la API.
 - Escenas pro: `src/scenes/pro/` (GanchoPro, StingPro, AperturaPro, CamerinosPro, CierrePro). Las que no existen en pro caen al estilo clásico. Antes de dar un video por bueno: renderizar cuadros y mirar el filmstrip (entradas, impactos, solapes de texto).
 
+## Escenas explicativas (anti-plantilla, estilo pro) — `src/scenes/pro/`
+Cada historia puede componerse con cualquier secuencia de escenas; ya no todo pasa por fichas de texto. Tipos nuevos en `episode.json`:
+- `contador` — cifra que sube (`cifra`, `desde`, `unidad`, `estilo: "tiza"|"marcador"`, `clave` = palabra donde termina la cuenta, `sello`): 149 goles, 173.850 personas, 3 balones de oro…
+- `mapa` — mapa REAL (Natural Earth vía `world-atlas`, dominio público) con `puntos: [{nombre, lat, lon, palabra}]` que aparecen al nombrarse y `ruta` (balón viajando). `fondo: "pizarra"` = mapa a tiza.
+- `versus` — dos hojas enfrentadas (`lados: [{titulo, lineas, palabras}]`) con sello «VS»: duelos y comparaciones.
+- `cronologia` — hilo vertical con `hitos: [{anio, texto, palabra}]`; la cámara baja al nombrarse cada año (máx. 5).
+- `recorte` — recorte de periódico inventado «Archivo del Camerino» (`titular`, `linea`, `resaltar`): documentos y titulares históricos.
+Prueba visual de todas: episodio interno `P99-pruebas-escenas` (no se publica). Formatos narrativos sugeridos: *cifra/récord* (gancho → contador → giro → remate), *viaje* (mapa → cronología), *duelo* (versus → giro), *documento* (recorte → giro), *misterio* (tono sobrio + cama `c`).
+
+## Ritmo (decisión del dueño: que no parezca plantilla y que no se haga largo)
+- Omitir la escena `sting` en episodios nuevos (2,4 s de puerta sin información); el sello sonoro de marca (`sello`: llave + cerrojo + golpe) va en la apertura.
+- Gancho ≤ 3,5 s; cierre corto (variar: con y sin «Yo estaba ahí. Bueno… casi.»). Meta: 30–35 s por video.
+- Velocidad de voz: `config/voice.json` (hoy 0,95; el dueño elige entre 0,95 / 1,05 / v3 de oído).
+- Música por ánimo (`assets/music/`, todas 100 BPM): `b` base estomp, `c` tensión/misterio, `d` sobria/emotiva, `e` ligera/humor. Pendiente de aprobación del dueño.
+
 ## Convenciones
 - Código y comentarios en español (el proyecto y su audiencia lo son); nombres de componentes en español como en BRAND.md.
 - Un componente nuevo = una animación de §5.2 + su sonido. No hay fundidos genéricos: las transiciones son objetos.
