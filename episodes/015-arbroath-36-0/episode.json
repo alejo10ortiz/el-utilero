@@ -40,7 +40,7 @@
       "expresion": "E3",
       "pose": "P3",
       "palabraGigante": "SHH",
-      "voz": "Cierren la puerta, que les cuento."
+      "voz": "Esto es entre nosotros."
     },
     {
       "tipo": "recorte",
@@ -106,7 +106,7 @@
   ],
   "guion": {
     "gancho": "cifra",
-    "apertura": "firma",
+    "apertura": "intima",
     "formato": "cifra",
     "cierre": "pregunta"
   }

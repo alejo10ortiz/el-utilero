@@ -72,7 +72,7 @@ export async function verificar(slug: string, online = false): Promise<Hallazgo[
       const cierre = ep.escenas.find((e) => e.tipo === 'cierre')?.voz ?? '';
       if (/pa[ií]s/i.test(cierre) && previos.slice(-1).some((x) => /pa[ií]s/i.test(x.cierreVoz))) warn('el cierre pide «su país» como el del episodio anterior: usa una pregunta propia de la historia');
       const musicaActual = ep.musica?.match(/-([a-e])\.mp3$/)?.[1];
-      if (musicaActual && ult2.some((x) => x.musica === musicaActual)) warn(`cama de música «${musicaActual}» repetida en uno de los 2 episodios anteriores`);
+      if (musicaActual && previos.slice(-1).some((x) => x.musica === musicaActual)) warn(`cama de música «${musicaActual}» igual a la del episodio anterior`);
     }
   }
 

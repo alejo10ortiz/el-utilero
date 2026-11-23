@@ -32,14 +32,14 @@
       "fondo": "pizarra",
       "texto": "SOLO LOS SUYOS",
       "resaltar": "SUYOS",
-      "voz": "Dos clubes que solo juegan con los suyos."
+      "voz": "¿Se puede ganar jugando solo con los suyos?"
     },
     {
       "tipo": "apertura",
       "expresion": "E3",
       "pose": "P3",
       "palabraGigante": "SHH",
-      "voz": "Cierren la puerta, que les cuento."
+      "voz": "Cierren la puerta."
     },
     {
       "tipo": "mapa",
@@ -112,12 +112,12 @@
       "claves": [
         "camerino"
       ],
-      "voz": "Comenten su país: ¿su club haría lo mismo?"
+      "voz": "Y ustedes, ¿jugarían solo con los suyos? Comenten."
     }
   ],
   "guion": {
-    "gancho": "afirmacion",
-    "apertura": "firma",
+    "gancho": "pregunta",
+    "apertura": "corta",
     "formato": "duelo",
     "cierre": "pregunta"
   }
