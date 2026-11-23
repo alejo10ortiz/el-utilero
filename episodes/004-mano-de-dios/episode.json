@@ -42,7 +42,7 @@
     },
     {
       "tipo": "contexto",
-      "ficha": "ARGENTINA – INGLATERRA · 1986",
+      "ficha": "MÉXICO · 22.06.1986",
       "sello": "MANO",
       "palabraGigante": "51",
       "claves": ["minuto", "mano"],
@@ -72,7 +72,7 @@
       "ficha": "El balón · el árbitro",
       "cinta": "en subasta",
       "palabraGigante": "AÑOS",
-      "kicker": "EL BALÓN",
+      "kicker": "MÁS DE 35",
       "claves": ["balón", "años"],
       "voz": "El árbitro guardó el balón más de 35 años y luego lo puso en subasta."
     },
