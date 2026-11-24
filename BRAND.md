@@ -772,7 +772,7 @@ La duración de cada escena sale de la duración real del audio (`words.json`), 
 
 ---
 
-## 13. Videos largos de YouTube (decisión: 1 por semana, 8–10 min, mismo canal)
+## 13. Videos largos de YouTube (decisión: 1 por semana, 6–10 min (la historia decide: no se rellena), mismo canal)
 
 **Por qué** (decisión del dueño): además de los shorts, un video largo por semana (4 al mes) que la gente vea completo. Sin imágenes de partidos, lo que sostiene 9 minutos no es el material sino la **premisa**: una pregunta que solo se responde al final, con una persona con algo en juego o un reloj corriendo.
 
