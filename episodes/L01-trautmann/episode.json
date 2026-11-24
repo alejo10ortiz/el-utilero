@@ -298,11 +298,12 @@
     },
     {
       "tipo": "titular",
-      "titular": "LA COMUNIDAD JUDÍA PROTESTA|PROTESTA FRENTE AL ESTADIO",
+      "titular": "LA COMUNIDAD JUDÍA PROTESTA|UN GRUPO SE MANIFIESTA|FRENTE AL ESTADIO",
       "resaltar": "PROTESTA",
       "claves": [
         "comunidad",
-        "manifiesta"
+        "manifiesta",
+        "estadio"
       ],
       "voz": "La comunidad judía de Manchester protesta. Un grupo se manifiesta frente al estadio.",
       "grupo": "g11",
@@ -652,7 +653,7 @@
         {
           "dato": "Minutos jugados después",
           "valores": "16 o 17",
-          "palabra": "Cuántos"
+          "palabra": "jugó"
         },
         {
           "dato": "Días hasta la radiografía",

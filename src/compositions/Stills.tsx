@@ -11,6 +11,7 @@ import { Cinta } from '../components/Cinta';
 import { Utilero } from '../components/Utilero';
 import { Objeto } from '../components/Objeto';
 import { EPISODIOS } from '../episodes';
+import { TemaProvider } from '../lib/tema';
 
 export type StillProps = { slug: string };
 
@@ -72,6 +73,32 @@ export const AvatarStill: React.FC = () => (
       <Defs />
       <Avatar size={800} />
       <Grano width={800} height={800} opacity={0.25} />
+    </AbsoluteFill>
+  </ConFuentes>
+);
+
+/** Miniatura 1280×720 de un video LARGO: la pregunta en dos palabras, el Utilero serio y el lugar/año. Estática (sin animaciones). */
+export const MiniaturaLargo: React.FC<StillProps & { linea1?: string; linea2?: string; cinta?: string }> = ({ linea1 = 'CUELLO', linea2 = 'ROTO', cinta = 'WEMBLEY · 1956' }) => (
+  <ConFuentes>
+    <AbsoluteFill>
+      <Defs />
+      <TemaProvider id="plano">
+        <Fondo tipo="papel" width={1280} height={720} />
+      </TemaProvider>
+      {[linea1, linea2].map((t, i) => (
+        <div
+          key={i}
+          style={{
+            position: 'absolute', left: 50, top: 28 + i * 282, fontFamily: FONT.grito, fontSize: 300, lineHeight: 0.92, color: C.tinta,
+            textShadow: i === 0 ? `12px 10px 0 ${C.lima}` : 'none', transform: `rotate(${i === 0 ? -2 : 1.5}deg)`, filter: 'url(#ink)',
+          }}
+        >
+          {i === 1 ? <span style={{ background: C.lima, padding: '0 22px' }}>{t}</span> : t}
+        </div>
+      ))}
+      <Utilero expresion="E7" size={600} x={690} y={140} vivo={false} sobre="papel" />
+      <Cinta texto={cinta} x={400} y={655} rot={-3} size={60} delay={-99} sonido={false} />
+      <Grano width={1280} height={720} />
     </AbsoluteFill>
   </ConFuentes>
 );

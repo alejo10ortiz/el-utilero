@@ -15,7 +15,9 @@
     "render": "tsx scripts/render.ts",
     "audio:norm": "bash scripts/normalize-audio.sh",
     "music": "tsx scripts/generate-music.ts",
-    "rotacion": "tsx scripts/rotacion.ts"
+    "rotacion": "tsx scripts/rotacion.ts",
+    "render-largo": "tsx scripts/render-largo.ts",
+    "stills-largo": "tsx scripts/stills-largo.ts"
   },
   "dependencies": {
     "@remotion/bundler": "4.0.545",

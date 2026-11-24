@@ -2,10 +2,12 @@ import React from 'react';
 import { Composition, Still } from 'remotion';
 import { FORMATS, FPS } from '../config/brand';
 import { Short, calcularShort, ShortProps } from './compositions/Short';
+import { Largo, calcularLargo, LargoProps } from './compositions/Largo';
+import { LH, LW } from './lib/largo';
 import {
   HojaExpresiones, HojaLogo, PruebaCamerino, PruebaComponentes, PruebaUtilero, LINEA_PRUEBA,
 } from './compositions/Pruebas';
-import { Miniatura, Post, AvatarStill, StillProps } from './compositions/Stills';
+import { Miniatura, MiniaturaLargo, Post, AvatarStill, StillProps } from './compositions/Stills';
 import { SLUG_POR_DEFECTO } from './episodes';
 import { estimateWords } from './lib/timeline';
 
@@ -25,7 +27,18 @@ export const Root: React.FC = () => (
       defaultProps={{ slug: SLUG_POR_DEFECTO } satisfies ShortProps}
       calculateMetadata={calcularShort}
     />
+    <Composition
+      id="Largo"
+      component={Largo}
+      width={LW}
+      height={LH}
+      fps={FPS}
+      durationInFrames={FPS * 340}
+      defaultProps={{ slug: 'L01-trautmann' } satisfies LargoProps}
+      calculateMetadata={calcularLargo}
+    />
     <Still id="Miniatura" component={Miniatura} width={miniatura.width} height={miniatura.height} defaultProps={{ slug: SLUG_POR_DEFECTO } satisfies StillProps} />
+    <Still id="MiniaturaLargo" component={MiniaturaLargo} width={miniatura.width} height={miniatura.height} defaultProps={{ slug: 'L01-trautmann' } satisfies StillProps} />
     <Still id="Post" component={Post} width={post.width} height={post.height} defaultProps={{ slug: SLUG_POR_DEFECTO } satisfies StillProps} />
     <Still id="Avatar" component={AvatarStill} width={800} height={800} />
 

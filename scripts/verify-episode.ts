@@ -30,6 +30,7 @@ export async function verificar(slug: string, online = false): Promise<Hallazgo[
   ok('esquema episode.json válido');
 
   const esPres = ep.formato === 'presentacion';
+  const esLargo = ep.formato === 'largo';
 
   if (!esPres) {
     // ── Regla de oro: dos fuentes por dato, de dominios distintos
@@ -49,18 +50,18 @@ export async function verificar(slug: string, online = false): Promise<Hallazgo[
 
   // ── Estructura (§7)
   const tipos = ep.escenas.map((e) => e.tipo);
-  if (tipos[0] !== 'gancho') warn('la primera escena debería ser el gancho (0–3 s)');
+  if (!esLargo && tipos[0] !== 'gancho') warn('la primera escena debería ser el gancho (0–3 s)');
   if (tipos[tipos.length - 1] !== 'cierre') err('la última escena debe ser el cierre');
   // Los episodios con escenas explicativas (contador, mapa, versus, cronología, recorte) omiten a propósito el sting y el giro del objeto.
   const explicativo = tipos.some((t) => ['contador', 'mapa', 'versus', 'cronologia', 'recorte'].includes(t));
   if (!tipos.includes('sting') && !explicativo) warn('falta el sting (camerino que se abre)');
-  if (!esPres && !explicativo && !ep.escenas.some((e) => e.tipo === 'giro')) warn('falta la escena de giro (objeto del día)');
+  if (!esPres && !esLargo && !explicativo && !ep.escenas.some((e) => e.tipo === 'giro')) warn('falta la escena de giro (objeto del día)');
   const cierre = ep.escenas.find((e) => e.tipo === 'cierre');
-  if (!esPres && cierre && !/comenten|comenta/i.test(cierre.voz ?? '')) warn('el cierre debería invitar a comentar el país (comunidad, §1)');
+  if (!esPres && !esLargo && cierre && !/comenten|comenta/i.test(cierre.voz ?? '')) warn('el cierre debería invitar a comentar el país (comunidad, §1)');
   if (ep.textoFinal.split(' · ')[0] !== HANDLE) err(`textoFinal debe empezar con el @usuario oficial ${HANDLE}`);
 
   // ── Rotación de guion (BRAND.md §7b): avisos, nunca bloquean
-  if (!esPres) {
+  if (!esPres && !esLargo) {
     if (!ep.guion) warn('anota `guion: {gancho, apertura, formato, cierre}` en episode.json (BRAND.md §7b) para poder rotar recursos');
     else {
       const previos = cargarEpisodios().filter((x) => x.id < ep.id).slice(-3);
@@ -82,14 +83,15 @@ export async function verificar(slug: string, online = false): Promise<Hallazgo[
   const palabras = ep.escenas.reduce((a, e) => a + (e.voz ? tokenize(e.voz).length : 0), 0);
   const tl = estimateTimeline(ep);
   const msg = `${palabras} palabras de voz → ~${tl.totalSeconds.toFixed(0)} s estimados (objetivo 30–45 s)`;
-  if (tl.totalSeconds > 50) warn(msg + ' — recortar guion o subir "speed" en config/voice.json');
+  if (esLargo) ok(`video largo: ${palabras} palabras de voz, ~${(tl.totalSeconds / 60).toFixed(1)} min estimados (la historia decide la duración; ver la real con npm run timeline)`);
+  else if (tl.totalSeconds > 50) warn(msg + ' — recortar guion o subir "speed" en config/voice.json');
   else if (tl.totalSeconds > 45) warn(msg + ' — algo largo; confirmar con la voz real');
   else ok(msg);
 
   // ── Reglas de plataforma (§10)
   const visible = ep.escenas.flatMap((e) => [e.texto, e.ficha, e.sello, e.cinta, e.palabraGigante, e.marcador]).filter(Boolean).join(' ');
   if (/\bfifa\b|world\s*cup/i.test(visible)) warn('texto en pantalla menciona FIFA/World Cup: evitar logos/nombres oficiales en la marca visual');
-  if (ep.escenas.some((e) => e.voz && e.voz.length > 260)) warn('hay líneas de voz muy largas (>260 caracteres); mejor partir en dos escenas');
+  if (!esLargo && ep.escenas.some((e) => e.voz && e.voz.length > 260)) warn('hay líneas de voz muy largas (>260 caracteres); mejor partir en dos escenas');
 
   // ── Fuentes en línea (opcional)
   if (online) {
