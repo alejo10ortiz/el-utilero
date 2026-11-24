@@ -59,8 +59,9 @@ const Cuadriculado: React.FC<{ w: number; h: number }> = ({ w, h }) => {
 
 /** Papel de estraza: fibras largas, dobleces, cinta de embalar en las esquinas, motas. */
 const Kraft: React.FC<{ w: number; h: number }> = ({ w, h }) => {
-  const motas = Array.from({ length: 140 }).map((_, i) => ({
-    x: hash(i * 3 + 1) * 1080, y: hash(i * 5 + 2) * 1920, r: 0.8 + hash(i + 9) * 2.2, o: 0.12 + hash(i + 4) * 0.25,
+  const sw = w - 480, sh = h - 480; // pantalla visible (el fondo sobra 240 px por lado)
+  const motas = Array.from({ length: Math.round((140 * sw * sh) / (1080 * 1920)) }).map((_, i) => ({
+    x: hash(i * 3 + 1) * sw, y: hash(i * 5 + 2) * sh, r: 0.8 + hash(i + 9) * 2.2, o: 0.12 + hash(i + 4) * 0.25,
   }));
   return (
     <>
@@ -72,23 +73,23 @@ const Kraft: React.FC<{ w: number; h: number }> = ({ w, h }) => {
           <circle key={i} cx={m.x} cy={m.y} r={m.r} fill={C.tinta} opacity={m.o} />
         ))}
         {/* fibras cortas sueltas del papel de estraza */}
-        {Array.from({ length: 260 }).map((_, i) => {
-          const x = hash(i * 7 + 3) * 1080, y = hash(i * 11 + 5) * 1920, l = 14 + hash(i + 2) * 38, a = hash(i * 3 + 8) * Math.PI;
+        {Array.from({ length: Math.round((260 * sw * sh) / (1080 * 1920)) }).map((_, i) => {
+          const x = hash(i * 7 + 3) * sw, y = hash(i * 11 + 5) * sh, l = 14 + hash(i + 2) * 38, a = hash(i * 3 + 8) * Math.PI;
           return <path key={`f${i}`} d={`M${x} ${y} q${Math.cos(a) * l * 0.5 + 6} ${Math.sin(a) * l * 0.5 - 6} ${Math.cos(a) * l} ${Math.sin(a) * l}`} fill="none" stroke={C.kraftOscuro} strokeWidth={1.5 + hash(i) * 1.5} opacity={0.22 + hash(i + 6) * 0.25} strokeLinecap="round" />;
         })}
         {/* dobleces del papel de envolver (cresta clara + sombra) */}
-        {[640, 1280].map((y, i) => (
+        {[sh / 3, (sh * 2) / 3].map((y, i) => (
           <g key={i} transform={`rotate(${i ? 0.25 : -0.3} 540 ${y})`}>
             <rect x={-240} y={y} width={1560} height={3} fill={C.cinta} opacity={0.3} />
             <rect x={-240} y={y + 3} width={1560} height={4} fill={C.tinta} opacity={0.09} />
           </g>
         ))}
-        <g transform="rotate(-0.2 540 960)">
-          <rect x={540} y={-240} width={3} height={2400} fill={C.cinta} opacity={0.26} />
-          <rect x={543} y={-240} width={4} height={2400} fill={C.tinta} opacity={0.08} />
+        <g transform={`rotate(-0.2 ${sw / 2} ${sh / 2})`}>
+          <rect x={sw / 2} y={-240} width={3} height={2400} fill={C.cinta} opacity={0.26} />
+          <rect x={sw / 2 + 3} y={-240} width={4} height={2400} fill={C.tinta} opacity={0.08} />
         </g>
         {/* cinta de embalar: arriba a la izquierda y abajo a la derecha */}
-        {[{ x: 70, y: 70, r: -34, w: 420 }, { x: 960, y: 1850, r: -30, w: 440 }].map((t, i) => (
+        {[{ x: 70, y: 70, r: -34, w: 420 }, { x: sw - 120, y: sh - 70, r: -30, w: 440 }].map((t, i) => (
           <g key={i} transform={`translate(${t.x} ${t.y}) rotate(${t.r})`}>
             <rect x={-t.w / 2} y={-44} width={t.w} height={88} fill={C.cinta} opacity={0.62} />
             <rect x={-t.w / 2} y={-44} width={t.w} height={10} fill="#fff" opacity={0.28} />
@@ -102,7 +103,11 @@ const Kraft: React.FC<{ w: number; h: number }> = ({ w, h }) => {
 };
 
 /** Papel milimetrado con la cancha como marca de agua y marcas de registro en las esquinas. */
-const Milimetrado: React.FC<{ w: number; h: number }> = ({ w, h }) => (
+const Milimetrado: React.FC<{ w: number; h: number }> = ({ w, h }) => {
+  const sw = w - 480, sh = h - 480;
+  const horizontal = sw > sh;
+  const escala = Math.min((sh * 0.85) / 860, (sw * 0.8) / 1380);
+  return (
   <>
     <rect width={w} height={h} fill={C.papel} />
     <Ruido id="ft-mi-blot" w={w} h={h} freq="0.0045 0.006" seed={9} rgb={[0.35, 0.3, 0.22]} a={1.4} b={-0.62} opacity={0.38} oct={4} />
@@ -118,7 +123,7 @@ const Milimetrado: React.FC<{ w: number; h: number }> = ({ w, h }) => (
     <rect width={w} height={h} fill="url(#ft-mi-grueso)" />
     <g transform="translate(240 240)">
       {/* cancha en marca de agua */}
-      <g fill="none" stroke={C.tinta} strokeWidth={6} opacity={0.085} strokeLinecap="round" strokeLinejoin="round" transform="rotate(-4 540 960)">
+      <g fill="none" stroke={C.tinta} strokeWidth={6} opacity={0.085} strokeLinecap="round" strokeLinejoin="round" transform={horizontal ? `translate(${sw / 2} ${sh / 2}) rotate(-2) scale(${escala}) translate(-540 -970) rotate(90 540 970)` : 'rotate(-4 540 960)'}>
         <path d="M110 280 H970 V1660 H110 Z" />
         <path d="M110 970 H970" />
         <circle cx={540} cy={970} r={176} />
@@ -128,23 +133,26 @@ const Milimetrado: React.FC<{ w: number; h: number }> = ({ w, h }) => (
       </g>
       {/* marcas de registro */}
       <g stroke={C.tinta} strokeWidth={3} fill="none" opacity={0.5}>
-        {[[40, 40, 1, 1], [1040, 40, -1, 1], [40, 1880, 1, -1], [1040, 1880, -1, -1]].map(([x, y, sx, sy], i) => (
+        {[[40, 40, 1, 1], [sw - 40, 40, -1, 1], [40, sh - 40, 1, -1], [sw - 40, sh - 40, -1, -1]].map(([x, y, sx, sy], i) => (
           <path key={i} d={`M${x} ${y + 46 * sy} V${y} H${x + 46 * sx}`} />
         ))}
-        <circle cx={540} cy={40} r={14} />
-        <path d="M520 40 H560 M540 20 V60" />
-        <circle cx={540} cy={1880} r={14} />
-        <path d="M520 1880 H560 M540 1860 V1900" />
+        <circle cx={sw / 2} cy={40} r={14} />
+        <path d={`M${sw / 2 - 20} 40 H${sw / 2 + 20} M${sw / 2} 20 V60`} />
+        <circle cx={sw / 2} cy={sh - 40} r={14} />
+        <path d={`M${sw / 2 - 20} ${sh - 40} H${sw / 2 + 20} M${sw / 2} ${sh - 60} V${sh - 20}`} />
       </g>
     </g>
   </>
-);
+  );
+};
 
 /** Papel prensa: trama de puntos, filetes de columna y bloques de texto gris que no se leen. */
 const Diario: React.FC<{ w: number; h: number }> = ({ w, h }) => {
-  const cols = [60, 300, 540, 780, 1020];
+  const sw = w - 480, sh = h - 480;
+  const cols = Array.from({ length: Math.ceil((sw - 60) / 240) + 1 }).map((_, k) => 60 + k * 240);
+  const filas = Math.ceil((sh - 300) / 235);
   const bloques = cols.slice(0, -1).flatMap((x, ci) =>
-    Array.from({ length: 7 }).map((_, bi) => ({ x: x + 14, y: 230 + bi * 235 + hash(ci * 9 + bi) * 30, n: 4 + Math.floor(hash(ci * 5 + bi * 3) * 6), ci, bi })),
+    Array.from({ length: filas }).map((_, bi) => ({ x: x + 14, y: 230 + bi * 235 + hash(ci * 9 + bi) * 30, n: 4 + Math.floor(hash(ci * 5 + bi * 3) * 6), ci, bi })),
   );
   return (
     <>
@@ -163,7 +171,7 @@ const Diario: React.FC<{ w: number; h: number }> = ({ w, h }) => {
         ))}
         <rect x={-240} y={150} width={1560} height={7} fill={C.tintaDiario} opacity={0.3} />
         <rect x={-240} y={164} width={1560} height={2.5} fill={C.tintaDiario} opacity={0.3} />
-        <rect x={-240} y={1710} width={1560} height={2.5} fill={C.tintaDiario} opacity={0.26} />
+        <rect x={-240} y={sh - 210} width={w} height={2.5} fill={C.tintaDiario} opacity={0.26} />
         {/* «texto» gris ilegible (solo textura) */}
         {bloques.map((b, i) =>
           Array.from({ length: b.n }).map((_, k) => (
@@ -178,7 +186,10 @@ const Diario: React.FC<{ w: number; h: number }> = ({ w, h }) => {
 /* ───────────── superficies oscuras (mismo papel de «pizarra») ───────────── */
 
 /** Pizarra verde de escuela con borrones de borrador y bandeja con tiza y borrador. */
-const Verde: React.FC<{ w: number; h: number }> = ({ w, h }) => (
+const Verde: React.FC<{ w: number; h: number }> = ({ w, h }) => {
+  const sw = w - 480, sh = h - 480;
+  const by = sh - 82; // bandeja pegada al borde inferior
+  return (
   <>
     <rect width={w} height={h} fill={C.metalSombra} />
     <g style={{ mixBlendMode: 'screen' }}>
@@ -188,19 +199,20 @@ const Verde: React.FC<{ w: number; h: number }> = ({ w, h }) => (
     <g transform="translate(240 240)" fill="none" stroke={C.tiza} strokeLinecap="round">
       {/* barridos de borrador */}
       {[[120, 520, 700], [220, 980, 820], [90, 1380, 640], [300, 1700, 560]].map(([x, y, l], i) => (
-        <path key={i} d={`M${x} ${y} q${l / 2} ${-60 + i * 22} ${l} ${12 - i * 8}`} strokeWidth={70 - i * 8} opacity={0.045} />
+        <path key={i} d={`M${(x * sw) / 1080} ${(y * sh) / 1920} q${(l * sw) / 2160} ${-60 + i * 22} ${(l * sw) / 1080} ${12 - i * 8}`} strokeWidth={70 - i * 8} opacity={0.045} />
       ))}
       {/* bandeja de tiza */}
-      <rect x={-240} y={1838} width={1560} height={110} fill={C.kraftOscuro} stroke="none" />
-      <rect x={-240} y={1838} width={1560} height={9} fill={C.kraft} stroke="none" opacity={0.9} />
-      <rect x={-240} y={1936} width={1560} height={12} fill={C.tinta} stroke="none" opacity={0.35} />
-      <rect x={110} y={1818} width={86} height={20} fill={C.tiza} stroke="none" transform="rotate(-6 150 1828)" />
-      <rect x={220} y={1824} width={54} height={14} fill={C.lima} stroke="none" transform="rotate(4 240 1830)" />
-      <rect x={760} y={1806} width={150} height={32} fill={C.kraftOscuro} stroke="none" />
-      <rect x={760} y={1826} width={150} height={12} fill={C.tinta} stroke="none" opacity={0.85} />
+      <rect x={-240} y={by} width={w} height={110} fill={C.kraftOscuro} stroke="none" />
+      <rect x={-240} y={by} width={w} height={9} fill={C.kraft} stroke="none" opacity={0.9} />
+      <rect x={-240} y={by + 98} width={w} height={12} fill={C.tinta} stroke="none" opacity={0.35} />
+      <rect x={110} y={by - 20} width={86} height={20} fill={C.tiza} stroke="none" transform={`rotate(-6 150 ${by - 10})`} />
+      <rect x={220} y={by - 14} width={54} height={14} fill={C.lima} stroke="none" transform={`rotate(4 240 ${by - 8})`} />
+      <rect x={sw - 320} y={by - 32} width={150} height={32} fill={C.kraftOscuro} stroke="none" />
+      <rect x={sw - 320} y={by - 12} width={150} height={12} fill={C.tinta} stroke="none" opacity={0.85} />
     </g>
   </>
-);
+  );
+};
 
 /** Cartón oscuro: fibras de estraza sobre tinta y ondulado vertical muy tenue. */
 const Carton: React.FC<{ w: number; h: number }> = ({ w, h }) => (
@@ -242,7 +254,9 @@ const Rejilla: React.FC<{ w: number; h: number }> = ({ w, h }) => (
 );
 
 /** Plancha de imprenta: tinta con trama de papel y filetes de columna. */
-const Plancha: React.FC<{ w: number; h: number }> = ({ w, h }) => (
+const Plancha: React.FC<{ w: number; h: number }> = ({ w, h }) => {
+  const sw = w - 480;
+  return (
   <>
     <rect width={w} height={h} fill={C.tinta} />
     <defs>
@@ -252,16 +266,17 @@ const Plancha: React.FC<{ w: number; h: number }> = ({ w, h }) => (
     </defs>
     <rect width={w} height={h} fill="url(#ft-pl-trama)" opacity={0.17} />
     <g transform="translate(240 240)">
-      {[60, 300, 540, 780, 1020].map((x, i) => (
-        <rect key={i} x={x - 1} y={-240} width={2} height={2400} fill={C.papel} opacity={0.13} />
+      {Array.from({ length: Math.ceil((sw - 60) / 240) + 1 }).map((_, k) => (
+        <rect key={k} x={60 + k * 240 - 1} y={-240} width={2} height={2400} fill={C.papel} opacity={0.13} />
       ))}
-      <rect x={-240} y={150} width={1560} height={6} fill={C.papel} opacity={0.2} />
+      <rect x={-240} y={150} width={w} height={6} fill={C.papel} opacity={0.2} />
     </g>
     <g style={{ mixBlendMode: 'screen' }}>
       <Ruido id="ft-pl-blot" w={w} h={h} freq="0.005 0.007" seed={19} rgb={[0.93, 0.92, 0.89]} a={-1.5} b={0.7} opacity={0.16} oct={4} />
     </g>
   </>
-);
+  );
+};
 
 /* ───────────── lima (cierres, remates) ───────────── */
 
@@ -296,18 +311,24 @@ const LimaCorrugado: React.FC<{ w: number; h: number }> = ({ w, h }) => (
 );
 
 /** Franjas de césped recién cortado + círculo central y línea de cal. */
-const LimaCancha: React.FC<{ w: number; h: number }> = ({ w, h }) => (
+const LimaCancha: React.FC<{ w: number; h: number }> = ({ w, h }) => {
+  const sw = w - 480, sh = h - 480;
+  const horizontal = sw > sh;
+  const cx = sw / 2, cy = horizontal ? sh / 2 : 980;
+  const r = Math.min(250, sh * 0.26);
+  return (
   <LimaBase w={w} h={h}>
-    {Array.from({ length: 12 }).map((_, i) => (
+    {Array.from({ length: Math.ceil(w / 130) }).map((_, i) => (
       <rect key={i} x={i * 130 + 12} y={0} width={130} height={h} fill={C.tinta} opacity={i % 2 ? 0.065 : 0} />
     ))}
     <g transform="translate(240 240)" fill="none" stroke={C.papel} strokeWidth={9} opacity={0.5}>
-      <circle cx={540} cy={980} r={250} />
-      <path d="M-240 980 H1320" />
-      <circle cx={540} cy={980} r={14} fill={C.papel} />
+      <circle cx={cx} cy={cy} r={r} />
+      <path d={horizontal ? `M${cx} -240 V${sh + 240}` : `M-240 ${cy} H${sw + 240}`} />
+      <circle cx={cx} cy={cy} r={14} fill={C.papel} />
     </g>
   </LimaBase>
-);
+  );
+};
 
 const LimaTrama: React.FC<{ w: number; h: number }> = ({ w, h }) => (
   <LimaBase w={w} h={h}>

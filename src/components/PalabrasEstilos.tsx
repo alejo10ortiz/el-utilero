@@ -19,13 +19,16 @@ export type PalabrasEstiloProps = {
   claves?: string[];
   y?: number;
   size?: number;
+  /** Margen izquierdo y ancho útil (por defecto la zona segura del Short vertical). */
+  x0?: number;
+  ancho?: number;
 };
 
 /**
  * Subtítulos de TEMA: misma temporización que <Palabras> (la palabra salta en el instante en que se dice),
  * distinta materia: subrayador de cuaderno, rotulado de etiquetadora, letras de recorte, línea a máquina.
  */
-export const PalabrasEstilo: React.FC<PalabrasEstiloProps> = ({ estilo, words, offsetFrames, tono = 'papel', claves = [], y = 1230, size = 86 }) => {
+export const PalabrasEstilo: React.FC<PalabrasEstiloProps> = ({ estilo, words, offsetFrames, tono = 'papel', claves = [], y = 1230, size = 86, x0 = SAFE_BOX.x0, ancho = SAFE_BOX.w }) => {
   const frame = useCurrentFrame();
   const t = (frame + offsetFrames) / FPS;
   const grupos = React.useMemo(() => agrupar(words), [words]);
@@ -57,7 +60,7 @@ export const PalabrasEstilo: React.FC<PalabrasEstiloProps> = ({ estilo, words, o
   const inicioGrupo = g.palabras[0].start * FPS - offsetFrames - 1;
 
   const caja: React.CSSProperties = {
-    position: 'absolute', left: SAFE_BOX.x0, width: SAFE_BOX.w, top: y,
+    position: 'absolute', left: x0, width: ancho, top: y,
     display: 'flex', justifyContent: 'center', flexWrap: 'wrap', alignItems: 'center',
     textAlign: 'center', textTransform: 'uppercase',
     transform: `scale(${0.9 + 0.1 * salida})`, opacity: salida,

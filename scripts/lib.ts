@@ -16,7 +16,7 @@ export function loadEnv() {
 
 /** Resuelve "001", "pickles" o "001-pickles" a la carpeta del episodio. */
 export function resolveSlug(arg: string | undefined): string {
-  const dirs = fs.readdirSync(path.join(ROOT, 'episodes')).filter((d) => /^(\d{3}|P\d{2})-/.test(d));
+  const dirs = fs.readdirSync(path.join(ROOT, 'episodes')).filter((d) => /^(\d{3}|P\d{2}|L\d{2})-/.test(d));
   if (!arg) {
     if (dirs.length === 1) return dirs[0];
     throw new Error(`Indica el episodio. Disponibles: ${dirs.join(', ')}`);

@@ -25,12 +25,17 @@ export const BEAT_SECONDS = 0.6;
 export const quantBeat = (seconds: number) => Math.ceil(seconds / BEAT_SECONDS - 1e-6) * BEAT_SECONDS;
 
 /** Silencio antes de la primera palabra: casi inmediato en el gancho; más largo tras una transición (queda tapada ~0.3 s). */
-const leadFor = (index: number) => (index === 0 ? 0.12 : 0.3);
+const leadFor = (index: number, largo = false) => (index === 0 ? 0.12 : largo ? 0.15 : 0.3);
 const PRE_LEAD = 0.15;
 const TAIL_DEFAULT = 0.35;
 const TAIL_CIERRE = 1.5; // portazo + pitazo
 const STING_SECONDS = 2.4; // 1 compás (§5.3)
 const MIN_SCENE = 1.2;
+/** Escenas sin voz con duración propia (segundos). Los capítulos de los videos largos dan tiempo a leer el título. */
+export const SILENCIO_SEGUNDOS: Record<string, number> = { sting: STING_SECONDS, capitulo: 2.4 };
+/** Videos largos: la narración es continua, así que hay menos aire antes y después de cada línea. */
+export const LARGO_LEAD = 0.15;
+export const LARGO_TAIL = 0.25;
 
 const pauseAfter = (w: string) => {
   if (/[…]|\.{3}$/.test(w)) return 0.45;
@@ -54,7 +59,8 @@ export function estimateWords(voz: string, startAt: number): { words: WordTiming
   return { words, end: t };
 }
 
-export function estimateTimeline(ep: { escenas: Escena[] }): Timeline {
+export function estimateTimeline(ep: { escenas: Escena[]; formato?: string }): Timeline {
+  const largo = ep.formato === 'largo';
   let cursor = 0;
   const scenes: SceneTiming[] = [];
   ep.escenas.forEach((esc, index) => {
@@ -62,11 +68,11 @@ export function estimateTimeline(ep: { escenas: Escena[] }): Timeline {
     let end: number;
     let words: WordTiming[] = [];
     if (esc.voz) {
-      const est = estimateWords(esc.voz, start + leadFor(index));
+      const est = estimateWords(esc.voz, start + leadFor(index, largo));
       words = est.words;
-      end = est.end + (esc.tipo === 'cierre' ? TAIL_CIERRE : TAIL_DEFAULT);
+      end = est.end + (esc.tipo === 'cierre' ? TAIL_CIERRE : largo ? LARGO_TAIL : TAIL_DEFAULT);
     } else {
-      end = start + (esc.tipo === 'sting' ? STING_SECONDS : MIN_SCENE);
+      end = start + (SILENCIO_SEGUNDOS[esc.tipo] ?? MIN_SCENE);
     }
     end = start + quantBeat(Math.max(end - start, MIN_SCENE));
     scenes.push({ index, tipo: esc.tipo, start, end, words });

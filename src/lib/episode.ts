@@ -17,7 +17,7 @@ export const OBJETOS = [
 export type ObjetoTipo = (typeof OBJETOS)[number];
 
 export const EscenaSchema = z.object({
-  tipo: z.enum(['gancho', 'sting', 'apertura', 'contexto', 'giro', 'remate', 'cierre', 'camerinos', 'serie', 'secreto', 'contador', 'mapa', 'versus', 'cronologia', 'recorte']),
+  tipo: z.enum(['gancho', 'sting', 'apertura', 'contexto', 'giro', 'remate', 'cierre', 'camerinos', 'serie', 'secreto', 'contador', 'mapa', 'versus', 'cronologia', 'recorte', 'capitulo', 'crono', 'titular', 'veredicto']),
   fondo: z.enum(['pizarra', 'papel', 'camerino', 'lima']).optional(),
   /** Cambia el tema SOLO en esta escena (variar dentro de un mismo video). */
   tema: z.enum(['clasico', 'cuaderno', 'kraft', 'plano', 'periodico']).optional(),
@@ -76,16 +76,26 @@ export const EscenaSchema = z.object({
   linea: z.string().optional(),
   /** secreto: cuántas llaves se muestran (1–5). */
   nivel: z.number().int().min(1).max(5).optional(),
+  // ── videos largos (16:9) ──
+  /** crono: prefijo de la cifra («≈») y palabra de la voz en la que arranca la cuenta (la que termina es `clave`). */
+  prefijo: z.string().optional(),
+  inicio: z.string().optional(),
+  /** veredicto: filas «dato → valores» de «Lo que las fuentes no dicen igual»; `palabra` = palabra de la voz que hace entrar la fila. */
+  filas: z.array(z.object({ dato: z.string(), valores: z.string(), palabra: z.string().optional() })).optional(),
+  /** Escenas consecutivas con el mismo `grupo` comparten una sola línea de voz: se divide el montaje, no el audio (videos largos). */
+  grupo: z.string().optional(),
+  /** Cama de música (assets/music/) que arranca en esta escena y suena hasta la siguiente que traiga `musica` (solo videos largos). */
+  musica: z.string().optional(),
 });
 export type Escena = z.infer<typeof EscenaSchema>;
 
 export const EpisodeSchema = z
   .object({
     /** "episodio" = historia con datos (necesita fuentes). "presentacion" = video de la cuenta (sin datos nuevos). */
-    formato: z.enum(['episodio', 'presentacion']).default('episodio'),
-    id: z.string().regex(/^(\d{3}|P\d{2})$/, 'id de 3 dígitos ("001") o de presentación ("P01")'),
+    formato: z.enum(['episodio', 'presentacion', 'largo']).default('episodio'),
+    id: z.string().regex(/^(\d{3}|P\d{2}|L\d{2})$/, 'id de 3 dígitos ("001"), de presentación ("P01") o de video largo ("L01")'),
     slug: z.string(),
-    serie: z.enum(['El Camerino', 'La llave de', '¿Mito o verdad?', 'Hoy hace X años', 'Presentación']),
+    serie: z.enum(['El Camerino', 'La llave de', '¿Mito o verdad?', 'Hoy hace X años', 'Presentación', 'Expediente del Camerino']),
     titulo: z.string(),
     pais: z.string().optional(),
     anio: z.number().int().optional(),
@@ -126,9 +136,10 @@ export const EpisodeSchema = z
     estado: z.enum(['pendiente', 'verificado']).default('pendiente'),
   })
   .superRefine((ep, ctx) => {
-    if (ep.formato !== 'episodio') return;
+    if (ep.formato === 'presentacion') return;
     if (ep.fuentes.length < 2)
       ctx.addIssue({ code: 'custom', path: ['fuentes'], message: 'Regla de oro: mínimo 2 fuentes verificables' });
+    if (ep.formato === 'largo') return;
     for (const k of ['pais', 'anio', 'objeto', 'nivelSecreto'] as const)
       if (ep[k] === undefined) ctx.addIssue({ code: 'custom', path: [k], message: `un episodio necesita "${k}"` });
   });

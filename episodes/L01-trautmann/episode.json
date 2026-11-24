@@ -1,0 +1,690 @@
+{
+  "formato": "largo",
+  "id": "L01",
+  "slug": "L01-trautmann",
+  "serie": "Expediente del Camerino",
+  "titulo": "Jugó los últimos minutos de una final con el cuello roto… y nadie lo sabía",
+  "rotulo": "LOCAL",
+  "estado": "verificado",
+  "estilo": "pro",
+  "musica": "base-100bpm-c.mp3",
+  "tema": "plano",
+  "transiciones": [
+    "flash",
+    "ninguna",
+    "ninguna",
+    "tinta",
+    "ninguna",
+    "ninguna",
+    "ninguna",
+    "ninguna",
+    "flash",
+    "ninguna",
+    "ninguna",
+    "ninguna",
+    "arranque",
+    "ninguna",
+    "ninguna",
+    "ninguna",
+    "flash",
+    "flash",
+    "ninguna",
+    "ninguna",
+    "ninguna",
+    "ninguna",
+    "persiana",
+    "ninguna",
+    "ninguna",
+    "flash",
+    "ninguna",
+    "ninguna",
+    "ninguna",
+    "ninguna",
+    "balon",
+    "ninguna",
+    "ninguna",
+    "borrador",
+    "ninguna",
+    "flash",
+    "ninguna",
+    "ninguna",
+    "ninguna"
+  ],
+  "guion": {
+    "gancho": "escena",
+    "apertura": "directa",
+    "formato": "misterio",
+    "cierre": "pregunta"
+  },
+  "textoFinal": "@elutilerofutbol · Síganme",
+  "fuentes": [
+    "https://en.wikipedia.org/wiki/Bert_Trautmann",
+    "https://www.mancity.com/mancitylegends/trautmann-bert",
+    "https://www.mancity.com/features/trautmann-story",
+    "https://channel4.com/news/bert-trautmann-manchester-city-broken-neck",
+    "https://www.thescore.com/epl/news/1021176/amp",
+    "https://www.flashscore.com/news/football-fa-cup-flashback-the-incredible-story-of-trautmann-s-broken-neck-in-fa-cup-final/YgEF3BaM/",
+    "https://history.co.uk/this-day-in-history/05-may/bert-trautmann-breaks-neck-during-fa-cup-final",
+    "https://nationalfootballmuseum.com/?p=50056",
+    "https://en.wikipedia.org/wiki/1956_FA_Cup_final",
+    "https://www.irishtimes.com/sport/soccer/manchester-city-goalkeeping-icon-bert-trautmann-dies-1.1469605",
+    "https://www.timesofisrael.com/german-pow-broken-neck-soccer-star-bert-trautmann-dies-at-89/",
+    "https://www.scotsman.com/news/obituaries/obituary-bernhard-carl-bert-trautmann-obe-goalkeeper-and-coach-2469332",
+    "https://forward.com/culture/452378/the-keeper-meyerson-jcc-bert-trautmann-biopic-screening",
+    "https://www.juedische-allgemeine.de/juedische-welt/wie-ein-rabbiner-die-karriere-der-deutsch-englischen-torwartlegende-bert-trautmann-rettete",
+    "https://www.citytilidie.com/posts/fulham-v-manchester-city-194950",
+    "https://www.citytilidie.com/?p=2920",
+    "https://www.sportsjournalists.co.uk/view-from-the-pressbox/trautmann-remembered-all-down-in-black-and-white/",
+    "https://www.footballsite.co.uk/Awards/Awards%20-%20FootballerOfTheYear.htm"
+  ],
+  "escenas": [
+    {
+      "tipo": "crono",
+      "voz": "Wembley. Cinco de mayo de 1956. Final de la Copa de Inglaterra. Faltan unos quince minutos.",
+      "tema": "plano",
+      "musica": "base-100bpm-c.mp3",
+      "fondo": "pizarra",
+      "texto": "WEMBLEY",
+      "kicker": "5 · MAYO · 1956",
+      "linea": "FINAL DE LA COPA DE INGLATERRA",
+      "cifra": 15,
+      "desde": 15,
+      "unidad": "′",
+      "prefijo": "≈",
+      "claves": [
+        "Wembley",
+        "quince"
+      ]
+    },
+    {
+      "tipo": "recorte",
+      "voz": "Llega un balón. El portero sale y se lanza. Un delantero llega al mismo tiempo, y su rodilla le golpea el cuello. El portero cae. Pierde el conocimiento.",
+      "tema": "plano",
+      "titular": "PORTERO DEL CITY, INCONSCIENTE EN WEMBLEY",
+      "linea": "WEMBLEY · 1956",
+      "resaltar": "INCONSCIENTE",
+      "claves": [
+        "rodilla",
+        "conocimiento"
+      ]
+    },
+    {
+      "tipo": "titular",
+      "voz": "Pero se levanta. Y sigue jugando. Unos días después, un médico le hace una radiografía… y descubre algo que nadie en ese estadio sabía.",
+      "tema": "plano",
+      "titular": "SIGUE JUGANDO|¿QUÉ DESCUBRIÓ EL MÉDICO?",
+      "resaltar": "SIGUE",
+      "claves": [
+        "sigue",
+        "radiografía"
+      ]
+    },
+    {
+      "tipo": "titular",
+      "voz": "Les voy a contar quién era ese portero. Y por qué, unos años antes, muchos hinchas no lo querían ahí.",
+      "tema": "plano",
+      "titular": "¿QUIÉN ERA|ESE PORTERO?",
+      "resaltar": "QUIÉN",
+      "expresion": "E7",
+      "pose": "P1",
+      "claves": [
+        "quién",
+        "hinchas"
+      ]
+    },
+    {
+      "tipo": "capitulo",
+      "tema": "periodico",
+      "musica": "base-100bpm-d.mp3",
+      "numero": "1",
+      "titulo": "EL HOMBRE"
+    },
+    {
+      "tipo": "mapa",
+      "voz": "Se llamaba Bert Trautmann. Nació en Bremen, Alemania, en 1923.",
+      "tema": "periodico",
+      "puntos": [
+        {
+          "nombre": "Bremen",
+          "lat": 53.08,
+          "lon": 8.8,
+          "palabra": "Bremen"
+        }
+      ],
+      "ruta": [],
+      "claves": [
+        "Trautmann",
+        "Bremen"
+      ]
+    },
+    {
+      "tipo": "titular",
+      "titular": "PARACAIDISTA|DE LA LUFTWAFFE",
+      "resaltar": "LUFTWAFFE",
+      "claves": [
+        "paracaidista",
+        "Luftwaffe"
+      ],
+      "voz": "Cuando empezó la guerra, se hizo paracaidista de la Luftwaffe, la fuerza aérea alemana.",
+      "grupo": "g06",
+      "tema": "periodico"
+    },
+    {
+      "tipo": "titular",
+      "titular": "FRENTE ORIENTAL|CRUZ DE HIERRO",
+      "resaltar": "HIERRO",
+      "claves": [
+        "frente",
+        "Cruz"
+      ],
+      "voz": "Combatió en el frente oriental y recibió la Cruz de Hierro de primera clase.",
+      "grupo": "g06",
+      "tema": "periodico"
+    },
+    {
+      "tipo": "titular",
+      "titular": "SIRVIÓ EN|LA ALEMANIA NAZI",
+      "resaltar": "NAZI",
+      "claves": [
+        "digo",
+        "Alemania"
+      ],
+      "voz": "Lo digo tal cual, porque es parte de la historia: sirvió en la Alemania nazi.",
+      "grupo": "g06",
+      "tema": "periodico"
+    },
+    {
+      "tipo": "mapa",
+      "voz": "Al final de la guerra, los británicos lo capturaron. Lo llevaron a un campo de prisioneros en Lancashire, en el norte de Inglaterra.",
+      "tema": "periodico",
+      "puntos": [
+        {
+          "nombre": "Bremen",
+          "lat": 53.08,
+          "lon": 8.8,
+          "palabra": "guerra"
+        },
+        {
+          "nombre": "Lancashire",
+          "lat": 53.49,
+          "lon": -2.64,
+          "palabra": "Lancashire"
+        }
+      ],
+      "ruta": [],
+      "claves": [
+        "capturaron",
+        "Lancashire"
+      ]
+    },
+    {
+      "tipo": "cronologia",
+      "hitos": [
+        {
+          "anio": "1948",
+          "texto": "Le ofrecen volver a Alemania",
+          "palabra": "1948"
+        },
+        {
+          "anio": "DICE NO",
+          "texto": "Se queda en Lancashire",
+          "palabra": "dijo"
+        }
+      ],
+      "claves": [
+        "1948",
+        "quedó"
+      ],
+      "voz": "En 1948, con la guerra ya terminada, le ofrecieron volver a Alemania. Él dijo que no. Se quedó.",
+      "grupo": "g08",
+      "tema": "periodico"
+    },
+    {
+      "tipo": "titular",
+      "titular": "ATAJA EN EL|ST HELENS TOWN",
+      "resaltar": "ST",
+      "linea": "TRABAJA EN UNA GRANJA",
+      "claves": [
+        "atajar",
+        "Helens"
+      ],
+      "voz": "Trabajó en una granja, y empezó a atajar para un equipo local, el St Helens Town.",
+      "grupo": "g08",
+      "tema": "periodico"
+    },
+    {
+      "tipo": "titular",
+      "titular": "SOLO LO QUE|SE PUEDE PROBAR",
+      "resaltar": "PROBAR",
+      "expresion": "E7",
+      "pose": "P1",
+      "claves": [
+        "solo",
+        "probar"
+      ],
+      "voz": "Por qué se quedó, cada biografía lo cuenta a su manera. Yo solo digo lo que se puede probar. Y lo que se puede probar es lo que vino después.",
+      "grupo": "g08",
+      "tema": "periodico"
+    },
+    {
+      "tipo": "capitulo",
+      "tema": "cuaderno",
+      "numero": "2",
+      "titulo": "EL RECHAZO"
+    },
+    {
+      "tipo": "recorte",
+      "voz": "Octubre de 1949. El Manchester City anuncia que ha fichado a Bert Trautmann. Un exsoldado de la Luftwaffe como portero del City, cuatro años después de la guerra.",
+      "tema": "cuaderno",
+      "titular": "CITY FICHA A UN EXSOLDADO ALEMÁN",
+      "linea": "MANCHESTER · OCTUBRE DE 1949",
+      "resaltar": "EXSOLDADO",
+      "claves": [
+        "fichado",
+        "exsoldado"
+      ]
+    },
+    {
+      "tipo": "titular",
+      "titular": "CARTAS DE BOICOT|ABONOS DEVUELTOS",
+      "resaltar": "BOICOT",
+      "claves": [
+        "cartas",
+        "abonos"
+      ],
+      "voz": "Los periódicos se llenan de cartas de hinchas que amenazan con un boicot. Algunos devuelven sus abonos.",
+      "grupo": "g11",
+      "tema": "cuaderno"
+    },
+    {
+      "tipo": "titular",
+      "titular": "LA COMUNIDAD JUDÍA PROTESTA|PROTESTA FRENTE AL ESTADIO",
+      "resaltar": "PROTESTA",
+      "claves": [
+        "comunidad",
+        "manifiesta"
+      ],
+      "voz": "La comunidad judía de Manchester protesta. Un grupo se manifiesta frente al estadio.",
+      "grupo": "g11",
+      "tema": "cuaderno"
+    },
+    {
+      "tipo": "versus",
+      "lados": [
+        {
+          "titulo": "DOCUMENTADO",
+          "lineas": [
+            "Cartas con amenaza de boicot",
+            "Abonos devueltos",
+            "Protesta frente al estadio"
+          ],
+          "palabras": [
+            "cartas",
+            "abonos",
+            "protesta"
+          ]
+        },
+        {
+          "titulo": "SIN CIFRA",
+          "lineas": [
+            "Cada fuente da una cifra distinta",
+            "Una la llama leyenda"
+          ],
+          "palabras": [
+            "cifra",
+            "leyenda"
+          ]
+        }
+      ],
+      "claves": [
+        "cifra",
+        "documentado"
+      ],
+      "voz": "Se habla de veinte mil personas. Pero esa cifra cambia según quién la cuente, y hasta hay quien la llama leyenda. Por eso aquí no la voy a decir. Lo que sí está documentado son las cartas, los abonos devueltos y la protesta.",
+      "grupo": "g11",
+      "tema": "cuaderno"
+    },
+    {
+      "tipo": "recorte",
+      "titular": "EL RABINO DE MANCHESTER ESCRIBE UNA CARTA",
+      "linea": "ALEXANDER ALTMANN · MANCHESTER",
+      "resaltar": "RABINO",
+      "claves": [
+        "Altmann",
+        "carta"
+      ],
+      "voz": "Y entonces pasa algo que nadie esperaba. Alexander Altmann, el rabino de la comunidad judía de Manchester, un hombre que había huido de la Alemania nazi, escribe una carta.",
+      "grupo": "g12",
+      "tema": "cuaderno"
+    },
+    {
+      "tipo": "titular",
+      "titular": "NO CASTIGAR A UN ALEMÁN|SIN RELACIÓN CON ESOS CRÍMENES",
+      "resaltar": "CRÍMENES",
+      "linea": "SEGÚN LA CARTA PUBLICADA (PARÁFRASIS)",
+      "claves": [
+        "castigar",
+        "crímenes"
+      ],
+      "voz": "Un periódico de la ciudad la publica. Dice que no se debe castigar a un alemán que no tiene nada que ver con esos crímenes de odio.",
+      "grupo": "g12",
+      "tema": "cuaderno"
+    },
+    {
+      "tipo": "titular",
+      "titular": "4 DE ENERO DE 1950|FULHAM · CITY",
+      "resaltar": "1950",
+      "linea": "LOS RELATOS CUENTAN QUE LE GRITARON INSULTOS",
+      "claves": [
+        "Cuatro",
+        "Fulham"
+      ],
+      "voz": "Cuatro de enero de 1950. El City juega de visitante, en Londres, contra el Fulham. Los relatos cuentan que al empezar le gritaron insultos.",
+      "grupo": "g13",
+      "tema": "cuaderno"
+    },
+    {
+      "tipo": "titular",
+      "titular": "APLAUSO DE PIE|PASILLO DE HONOR",
+      "resaltar": "APLAUSO",
+      "claves": [
+        "aplaudió",
+        "pasillo"
+      ],
+      "voz": "Al terminar el partido, el público se puso de pie y lo aplaudió. Los jugadores del Fulham le hicieron un pasillo.",
+      "grupo": "g13",
+      "tema": "cuaderno"
+    },
+    {
+      "tipo": "titular",
+      "titular": "NUNCA LO OLVIDARÍA",
+      "resaltar": "OLVIDARÍA",
+      "linea": "SEGÚN CONTÓ ÉL MISMO",
+      "claves": [
+        "olvidaría",
+        "adoptándolo"
+      ],
+      "voz": "Según contó él mismo, ese aplauso fue algo que nunca olvidaría. Con el tiempo, aquellos hinchas terminarían adoptándolo.",
+      "grupo": "g13",
+      "tema": "cuaderno"
+    },
+    {
+      "tipo": "capitulo",
+      "tema": "plano",
+      "musica": "base-100bpm-c.mp3",
+      "numero": "3",
+      "titulo": "LA FINAL"
+    },
+    {
+      "tipo": "recorte",
+      "voz": "Volvamos a 1956. Ese año, los periodistas ingleses lo eligieron el mejor futbolista de la temporada. Fue el primer portero y el primer extranjero en ganar ese premio.",
+      "tema": "plano",
+      "titular": "FUTBOLISTA DEL AÑO 1956",
+      "linea": "PRENSA INGLESA · PRIMER PORTERO Y PRIMER EXTRANJERO",
+      "resaltar": "FUTBOLISTA",
+      "claves": [
+        "futbolista",
+        "primer"
+      ]
+    },
+    {
+      "tipo": "titular",
+      "titular": "1955|PIERDE 3–1 CON EL NEWCASTLE",
+      "resaltar": "1955",
+      "claves": [
+        "1955",
+        "perdió"
+      ],
+      "voz": "Un año antes, en 1955, había jugado otra final en Wembley. La perdió: tres a uno contra el Newcastle.",
+      "grupo": "g16",
+      "tema": "plano"
+    },
+    {
+      "tipo": "versus",
+      "lados": [
+        {
+          "titulo": "MANCHESTER CITY",
+          "lineas": [
+            "5 de mayo de 1956",
+            "Wembley"
+          ],
+          "palabras": [
+            "cinco",
+            "Wembley"
+          ]
+        },
+        {
+          "titulo": "BIRMINGHAM CITY",
+          "lineas": [
+            "La final de la Copa"
+          ],
+          "palabras": [
+            "contra"
+          ]
+        }
+      ],
+      "claves": [
+        "cinco",
+        "Birmingham"
+      ],
+      "voz": "Y ahora, cinco de mayo de 1956. Wembley. Manchester City contra Birmingham City.",
+      "grupo": "g16",
+      "tema": "plano"
+    },
+    {
+      "tipo": "titular",
+      "titular": "EL CHOQUE|LA RODILLA EN EL CUELLO|INCONSCIENTE",
+      "resaltar": "INCONSCIENTE",
+      "claves": [
+        "lanza",
+        "rodilla",
+        "inconsciente"
+      ],
+      "voz": "A un cuarto de hora del final, Trautmann se lanza a un balón. Choca con un delantero del Birmingham, Peter Murphy. La rodilla de Murphy le pega en el cuello. Trautmann queda inconsciente.",
+      "grupo": "g17",
+      "tema": "plano"
+    },
+    {
+      "tipo": "crono",
+      "fondo": "pizarra",
+      "texto": "CON EL CUELLO ROTO",
+      "kicker": "WEMBLEY · 1956",
+      "linea": "MINUTOS JUGADOS DESPUÉS DEL CHOQUE",
+      "cifra": 17,
+      "desde": 0,
+      "unidad": "′",
+      "prefijo": "≈",
+      "inicio": "recupera",
+      "clave": "diecisiete",
+      "claves": [
+        "recupera",
+        "diecisiete"
+      ],
+      "voz": "Cuando se recupera, sigue jugando. Los minutos que quedan, unos diecisiete, los juega con el cuello roto. Y sin saberlo.",
+      "grupo": "g17",
+      "tema": "plano"
+    },
+    {
+      "tipo": "titular",
+      "titular": "CITY 3 · BIRMINGHAM 1|EL DUQUE DE EDIMBURGO|LE PREGUNTA POR EL CUELLO",
+      "resaltar": "3",
+      "claves": [
+        "gana",
+        "duque",
+        "pregunta"
+      ],
+      "voz": "El City gana la final: tres a uno. Al subir a recoger las medallas, el duque de Edimburgo, que las entregaba, se fija en cómo Trautmann sostiene la cabeza. Le pregunta.",
+      "grupo": "g18",
+      "tema": "plano"
+    },
+    {
+      "tipo": "titular",
+      "titular": "SEGÚN EL MUSEO NACIONAL|DEL FÚTBOL DE INGLATERRA|ÉL LO ATRIBUYE A UN TORTÍCOLIS",
+      "resaltar": "TORTÍCOLIS",
+      "claves": [
+        "Según",
+        "Fútbol",
+        "tortícolis"
+      ],
+      "voz": "Según el Museo Nacional del Fútbol de Inglaterra, Trautmann responde que debe de ser un tortícolis.",
+      "grupo": "g18",
+      "tema": "plano"
+    },
+    {
+      "tipo": "capitulo",
+      "tema": "kraft",
+      "musica": "base-100bpm-d.mp3",
+      "numero": "4",
+      "titulo": "LA RADIOGRAFÍA"
+    },
+    {
+      "tipo": "recorte",
+      "titular": "RADIOGRAFÍA: EL CUELLO ESTABA ROTO",
+      "linea": "UNOS DÍAS DESPUÉS DE LA FINAL",
+      "sello": "FRACTURA",
+      "resaltar": "ROTO",
+      "claves": [
+        "vértebras",
+        "rota"
+      ],
+      "voz": "Unos días después, un médico le hace una radiografía. El resultado: varias vértebras del cuello desplazadas. Y una de ellas, rota.",
+      "grupo": "g20",
+      "tema": "kraft"
+    },
+    {
+      "tipo": "titular",
+      "titular": "JUGÓ CON EL CUELLO ROTO|Y SIN SABERLO|SE QUEDÓ HASTA 1964",
+      "resaltar": "ROTO",
+      "claves": [
+        "jugado",
+        "sabía",
+        "1964"
+      ],
+      "voz": "Había jugado el final de una final de Wembley con el cuello roto. Y no lo sabía. Aun así, se quedó en el City hasta 1964.",
+      "grupo": "g20",
+      "tema": "kraft"
+    },
+    {
+      "tipo": "capitulo",
+      "tema": "periodico",
+      "numero": "5",
+      "titulo": "LO QUE VINO"
+    },
+    {
+      "tipo": "titular",
+      "titular": "15 DE ABRIL DE 1964|HOMENAJE EN MAINE ROAD",
+      "resaltar": "1964",
+      "claves": [
+        "Quince",
+        "homenaje"
+      ],
+      "voz": "Quince de abril de 1964. Maine Road, el estadio del City. Es el partido de homenaje a Bert Trautmann, que se retira.",
+      "grupo": "g22",
+      "tema": "periodico"
+    },
+    {
+      "tipo": "versus",
+      "lados": [
+        {
+          "titulo": "1964",
+          "lineas": [
+            "Homenaje en Maine Road",
+            "Entre 48.000 y 60.000 personas"
+          ],
+          "palabras": [
+            "cuarenta",
+            "sesenta"
+          ]
+        },
+        {
+          "titulo": "1949",
+          "lineas": [
+            "Hinchas que amenazaban con no volver"
+          ],
+          "palabras": [
+            "amenazaban"
+          ]
+        }
+      ],
+      "claves": [
+        "cuarenta",
+        "amenazaban"
+      ],
+      "voz": "Van entre cuarenta y ocho mil personas, la cifra oficial, y cerca de sesenta mil, según los cálculos. Unos quince años antes, algunos hinchas de ese mismo club amenazaban con no volver al estadio.",
+      "grupo": "g22",
+      "tema": "periodico"
+    },
+    {
+      "tipo": "cronologia",
+      "voz": "Al retirarse, se fue a entrenar por el mundo: entre otros países, Birmania, Tanzania, Liberia y Pakistán. En 2004, recibió la Orden del Imperio Británico por su trabajo para acercar a ingleses y alemanes. Murió en 2013, a los 89 años.",
+      "tema": "periodico",
+      "hitos": [
+        {
+          "anio": "DESPUÉS",
+          "texto": "Entrena en Birmania, Tanzania, Liberia y Pakistán",
+          "palabra": "Birmania"
+        },
+        {
+          "anio": "2004",
+          "texto": "Orden del Imperio Británico",
+          "palabra": "2004"
+        },
+        {
+          "anio": "2013",
+          "texto": "Muere a los 89 años",
+          "palabra": "2013"
+        }
+      ],
+      "claves": [
+        "entrenar",
+        "Murió"
+      ]
+    },
+    {
+      "tipo": "veredicto",
+      "sello": "VERIFICADO*",
+      "filas": [
+        {
+          "dato": "Minuto del choque",
+          "valores": "73 o 75",
+          "palabra": "minuto"
+        },
+        {
+          "dato": "Minutos jugados después",
+          "valores": "16 o 17",
+          "palabra": "Cuántos"
+        },
+        {
+          "dato": "Días hasta la radiografía",
+          "valores": "3 o 4",
+          "palabra": "días"
+        },
+        {
+          "dato": "Manifestantes en 1949",
+          "valores": "20.000 · 25.000 · decenas de miles",
+          "palabra": "protestó"
+        }
+      ],
+      "claves": [
+        "asteriscos",
+        "afirmo"
+      ],
+      "voz": "Veredicto: verificado. Pero con asteriscos. Las fuentes no dicen lo mismo en cuatro cosas. El minuto del choque: setenta y tres o setenta y cinco. Cuántos minutos jugó después: dieciséis o diecisiete. Cuántos días pasaron hasta la radiografía: tres o cuatro. Y cuánta gente protestó en 1949: veinte mil, veinticinco mil o decenas de miles. Las dejé tal cual. Si no se puede probar, no lo afirmo.",
+      "grupo": "g24",
+      "tema": "clasico",
+      "musica": "base-100bpm-d.mp3"
+    },
+    {
+      "tipo": "cierre",
+      "expresion": "E7",
+      "pose": "P1",
+      "claves": [
+        "conocen",
+        "expediente"
+      ],
+      "voz": "Ahora les pregunto yo: ¿conocen otra historia así, de alguien que siguió cuando todo decía que parara? Cuéntenmela en los comentarios, con su país, y abro su camerino. La próxima semana, otro expediente.",
+      "grupo": "g24",
+      "tema": "clasico"
+    }
+  ]
+}

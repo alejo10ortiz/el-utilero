@@ -15,6 +15,7 @@ import epP99 from '../episodes/P99-pruebas-escenas/episode.json';
 import ep013 from '../episodes/013-el-dorado/episode.json';
 import ep014 from '../episodes/014-chivas-athletic/episode.json';
 import ep015 from '../episodes/015-arbroath-36-0/episode.json';
+import epL01 from '../episodes/L01-trautmann/episode.json';
 import epP01 from '../episodes/P01-quien-es/episode.json';
 import epP02 from '../episodes/P02-que-hay/episode.json';
 import epP03 from '../episodes/P03-como-funciona/episode.json';
@@ -40,6 +41,7 @@ export const EPISODIOS: Record<string, Episode> = {
   '013-el-dorado': parseEpisode(ep013),
   '014-chivas-athletic': parseEpisode(ep014),
   '015-arbroath-36-0': parseEpisode(ep015),
+  'L01-trautmann': parseEpisode(epL01),
   'P01-quien-es': parseEpisode(epP01),
   'P99-pruebas-escenas': parseEpisode(epP99),
   'P02-que-hay': parseEpisode(epP02),

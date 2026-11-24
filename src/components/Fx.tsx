@@ -1,5 +1,5 @@
 import React from 'react';
-import { useCurrentFrame } from 'remotion';
+import { useCurrentFrame, useVideoConfig } from 'remotion';
 import { C } from '../../config/brand';
 import { E, hash, tw } from '../lib/ease';
 import { useAbs, BEAT } from '../lib/ritmo';
@@ -86,13 +86,14 @@ export const Particulas: React.FC<{
   opacidad?: number;
 }> = ({ tipo = 'polvo', n = 36, semilla = 1, colores = [C.tiza], dir = -1, velocidad = 0.6, tam = 1, opacidad = 0.5 }) => {
   const abs = useAbs();
+  const { width: VW, height: VH } = useVideoConfig();
   const forma = useTema().polvo; // el tema cambia la forma de la mota (virutas, fibras, cruces…)
-  const H = 1920 + 200;
+  const H = VH + 200;
   return (
-    <svg width={1080} height={1920} style={{ position: 'absolute', inset: 0, pointerEvents: 'none', overflow: 'visible' }}>
+    <svg width={VW} height={VH} style={{ position: 'absolute', inset: 0, pointerEvents: 'none', overflow: 'visible' }}>
       {Array.from({ length: n }).map((_, i) => {
         const z = 0.35 + 0.65 * hash(i + semilla * 17); // profundidad
-        const x0 = hash(i * 2 + semilla) * 1200 - 60;
+        const x0 = hash(i * 2 + semilla) * (VW + 120) - 60;
         const v = velocidad * (0.4 + 1.1 * z) * 3;
         const yy = ((hash(i * 5 + semilla * 3) * H + dir * abs * v) % H + H) % H - 100;
         const xx = x0 + Math.sin(abs / (28 + 40 * hash(i + 4)) + i) * (18 + 30 * z);

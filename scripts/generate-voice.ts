@@ -14,7 +14,7 @@ import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import { FPS } from '../config/brand';
-import { leadFor, quantBeat, STING_SECONDS, MIN_SCENE, TAIL_CIERRE, TAIL_DEFAULT, Timeline, WordTiming } from '../src/lib/timeline';
+import { BEAT_SECONDS, LARGO_TAIL, leadFor, quantBeat, SILENCIO_SEGUNDOS, MIN_SCENE, TAIL_CIERRE, TAIL_DEFAULT, Timeline, tokenize, WordTiming } from '../src/lib/timeline';
 import { ROOT, episodeMediaDir, flag, loadEnv, loadEpisode, positional, resolveSlug } from './lib';
 
 type VoiceCfg = {
@@ -32,8 +32,11 @@ const ffprobeDur = (f: string) =>
 
 type Alignment = { characters: string[]; character_start_times_seconds: number[]; character_end_times_seconds: number[] };
 
-async function tts(text: string, cfg: VoiceCfg, key: string): Promise<{ mp3: Buffer; alignment: Alignment }> {
+async function tts(text: string, cfg: VoiceCfg, key: string, contexto?: { previous?: string; next?: string }): Promise<{ mp3: Buffer; alignment: Alignment }> {
   const body: Record<string, unknown> = { text, model_id: cfg.model_id, voice_settings: cfg.voice_settings };
+  // videos largos: las líneas vecinas dan continuidad de entonación entre escenas
+  if (contexto?.previous) body.previous_text = contexto.previous;
+  if (contexto?.next) body.next_text = contexto.next;
   if (cfg.language_code && /v2_5|v3|flash|turbo/.test(cfg.model_id)) body.language_code = cfg.language_code;
   const r = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/${cfg.voice_id}/with-timestamps?output_format=mp3_44100_128`, {
     method: 'POST',
@@ -98,39 +101,90 @@ async function main() {
   if (!key) throw new Error('Falta ELEVENLABS_API_KEY (cópialo de .env.example a .env)');
   if (!cfg.voice_id) throw new Error('Falta voice_id en config/voice.json (diseña la voz: BRAND.md §5.7)');
 
+  const largo = ep.formato === 'largo';
   const timeline: Timeline = { source: 'elevenlabs', totalSeconds: 0, scenes: [] };
   const wavs: string[] = [];
   let cursor = 0;
 
-  for (let i = 0; i < ep.escenas.length; i++) {
+  // Grupos de escenas consecutivas que comparten una sola línea de voz (`grupo`): se corta el montaje, no el audio.
+  const grupos: number[][] = [];
+  ep.escenas.forEach((e, i) => {
+    const ult = grupos[grupos.length - 1];
+    if (e.grupo && ult && ep.escenas[ult[0]].grupo === e.grupo) ult.push(i);
+    else grupos.push([i]);
+  });
+  const textoDe = (g?: number[]) => {
+    const partes = (g ?? []).map((i) => ep.escenas[i].voz).filter(Boolean) as string[];
+    return partes.length ? partes.join(' ') : undefined;
+  };
+  const buscarClip = (hash: string) => fs.readdirSync(clips).find((f) => f.endsWith(`-${hash}.mp3`));
+
+  for (let gi = 0; gi < grupos.length; gi++) {
+    const g = grupos[gi];
+    const i = g[0];
     const esc = ep.escenas[i];
     const start = cursor;
     const wav = path.join(work, `scene-${String(i).padStart(2, '0')}.wav`);
+    const texto = textoDe(g);
     let dur: number;
     let words: WordTiming[] = [];
 
-    if (esc.voz) {
-      const hash = crypto.createHash('sha1').update(JSON.stringify([cfg.voice_id, cfg.model_id, cfg.voice_settings, esc.voz])).digest('hex').slice(0, 10);
-      const mp3 = path.join(clips, `line-${String(i).padStart(2, '0')}-${hash}.mp3`);
+    if (texto) {
+      // contexto de entonación (solo largos): final de la línea anterior y comienzo de la siguiente
+      const previous = largo ? textoDe(grupos[gi - 1])?.slice(-250) : undefined;
+      const next = largo ? textoDe(grupos[gi + 1])?.slice(0, 250) : undefined;
+      const hash = crypto.createHash('sha1').update(JSON.stringify(largo ? [cfg.voice_id, cfg.model_id, cfg.voice_settings, texto, previous, next] : [cfg.voice_id, cfg.model_id, cfg.voice_settings, texto])).digest('hex').slice(0, 10);
+      const existente = buscarClip(hash);
+      const mp3 = path.join(clips, existente ?? `line-${String(i).padStart(2, '0')}-${hash}.mp3`);
       const alf = mp3.replace(/\.mp3$/, '.json');
       if (force || !fs.existsSync(mp3) || !fs.existsSync(alf)) {
         console.log(` ♪ [${i}] ${esc.tipo}: generando…`);
-        const r = await tts(esc.voz, cfg, key);
+        const r = await tts(texto, cfg, key, largo ? { previous, next } : undefined);
         fs.writeFileSync(mp3, r.mp3);
         fs.writeFileSync(alf, JSON.stringify(r.alignment));
-      } else console.log(` · [${i}] ${esc.tipo}: caché`);
+      } else console.log(` · [${i}] ${esc.tipo}${g.length > 1 ? ` ×${g.length}` : ''}: caché`);
       const clipDur = ffprobeDur(mp3);
-      const tail = esc.tipo === 'cierre' ? TAIL_CIERRE : TAIL_DEFAULT;
-      const lead = leadFor(i);
-      dur = aFrames(quantBeat(lead + clipDur + tail)); // la escena dura un número entero de beats (100 BPM)
+      const tail = esc.tipo === 'cierre' && !largo ? TAIL_CIERRE : largo ? LARGO_TAIL : TAIL_DEFAULT;
+      const lead = leadFor(i, largo);
+      dur = aFrames(quantBeat(lead + clipDur + tail)); // el grupo dura un número entero de beats (100 BPM)
       words = alignmentToWords(JSON.parse(fs.readFileSync(alf, 'utf8')), start + lead);
       execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-i', mp3, '-af', `adelay=${Math.round(lead * 1000)}:all=1,apad=whole_dur=${dur}`, '-t', String(dur), '-ar', '44100', '-ac', '1', wav]);
     } else {
-      dur = esc.tipo === 'sting' ? STING_SECONDS : aFrames(quantBeat(MIN_SCENE));
+      dur = SILENCIO_SEGUNDOS[esc.tipo] !== undefined ? aFrames(quantBeat(SILENCIO_SEGUNDOS[esc.tipo])) : aFrames(quantBeat(MIN_SCENE));
       execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-f', 'lavfi', '-i', 'anullsrc=r=44100:cl=mono', '-t', String(dur), wav]);
     }
     wavs.push(wav);
-    timeline.scenes.push({ index: i, tipo: esc.tipo, start, end: start + dur, words });
+
+    if (g.length === 1) {
+      timeline.scenes.push({ index: i, tipo: esc.tipo, start, end: start + dur, words });
+    } else {
+      // reparte las palabras entre las escenas del grupo y corta en el beat más cercano al hueco entre frases
+      const ntok = g.map((k) => tokenize(ep.escenas[k].voz ?? '').length);
+      if (words.length !== ntok.reduce((a, b) => a + b, 0))
+        throw new Error(`El grupo «${esc.grupo}» (escena ${i}): ${words.length} palabras alineadas ≠ ${ntok.reduce((a, b) => a + b, 0)} del texto. Revisa la puntuación.`);
+      const cortes: number[] = [];
+      let idx = 0;
+      for (let k = 0; k < g.length - 1; k++) {
+        idx += ntok[k];
+        const hueco = [words[idx - 1].end, words[idx].start];
+        const mid = (hueco[0] + hueco[1]) / 2;
+        const minimo = (cortes[k - 1] ?? start) + 1.2;
+        const maximo = start + dur - 1.2;
+        const m0 = Math.round((mid - start) / BEAT_SECONDS);
+        const cand = [m0 - 2, m0 - 1, m0, m0 + 1, m0 + 2].map((m) => aFrames(start + m * BEAT_SECONDS)).filter((t) => t >= minimo - 1e-6 && t <= maximo + 1e-6);
+        const dentro = cand.filter((t) => t >= hueco[0] - 0.05 && t <= hueco[1] + 0.05);
+        const pool = dentro.length ? dentro : cand;
+        if (!pool.length) throw new Error(`No hay hueco para cortar el grupo «${esc.grupo}» en la escena ${g[k]}`);
+        cortes.push(pool.reduce((a, b) => (Math.abs(b - mid) < Math.abs(a - mid) ? b : a)));
+      }
+      let w0 = 0;
+      g.forEach((k, j) => {
+        const s0 = j === 0 ? start : cortes[j - 1];
+        const e0 = j === g.length - 1 ? start + dur : cortes[j];
+        timeline.scenes.push({ index: k, tipo: ep.escenas[k].tipo, start: s0, end: e0, words: words.slice(w0, w0 + ntok[j]) });
+        w0 += ntok[j];
+      });
+    }
     cursor += dur;
   }
   timeline.totalSeconds = cursor;
@@ -140,7 +194,7 @@ async function main() {
   execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-f', 'concat', '-safe', '0', '-i', list, '-c:a', 'libmp3lame', '-b:a', '192k', path.join(dir, 'voice.mp3')]);
   fs.writeFileSync(path.join(dir, 'words.json'), JSON.stringify(timeline, null, 1));
   console.log(`✓ voice.mp3 + words.json → assets/episodes/${slug}/  (${cursor.toFixed(1)} s)`);
-  if (cursor > 45) console.log('! Pasa de 45 s: considera subir "speed" en config/voice.json o recortar el guion.');
+  if (!largo && cursor > 45) console.log('! Pasa de 45 s: considera subir "speed" en config/voice.json o recortar el guion.');
 }
 
 main().catch((e) => {

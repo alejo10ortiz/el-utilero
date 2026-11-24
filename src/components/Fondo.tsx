@@ -1,4 +1,5 @@
 import React from 'react';
+import { useVideoConfig } from 'remotion';
 import { C } from '../../config/brand';
 import { useTema } from '../lib/tema';
 import { FondoTema } from './FondoTema';
@@ -16,11 +17,11 @@ const BASE: Record<Tipo, string> = {
  * Fondos de mesa: papel periódico, pizarra, lima (cierre).
  * Nunca color plano: viñeta + manchas de baja frecuencia + (en pizarra) borrones de tiza.
  */
-export const Fondo: React.FC<{ tipo: Tipo; width?: number; height?: number }> = ({
-  tipo,
-  width = 1080,
-  height = 1920,
-}) => {
+export const Fondo: React.FC<{ tipo: Tipo; width?: number; height?: number }> = ({ tipo, width: w, height: h }) => {
+  // El fondo toma el tamaño del video (Short vertical 1080×1920 o largo 1920×1080) salvo que se indique otro.
+  const cfg = useVideoConfig();
+  const width = w ?? cfg.width;
+  const height = h ?? cfg.height;
   const tema = useTema();
   if (tema.id !== 'clasico' && tipo !== 'tinta') return <FondoTema tipo={tipo} tema={tema} width={width} height={height} />;
   const id = `fondo-${tipo}`;

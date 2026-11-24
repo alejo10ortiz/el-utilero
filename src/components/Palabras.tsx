@@ -21,7 +21,10 @@ const PalabrasClasico: React.FC<{
   claves?: string[];
   y?: number;
   size?: number;
-}> = ({ words, offsetFrames, tono = 'papel', claves = [], y = 1230, size = 86 }) => {
+  /** Margen izquierdo y ancho útil (por defecto la zona segura del Short vertical). */
+  x0?: number;
+  ancho?: number;
+}> = ({ words, offsetFrames, tono = 'papel', claves = [], y = 1230, size = 86, x0 = SAFE_BOX.x0, ancho = SAFE_BOX.w }) => {
   const frame = useCurrentFrame();
   const t = (frame + offsetFrames) / FPS;
   const grupos = React.useMemo(() => agrupar(words), [words]);
@@ -53,7 +56,7 @@ const PalabrasClasico: React.FC<{
   return (
     <div
       style={{
-        position: 'absolute', left: SAFE_BOX.x0, width: SAFE_BOX.w, top: y,
+        position: 'absolute', left: x0, width: ancho, top: y,
         display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: `0 ${size * 0.26}px`,
         fontFamily: FONT.subtitulo, fontWeight: 800, fontSize: size, lineHeight: 1.08, letterSpacing: '-0.01em',
         textTransform: 'uppercase', textAlign: 'center', color,
@@ -105,6 +108,9 @@ export const Palabras: React.FC<{
   claves?: string[];
   y?: number;
   size?: number;
+  /** Margen izquierdo y ancho útil (por defecto la zona segura del Short vertical). */
+  x0?: number;
+  ancho?: number;
 }> = (props) => {
   const tema = useTema();
   if (tema.subtitulos === 'clasico') return <PalabrasClasico {...props} />;
