@@ -769,3 +769,25 @@ La duración de cada escena sale de la duración real del audio (`words.json`), 
 - [x] Voz diseñada y guardada en ElevenLabs: «El Utilero» (`config/voice.json`).
 - [ ] Verificar las historias #003–#009 con dos fuentes cada una.
 - [ ] Definir frecuencia de publicación (sugerido: 1 Short diario, 1 recopilación larga semanal para YouTube).
+
+---
+
+## 13. Videos largos de YouTube (decisión: 1 por semana, 8–10 min, mismo canal)
+
+**Por qué** (decisión del dueño): además de los shorts, un video largo por semana (4 al mes) que la gente vea completo. Sin imágenes de partidos, lo que sostiene 9 minutos no es el material sino la **premisa**: una pregunta que solo se responde al final, con una persona con algo en juego o un reloj corriendo.
+
+**Canal:** el mismo de los shorts (una marca, una base de suscriptores; los shorts cierran con «la historia completa, en el canal»).
+
+**Estructura base:** gancho con la pregunta y la promesa (0:30) → contexto → 3 pistas/capítulos de ~1:30 que terminan abriendo la siguiente duda → giro → **veredicto con sello** (VERIFICADO · MITO · SIN RESOLVER) + escena «Lo que las fuentes no dicen igual» → puerta del siguiente expediente. Un tema visual distinto por capítulo (`esc.tema`).
+
+**Mes 1 = experimento con 4 mecanismos de enganche** (se compara el porcentaje visto de cada uno; con 4 videos son señales, no pruebas):
+1. **Persona + reloj:** *L01 Trautmann* (final de 1956 con el cuello roto). Piloto. Ver `largos/L01-trautmann/`.
+2. **Enigma/regla con ancla actual:** *L02 El penal* (William McCrum): se abre con un hecho reciente y el cuerpo revela el origen. Falta 2.ª fuente sólida (las vistas son locales y una memoria familiar; fecha 1890/1891).
+3. **Serial:** *L03 «1930, el primer Mundial», cap. 1* (la Copa viajó en una maleta, sin balones a bordo; discrepancia sobre el barco de Yugoslavia).
+4. **Reloj:** *L04 «Maracaná, hora por hora»* (cronómetro en pantalla; solo momentos con fuente).
+
+**Relleno barato:** cuentas atrás con material ya investigado de los shorts. **Otras premisas** para después: «La llave de [país]» elegido por comentarios; temporadas de 4 capítulos sobre una sola historia.
+
+**Reglas:** misma regla de oro (2 fuentes por dato, `dossier.md` con estado A/B/C por dato); cifras con discrepancia se dicen con redacción prudente y se muestran en pantalla; historias sensibles en tono sobrio. Cada largo debería dar 2–3 shorts (una pista cada uno).
+
+**Pendiente técnico (nada hecho aún):** composición 16:9 (1920×1080) y versiones horizontales de las escenas; lecho de música de 8–10 min; render **por capítulos y unión** (un largo son ~16.000 fotogramas, ~2–3 h de render, y un reinicio del contenedor ya nos hizo perder un render); miniatura 1280×720 que plantee la pregunta (la composición `Miniatura` ya existe).
