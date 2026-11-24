@@ -47,6 +47,9 @@ GanchoPro: sin `kicker`, la primera línea del titular entra en f≈9 (antes esp
 Público: **todo el mundo hispanohablante** (BRAND.md §3.4): máx. 1 de cada 3 videos de Mundial, alternar países, lenguaje neutro («ustedes»; sin regionalismos), «vestuario» en textos para España; historias delicadas con `tono: "misterio"` (giro/remate/cierre sobrios, `expresion: "E7"`).
 Regla de ritmo aprendida: **nunca pantalla vacía** — lo gigante entra en f≈11 y la palabra dicha solo lo refuerza (`cuando()` en `src/lib/voz.ts`).
 
+## Copys de publicación
+Todos los copys (texto, hashtags, comentario fijado con fuentes, título de Shorts) viven en **`COPYS.md`, en la raíz del repo `alejo10ortiz/el-utilero-videos`** (clon en `/home/user/el-utilero-videos`), junto a cada video y su miniatura. Al subir un video nuevo (`subir-uno`: encode + miniatura + push), **añadir su sección al final de `COPYS.md` y a su tabla de índice en el mismo commit**. Formato: `## #NNN · Título`, bloque de texto, `Hashtags`, `Comentario fijado` (fuentes con enlace), `Título Shorts`, y «Cuidados» si hay datos discutidos. Las fuentes salen de `fuentes` del `episode.json`.
+
 ## Estilo "pro" (montaje dinámico al ritmo) — `"estilo": "pro"` en episode.json
 Un episodio en estilo pro **no es un cartel con elementos que aparecen**: cada escena está coreografiada sobre la rejilla musical.
 - **Ritmo**: la música está a **100 BPM exactos** → 1 beat = 18 frames, 1 compás = 72 f (`src/lib/ritmo.tsx`). Toda escena dura un número entero de beats (el timeline lo cuantiza en `generate-voice`/`estimateTimeline`), así los cortes caen en tiempo. Los golpes se anclan a beats/corcheas (`snap`) o a la palabra dicha (la voz manda en lo sincrónico).
