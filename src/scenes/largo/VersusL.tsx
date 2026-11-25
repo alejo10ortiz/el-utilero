@@ -16,8 +16,8 @@ export const VersusL: React.FC<EscenaProps> = ({ esc, timing, frames }) => {
   const f = useCurrentFrame();
   const off = Math.round(timing.start * FPS);
   const lados = (esc.lados ?? []).slice(0, 2);
-  const base = [11, 27];
-  const tVS = 27 + 14;
+  const base = [4, 20];
+  const tVS = 20 + 14;
   const hojas = [
     { x: 120, y: 110, w: 790, h: 660, rot: -2.2, fondo: C.lima, desde: -1 },
     { x: 1010, y: 170, w: 790, h: 660, rot: 2.2, fondo: C.kraft, desde: 1 },

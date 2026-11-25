@@ -17,7 +17,7 @@ export const OBJETOS = [
 export type ObjetoTipo = (typeof OBJETOS)[number];
 
 export const EscenaSchema = z.object({
-  tipo: z.enum(['gancho', 'sting', 'apertura', 'contexto', 'giro', 'remate', 'cierre', 'camerinos', 'serie', 'secreto', 'contador', 'mapa', 'versus', 'cronologia', 'recorte', 'capitulo', 'crono', 'titular', 'veredicto']),
+  tipo: z.enum(['gancho', 'sting', 'apertura', 'contexto', 'giro', 'remate', 'cierre', 'camerinos', 'serie', 'secreto', 'contador', 'mapa', 'versus', 'cronologia', 'recorte', 'capitulo', 'crono', 'titular', 'veredicto', 'jugada', 'radiografia', 'pasillo', 'estadio', 'regla', 'marcador']),
   fondo: z.enum(['pizarra', 'papel', 'camerino', 'lima']).optional(),
   /** Cambia el tema SOLO en esta escena (variar dentro de un mismo video). */
   tema: z.enum(['clasico', 'cuaderno', 'kraft', 'plano', 'periodico']).optional(),
@@ -84,6 +84,29 @@ export const EscenaSchema = z.object({
   filas: z.array(z.object({ dato: z.string(), valores: z.string(), palabra: z.string().optional() })).optional(),
   /** Escenas consecutivas con el mismo `grupo` comparten una sola línea de voz: se divide el montaje, no el audio (videos largos). */
   grupo: z.string().optional(),
+  /** regla: escala (mín, máx), valores marcados y unidad. */
+  escala: z.tuple([z.number(), z.number()]).optional(),
+  marcas: z.array(z.number()).optional(),
+  /** Pictogramas que entran cuando la voz dice su `palabra` (videos largos): coordenadas del cuadro 1920×1080. */
+  elementos: z
+    .array(
+      z.object({
+        p: z.string(),
+        x: z.number(),
+        y: z.number(),
+        tam: z.number().optional(),
+        palabra: z.string().optional(),
+        anim: z.enum(['pop', 'cae', 'desliza', 'vuela', 'pulso']).optional(),
+        desde: z.enum(['izq', 'der', 'arr', 'abj']).optional(),
+        rot: z.number().optional(),
+        etiqueta: z.string().optional(),
+        texto: z.string().optional(),
+        acento: z.enum(['lima', 'papel', 'sello', 'cinta', 'kraft']).optional(),
+      }),
+    )
+    .optional(),
+  /** Flechas dibujadas a mano entre dos puntos (videos largos); `curva` curva el trazo (px). */
+  flechas: z.array(z.object({ x1: z.number(), y1: z.number(), x2: z.number(), y2: z.number(), palabra: z.string().optional(), curva: z.number().optional(), color: z.enum(['tinta', 'lima', 'sello']).optional() })).optional(),
   /** Cama de música (assets/music/) que arranca en esta escena y suena hasta la siguiente que traiga `musica` (solo videos largos). */
   musica: z.string().optional(),
 });

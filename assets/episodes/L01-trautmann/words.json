@@ -2215,7 +2215,7 @@
   },
   {
    "index": 21,
-   "tipo": "titular",
+   "tipo": "pasillo",
    "start": 154.2,
    "end": 160.8,
    "words": [
@@ -2581,7 +2581,7 @@
   },
   {
    "index": 25,
-   "tipo": "titular",
+   "tipo": "marcador",
    "start": 184.20000000000002,
    "end": 191.4,
    "words": [
@@ -2757,7 +2757,7 @@
   },
   {
    "index": 27,
-   "tipo": "titular",
+   "tipo": "jugada",
    "start": 200.4,
    "end": 210.6,
    "words": [
@@ -3038,9 +3038,9 @@
   },
   {
    "index": 29,
-   "tipo": "titular",
+   "tipo": "marcador",
    "start": 218.4,
-   "end": 229.8,
+   "end": 221.4,
    "words": [
     {
      "text": "El",
@@ -3081,7 +3081,15 @@
      "text": "uno.",
      "start": 220.942,
      "end": 221.348
-    },
+    }
+   ]
+  },
+  {
+   "index": 30,
+   "tipo": "titular",
+   "start": 221.4,
+   "end": 229.8,
+   "words": [
     {
      "text": "Al",
      "start": 221.371,
@@ -3200,7 +3208,7 @@
    ]
   },
   {
-   "index": 30,
+   "index": 31,
    "tipo": "titular",
    "start": 229.8,
    "end": 236.4,
@@ -3288,15 +3296,15 @@
    ]
   },
   {
-   "index": 31,
+   "index": 32,
    "tipo": "capitulo",
    "start": 236.4,
    "end": 238.8,
    "words": []
   },
   {
-   "index": 32,
-   "tipo": "recorte",
+   "index": 33,
+   "tipo": "radiografia",
    "start": 238.8,
    "end": 247.2,
    "words": [
@@ -3408,7 +3416,7 @@
    ]
   },
   {
-   "index": 33,
+   "index": 34,
    "tipo": "titular",
    "start": 247.2,
    "end": 257.40000000000003,
@@ -3546,14 +3554,14 @@
    ]
   },
   {
-   "index": 34,
+   "index": 35,
    "tipo": "capitulo",
    "start": 257.40000000000003,
    "end": 259.8,
    "words": []
   },
   {
-   "index": 35,
+   "index": 36,
    "tipo": "titular",
    "start": 259.8,
    "end": 268.2,
@@ -3671,8 +3679,8 @@
    ]
   },
   {
-   "index": 36,
-   "tipo": "versus",
+   "index": 37,
+   "tipo": "estadio",
    "start": 268.2,
    "end": 280.2,
    "words": [
@@ -3849,10 +3857,10 @@
    ]
   },
   {
-   "index": 37,
-   "tipo": "cronologia",
+   "index": 38,
+   "tipo": "mapa",
    "start": 280.2,
-   "end": 297,
+   "end": 287.4,
    "words": [
     {
      "text": "Al",
@@ -3938,7 +3946,15 @@
      "text": "Pakistán.",
      "start": 286.49199999999996,
      "end": 287.14199999999994
-    },
+    }
+   ]
+  },
+  {
+   "index": 39,
+   "tipo": "cronologia",
+   "start": 287.4,
+   "end": 297,
+   "words": [
     {
      "text": "En",
      "start": 287.258,
@@ -4062,10 +4078,10 @@
    ]
   },
   {
-   "index": 38,
+   "index": 40,
    "tipo": "veredicto",
    "start": 297,
-   "end": 323.4,
+   "end": 302.4,
    "words": [
     {
      "text": "Veredicto:",
@@ -4136,7 +4152,15 @@
      "text": "cosas.",
      "start": 301.991,
      "end": 302.525
-    },
+    }
+   ]
+  },
+  {
+   "index": 41,
+   "tipo": "regla",
+   "start": 302.4,
+   "end": 306,
+   "words": [
     {
      "text": "El",
      "start": 302.688,
@@ -4191,7 +4215,15 @@
      "text": "cinco.",
      "start": 305.59,
      "end": 306.125
-    },
+    }
+   ]
+  },
+  {
+   "index": 42,
+   "tipo": "regla",
+   "start": 306,
+   "end": 310.2,
+   "words": [
     {
      "text": "Cuántos",
      "start": 306.171,
@@ -4226,7 +4258,15 @@
      "text": "diecisiete.",
      "start": 309.131,
      "end": 310.037
-    },
+    }
+   ]
+  },
+  {
+   "index": 43,
+   "tipo": "regla",
+   "start": 310.2,
+   "end": 313.2,
+   "words": [
     {
      "text": "Cuántos",
      "start": 310.07099999999997,
@@ -4271,7 +4311,15 @@
      "text": "cuatro.",
      "start": 313.032,
      "end": 313.462
-    },
+    }
+   ]
+  },
+  {
+   "index": 44,
+   "tipo": "regla",
+   "start": 313.2,
+   "end": 320.4,
+   "words": [
     {
      "text": "Y",
      "start": 313.496,
@@ -4341,7 +4389,15 @@
      "text": "miles.",
      "start": 319.638,
      "end": 320.07899999999995
-    },
+    }
+   ]
+  },
+  {
+   "index": 45,
+   "tipo": "titular",
+   "start": 320.4,
+   "end": 323.4,
+   "words": [
     {
      "text": "Las",
      "start": 320.137,
@@ -4405,7 +4461,7 @@
    ]
   },
   {
-   "index": 39,
+   "index": 46,
    "tipo": "cierre",
    "start": 323.4,
    "end": 335.4,

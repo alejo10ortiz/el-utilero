@@ -28,15 +28,16 @@ export const VeredictoL: React.FC<EscenaProps> = ({ esc, timing, frames }) => {
     tFila.push(Math.max(prev, cuando(timing, off, r.palabra ?? r.dato, prev, prev + 40) - 2));
   });
   const tAfirmo = Math.max((tFila[tFila.length - 1] ?? 0) + 30, cuando(timing, off, 'afirmo', 0, frames - 60) - 4);
-  const sHoja = slam(f, tHoja, 1.4);
+  const conHoja = filas.length > 0;
+  const sHoja = conHoja ? slam(f, tHoja, 1.4) : { visible: false, opacity: 0, scale: 1, y: 0, blur: 0, rot: 0 };
   const bo = boil(f, 12, 1.2);
   const z = empuje(f, frames, 0.04, 8) * golpes(f, [tSello, ...tFila], 0.025);
 
   return (
     <Escenario fondo="papel" impactos={[{ frame: tSello + 3, amp: 16 }, ...tFila.map((t) => ({ frame: t + 2, amp: 7 }))]} deriva={0.4} zoom={z}>
       <Particulas tipo="polvo" n={22} semilla={79} colores={[C.tinta, C.grisArchivo]} opacidad={0.22} velocidad={0.3} />
-      {esc.sello && <Sello texto={esc.sello} x={460} y={400} size={132} rot={-9} delay={tSello} mezcla="multiply" />}
-      <CintaImpacto texto="CON ASTERISCOS" x={470} y={640} at={tAst} rot={-3} size={64} color={C.lima} />
+      {esc.sello && <Sello texto={esc.sello} x={conHoja ? 460 : 960} y={conHoja ? 400 : 430} size={conHoja ? 132 : 210} rot={-9} delay={tSello} mezcla="multiply" />}
+      <CintaImpacto texto="CON ASTERISCOS" x={conHoja ? 470 : 960} y={conHoja ? 640 : 690} at={tAst} rot={-3} size={conHoja ? 64 : 84} color={C.lima} />
       {sHoja.visible && (
         <div
           style={{
@@ -62,7 +63,7 @@ export const VeredictoL: React.FC<EscenaProps> = ({ esc, timing, frames }) => {
           })}
         </div>
       )}
-      <CintaImpacto texto="SI NO SE PUEDE PROBAR, NO LO AFIRMO" x={960} y={850} at={tAfirmo} rot={-1.5} size={54} color={C.cinta} />
+      {conHoja && <CintaImpacto texto="SI NO SE PUEDE PROBAR, NO LO AFIRMO" x={960} y={850} at={tAfirmo} rot={-1.5} size={54} color={C.cinta} />}
       <Destello at={tSello} color={C.lima} max={0.3} dur={5} />
       <Impacto at={tSello} x={470} y={400} flash={0.1} color={C.tinta} semilla={5} />
       <Sfx name="whoosh" at={tHoja - 2} volume={0.45} />

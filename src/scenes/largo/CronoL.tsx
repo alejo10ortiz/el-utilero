@@ -29,7 +29,7 @@ export const CronoL: React.FC<EscenaProps> = ({ esc, timing, frames }) => {
   const desde = esc.desde ?? 0;
   const hasta = esc.cifra ?? 0;
   const cuenta = hasta !== desde;
-  const tIni = cuenta && esc.inicio ? Math.max(14, cuando(timing, off, esc.inicio, 0, 24)) : 14;
+  const tIni = cuenta && esc.inicio ? Math.max(8, cuando(timing, off, esc.inicio, 0, 24)) : 8;
   const tFin = cuenta && esc.clave ? cuando(timing, off, esc.clave, tIni, frames - 50) + 10 : frames - 40;
   const p = cuenta ? tw(f, [tIni, tFin], [0, 1], E.inOutCubic) : 1;
   const valor = desde + (hasta - desde) * p;
@@ -40,8 +40,8 @@ export const CronoL: React.FC<EscenaProps> = ({ esc, timing, frames }) => {
   const [x1, y1] = pt(m1);
   const arco = `M${x0} ${y0} A${R} ${R} 0 ${largo / 90 > 0.5 ? 1 : 0} 1 ${x1} ${y1}`;
   const pulso = 1 + 0.025 * Math.exp(-(abs % BEAT) / 4.5);
-  const sR = slam(f, 6, 1.6);
-  const sT = slam(f, 12, 1.7);
+  const sR = slam(f, 3, 1.6);
+  const sT = slam(f, 8, 1.7);
   const bo = boil(f, 9, 1.3);
   const texto = (esc.texto ?? '').toUpperCase();
   const tam = Math.min(250, fitText({ text: texto, withinWidth: 820, fontFamily: 'League Gothic', fontWeight: '400' }).fontSize);

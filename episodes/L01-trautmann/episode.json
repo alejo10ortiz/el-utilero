@@ -30,14 +30,15 @@
     "flash",
     "ninguna",
     "ninguna",
-    "ninguna",
+    "flash",
     "ninguna",
     "persiana",
     "ninguna",
-    "ninguna",
+    "flash",
+    "flash",
     "flash",
     "ninguna",
-    "ninguna",
+    "flash",
     "ninguna",
     "ninguna",
     "balon",
@@ -46,6 +47,12 @@
     "borrador",
     "ninguna",
     "flash",
+    "flash",
+    "ninguna",
+    "ninguna",
+    "ninguna",
+    "ninguna",
+    "ninguna",
     "ninguna",
     "ninguna",
     "ninguna"
@@ -106,6 +113,32 @@
       "claves": [
         "rodilla",
         "conocimiento"
+      ],
+      "elementos": [
+        {
+          "p": "balon",
+          "x": 150,
+          "y": 250,
+          "tam": 210,
+          "palabra": "balón",
+          "anim": "cae"
+        },
+        {
+          "p": "estallido",
+          "x": 1770,
+          "y": 470,
+          "tam": 240,
+          "palabra": "rodilla",
+          "anim": "pop"
+        },
+        {
+          "p": "cabeza",
+          "x": 1770,
+          "y": 730,
+          "tam": 210,
+          "palabra": "cuello",
+          "anim": "pop"
+        }
       ]
     },
     {
@@ -117,6 +150,32 @@
       "claves": [
         "sigue",
         "radiografía"
+      ],
+      "elementos": [
+        {
+          "p": "persona",
+          "x": 1500,
+          "y": 300,
+          "tam": 260,
+          "palabra": "levanta",
+          "anim": "pop"
+        },
+        {
+          "p": "lupa",
+          "x": 1700,
+          "y": 520,
+          "tam": 300,
+          "palabra": "médico",
+          "anim": "cae"
+        },
+        {
+          "p": "interrogacion",
+          "x": 1450,
+          "y": 640,
+          "tam": 325,
+          "palabra": "radiografía",
+          "anim": "pulso"
+        }
       ]
     },
     {
@@ -167,7 +226,17 @@
       ],
       "voz": "Cuando empezó la guerra, se hizo paracaidista de la Luftwaffe, la fuerza aérea alemana.",
       "grupo": "g06",
-      "tema": "periodico"
+      "tema": "periodico",
+      "elementos": [
+        {
+          "p": "paracaidas",
+          "x": 1500,
+          "y": 360,
+          "tam": 400,
+          "palabra": "paracaidista",
+          "anim": "cae"
+        }
+      ]
     },
     {
       "tipo": "titular",
@@ -179,7 +248,27 @@
       ],
       "voz": "Combatió en el frente oriental y recibió la Cruz de Hierro de primera clase.",
       "grupo": "g06",
-      "tema": "periodico"
+      "tema": "periodico",
+      "elementos": [
+        {
+          "p": "flecha",
+          "x": 1450,
+          "y": 330,
+          "tam": 300,
+          "palabra": "frente",
+          "anim": "desliza",
+          "desde": "izq"
+        },
+        {
+          "p": "medalla",
+          "x": 1590,
+          "y": 640,
+          "tam": 375,
+          "palabra": "Cruz",
+          "anim": "pop",
+          "etiqueta": "CONDECORACIÓN"
+        }
+      ]
     },
     {
       "tipo": "titular",
@@ -215,6 +304,17 @@
       "claves": [
         "capturaron",
         "Lancashire"
+      ],
+      "elementos": [
+        {
+          "p": "alambrada",
+          "x": 1700,
+          "y": 320,
+          "tam": 300,
+          "palabra": "prisioneros",
+          "anim": "cae",
+          "etiqueta": "PRISIONEROS"
+        }
       ]
     },
     {
@@ -237,7 +337,26 @@
       ],
       "voz": "En 1948, con la guerra ya terminada, le ofrecieron volver a Alemania. Él dijo que no. Se quedó.",
       "grupo": "g08",
-      "tema": "periodico"
+      "tema": "periodico",
+      "elementos": [
+        {
+          "p": "maleta",
+          "x": 960,
+          "y": 700,
+          "tam": 300,
+          "palabra": "volver",
+          "anim": "pop",
+          "etiqueta": "VOLVER A ALEMANIA"
+        },
+        {
+          "p": "cruz",
+          "x": 1250,
+          "y": 690,
+          "tam": 220,
+          "palabra": "dijo",
+          "anim": "pulso"
+        }
+      ]
     },
     {
       "tipo": "titular",
@@ -250,7 +369,25 @@
       ],
       "voz": "Trabajó en una granja, y empezó a atajar para un equipo local, el St Helens Town.",
       "grupo": "g08",
-      "tema": "periodico"
+      "tema": "periodico",
+      "elementos": [
+        {
+          "p": "granero",
+          "x": 1450,
+          "y": 330,
+          "tam": 375,
+          "palabra": "granja",
+          "anim": "pop"
+        },
+        {
+          "p": "guantes",
+          "x": 1650,
+          "y": 640,
+          "tam": 350,
+          "palabra": "atajar",
+          "anim": "pop"
+        }
+      ]
     },
     {
       "tipo": "titular",
@@ -282,6 +419,26 @@
       "claves": [
         "fichado",
         "exsoldado"
+      ],
+      "elementos": [
+        {
+          "p": "calendario",
+          "x": 1770,
+          "y": 260,
+          "tam": 200,
+          "palabra": "Octubre",
+          "anim": "cae",
+          "texto": "OCT"
+        },
+        {
+          "p": "pluma",
+          "x": 1770,
+          "y": 540,
+          "tam": 190,
+          "palabra": "fichado",
+          "anim": "vuela",
+          "desde": "der"
+        }
       ]
     },
     {
@@ -294,7 +451,38 @@
       ],
       "voz": "Los periódicos se llenan de cartas de hinchas que amenazan con un boicot. Algunos devuelven sus abonos.",
       "grupo": "g11",
-      "tema": "cuaderno"
+      "tema": "cuaderno",
+      "elementos": [
+        {
+          "p": "sobre",
+          "x": 1380,
+          "y": 290,
+          "tam": 300,
+          "palabra": "cartas",
+          "anim": "vuela",
+          "desde": "der"
+        },
+        {
+          "p": "sobre",
+          "x": 1610,
+          "y": 400,
+          "tam": 262,
+          "palabra": "boicot",
+          "anim": "vuela",
+          "desde": "der",
+          "rot": 12
+        },
+        {
+          "p": "abono",
+          "x": 1470,
+          "y": 650,
+          "tam": 375,
+          "palabra": "abonos",
+          "anim": "vuela",
+          "desde": "der",
+          "texto": "ABONO"
+        }
+      ]
     },
     {
       "tipo": "titular",
@@ -307,7 +495,41 @@
       ],
       "voz": "La comunidad judía de Manchester protesta. Un grupo se manifiesta frente al estadio.",
       "grupo": "g11",
-      "tema": "cuaderno"
+      "tema": "cuaderno",
+      "elementos": [
+        {
+          "p": "megafono",
+          "x": 1480,
+          "y": 300,
+          "tam": 375,
+          "palabra": "protesta",
+          "anim": "pulso"
+        },
+        {
+          "p": "persona",
+          "x": 1330,
+          "y": 640,
+          "tam": 229,
+          "palabra": "grupo",
+          "anim": "pop"
+        },
+        {
+          "p": "persona",
+          "x": 1480,
+          "y": 660,
+          "tam": 229,
+          "palabra": "manifiesta",
+          "anim": "pop"
+        },
+        {
+          "p": "persona",
+          "x": 1630,
+          "y": 640,
+          "tam": 229,
+          "palabra": "estadio",
+          "anim": "pop"
+        }
+      ]
     },
     {
       "tipo": "versus",
@@ -343,7 +565,58 @@
       ],
       "voz": "Se habla de veinte mil personas. Pero esa cifra cambia según quién la cuente, y hasta hay quien la llama leyenda. Por eso aquí no la voy a decir. Lo que sí está documentado son las cartas, los abonos devueltos y la protesta.",
       "grupo": "g11",
-      "tema": "cuaderno"
+      "tema": "cuaderno",
+      "elementos": [
+        {
+          "p": "sobre",
+          "x": 250,
+          "y": 640,
+          "tam": 210,
+          "palabra": "cartas",
+          "anim": "pop"
+        },
+        {
+          "p": "abono",
+          "x": 470,
+          "y": 655,
+          "tam": 230,
+          "palabra": "abonos",
+          "anim": "pop",
+          "texto": "ABONO"
+        },
+        {
+          "p": "megafono",
+          "x": 720,
+          "y": 640,
+          "tam": 210,
+          "palabra": "protesta",
+          "anim": "pop"
+        },
+        {
+          "p": "interrogacion",
+          "x": 1250,
+          "y": 760,
+          "tam": 170,
+          "palabra": "cifra",
+          "anim": "pop"
+        },
+        {
+          "p": "interrogacion",
+          "x": 1440,
+          "y": 760,
+          "tam": 170,
+          "palabra": "cambia",
+          "anim": "pop"
+        },
+        {
+          "p": "interrogacion",
+          "x": 1630,
+          "y": 760,
+          "tam": 170,
+          "palabra": "leyenda",
+          "anim": "pop"
+        }
+      ]
     },
     {
       "tipo": "recorte",
@@ -356,7 +629,27 @@
       ],
       "voz": "Y entonces pasa algo que nadie esperaba. Alexander Altmann, el rabino de la comunidad judía de Manchester, un hombre que había huido de la Alemania nazi, escribe una carta.",
       "grupo": "g12",
-      "tema": "cuaderno"
+      "tema": "cuaderno",
+      "elementos": [
+        {
+          "p": "sobre",
+          "x": 1770,
+          "y": 290,
+          "tam": 190,
+          "palabra": "carta",
+          "anim": "vuela",
+          "desde": "der"
+        },
+        {
+          "p": "pluma",
+          "x": 1770,
+          "y": 560,
+          "tam": 180,
+          "palabra": "escribe",
+          "anim": "desliza",
+          "desde": "der"
+        }
+      ]
     },
     {
       "tipo": "titular",
@@ -369,7 +662,17 @@
       ],
       "voz": "Un periódico de la ciudad la publica. Dice que no se debe castigar a un alemán que no tiene nada que ver con esos crímenes de odio.",
       "grupo": "g12",
-      "tema": "cuaderno"
+      "tema": "cuaderno",
+      "elementos": [
+        {
+          "p": "balanza",
+          "x": 1500,
+          "y": 360,
+          "tam": 400,
+          "palabra": "castigar",
+          "anim": "pop"
+        }
+      ]
     },
     {
       "tipo": "titular",
@@ -382,19 +685,33 @@
       ],
       "voz": "Cuatro de enero de 1950. El City juega de visitante, en Londres, contra el Fulham. Los relatos cuentan que al empezar le gritaron insultos.",
       "grupo": "g13",
-      "tema": "cuaderno"
+      "tema": "cuaderno",
+      "elementos": [
+        {
+          "p": "calendario",
+          "x": 1400,
+          "y": 300,
+          "tam": 350,
+          "palabra": "Cuatro",
+          "anim": "cae",
+          "texto": "4 ENE"
+        },
+        {
+          "p": "pin",
+          "x": 1640,
+          "y": 600,
+          "tam": 287,
+          "palabra": "Londres",
+          "anim": "cae",
+          "etiqueta": "LONDRES"
+        }
+      ]
     },
     {
-      "tipo": "titular",
-      "titular": "APLAUSO DE PIE|PASILLO DE HONOR",
-      "resaltar": "APLAUSO",
-      "claves": [
-        "aplaudió",
-        "pasillo"
-      ],
       "voz": "Al terminar el partido, el público se puso de pie y lo aplaudió. Los jugadores del Fulham le hicieron un pasillo.",
       "grupo": "g13",
-      "tema": "cuaderno"
+      "tema": "cuaderno",
+      "tipo": "pasillo"
     },
     {
       "tipo": "titular",
@@ -407,7 +724,33 @@
       ],
       "voz": "Según contó él mismo, ese aplauso fue algo que nunca olvidaría. Con el tiempo, aquellos hinchas terminarían adoptándolo.",
       "grupo": "g13",
-      "tema": "cuaderno"
+      "tema": "cuaderno",
+      "elementos": [
+        {
+          "p": "palmas",
+          "x": 1500,
+          "y": 340,
+          "tam": 360,
+          "palabra": "aplauso",
+          "anim": "pulso"
+        },
+        {
+          "p": "persona",
+          "x": 1380,
+          "y": 700,
+          "tam": 229,
+          "palabra": "hinchas",
+          "anim": "pop"
+        },
+        {
+          "p": "persona",
+          "x": 1620,
+          "y": 700,
+          "tam": 229,
+          "palabra": "terminarían",
+          "anim": "pop"
+        }
+      ]
     },
     {
       "tipo": "capitulo",
@@ -426,19 +769,61 @@
       "claves": [
         "futbolista",
         "primer"
+      ],
+      "elementos": [
+        {
+          "p": "trofeo",
+          "x": 1770,
+          "y": 250,
+          "tam": 210,
+          "palabra": "futbolista",
+          "anim": "cae"
+        },
+        {
+          "p": "guantes",
+          "x": 1770,
+          "y": 490,
+          "tam": 200,
+          "palabra": "portero",
+          "anim": "pop"
+        },
+        {
+          "p": "pasaporte",
+          "x": 1770,
+          "y": 720,
+          "tam": 180,
+          "palabra": "extranjero",
+          "anim": "pop"
+        }
       ]
     },
     {
-      "tipo": "titular",
-      "titular": "1955|PIERDE 3–1 CON EL NEWCASTLE",
-      "resaltar": "1955",
-      "claves": [
-        "1955",
-        "perdió"
-      ],
       "voz": "Un año antes, en 1955, había jugado otra final en Wembley. La perdió: tres a uno contra el Newcastle.",
       "grupo": "g16",
-      "tema": "plano"
+      "tema": "plano",
+      "tipo": "marcador",
+      "kicker": "FINAL DE LA COPA · WEMBLEY · 1955",
+      "linea": "EL CITY PIERDE LA FINAL",
+      "lados": [
+        {
+          "titulo": "NEWCASTLE",
+          "lineas": [
+            "3"
+          ],
+          "palabras": [
+            "tres"
+          ]
+        },
+        {
+          "titulo": "MANCHESTER CITY",
+          "lineas": [
+            "1"
+          ],
+          "palabras": [
+            "uno"
+          ]
+        }
+      ]
     },
     {
       "tipo": "versus",
@@ -470,20 +855,48 @@
       ],
       "voz": "Y ahora, cinco de mayo de 1956. Wembley. Manchester City contra Birmingham City.",
       "grupo": "g16",
-      "tema": "plano"
+      "tema": "plano",
+      "elementos": [
+        {
+          "p": "calendario",
+          "x": 300,
+          "y": 610,
+          "tam": 250,
+          "palabra": "cinco",
+          "anim": "cae",
+          "texto": "5 MAY"
+        },
+        {
+          "p": "estadio",
+          "x": 620,
+          "y": 620,
+          "tam": 270,
+          "palabra": "Wembley",
+          "anim": "pop"
+        },
+        {
+          "p": "balon",
+          "x": 1350,
+          "y": 610,
+          "tam": 230,
+          "palabra": "contra",
+          "anim": "pop"
+        },
+        {
+          "p": "trofeo",
+          "x": 1620,
+          "y": 610,
+          "tam": 240,
+          "palabra": "Birmingham",
+          "anim": "cae"
+        }
+      ]
     },
     {
-      "tipo": "titular",
-      "titular": "EL CHOQUE|LA RODILLA EN EL CUELLO|INCONSCIENTE",
-      "resaltar": "INCONSCIENTE",
-      "claves": [
-        "lanza",
-        "rodilla",
-        "inconsciente"
-      ],
       "voz": "A un cuarto de hora del final, Trautmann se lanza a un balón. Choca con un delantero del Birmingham, Peter Murphy. La rodilla de Murphy le pega en el cuello. Trautmann queda inconsciente.",
       "grupo": "g17",
-      "tema": "plano"
+      "tema": "plano",
+      "tipo": "jugada"
     },
     {
       "tipo": "crono",
@@ -506,17 +919,70 @@
       "tema": "plano"
     },
     {
+      "tipo": "marcador",
+      "voz": "El City gana la final: tres a uno.",
+      "grupo": "g18",
+      "tema": "plano",
+      "kicker": "FINAL DE LA COPA · 5 DE MAYO DE 1956",
+      "linea": "EL CITY GANA LA COPA",
+      "lados": [
+        {
+          "titulo": "MANCHESTER CITY",
+          "lineas": [
+            "3"
+          ],
+          "palabras": [
+            "tres"
+          ]
+        },
+        {
+          "titulo": "BIRMINGHAM CITY",
+          "lineas": [
+            "1"
+          ],
+          "palabras": [
+            "uno"
+          ]
+        }
+      ]
+    },
+    {
       "tipo": "titular",
-      "titular": "CITY 3 · BIRMINGHAM 1|EL DUQUE DE EDIMBURGO|LE PREGUNTA POR EL CUELLO",
-      "resaltar": "3",
+      "voz": "Al subir a recoger las medallas, el duque de Edimburgo, que las entregaba, se fija en cómo Trautmann sostiene la cabeza. Le pregunta.",
+      "grupo": "g18",
+      "tema": "plano",
+      "titular": "EL DUQUE DE EDIMBURGO|LE PREGUNTA POR EL CUELLO",
+      "resaltar": "CUELLO",
       "claves": [
-        "gana",
         "duque",
         "pregunta"
       ],
-      "voz": "El City gana la final: tres a uno. Al subir a recoger las medallas, el duque de Edimburgo, que las entregaba, se fija en cómo Trautmann sostiene la cabeza. Le pregunta.",
-      "grupo": "g18",
-      "tema": "plano"
+      "elementos": [
+        {
+          "p": "medalla",
+          "x": 1480,
+          "y": 300,
+          "tam": 375,
+          "palabra": "medallas",
+          "anim": "pop"
+        },
+        {
+          "p": "cabeza",
+          "x": 1370,
+          "y": 660,
+          "tam": 325,
+          "palabra": "cabeza",
+          "anim": "pop"
+        },
+        {
+          "p": "interrogacion",
+          "x": 1650,
+          "y": 600,
+          "tam": 300,
+          "palabra": "pregunta",
+          "anim": "pulso"
+        }
+      ]
     },
     {
       "tipo": "titular",
@@ -529,7 +995,26 @@
       ],
       "voz": "Según el Museo Nacional del Fútbol de Inglaterra, Trautmann responde que debe de ser un tortícolis.",
       "grupo": "g18",
-      "tema": "plano"
+      "tema": "plano",
+      "elementos": [
+        {
+          "p": "documento",
+          "x": 1380,
+          "y": 230,
+          "tam": 290,
+          "palabra": "Museo",
+          "anim": "pop"
+        },
+        {
+          "p": "cabeza",
+          "x": 1620,
+          "y": 690,
+          "tam": 330,
+          "palabra": "tortícolis",
+          "anim": "pop",
+          "etiqueta": "TORTÍCOLIS"
+        }
+      ]
     },
     {
       "tipo": "capitulo",
@@ -539,18 +1024,10 @@
       "titulo": "LA RADIOGRAFÍA"
     },
     {
-      "tipo": "recorte",
-      "titular": "RADIOGRAFÍA: EL CUELLO ESTABA ROTO",
-      "linea": "UNOS DÍAS DESPUÉS DE LA FINAL",
-      "sello": "FRACTURA",
-      "resaltar": "ROTO",
-      "claves": [
-        "vértebras",
-        "rota"
-      ],
       "voz": "Unos días después, un médico le hace una radiografía. El resultado: varias vértebras del cuello desplazadas. Y una de ellas, rota.",
       "grupo": "g20",
-      "tema": "kraft"
+      "tema": "kraft",
+      "tipo": "radiografia"
     },
     {
       "tipo": "titular",
@@ -563,7 +1040,35 @@
       ],
       "voz": "Había jugado el final de una final de Wembley con el cuello roto. Y no lo sabía. Aun así, se quedó en el City hasta 1964.",
       "grupo": "g20",
-      "tema": "kraft"
+      "tema": "kraft",
+      "elementos": [
+        {
+          "p": "balon",
+          "x": 1400,
+          "y": 290,
+          "tam": 287,
+          "palabra": "final",
+          "anim": "pop"
+        },
+        {
+          "p": "interrogacion",
+          "x": 1630,
+          "y": 420,
+          "tam": 325,
+          "palabra": "sabía",
+          "anim": "pulso"
+        },
+        {
+          "p": "calendario",
+          "x": 1480,
+          "y": 680,
+          "tam": 312,
+          "palabra": "1964",
+          "anim": "cae",
+          "texto": "1964",
+          "etiqueta": "HASTA"
+        }
+      ]
     },
     {
       "tipo": "capitulo",
@@ -581,50 +1086,77 @@
       ],
       "voz": "Quince de abril de 1964. Maine Road, el estadio del City. Es el partido de homenaje a Bert Trautmann, que se retira.",
       "grupo": "g22",
-      "tema": "periodico"
-    },
-    {
-      "tipo": "versus",
-      "lados": [
+      "tema": "periodico",
+      "elementos": [
         {
-          "titulo": "1964",
-          "lineas": [
-            "Homenaje en Maine Road",
-            "Entre 48.000 y 60.000 personas"
-          ],
-          "palabras": [
-            "cuarenta",
-            "sesenta"
-          ]
+          "p": "calendario",
+          "x": 1400,
+          "y": 320,
+          "tam": 350,
+          "palabra": "Quince",
+          "anim": "cae",
+          "texto": "15 ABR"
         },
         {
-          "titulo": "1949",
-          "lineas": [
-            "Hinchas que amenazaban con no volver"
-          ],
-          "palabras": [
-            "amenazaban"
-          ]
+          "p": "estadio",
+          "x": 1620,
+          "y": 640,
+          "tam": 380,
+          "palabra": "Maine",
+          "anim": "pop",
+          "etiqueta": "MAINE ROAD"
         }
-      ],
-      "claves": [
-        "cuarenta",
-        "amenazaban"
-      ],
+      ]
+    },
+    {
       "voz": "Van entre cuarenta y ocho mil personas, la cifra oficial, y cerca de sesenta mil, según los cálculos. Unos quince años antes, algunos hinchas de ese mismo club amenazaban con no volver al estadio.",
       "grupo": "g22",
-      "tema": "periodico"
+      "tema": "periodico",
+      "tipo": "estadio"
+    },
+    {
+      "tipo": "mapa",
+      "voz": "Al retirarse, se fue a entrenar por el mundo: entre otros países, Birmania, Tanzania, Liberia y Pakistán.",
+      "grupo": "g37",
+      "tema": "periodico",
+      "puntos": [
+        {
+          "nombre": "Birmania",
+          "lat": 16.8,
+          "lon": 96.2,
+          "palabra": "Birmania"
+        },
+        {
+          "nombre": "Tanzania",
+          "lat": -6.8,
+          "lon": 39.3,
+          "palabra": "Tanzania"
+        },
+        {
+          "nombre": "Liberia",
+          "lat": 6.3,
+          "lon": -10.8,
+          "palabra": "Liberia"
+        },
+        {
+          "nombre": "Pakistán",
+          "lat": 33.7,
+          "lon": 73.1,
+          "palabra": "Pakistán"
+        }
+      ],
+      "ruta": [],
+      "claves": [
+        "entrenar",
+        "mundo"
+      ]
     },
     {
       "tipo": "cronologia",
-      "voz": "Al retirarse, se fue a entrenar por el mundo: entre otros países, Birmania, Tanzania, Liberia y Pakistán. En 2004, recibió la Orden del Imperio Británico por su trabajo para acercar a ingleses y alemanes. Murió en 2013, a los 89 años.",
+      "voz": "En 2004, recibió la Orden del Imperio Británico por su trabajo para acercar a ingleses y alemanes. Murió en 2013, a los 89 años.",
+      "grupo": "g37",
       "tema": "periodico",
       "hitos": [
-        {
-          "anio": "DESPUÉS",
-          "texto": "Entrena en Birmania, Tanzania, Liberia y Pakistán",
-          "palabra": "Birmania"
-        },
         {
           "anio": "2004",
           "texto": "Orden del Imperio Británico",
@@ -637,55 +1169,143 @@
         }
       ],
       "claves": [
-        "entrenar",
+        "acercar",
         "Murió"
       ]
     },
     {
       "tipo": "veredicto",
-      "sello": "VERIFICADO*",
-      "filas": [
-        {
-          "dato": "Minuto del choque",
-          "valores": "73 o 75",
-          "palabra": "minuto"
-        },
-        {
-          "dato": "Minutos jugados después",
-          "valores": "16 o 17",
-          "palabra": "jugó"
-        },
-        {
-          "dato": "Días hasta la radiografía",
-          "valores": "3 o 4",
-          "palabra": "días"
-        },
-        {
-          "dato": "Manifestantes en 1949",
-          "valores": "20.000 · 25.000 · decenas de miles",
-          "palabra": "protestó"
-        }
-      ],
-      "claves": [
-        "asteriscos",
-        "afirmo"
-      ],
-      "voz": "Veredicto: verificado. Pero con asteriscos. Las fuentes no dicen lo mismo en cuatro cosas. El minuto del choque: setenta y tres o setenta y cinco. Cuántos minutos jugó después: dieciséis o diecisiete. Cuántos días pasaron hasta la radiografía: tres o cuatro. Y cuánta gente protestó en 1949: veinte mil, veinticinco mil o decenas de miles. Las dejé tal cual. Si no se puede probar, no lo afirmo.",
+      "voz": "Veredicto: verificado. Pero con asteriscos. Las fuentes no dicen lo mismo en cuatro cosas.",
       "grupo": "g24",
       "tema": "clasico",
-      "musica": "base-100bpm-d.mp3"
+      "musica": "base-100bpm-d.mp3",
+      "sello": "VERIFICADO*",
+      "claves": [
+        "asteriscos"
+      ]
+    },
+    {
+      "tipo": "regla",
+      "voz": "El minuto del choque: setenta y tres o setenta y cinco.",
+      "grupo": "g24",
+      "tema": "clasico",
+      "texto": "MINUTO DEL CHOQUE",
+      "escala": [
+        60,
+        90
+      ],
+      "marcas": [
+        73,
+        75
+      ],
+      "unidad": "′",
+      "claves": [
+        "tres",
+        "cinco"
+      ]
+    },
+    {
+      "tipo": "regla",
+      "voz": "Cuántos minutos jugó después: dieciséis o diecisiete.",
+      "grupo": "g24",
+      "tema": "clasico",
+      "texto": "MINUTOS JUGADOS DESPUÉS",
+      "escala": [
+        10,
+        20
+      ],
+      "marcas": [
+        16,
+        17
+      ],
+      "unidad": "′",
+      "claves": [
+        "dieciséis",
+        "diecisiete"
+      ]
+    },
+    {
+      "tipo": "regla",
+      "voz": "Cuántos días pasaron hasta la radiografía: tres o cuatro.",
+      "grupo": "g24",
+      "tema": "clasico",
+      "texto": "DÍAS HASTA LA RADIOGRAFÍA",
+      "escala": [
+        0,
+        10
+      ],
+      "marcas": [
+        3,
+        4
+      ],
+      "unidad": "d",
+      "claves": [
+        "tres",
+        "cuatro"
+      ]
+    },
+    {
+      "tipo": "regla",
+      "voz": "Y cuánta gente protestó en 1949: veinte mil, veinticinco mil o decenas de miles.",
+      "grupo": "g24",
+      "tema": "clasico",
+      "texto": "MANIFESTANTES EN 1949",
+      "escala": [
+        0,
+        30000
+      ],
+      "marcas": [
+        20000,
+        25000
+      ],
+      "unidad": "",
+      "linea": "«DECENAS DE MILES»",
+      "claves": [
+        "veinte",
+        "veinticinco"
+      ]
+    },
+    {
+      "tipo": "titular",
+      "voz": "Las dejé tal cual. Si no se puede probar, no lo afirmo.",
+      "grupo": "g24",
+      "tema": "clasico",
+      "titular": "SI NO SE PUEDE PROBAR|NO LO AFIRMO",
+      "resaltar": "AFIRMO",
+      "claves": [
+        "probar",
+        "afirmo"
+      ],
+      "elementos": [
+        {
+          "p": "lupa",
+          "x": 1480,
+          "y": 330,
+          "tam": 380,
+          "palabra": "probar",
+          "anim": "pop"
+        },
+        {
+          "p": "cruz",
+          "x": 1640,
+          "y": 650,
+          "tam": 262,
+          "palabra": "afirmo",
+          "anim": "pop"
+        }
+      ]
     },
     {
       "tipo": "cierre",
+      "voz": "Ahora les pregunto yo: ¿conocen otra historia así, de alguien que siguió cuando todo decía que parara? Cuéntenmela en los comentarios, con su país, y abro su camerino. La próxima semana, otro expediente.",
+      "grupo": "g24",
+      "tema": "clasico",
       "expresion": "E7",
       "pose": "P1",
       "claves": [
         "conocen",
         "expediente"
-      ],
-      "voz": "Ahora les pregunto yo: ¿conocen otra historia así, de alguien que siguió cuando todo decía que parara? Cuéntenmela en los comentarios, con su país, y abro su camerino. La próxima semana, otro expediente.",
-      "grupo": "g24",
-      "tema": "clasico"
+      ]
     }
   ]
 }

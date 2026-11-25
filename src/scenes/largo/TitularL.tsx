@@ -22,17 +22,18 @@ export const TitularL: React.FC<EscenaProps> = ({ esc, timing, frames }) => {
   const lineas = (esc.titular ?? '').split('|').map((s) => s.trim()).filter(Boolean);
   const conUtilero = !!esc.expresion;
   const oscuro = esc.fondo === 'pizarra';
-  const ancho = conUtilero ? 1100 : 1600;
-  const x = conUtilero ? 130 : 160;
+  const conElementos = !!(esc.elementos?.length || esc.flechas?.length);
+  const ancho = conUtilero ? 1100 : conElementos ? 1060 : 1600;
+  const x = conUtilero ? 130 : conElementos ? 90 : 160;
 
   // instante de cada línea: la voz manda; si no se nombra, se reparte
   const at: number[] = [];
   lineas.forEach((_, i) => {
     const prev = i === 0 ? 0 : at[i - 1] + 10;
     const ancla = esc.claves?.[i];
-    const def = 12 + i * Math.max(28, Math.floor((frames - 40) / Math.max(1, lineas.length)));
+    const def = 4 + i * Math.max(28, Math.floor((frames - 40) / Math.max(1, lineas.length)));
     const t = ancla ? cuando(timing, off, ancla, prev > 0 ? prev : 0, def) - 2 : def;
-    at.push(Math.max(i === 0 ? 11 : prev, t));
+    at.push(Math.max(i === 0 ? 3 : prev, t));
   });
 
   // alto del bloque para centrarlo verticalmente

@@ -123,7 +123,7 @@ const Milimetrado: React.FC<{ w: number; h: number }> = ({ w, h }) => {
     <rect width={w} height={h} fill="url(#ft-mi-grueso)" />
     <g transform="translate(240 240)">
       {/* cancha en marca de agua */}
-      <g fill="none" stroke={C.tinta} strokeWidth={6} opacity={0.085} strokeLinecap="round" strokeLinejoin="round" transform={horizontal ? `translate(${sw / 2} ${sh / 2}) rotate(-2) scale(${escala}) translate(-540 -970) rotate(90 540 970)` : 'rotate(-4 540 960)'}>
+      <g fill="none" stroke={C.tinta} strokeWidth={horizontal ? 4 : 6} opacity={horizontal ? 0.055 : 0.085} strokeLinecap="round" strokeLinejoin="round" transform={horizontal ? `translate(${sw / 2} ${sh / 2}) rotate(-2) scale(${escala}) translate(-540 -970) rotate(90 540 970)` : 'rotate(-4 540 960)'}>
         <path d="M110 280 H970 V1660 H110 Z" />
         <path d="M110 970 H970" />
         <circle cx={540} cy={970} r={176} />

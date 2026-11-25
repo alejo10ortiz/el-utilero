@@ -17,7 +17,7 @@ export const RecorteL: React.FC<EscenaProps> = ({ esc, timing, frames }) => {
   const f = useCurrentFrame();
   const off = Math.round(timing.start * FPS);
   const palabras = (esc.titular ?? '').split(' ').filter(Boolean);
-  const tEntra = 8;
+  const tEntra = 4;
   const tPalabra = (i: number) => tEntra + 18 + i * 5;
   const tHL = esc.resaltar ? Math.max(tEntra + 26, cuando(timing, off, esc.resaltar, 0, tEntra + 24 + palabras.length * 5) - 1) : -1;
   const tSello = esc.sello ? Math.max(tEntra + 40, cuando(timing, off, esc.claves?.[1] ?? esc.sello, 0, tEntra + 60)) : -1;

@@ -43,7 +43,7 @@ export const MapaL: React.FC<EscenaProps> = ({ esc, timing, frames }) => {
   const tPunto: number[] = [];
   puntos.forEach((p, i) => {
     const prev = i === 0 ? 0 : tPunto[i - 1] + 6;
-    tPunto.push(Math.max(i === 0 ? 20 : prev, cuando(timing, off, p.palabra ?? p.nombre, i === 0 ? 0 : prev, 34 + i * 52) - 2));
+    tPunto.push(Math.max(i === 0 ? 10 : prev, cuando(timing, off, p.palabra ?? p.nombre, i === 0 ? 0 : prev, 34 + i * 52) - 2));
   });
   const ruta = esc.ruta ?? puntos.map((_, i) => i);
   const piernas = ruta.slice(0, -1).map((a, j) => {

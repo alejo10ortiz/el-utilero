@@ -36,8 +36,8 @@ export const CierreL: React.FC<EscenaProps> = ({ esc, ep, timing, frames }) => {
     <Escenario fondo="lima" impactos={[{ frame: tHandle + 2, amp: 12 }, { frame: tPortazo + 7, amp: 14 }]} deriva={0.5} zoom={z}>
       <Rayos c2="rgba(22,19,15,0.10)" cx={560} cy={560} vel={-0.2} />
       <Particulas tipo="polvo" n={18} semilla={83} colores={[C.tinta, C.papel]} opacidad={0.3} velocidad={0.3} />
-      <div style={{ transform: `scale(${pulso})`, transformOrigin: '20% 85%', position: 'absolute', inset: 0 }}>
-        <UtileroActor entrada={8} desde="izquierda" expresion={esc.expresion ?? 'E7'} pose={esc.pose} sobre="lima" words={timing.words} offsetFrames={off} size={660} x={110} y={235} seed={9} />
+      <div style={{ transform: `scale(${pulso})`, transformOrigin: '15% 85%', position: 'absolute', inset: 0 }}>
+        <UtileroActor entrada={8} desde="izquierda" expresion={esc.expresion ?? 'E7'} pose={esc.pose} sobre="lima" words={timing.words} offsetFrames={off} size={620} x={40} y={250} seed={9} />
       </div>
       <TituloImpacto lineas={[{ texto: '¿CONOCEN OTRA', at: tPregunta, max: 150 }, { texto: 'HISTORIA ASÍ?', at: tPregunta + 8, resaltar: 'ASÍ?', max: 150 }]} x={1000} y={130} ancho={790} tono="tinta" maxSize={150} />
       <CintaImpacto texto="CUÉNTENMELA CON SU PAÍS" x={1400} y={470} at={tPais} rot={-2} size={50} color={C.papel} />

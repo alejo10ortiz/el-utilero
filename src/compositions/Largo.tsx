@@ -12,6 +12,7 @@ import { AbsProvider } from '../lib/ritmo';
 import { TEMAS, TemaId, TemaProvider } from '../lib/tema';
 import { estimateTimeline, Timeline, timelineFrames, toFrames } from '../lib/timeline';
 import { CapituloL } from '../scenes/largo/CapituloL';
+import { ElementosL } from '../scenes/largo/ElementosL';
 import { CierreL } from '../scenes/largo/CierreL';
 import { CronoL } from '../scenes/largo/CronoL';
 import { CronologiaL } from '../scenes/largo/CronologiaL';
@@ -20,9 +21,16 @@ import { RecorteL } from '../scenes/largo/RecorteL';
 import { TitularL } from '../scenes/largo/TitularL';
 import { VeredictoL } from '../scenes/largo/VeredictoL';
 import { VersusL } from '../scenes/largo/VersusL';
+import { JugadaL } from '../scenes/largo/JugadaL';
+import { RadiografiaL } from '../scenes/largo/RadiografiaL';
+import { PasilloL } from '../scenes/largo/PasilloL';
+import { EstadioL } from '../scenes/largo/EstadioL';
+import { ReglaL } from '../scenes/largo/ReglaL';
+import { MarcadorL } from '../scenes/largo/MarcadorL';
 
 const ESCENAS_L: Partial<Record<Episode['escenas'][number]['tipo'], React.FC<any>>> = {
   capitulo: CapituloL, crono: CronoL, titular: TitularL, mapa: MapaL, cronologia: CronologiaL, recorte: RecorteL, versus: VersusL, veredicto: VeredictoL, cierre: CierreL,
+  jugada: JugadaL, radiografia: RadiografiaL, pasillo: PasilloL, estadio: EstadioL, regla: ReglaL, marcador: MarcadorL,
 };
 
 export type LargoProps = {
@@ -81,6 +89,7 @@ export const Largo: React.FC<LargoProps> = ({ slug, episode, timeline }) => {
               <TemaProvider id={(esc.tema ?? episode.tema) as TemaId}>
                 <AbsProvider inicio={from}>
                   <Escena esc={esc} ep={episode} timing={t} frames={frames} width={LW} height={LH} />
+                  {(esc.elementos || esc.flechas) && <ElementosL esc={esc} timing={t} frames={frames} />}
                 </AbsProvider>
               </TemaProvider>
             </Sequence>

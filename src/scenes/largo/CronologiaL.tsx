@@ -24,7 +24,7 @@ export const CronologiaL: React.FC<EscenaProps> = ({ esc, timing, frames }) => {
   const t: number[] = [];
   hitos.forEach((h, i) => {
     const prev = i === 0 ? 0 : t[i - 1] + 8;
-    t.push(i === 0 ? 12 : Math.max(prev, cuando(timing, off, h.palabra ?? h.anio, prev, 28 + i * 60) - 3));
+    t.push(i === 0 ? 4 : Math.max(prev, cuando(timing, off, h.palabra ?? h.anio, prev, 28 + i * 60) - 3));
   });
   const anchoHito = n >= 4 ? 400 : n === 3 ? 480 : 640;
   const margen = anchoHito / 2 + 110; // el primer y el último hito quedan dentro del cuadro
