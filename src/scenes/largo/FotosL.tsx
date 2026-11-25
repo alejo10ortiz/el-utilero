@@ -98,12 +98,12 @@ export const FotosL: React.FC<Pick<EscenaProps, 'esc' | 'timing' | 'frames'>> = 
                   {p.pie}
                 </div>
               )}
-              {/* crédito: pequeño, vertical, al costado */}
+              {/* crédito: pequeño, vertical, al costado (se parte en columnas para no pasar del alto de la foto) */}
               <div
                 style={{
-                  position: 'absolute', top: 6, [lado === 'der' ? 'left' : 'right']: ancho + 10, writingMode: 'vertical-rl', whiteSpace: 'nowrap',
-                  fontFamily: FONT.maquina, fontSize: 17, lineHeight: 1.1, color: C.tinta, opacity: 0.78 * Math.min(1, dt / 12), letterSpacing: 0.4,
-                  transform: lado === 'izq' ? 'rotate(180deg)' : undefined,
+                  position: 'absolute', top: 4, [lado === 'der' ? 'left' : 'right']: ancho + 10, maxHeight: alto + 8, writingMode: lado === 'der' ? 'vertical-lr' : 'vertical-rl',
+                  whiteSpace: 'normal', width: 'max-content', maxWidth: 70,
+                  fontFamily: FONT.maquina, fontSize: 17, lineHeight: 1.15, color: C.tinta, opacity: 0.8 * Math.min(1, dt / 12), letterSpacing: 0.3,
                 }}
               >
                 FOTO: {p.credito}

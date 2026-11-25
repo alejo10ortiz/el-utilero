@@ -4,6 +4,8 @@
  *   npx tsx scripts/verify-episode.ts 001 --online   # además comprueba que las fuentes respondan
  * Sale con código 1 si hay errores.
  */
+import fs from 'node:fs';
+import path from 'node:path';
 import { ZodError } from 'zod';
 import { flag, loadEpisode, positional, resolveSlug } from './lib';
 import { estimateTimeline, tokenize } from '../src/lib/timeline';
@@ -77,6 +79,18 @@ export async function verificar(slug: string, online = false): Promise<Hallazgo[
       const temaActual = (ep as { tema?: string }).tema ?? 'clasico';
       if (ult2.some((x) => x.tema === temaActual)) warn(`tema visual «${temaActual}» repetido en uno de los 2 episodios anteriores: rota la superficie (cuaderno, kraft, plano, periodico; BRAND §2.6)`);
     }
+  }
+
+  // ── Fotos con licencia libre (solo videos largos): archivo presente y crédito con licencia reconocible
+  const fotos = ep.escenas.flatMap((e) => e.fotos ?? []);
+  if (fotos.length) {
+    if (!esLargo) err('fotos reales solo se permiten en videos largos (BRAND.md §10 regla 3)');
+    for (const f of fotos) {
+      if (!fs.existsSync(path.resolve(__dirname, '..', 'assets', f.foto))) err(`foto «${f.foto}»: el archivo no existe en assets/`);
+      if (!/CC BY|CC0|dominio público|public domain/i.test(f.credito)) err(`foto «${f.foto}»: el crédito debe nombrar una licencia libre (CC BY, CC BY-SA, CC0 o dominio público): «${f.credito}»`);
+      if (/getty|\bap\b|reuters|mirrorpix|\bpa media|shutterstock/i.test(f.credito)) err(`foto «${f.foto}»: las fotos de agencia no están permitidas`);
+    }
+    ok(`${fotos.length} fotos con crédito y licencia libre`);
   }
 
   // ── Duración (30–45 s objetivo)

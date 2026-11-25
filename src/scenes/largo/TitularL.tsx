@@ -22,7 +22,7 @@ export const TitularL: React.FC<EscenaProps> = ({ esc, timing, frames }) => {
   const lineas = (esc.titular ?? '').split('|').map((s) => s.trim()).filter(Boolean);
   const conUtilero = !!esc.expresion;
   const oscuro = esc.fondo === 'pizarra';
-  const conElementos = !!(esc.elementos?.length || esc.flechas?.length);
+  const conElementos = !!(esc.elementos?.length || esc.flechas?.length || esc.fotos?.length);
   const ancho = conUtilero ? 1100 : conElementos ? 1060 : 1600;
   const x = conUtilero ? 130 : conElementos ? 90 : 160;
 

@@ -230,6 +230,21 @@
           "lado": "der",
           "foco": "50% 28%",
           "zoom": 1.1
+        },
+        {
+          "foto": "fotos/L01-trautmann/trautmann-platz.jpg",
+          "credito": "JürnC · CC BY-SA 3.0 · Wikimedia Commons",
+          "x": 400,
+          "y": 740,
+          "ancho": 520,
+          "ratio": 1.9,
+          "rot": -3,
+          "palabra": "Bremen",
+          "anim": "pop",
+          "pie": "PLACA EN BREMEN: BERT-TRAUTMANN-PLATZ",
+          "lado": "der",
+          "foco": "50% 50%",
+          "zoom": 1.06
         }
       ]
     },
@@ -1013,23 +1028,22 @@
       "voz": "Según el Museo Nacional del Fútbol de Inglaterra, Trautmann responde que debe de ser un tortícolis.",
       "grupo": "g18",
       "tema": "plano",
-      "elementos": [
+      "elementos": [],
+      "fotos": [
         {
-          "p": "documento",
-          "x": 1380,
-          "y": 230,
-          "tam": 290,
+          "foto": "fotos/L01-trautmann/collarin-museo.jpg",
+          "credito": "Hmickey · CC BY-SA 4.0 · Wikimedia Commons",
+          "x": 1560,
+          "y": 470,
+          "ancho": 420,
+          "ratio": 0.75,
+          "rot": 2,
           "palabra": "Museo",
-          "anim": "pop"
-        },
-        {
-          "p": "cabeza",
-          "x": 1620,
-          "y": 690,
-          "tam": 330,
-          "palabra": "tortícolis",
-          "anim": "pop",
-          "etiqueta": "TORTÍCOLIS"
+          "anim": "cae",
+          "pie": "SU COLLARÍN, EN EL MUSEO",
+          "lado": "der",
+          "foco": "45% 55%",
+          "zoom": 1.08
         }
       ]
     },
@@ -1060,30 +1074,30 @@
       "tema": "kraft",
       "elementos": [
         {
-          "p": "balon",
-          "x": 1400,
-          "y": 290,
-          "tam": 287,
-          "palabra": "final",
-          "anim": "pop"
-        },
-        {
-          "p": "interrogacion",
-          "x": 1630,
-          "y": 420,
-          "tam": 325,
-          "palabra": "sabía",
-          "anim": "pulso"
-        },
-        {
           "p": "calendario",
-          "x": 1480,
-          "y": 680,
-          "tam": 312,
+          "x": 1290,
+          "y": 840,
+          "tam": 250,
           "palabra": "1964",
           "anim": "cae",
           "texto": "1964",
           "etiqueta": "HASTA"
+        }
+      ],
+      "fotos": [
+        {
+          "foto": "fotos/L01-trautmann/collarin.jpg",
+          "credito": "Smabs Sputzer · CC BY 2.0 · Wikimedia Commons",
+          "x": 1600,
+          "y": 450,
+          "ancho": 440,
+          "ratio": 0.75,
+          "rot": -2.5,
+          "anim": "cae",
+          "pie": "EL COLLARÍN DE TRAUTMANN",
+          "lado": "der",
+          "foco": "50% 40%",
+          "zoom": 1.1
         }
       ]
     },
@@ -1107,21 +1121,29 @@
       "elementos": [
         {
           "p": "calendario",
-          "x": 1400,
-          "y": 320,
-          "tam": 350,
+          "x": 1380,
+          "y": 250,
+          "tam": 300,
           "palabra": "Quince",
           "anim": "cae",
           "texto": "15 ABR"
-        },
+        }
+      ],
+      "fotos": [
         {
-          "p": "estadio",
-          "x": 1620,
-          "y": 640,
-          "tam": 380,
+          "foto": "fotos/L01-trautmann/maine-road-1975.jpg",
+          "credito": "Braveheart · CC BY-SA 4.0 · Wikimedia Commons",
+          "x": 1520,
+          "y": 700,
+          "ancho": 600,
+          "ratio": 1.48,
+          "rot": -2,
           "palabra": "Maine",
           "anim": "pop",
-          "etiqueta": "MAINE ROAD"
+          "pie": "MAINE ROAD (FOTO DE 1975)",
+          "lado": "izq",
+          "foco": "50% 55%",
+          "zoom": 1.07
         }
       ]
     },
@@ -1188,6 +1210,23 @@
       "claves": [
         "acercar",
         "Murió"
+      ],
+      "fotos": [
+        {
+          "foto": "fotos/L01-trautmann/escultura.jpg",
+          "credito": "Oldelpaso · CC BY-SA 3.0 · Wikimedia Commons",
+          "x": 985,
+          "y": 745,
+          "ancho": 380,
+          "ratio": 1.33,
+          "rot": 1.5,
+          "palabra": "Murió",
+          "anim": "pop",
+          "pie": "ESCULTURA EN EL MUSEO DEL CITY",
+          "lado": "der",
+          "foco": "40% 50%",
+          "zoom": 1.07
+        }
       ]
     },
     {

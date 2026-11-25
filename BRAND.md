@@ -738,9 +738,10 @@ La duración de cada escena sale de la duración real del audio (`words.json`), 
 1. **Dos fuentes por dato**, anotadas en `episode.json`. Si no hay dos fuentes, el dato no sale.
 2. **El narrador es ficción, los datos no.** Decirlo en la bio: *"El Utilero es un personaje. Los datos son reales y con fuente."*
 3. **Cero imágenes de partidos, transmisiones ni fotos con derechos.** Todo se dibuja o se fotografía por nosotros.
+   **Excepción para videos largos (decisión del dueño, 25-nov-2026):** los largos combinan infografía animada con **fotografías reales de licencia libre verificada** (dominio público, CC0, CC BY o CC BY-SA; en la práctica, Wikimedia Commons) para dar peso narrativo y mostrar quién es el protagonista. Condiciones: (a) la licencia se comprueba en la página del archivo (API de Commons: `LicenseShortName`, autor, fecha); (b) crédito en pantalla, pequeño y vertical junto a la foto (`Autor · Licencia · Wikimedia Commons`) y crédito completo con enlaces en la descripción de YouTube (`COPYS.md`); (c) **nunca** fotos de agencia o prensa (Getty, AP, PA, Reuters, Mirrorpix…), ni imágenes con logos de patrocinadores/escudos de club a la vista, ni de menores; (d) el pie de foto dice lo que la foto ES (año real, objeto, lugar), nunca la presenta como otro momento; (e) tratamiento de «copia de archivo»: blanco y negro, grano, borde de papel, cinta. Los Shorts siguen sin fotos.
 4. **Sin logos oficiales** (FIFA, federaciones, clubes) ni el nombre "Mundial / World Cup" en la marca.
 5. **Nada de contenido en serie sin criterio:** YouTube no monetiza el "contenido no auténtico" (videos repetitivos o producidos en masa). Cada episodio debe tener investigación, guion y edición propios; la plantilla acelera, no reemplaza.
-6. No usar fotos de personas reales en las piezas; los protagonistas se cuentan con objetos, fechas y tipografía.
+6. En los Shorts no se usan fotos de personas reales: los protagonistas se cuentan con objetos, fechas y tipografía (los largos tienen la excepción de la regla 3).
 
 ---
 
