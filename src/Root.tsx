@@ -8,6 +8,7 @@ import {
   HojaExpresiones, HojaLogo, PruebaCamerino, PruebaComponentes, PruebaUtilero, LINEA_PRUEBA,
 } from './compositions/Pruebas';
 import { Miniatura, MiniaturaLargo, Post, AvatarStill, StillProps } from './compositions/Stills';
+import { Historia, HistoriaProps } from './compositions/Historias';
 import { SLUG_POR_DEFECTO } from './episodes';
 import { estimateWords } from './lib/timeline';
 
@@ -41,6 +42,7 @@ export const Root: React.FC = () => (
     <Still id="MiniaturaLargo" component={MiniaturaLargo} width={miniatura.width} height={miniatura.height} defaultProps={{ slug: 'L01-trautmann' } satisfies StillProps} />
     <Still id="Post" component={Post} width={post.width} height={post.height} defaultProps={{ slug: SLUG_POR_DEFECTO } satisfies StillProps} />
     <Still id="Avatar" component={AvatarStill} width={800} height={800} />
+    <Still id="Historia" component={Historia} width={1080} height={1920} defaultProps={{ n: 1 } satisfies HistoriaProps} />
 
     {/* ── Fases de trabajo (BRAND.md §11) ── */}
     <Composition id="F1-Componentes" component={PruebaComponentes} width={short.width} height={short.height} fps={FPS} durationInFrames={FPS * 8} />
