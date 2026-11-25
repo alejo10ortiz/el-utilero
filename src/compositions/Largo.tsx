@@ -13,6 +13,7 @@ import { TEMAS, TemaId, TemaProvider } from '../lib/tema';
 import { estimateTimeline, Timeline, timelineFrames, toFrames } from '../lib/timeline';
 import { CapituloL } from '../scenes/largo/CapituloL';
 import { ElementosL } from '../scenes/largo/ElementosL';
+import { FotosL } from '../scenes/largo/FotosL';
 import { CierreL } from '../scenes/largo/CierreL';
 import { CronoL } from '../scenes/largo/CronoL';
 import { CronologiaL } from '../scenes/largo/CronologiaL';
@@ -90,6 +91,7 @@ export const Largo: React.FC<LargoProps> = ({ slug, episode, timeline }) => {
                 <AbsProvider inicio={from}>
                   <Escena esc={esc} ep={episode} timing={t} frames={frames} width={LW} height={LH} />
                   {(esc.elementos || esc.flechas) && <ElementosL esc={esc} timing={t} frames={frames} />}
+                  {esc.fotos && <FotosL esc={esc} timing={t} frames={frames} />}
                 </AbsProvider>
               </TemaProvider>
             </Sequence>

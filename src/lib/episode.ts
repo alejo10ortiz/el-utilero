@@ -107,6 +107,32 @@ export const EscenaSchema = z.object({
     .optional(),
   /** Flechas dibujadas a mano entre dos puntos (videos largos); `curva` curva el trazo (px). */
   flechas: z.array(z.object({ x1: z.number(), y1: z.number(), x2: z.number(), y2: z.number(), palabra: z.string().optional(), curva: z.number().optional(), color: z.enum(['tinta', 'lima', 'sello']).optional() })).optional(),
+  /**
+   * Fotografías reales con licencia libre (dominio público / Creative Commons) de Wikimedia Commons, pegadas como copias de archivo.
+   * `foto` = ruta dentro de assets/, `credito` = «Autor · Licencia · Fuente» (OBLIGATORIO: se muestra en pantalla junto a la foto).
+   * `ratio` = ancho/alto del recorte; `foco` = punto de interés («50% 30%»); `pie` = pie de foto en cinta.
+   */
+  fotos: z
+    .array(
+      z.object({
+        foto: z.string(),
+        credito: z.string().min(8),
+        x: z.number(),
+        y: z.number(),
+        ancho: z.number(),
+        ratio: z.number().optional(),
+        rot: z.number().optional(),
+        palabra: z.string().optional(),
+        anim: z.enum(['pop', 'cae', 'desliza']).optional(),
+        desde: z.enum(['izq', 'der', 'arr', 'abj']).optional(),
+        pie: z.string().optional(),
+        lado: z.enum(['izq', 'der']).optional(),
+        zoom: z.number().optional(),
+        foco: z.string().optional(),
+        color: z.boolean().optional(),
+      }),
+    )
+    .optional(),
   /** Cama de música (assets/music/) que arranca en esta escena y suena hasta la siguiente que traiga `musica` (solo videos largos). */
   musica: z.string().optional(),
 });
