@@ -33,7 +33,8 @@ export const TitularL: React.FC<EscenaProps> = ({ esc, timing, frames }) => {
     const ancla = esc.claves?.[i];
     const def = 4 + i * Math.max(28, Math.floor((frames - 40) / Math.max(1, lineas.length)));
     const t = ancla ? cuando(timing, off, ancla, prev > 0 ? prev : 0, def) - 2 : def;
-    at.push(Math.max(i === 0 ? 3 : prev, t));
+    // nunca pantalla vacía tras un corte: la primera línea entra en los primeros fotogramas (la palabra dicha solo la refuerza)
+    at.push(i === 0 ? Math.min(Math.max(3, t), 8) : Math.max(prev, t));
   });
 
   // alto del bloque para centrarlo verticalmente

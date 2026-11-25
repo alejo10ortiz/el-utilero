@@ -19,7 +19,7 @@ export const PasilloL: React.FC<EscenaProps> = ({ esc, timing, frames }) => {
   const f = useCurrentFrame();
   const abs = useAbs();
   const off = Math.round(timing.start * FPS);
-  const tGrada = Math.max(6, cuando(timing, off, 'público', 0, 14) - 3);
+  const tGrada = 6; // la grada entra de inmediato (nunca pantalla vacía tras el corte)
   const tPalmas = Math.max(tGrada + 14, cuando(timing, off, 'aplaudió', tGrada, 44) - 4);
   const tFilas = Math.max(tPalmas + 8, cuando(timing, off, 'jugadores', tPalmas, 80) - 3);
   const tPasillo = Math.max(tFilas + 18, cuando(timing, off, 'pasillo', tFilas, 120) - 3);
@@ -82,8 +82,8 @@ export const PasilloL: React.FC<EscenaProps> = ({ esc, timing, frames }) => {
         </>
       )}
       {f >= tPasillo - 4 && (
-        <div style={{ position: 'absolute', left: 1500, top: 470, transform: `rotate(-3deg) scale(${tw(f, [tPasillo - 4, tPasillo + 4], [0, 1], E.outBack)})` }}>
-          <span style={{ display: 'inline-block', background: C.cinta, color: C.tinta, fontFamily: FONT.maquina, fontSize: 38, padding: '6px 22px', clipPath: 'polygon(0 8%,2% 0,50% 4%,98% 0,100% 10%,99% 92%,100% 100%,50% 95%,2% 100%,0 92%)' }}>PASILLO DE HONOR</span>
+        <div style={{ position: 'absolute', left: 1490, top: 480, transform: `rotate(-3deg) scale(${tw(f, [tPasillo - 4, tPasillo + 4], [0, 1], E.outBack)})` }}>
+          <span style={{ display: 'inline-block', background: C.cinta, color: C.tinta, fontFamily: FONT.maquina, fontSize: 30, padding: '6px 18px', clipPath: 'polygon(0 8%,2% 0,50% 4%,98% 0,100% 10%,99% 92%,100% 100%,50% 95%,2% 100%,0 92%)' }}>PASILLO DE HONOR</span>
         </div>
       )}
       <Sfx name="hinchada" at={tPalmas} volume={0.35} />
