@@ -83,6 +83,11 @@ Cada historia puede componerse con cualquier secuencia de escenas; ya no todo pa
 - `recorte` — recorte de periódico inventado «Archivo del Camerino» (`titular`, `linea`, `resaltar`): documentos y titulares históricos.
 Prueba visual de todas: episodio interno `P99-pruebas-escenas` (no se publica). Formatos narrativos sugeridos: *cifra/récord* (gancho → contador → giro → remate), *viaje* (mapa → cronología), *duelo* (versus → giro), *documento* (recorte → giro), *misterio* (tono sobrio + cama `c`).
 
+## Lo que enseñó YouTube (análisis del 26-nov-2026, 5 Shorts, primeras 9 h) — reglas vigentes
+- **Los Shorts duraban 37–44 s y el primer dato llegaba tarde** (#007: gancho 6,6 s + sting 2,4 s + «Cierren la puerta» 4,2 s → primer hecho a los 13,2 s); el tiempo promedio visto fue 10–17 s: la gente se iba justo antes de que empezara la historia. El formato nuevo (#014: gancho 3,0 s + apertura 1,8 s → primer dato a 4,8 s, total 30,6 s) es el objetivo.
+- **Reglas:** (1) ningún Short con `sting`; (2) el primer dato de la historia entra antes de los 5 s; la apertura («Cierren la puerta…») ≤ 1,8 s y nunca antes del gancho de contenido; (3) duración objetivo 28–33 s (máx. 35); (4) el titular del gancho con la premisa en pantalla desde f=0; (5) **cierre con pregunta de elección A/B** («¿Uruguay o Brasil?», «¿Sí o no?») en voz y fijada como primer comentario por la cuenta al publicar; nada de «comenten su país» genérico; (6) el título puede ser la pregunta A/B (el Short que lo hizo, #007, quintuplicó las vistas).
+- Línea base y preguntas por video: `COPYS.md` (sección «Preguntas A/B…»). Para comparar: mismas métricas (vistas, «se quedaron para mirar», tiempo promedio visto, comentarios) a las 9 h. Ojo: con <50 vistas (p. ej. #003, 14) los porcentajes no sirven.
+
 ## Ritmo (decisión del dueño: que no parezca plantilla y que no se haga largo)
 - Omitir la escena `sting` en episodios nuevos (2,4 s de puerta sin información); el sello sonoro de marca (`sello`: llave + cerrojo + golpe) va en la apertura.
 - Gancho ≤ 3,5 s; cierre corto (variar: con y sin «Yo estaba ahí. Bueno… casi.»). Meta: 30–35 s por video.
