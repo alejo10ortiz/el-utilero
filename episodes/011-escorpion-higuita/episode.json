@@ -23,7 +23,6 @@
   "musica": "base-100bpm-b.mp3",
   "transiciones": [
     "flash",
-    "cinta",
     "hoja",
     "cinta",
     "hoja",
@@ -39,15 +38,11 @@
       "voz": "Un portero despejó con los talones… en Wembley."
     },
     {
-      "tipo": "sting",
-      "camerino": "entreabierto"
-    },
-    {
       "tipo": "apertura",
       "expresion": "E3",
       "pose": "P3",
       "palabraGigante": "SHH",
-      "voz": "Cierren la puerta, que les cuento."
+      "voz": "Cierren la puerta."
     },
     {
       "tipo": "contexto",
@@ -100,9 +95,10 @@
       "fondo": "lima",
       "expresion": "E2",
       "claves": [
-        "camerino"
+        "atajada",
+        "show"
       ],
-      "voz": "Yo estaba ahí. Bueno… casi. Comenten su país y abro su camerino."
+      "voz": "¿La mejor atajada de la historia o puro show?"
     }
   ],
   "guion": {

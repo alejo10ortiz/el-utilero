@@ -23,7 +23,6 @@
   "musica": "base-100bpm-b.mp3",
   "transiciones": [
     "flash",
-    "cinta",
     "hoja",
     "cinta",
     "hoja",
@@ -39,15 +38,11 @@
       "voz": "La final de la Libertadores se jugó en Madrid."
     },
     {
-      "tipo": "sting",
-      "camerino": "entreabierto"
-    },
-    {
       "tipo": "apertura",
       "expresion": "E3",
       "pose": "P3",
       "palabraGigante": "SHH",
-      "voz": "Cierren la puerta, que les cuento."
+      "voz": "Cierren la puerta."
     },
     {
       "tipo": "contexto",
@@ -57,7 +52,7 @@
         "bus",
         "atacaron"
       ],
-      "voz": "River y Boca, noviembre de 2018. Hinchas de River atacaron el bus de Boca antes del partido."
+      "voz": "Noviembre de 2018. Hinchas de River atacaron el bus de Boca antes del partido."
     },
     {
       "tipo": "contexto",
@@ -82,7 +77,7 @@
         "Conmebol",
         "Bernabéu"
       ],
-      "voz": "La Conmebol decidió jugarlo fuera de Sudamérica: en el Bernabéu, en Madrid."
+      "voz": "La Conmebol decidió jugarlo fuera de Sudamérica: en el Bernabéu."
     },
     {
       "tipo": "remate",
@@ -100,9 +95,9 @@
       "fondo": "lima",
       "expresion": "E2",
       "claves": [
-        "camerino"
+        "Madrid"
       ],
-      "voz": "Yo estaba ahí. Bueno… casi. Comenten su país y abro su camerino."
+      "voz": "¿Debió jugarse la final en Madrid? Sí o no."
     }
   ],
   "guion": {

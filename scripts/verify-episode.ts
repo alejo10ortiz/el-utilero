@@ -56,10 +56,10 @@ export async function verificar(slug: string, online = false): Promise<Hallazgo[
   if (tipos[tipos.length - 1] !== 'cierre') err('la última escena debe ser el cierre');
   // Los episodios con escenas explicativas (contador, mapa, versus, cronología, recorte) omiten a propósito el sting y el giro del objeto.
   const explicativo = tipos.some((t) => ['contador', 'mapa', 'versus', 'cronologia', 'recorte'].includes(t));
-  if (!tipos.includes('sting') && !explicativo) warn('falta el sting (camerino que se abre)');
+  // (el sting se eliminó: 2,4 s de puerta muda; regla de ritmo del 26-nov-2026)
   if (!esPres && !esLargo && !explicativo && !ep.escenas.some((e) => e.tipo === 'giro')) warn('falta la escena de giro (objeto del día)');
   const cierre = ep.escenas.find((e) => e.tipo === 'cierre');
-  if (!esPres && !esLargo && cierre && !/comenten|comenta/i.test(cierre.voz ?? '')) warn('el cierre debería invitar a comentar el país (comunidad, §1)');
+  // (el cierre ahora es una pregunta A/B que invita a responder; ver reglas de ritmo más abajo)
   if (ep.textoFinal.split(' · ')[0] !== HANDLE) err(`textoFinal debe empezar con el @usuario oficial ${HANDLE}`);
 
   // ── Rotación de guion (BRAND.md §7b): avisos, nunca bloquean
@@ -95,12 +95,21 @@ export async function verificar(slug: string, online = false): Promise<Hallazgo[
 
   // ── Duración (30–45 s objetivo)
   const palabras = ep.escenas.reduce((a, e) => a + (e.voz ? tokenize(e.voz).length : 0), 0);
-  const tl = estimateTimeline(ep);
-  const msg = `${palabras} palabras de voz → ~${tl.totalSeconds.toFixed(0)} s estimados (objetivo 30–45 s)`;
+  const wjReal = path.resolve(__dirname, '..', 'assets', 'episodes', `${ep.id}-${ep.slug}`, 'words.json');
+  const tl = fs.existsSync(wjReal) ? (JSON.parse(fs.readFileSync(wjReal, 'utf8')) as ReturnType<typeof estimateTimeline>) : estimateTimeline(ep);
+  const msg = `${palabras} palabras de voz → ~${tl.totalSeconds.toFixed(0)} s (según la voz real si existe) (objetivo 28–33 s, máx. 35; análisis de YouTube 26-nov-2026)`;
   if (esLargo) ok(`video largo: ${palabras} palabras de voz, ~${(tl.totalSeconds / 60).toFixed(1)} min estimados (la historia decide la duración; ver la real con npm run timeline)`);
-  else if (tl.totalSeconds > 50) warn(msg + ' — recortar guion o subir "speed" en config/voice.json');
-  else if (tl.totalSeconds > 45) warn(msg + ' — algo largo; confirmar con la voz real');
+  else if (tl.totalSeconds > 40) warn(msg + ' — recortar guion (los Shorts de 40+ s perdían a la gente antes del primer dato)');
+  else if (tl.totalSeconds > 35) warn(msg + ' — algo largo; recortar relleno');
   else ok(msg);
+
+  // ── Reglas de ritmo (solo Shorts): sin sting, primer dato pronto, cierre con pregunta A/B
+  if (!esLargo && !esPres) {
+    if (ep.escenas.some((e) => e.tipo === 'sting')) warn('hay escena «sting» (2,4 s de puerta muda): quitarla (regla de ritmo del 26-nov-2026)');
+    const cierre = ep.escenas.find((e) => e.tipo === 'cierre');
+    if (cierre?.voz && !/¿[^?]*\?/.test(cierre.voz)) warn('el cierre no es una pregunta: usa una pregunta de elección A/B («¿X o Y?», «¿Sí o no?»)');
+    if (/comenten su pa[ií]s/i.test(cierre?.voz ?? '')) warn('cierre genérico «comenten su país»: sustituir por una pregunta A/B');
+  }
 
   // ── Reglas de plataforma (§10)
   const visible = ep.escenas.flatMap((e) => [e.texto, e.ficha, e.sello, e.cinta, e.palabraGigante, e.marcador]).filter(Boolean).join(' ');

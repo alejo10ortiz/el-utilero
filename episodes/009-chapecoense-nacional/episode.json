@@ -23,7 +23,6 @@
   "musica": "base-100bpm-b.mp3",
   "transiciones": [
     "flash",
-    "cinta",
     "hoja",
     "cinta",
     "hoja",
@@ -39,15 +38,11 @@
       "voz": "Un equipo pidió que su rival fuera campeón."
     },
     {
-      "tipo": "sting",
-      "camerino": "entreabierto"
-    },
-    {
       "tipo": "apertura",
       "expresion": "E3",
       "pose": "P3",
       "palabraGigante": "SHH",
-      "voz": "Cierren la puerta, que les cuento."
+      "voz": "Cierren la puerta."
     },
     {
       "tipo": "contexto",
@@ -67,7 +62,7 @@
         "rival",
         "Conmebol"
       ],
-      "voz": "La final se suspendió. Su rival, el Atlético Nacional, pidió a la Conmebol darle el título al Chapecoense."
+      "voz": "Su rival, el Atlético Nacional, pidió a la Conmebol darle el título al Chapecoense."
     },
     {
       "tipo": "giro",
@@ -82,7 +77,7 @@
         "campeón",
         "primer"
       ],
-      "voz": "El 5 de diciembre, la Conmebol lo declaró campeón. Fue el primer título internacional del club."
+      "voz": "El 5 de diciembre, la Conmebol lo declaró campeón: su primer título internacional."
     },
     {
       "tipo": "remate",
@@ -102,9 +97,10 @@
       "fondo": "lima",
       "expresion": "E7",
       "claves": [
-        "camerino"
+        "juega",
+        "gesto"
       ],
-      "voz": "Así también se juega. Comenten su país y abro su camerino.",
+      "voz": "Así también se juega. ¿Conocían este gesto?",
       "tono": "misterio"
     }
   ],

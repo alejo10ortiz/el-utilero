@@ -24,7 +24,6 @@
   "musica": "base-100bpm-b.mp3",
   "transiciones": [
     "flash",
-    "cinta",
     "hoja",
     "cinta",
     "hoja",
@@ -37,18 +36,14 @@
       "fondo": "pizarra",
       "texto": "CONTRATO EN SERVILLETA",
       "resaltar": "SERVILLETA",
-      "voz": "El contrato más famoso de Messi se firmó en una servilleta."
-    },
-    {
-      "tipo": "sting",
-      "camerino": "entreabierto"
+      "voz": "El contrato más famoso de Messi: una servilleta."
     },
     {
       "tipo": "apertura",
       "expresion": "E3",
       "pose": "P3",
       "palabraGigante": "SHH",
-      "voz": "Cierren la puerta, que les cuento."
+      "voz": "Cierren la puerta."
     },
     {
       "tipo": "contexto",
@@ -102,9 +97,9 @@
       "fondo": "lima",
       "expresion": "E2",
       "claves": [
-        "camerino"
+        "servilleta"
       ],
-      "voz": "Yo estaba ahí. Bueno… casi. Comenten su país y abro su camerino."
+      "voz": "¿Firmarían ustedes en una servilleta? Sí o no."
     }
   ],
   "guion": {

@@ -23,7 +23,6 @@
   "musica": "base-100bpm-b.mp3",
   "transiciones": [
     "flash",
-    "cinta",
     "hoja",
     "cinta",
     "hoja",
@@ -39,15 +38,11 @@
       "voz": "Secuestraron a Di Stéfano en pleno viaje del Real Madrid."
     },
     {
-      "tipo": "sting",
-      "camerino": "entreabierto"
-    },
-    {
       "tipo": "apertura",
       "expresion": "E3",
       "pose": "P3",
       "palabraGigante": "SHH",
-      "voz": "Cierren la puerta, que les cuento."
+      "voz": "Cierren la puerta."
     },
     {
       "tipo": "contexto",
@@ -57,7 +52,7 @@
         "gira",
         "hotel"
       ],
-      "voz": "Agosto de 1963. El Real Madrid estaba de gira y Di Stéfano se alojaba en un hotel de Caracas."
+      "voz": "Agosto de 1963. Di Stéfano se alojaba en un hotel de Caracas con el Real Madrid."
     },
     {
       "tipo": "contexto",
@@ -100,9 +95,10 @@
       "fondo": "lima",
       "expresion": "E2",
       "claves": [
-        "camerino"
+        "Pelé",
+        "Maradona"
       ],
-      "voz": "Yo estaba ahí. Bueno… casi. Comenten su país y abro su camerino."
+      "voz": "¿Di Stéfano, Pelé o Maradona? ¿A quién pondrían de primero?"
     }
   ],
   "guion": {
